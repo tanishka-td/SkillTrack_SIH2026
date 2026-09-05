@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | Current Status</title>
+
+    <link
+        rel="stylesheet"
+        href="trainee-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="page-topbar">
+
+
+    <a href="trainee-dashboard.html">
+        ← Back to Dashboard
+    </a>
+
+
+    <div class="inner-brand">
+
+        <div class="inner-logo">
+            S
+        </div>
+
+
+        <div>
+
+            <strong>
+                SkillTrack
+            </strong>
+
+            <span>
+                Current Status
+            </span>
+
+        </div>
+
+    </div>
+
+
+</header>
+
+
+
+<main class="inner-content">
+
+
+    <!-- ==================================================
+         PAGE HEADING
+    =================================================== -->
+
+    <div class="page-heading">
+
+        <p>
+            CURRENT STATUS
+        </p>
+
+
+        <h1>
+            What are you doing now?
+        </h1>
+
+
+        <span>
+            Keeping your status updated helps SkillTrack
+            measure post-training outcomes.
+        </span>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         STATUS CARD
+    =================================================== -->
+
+    <section class="status-main-card">
+
+
+        <h2>
+            Select your current career status
+        </h2>
+
+
+
+        <!-- ==================================================
+             STATUS OPTIONS
+        =================================================== -->
+
+        <div class="status-grid">
+
+
+            <!-- EMPLOYED -->
+
+            <button
+                type="button"
+                class="status-select selected"
+                data-status="Employed"
+            >
+
+                <span>💼</span>
+
+                <strong>
+                    I got a job
+                </strong>
+
+                <small>
+                    Currently employed
+                </small>
+
+            </button>
+
+
+
+            <!-- BUSINESS -->
+
+            <button
+                type="button"
+                class="status-select"
+                data-status="Business"
+            >
+
+                <span>🏢</span>
+
+                <strong>
+                    I started a business
+                </strong>
+
+                <small>
+                    Self-employed
+                </small>
+
+            </button>
+
+
+
+            <!-- APPRENTICESHIP -->
+
+            <button
+                type="button"
+                class="status-select"
+                data-status="Apprenticeship"
+            >
+
+                <span>🎓</span>
+
+                <strong>
+                    I'm doing an apprenticeship
+                </strong>
+
+                <small>
+                    Apprentice / trainee
+                </small>
+
+            </button>
+
+
+
+            <!-- UNEMPLOYED -->
+
+            <button
+                type="button"
+                class="status-select"
+                data-status="Unemployed"
+            >
+
+                <span>○</span>
+
+                <strong>
+                    I'm unemployed
+                </strong>
+
+                <small>
+                    Looking for opportunities
+                </small>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             REASON (shown only when Unemployed)
+        =================================================== -->
+
+        <div
+            class="field"
+            id="unemployedFields"
+            style="display:none;"
+        >
+
+            <label for="unemployedReason">
+                Reason (why aren't you placed / why did you leave your last job?)
+            </label>
+
+            <textarea
+                id="unemployedReason"
+                placeholder="e.g. wage offered was too low, location too far, family reasons..."
+            ></textarea>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             DYNAMIC EMPLOYMENT INFORMATION
+        =================================================== -->
+
+        <div
+            class="dynamic-fields"
+            id="dynamicFields"
+        >
+
+
+            <!-- COMPANY -->
+
+            <div class="field">
+
+                <label for="company">
+                    Company / Organisation
+                </label>
+
+
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Enter company name"
+                >
+
+            </div>
+
+
+
+            <!-- JOB ROLE + SALARY -->
+
+            <div class="two-fields">
+
+
+                <div class="field">
+
+                    <label for="role">
+                        Job Role
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="role"
+                        placeholder="Enter your job role"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="salary">
+                        Monthly Salary
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="salary"
+                        placeholder="Optional"
+                        min="0"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 JOINING DATE + EMPLOYMENT TYPE
+            =================================================== -->
+
+            <div class="two-fields">
+
+
+                <div class="field">
+
+                    <label for="joiningDate">
+                        Joining Date
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="joiningDate"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="employmentType">
+                        Employment Type
+                    </label>
+
+
+                    <select id="employmentType">
+
+                        <option value="">
+                            Select employment type
+                        </option>
+
+                        <option value="Full-time">
+                            Full-time
+                        </option>
+
+                        <option value="Part-time">
+                            Part-time
+                        </option>
+
+                        <option value="Contract">
+                            Contract
+                        </option>
+
+                        <option value="Apprenticeship">
+                            Apprenticeship
+                        </option>
+
+                        <option value="Self-employed">
+                            Self-employed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             MESSAGE
+        =================================================== -->
+
+        <div
+            class="message"
+            id="statusMessage"
+        ></div>
+
+
+
+        <!-- ==================================================
+             SAVE BUTTON
+        =================================================== -->
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="saveStatus"
+        >
+            Save Current Status →
+        </button>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ======================================================
+     SUPABASE
+======================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- Your Supabase configuration -->
+
+<script src="supabase.js"></script>
+
+
+<!-- Current Status logic -->
+
+<script src="trainee-status.js"></script>
+
+
+</body>
+
+</html>

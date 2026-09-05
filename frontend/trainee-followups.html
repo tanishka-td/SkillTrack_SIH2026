@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | Follow-ups</title>
+
+    <link
+        rel="stylesheet"
+        href="trainee-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+<header class="page-topbar">
+
+    <a href="trainee-dashboard.html">
+        ← Back to Dashboard
+    </a>
+
+
+    <div class="inner-brand">
+
+        <div class="inner-logo">
+            S
+        </div>
+
+        <div>
+
+            <strong>
+                SkillTrack
+            </strong>
+
+            <span>
+                Follow-ups
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="inner-content">
+
+
+    <div class="page-heading">
+
+        <p>
+            FOLLOW-UPS
+        </p>
+
+        <h1>
+            Your post-training check-ins
+        </h1>
+
+        <span>
+            SkillTrack follows your journey after training
+            to measure long-term outcomes.
+        </span>
+
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div
+        id="loadingMessage"
+        style="padding:20px;"
+    >
+        Loading your follow-ups...
+    </div>
+
+
+    <!-- FOLLOWUPS WILL BE INSERTED HERE -->
+
+    <div id="followupsContainer"></div>
+
+
+    <!-- ERROR -->
+
+    <div
+        id="followupError"
+        style="
+            display:none;
+            color:#dc2626;
+            margin-top:20px;
+        "
+    ></div>
+
+
+</main>
+
+
+<!-- IMPORTANT:
+     Use the same Supabase JS setup
+     that you are already using in your other pages.
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase-config.js"></script>
+
+<script src="trainee-followups.js"></script>
+
+</body>
+
+</html>

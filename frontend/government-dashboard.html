@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SkillTrack | Government Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="government-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="mobile-overlay"
+        id="mobileOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="brand-block">
+
+            <div class="brand-logo">
+                S
+            </div>
+
+            <div>
+
+                <h2>
+                    SkillTrack
+                </h2>
+
+                <span>
+                    Government Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OFFICIAL USER -->
+
+        <div class="official-user">
+
+            <div class="official-avatar">
+                RK
+            </div>
+
+            <div>
+
+                <strong>
+                    Rajesh Kumar
+                </strong>
+
+                <span>
+                    District Officer
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+
+            <p class="nav-label">
+                MONITORING
+            </p>
+
+
+            <a
+                href="government-dashboard.html"
+                class="nav-link active"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#outcomes"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                Outcome Analytics
+
+            </a>
+
+
+            <a
+                href="#districts"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ▤
+                </span>
+
+                District Performance
+
+            </a>
+
+
+            <a
+                href="#courses"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ◈
+                </span>
+
+                Course Performance
+
+            </a>
+
+
+            <a
+                href="#followups"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ◷
+                </span>
+
+                Follow-up Tracking
+
+                <b>
+                    12
+                </b>
+
+            </a>
+
+
+
+            <p class="nav-label second">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="#verification"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ✓
+                </span>
+
+                Verification Queue
+
+                <b class="red">
+                    8
+                </b>
+
+            </a>
+
+
+            <a
+                href="#reports"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                Reports
+
+            </a>
+
+
+            <a
+                href="#settings"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                Settings
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="sidebar-footer">
+
+
+            <div class="system-status">
+
+                <span></span>
+
+                System Operational
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                id="logoutBtn"
+            >
+
+                ↪
+
+                Sign Out
+
+            </button>
+
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="top-left">
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <p>
+                        GOVERNMENT DASHBOARD
+                    </p>
+
+                    <h1>
+                        Programme Overview
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="top-right">
+
+
+                <div class="jurisdiction">
+
+                    <span>
+                        Current jurisdiction
+                    </span>
+
+                    <strong>
+                        Delhi
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="notification-btn"
+                    id="notificationBtn"
+                >
+
+                    🔔
+
+                    <i></i>
+
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="top-avatar">
+                        RK
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Rajesh Kumar
+                        </strong>
+
+                        <span>
+                            District Officer
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <main class="content">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <section class="page-header">
+
+
+                <div>
+
+                    <p class="eyebrow">
+                        SKILL DEVELOPMENT MONITORING
+                    </p>
+
+                    <h2>
+                        Training Outcomes Overview
+                    </h2>
+
+                    <span>
+                        Monitor verified post-training outcomes
+                        across your jurisdiction.
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <label class="date-select">
+
+                        <span>
+                            Reporting period
+                        </span>
+
+                        <select id="periodSelect">
+
+                            <option>
+                                FY 2026-27
+                            </option>
+
+                            <option>
+                                FY 2025-26
+                            </option>
+
+                            <option>
+                                FY 2024-25
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <button
+                        class="export-btn"
+                        id="exportBtn"
+                    >
+
+                        ↓ Export Report
+
+                    </button>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+
+            <section class="filters">
+
+
+                <div class="filter-title">
+
+                    <span>
+                        FILTER DATA
+                    </span>
+
+                    <strong>
+                        Current View
+                    </strong>
+
+                </div>
+
+
+                <div class="filter-group">
+
+
+                    <label>
+
+                        State
+
+                        <select id="stateFilter">
+
+                            <option>
+                                Delhi
+                            </option>
+
+                            <option>
+                                Haryana
+                            </option>
+
+                            <option>
+                                Uttar Pradesh
+                            </option>
+
+                            <option>
+                                Maharashtra
+                            </option>
+
+                            <option>
+                                All States
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+
+                    <label>
+
+                        District
+
+                        <select id="districtFilter">
+
+                            <option>
+                                All Districts
+                            </option>
+
+                            <option>
+                                North West Delhi
+                            </option>
+
+                            <option>
+                                Central Delhi
+                            </option>
+
+                            <option>
+                                South Delhi
+                            </option>
+
+                            <option>
+                                East Delhi
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+
+                    <label>
+
+                        Programme
+
+                        <select id="programmeFilter">
+
+                            <option>
+                                All Programmes
+                            </option>
+
+                            <option>
+                                Web Development
+                            </option>
+
+                            <option>
+                                Data Analytics
+                            </option>
+
+                            <option>
+                                Electrician
+                            </option>
+
+                            <option>
+                                Healthcare Assistant
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                </div>
+
+
+                <button
+                    class="reset-btn"
+                    id="resetFilters"
+                >
+
+                    Reset
+
+                </button>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 KPI CARDS
+            ================================================== -->
+
+            <section class="kpi-grid">
+
+
+                <article class="kpi-card">
+
+                    <div class="kpi-top">
+
+                        <span>
+                            TOTAL TRAINEES
+                        </span>
+
+                        <div class="kpi-icon blue">
+                            👥
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="counter"
+                        data-value="24860"
+                    >
+                        0
+                    </strong>
+
+
+                    <div class="kpi-bottom">
+
+                        <span>
+                            Across selected jurisdiction
+                        </span>
+
+                        <b class="positive">
+                            +8.4%
+                        </b>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="kpi-card">
+
+                    <div class="kpi-top">
+
+                        <span>
+                            TRAINING COMPLETION
+                        </span>
+
+                        <div class="kpi-icon purple">
+                            ◈
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="counter"
+                        data-value="91"
+                        data-suffix="%"
+                    >
+                        0%
+                    </strong>
+
+
+                    <div class="kpi-bottom">
+
+                        <span>
+                            Programme completion
+                        </span>
+
+                        <b class="positive">
+                            +3.2%
+                        </b>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="kpi-card">
+
+                    <div class="kpi-top">
+
+                        <span>
+                            EMPLOYMENT RATE
+                        </span>
+
+                        <div class="kpi-icon green">
+                            💼
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="counter"
+                        data-value="74"
+                        data-suffix="%"
+                    >
+                        0%
+                    </strong>
+
+
+                    <div class="kpi-bottom">
+
+                        <span>
+                            Verified employment
+                        </span>
+
+                        <b class="positive">
+                            +6.1%
+                        </b>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="kpi-card">
+
+                    <div class="kpi-top">
+
+                        <span>
+                            VERIFIED OUTCOMES
+                        </span>
+
+                        <div class="kpi-icon orange">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="counter"
+                        data-value="18420"
+                    >
+                        0
+                    </strong>
+
+
+                    <div class="kpi-bottom">
+
+                        <span>
+                            Records verified
+                        </span>
+
+                        <b class="positive">
+                            +12.7%
+                        </b>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RETENTION
+            ================================================== -->
+
+            <section
+                class="retention-section"
+                id="followups"
+            >
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p>
+                            LONGITUDINAL TRACKING
+                        </p>
+
+                        <h2>
+                            Outcome Retention
+                        </h2>
+
+                    </div>
+
+
+                    <span>
+                        Post-training employment retention
+                    </span>
+
+                </div>
+
+
+
+                <div class="retention-grid">
+
+
+                    <div class="retention-card">
+
+                        <div class="retention-number">
+                            78%
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                3 Month
+                            </strong>
+
+                            <span>
+                                Employment retention
+                            </span>
+
+                        </div>
+
+                        <div class="mini-bar">
+                            <span style="width:78%"></span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="retention-card">
+
+                        <div class="retention-number">
+                            73%
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                6 Month
+                            </strong>
+
+                            <span>
+                                Employment retention
+                            </span>
+
+                        </div>
+
+                        <div class="mini-bar">
+                            <span style="width:73%"></span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="retention-card">
+
+                        <div class="retention-number">
+                            67%
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                12 Month
+                            </strong>
+
+                            <span>
+                                Employment retention
+                            </span>
+
+                        </div>
+
+                        <div class="mini-bar">
+                            <span style="width:67%"></span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="retention-summary">
+
+                        <span>
+                            TREND
+                        </span>
+
+                        <strong>
+                            Improving
+                        </strong>
+
+                        <p>
+                            Long-term retention is
+                            improving compared with
+                            the previous reporting period.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ANALYTICS GRID
+            ================================================== -->
+
+            <section class="analytics-grid">
+
+
+                <!-- OUTCOME DISTRIBUTION -->
+
+                <article
+                    class="panel outcome-panel"
+                    id="outcomes"
+                >
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                CURRENT OUTCOMES
+                            </span>
+
+                            <h2>
+                                Trainee Status
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            class="icon-btn"
+                            id="outcomeInfo"
+                        >
+                            i
+                        </button>
+
+                    </div>
+
+
+                    <div class="donut-area">
+
+
+                        <div class="donut">
+
+                            <div>
+
+                                <strong>
+                                    24.8K
+                                </strong>
+
+                                <span>
+                                    Trainees
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="legend">
+
+
+                            <div>
+
+                                <i class="legend-dot employed"></i>
+
+                                <span>
+                                    Employed
+                                </span>
+
+                                <strong>
+                                    74%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="legend-dot business"></i>
+
+                                <span>
+                                    Business
+                                </span>
+
+                                <strong>
+                                    9%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="legend-dot apprenticeship"></i>
+
+                                <span>
+                                    Apprenticeship
+                                </span>
+
+                                <strong>
+                                    7%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="legend-dot unemployed"></i>
+
+                                <span>
+                                    Unemployed
+                                </span>
+
+                                <strong>
+                                    10%
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- DISTRICT PERFORMANCE -->
+
+                <article
+                    class="panel district-panel"
+                    id="districts"
+                >
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                DISTRICT ANALYSIS
+                            </span>
+
+                            <h2>
+                                District Performance
+                            </h2>
+
+                        </div>
+
+
+                        <select
+                            class="small-select"
+                            id="districtMetric"
+                        >
+
+                            <option>
+                                Employment Rate
+                            </option>
+
+                            <option>
+                                Completion Rate
+                            </option>
+
+                            <option>
+                                Verification Rate
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="district-list">
+
+
+                        <div class="district-row">
+
+                            <div class="rank">
+                                01
+                            </div>
+
+                            <div class="district-info">
+
+                                <strong>
+                                    North West Delhi
+                                </strong>
+
+                                <span>
+                                    6,840 trainees
+                                </span>
+
+                            </div>
+
+                            <div class="district-value">
+
+                                <strong>
+                                    81%
+                                </strong>
+
+                                <div class="bar">
+                                    <span style="width:81%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="district-row">
+
+                            <div class="rank">
+                                02
+                            </div>
+
+                            <div class="district-info">
+
+                                <strong>
+                                    South Delhi
+                                </strong>
+
+                                <span>
+                                    5,230 trainees
+                                </span>
+
+                            </div>
+
+                            <div class="district-value">
+
+                                <strong>
+                                    77%
+                                </strong>
+
+                                <div class="bar">
+                                    <span style="width:77%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="district-row">
+
+                            <div class="rank">
+                                03
+                            </div>
+
+                            <div class="district-info">
+
+                                <strong>
+                                    Central Delhi
+                                </strong>
+
+                                <span>
+                                    4,912 trainees
+                                </span>
+
+                            </div>
+
+                            <div class="district-value">
+
+                                <strong>
+                                    72%
+                                </strong>
+
+                                <div class="bar">
+                                    <span style="width:72%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="district-row">
+
+                            <div class="rank">
+                                04
+                            </div>
+
+                            <div class="district-info">
+
+                                <strong>
+                                    East Delhi
+                                </strong>
+
+                                <span>
+                                    4,102 trainees
+                                </span>
+
+                            </div>
+
+                            <div class="district-value">
+
+                                <strong>
+                                    68%
+                                </strong>
+
+                                <div class="bar">
+                                    <span style="width:68%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 COURSE PERFORMANCE
+            ================================================== -->
+
+            <section
+                class="panel course-panel"
+                id="courses"
+            >
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span>
+                            PROGRAMME PERFORMANCE
+                        </span>
+
+                        <h2>
+                            Course-wise Outcomes
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="small-btn"
+                        id="courseDetailsBtn"
+                    >
+                        View details
+                    </button>
+
+                </div>
+
+
+                <div class="table-container">
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Training Programme
+                                </th>
+
+                                <th>
+                                    Trainees
+                                </th>
+
+                                <th>
+                                    Completion
+                                </th>
+
+                                <th>
+                                    Employment
+                                </th>
+
+                                <th>
+                                    Verification
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="course-name">
+
+                                        <div class="course-box blue">
+                                            WD
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Web Development
+                                            </strong>
+
+                                            <span>
+                                                Digital Skills
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    5,840
+                                </td>
+
+                                <td>
+                                    94%
+                                </td>
+
+                                <td>
+                                    <b class="table-positive">
+                                        82%
+                                    </b>
+                                </td>
+
+                                <td>
+                                    89%
+                                </td>
+
+                                <td>
+                                    <span class="status-good">
+                                        Good
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="course-name">
+
+                                        <div class="course-box purple">
+                                            DA
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Data Analytics
+                                            </strong>
+
+                                            <span>
+                                                Technology
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    4,210
+                                </td>
+
+                                <td>
+                                    91%
+                                </td>
+
+                                <td>
+                                    <b class="table-positive">
+                                        78%
+                                    </b>
+                                </td>
+
+                                <td>
+                                    86%
+                                </td>
+
+                                <td>
+                                    <span class="status-good">
+                                        Good
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="course-name">
+
+                                        <div class="course-box orange">
+                                            EL
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Electrician
+                                            </strong>
+
+                                            <span>
+                                                Technical Skills
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    7,120
+                                </td>
+
+                                <td>
+                                    89%
+                                </td>
+
+                                <td>
+                                    <b>
+                                        69%
+                                    </b>
+                                </td>
+
+                                <td>
+                                    81%
+                                </td>
+
+                                <td>
+                                    <span class="status-watch">
+                                        Watch
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="course-name">
+
+                                        <div class="course-box green">
+                                            HC
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Healthcare Assistant
+                                            </strong>
+
+                                            <span>
+                                                Healthcare
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    3,980
+                                </td>
+
+                                <td>
+                                    93%
+                                </td>
+
+                                <td>
+                                    <b class="table-positive">
+                                        76%
+                                    </b>
+                                </td>
+
+                                <td>
+                                    90%
+                                </td>
+
+                                <td>
+                                    <span class="status-good">
+                                        Good
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 VERIFICATION + ALERTS
+            ================================================== -->
+
+            <section class="bottom-grid">
+
+
+                <!-- VERIFICATION -->
+
+                <article
+                    class="panel"
+                    id="verification"
+                >
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                EMPLOYER VERIFICATION
+                            </span>
+
+                            <h2>
+                                Verification Queue
+                            </h2>
+
+                        </div>
+
+
+                        <span class="queue-count">
+                            8 Pending
+                        </span>
+
+                    </div>
+
+
+                    <div class="queue-list">
+
+
+                        <div class="queue-item">
+
+                            <div class="queue-avatar">
+                                AS
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Aman Sharma
+                                </strong>
+
+                                <span>
+                                    Web Developer • Digital Solutions
+                                </span>
+
+                            </div>
+
+                            <button>
+                                Review
+                            </button>
+
+                        </div>
+
+
+                        <div class="queue-item">
+
+                            <div class="queue-avatar">
+                                RK
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Rohan Kumar
+                                </strong>
+
+                                <span>
+                                    Electrician • ABC Services
+                                </span>
+
+                            </div>
+
+                            <button>
+                                Review
+                            </button>
+
+                        </div>
+
+
+                        <div class="queue-item">
+
+                            <div class="queue-avatar">
+                                PM
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Priya Mehta
+                                </strong>
+
+                                <span>
+                                    Data Analyst • TechWorks
+                                </span>
+
+                            </div>
+
+                            <button>
+                                Review
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button
+                        class="full-outline"
+                        id="verificationBtn"
+                    >
+                        Open Verification Queue →
+                    </button>
+
+
+                </article>
+
+
+
+                <!-- ALERTS -->
+
+                <article
+                    class="panel"
+                    id="reports"
+                >
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                PROGRAMME ALERTS
+                            </span>
+
+                            <h2>
+                                Attention Required
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-list">
+
+
+                        <div class="alert-item warning-alert">
+
+                            <div>
+                                !
+                            </div>
+
+                            <section>
+
+                                <strong>
+                                    Low employment retention
+                                </strong>
+
+                                <p>
+                                    Electrician programme
+                                    retention has fallen below
+                                    the target threshold.
+                                </p>
+
+                            </section>
+
+                        </div>
+
+
+                        <div class="alert-item info-alert">
+
+                            <div>
+                                ◷
+                            </div>
+
+                            <section>
+
+                                <strong>
+                                    Follow-ups due
+                                </strong>
+
+                                <p>
+                                    12 trainee follow-ups are
+                                    due within the next 30 days.
+                                </p>
+
+                            </section>
+
+                        </div>
+
+
+                        <div class="alert-item success-alert">
+
+                            <div>
+                                ✓
+                            </div>
+
+                            <section>
+
+                                <strong>
+                                    Verification improving
+                                </strong>
+
+                                <p>
+                                    Employer verification rate
+                                    increased by 12.7%.
+                                </p>
+
+                            </section>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 LAST UPDATED
+            ================================================== -->
+
+            <div class="last-updated">
+
+                <span>
+                    Last updated: 1 September 2026, 20:45 IST
+                </span>
+
+                <span>
+                    Data refreshes periodically
+                </span>
+
+            </div>
+
+
+        </main>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <span>
+                © 2026 SkillTrack
+            </span>
+
+            <span>
+                Government Digital Skill Outcome Platform
+            </span>
+
+            <span>
+                Secure Government Access
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         INFO MODAL
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="infoModal"
+    >
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                data-close
+            >
+                ×
+            </button>
+
+
+            <div class="modal-icon">
+                i
+            </div>
+
+
+            <h2 id="modalTitle">
+                Information
+            </h2>
+
+
+            <p id="modalText">
+                Dashboard information.
+            </p>
+
+
+            <button
+                class="primary-btn"
+                data-close
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="government-dashboard.js"></script>
+
+</body>
+
+</html>

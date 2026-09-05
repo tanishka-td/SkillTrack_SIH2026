@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | Government Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="government-login.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         BACKGROUND
+    ================================== -->
+
+    <div class="background">
+
+        <div class="grid"></div>
+
+        <div class="shape shape-one"></div>
+
+        <div class="shape shape-two"></div>
+
+    </div>
+
+
+
+    <!-- =================================
+         NAVBAR
+    ================================== -->
+
+    <header class="navbar">
+
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <div class="brand-logo">
+                S
+            </div>
+
+
+            <div class="brand-text">
+
+                <h2>
+                    SkillTrack
+                </h2>
+
+                <span>
+                    Government Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <div class="official-badge">
+
+            <span></span>
+
+            Official Access Portal
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAIN
+    ================================== -->
+
+    <main class="main-container">
+
+
+        <!-- =================================
+             LEFT PANEL
+        ================================== -->
+
+        <section class="info-panel">
+
+
+            <div class="info-content">
+
+
+                <div class="label">
+                    GOVERNMENT REPRESENTATIVE ACCESS
+                </div>
+
+
+                <h1>
+
+                    Data-driven
+                    <span>
+                        decisions
+                    </span>
+                    start here.
+
+                </h1>
+
+
+                <p class="description">
+
+                    Access verified SkillTrack outcomes,
+                    monitor post-training progress and
+                    understand long-term employment
+                    impact across districts and training
+                    programmes.
+
+                </p>
+
+
+
+                <!-- INFO ITEMS -->
+
+                <div class="info-items">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Verified Outcome Data
+                            </h3>
+
+                            <p>
+                                Review verified trainee
+                                employment and career outcomes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            ↗
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                District-Level Insights
+                            </h3>
+
+                            <p>
+                                Monitor programme performance
+                                across districts and regions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            ◷
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Longitudinal Tracking
+                            </h3>
+
+                            <p>
+                                Analyse 3, 6 and 12-month
+                                post-training outcomes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TIMELINE -->
+
+                <div class="impact-line">
+
+                    <span>Training</span>
+
+                    <i>→</i>
+
+                    <span>Employment</span>
+
+                    <i>→</i>
+
+                    <span>3M</span>
+
+                    <i>→</i>
+
+                    <span>6M</span>
+
+                    <i>→</i>
+
+                    <span>12M</span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             AUTH PANEL
+        ================================== -->
+
+        <section class="auth-panel">
+
+
+            <div class="auth-card">
+
+
+                <!-- HEADER -->
+
+                <div class="auth-header">
+
+
+                    <div>
+
+                        <p>
+                            AUTHORIZED PERSONNEL
+                        </p>
+
+                        <h2 id="formTitle">
+                            Government access
+                        </h2>
+
+                    </div>
+
+
+                    <div class="government-icon">
+                        🏛
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TABS -->
+
+                <div class="tabs">
+
+
+                    <button
+                        type="button"
+                        id="signupTab"
+                        class="tab active"
+                    >
+
+                        Register
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="loginTab"
+                        class="tab"
+                    >
+
+                        Sign In
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     REGISTER FORM
+                ================================== -->
+
+                <form
+                    id="signupForm"
+                    class="form"
+                    novalidate
+                >
+
+
+                    <!-- OFFICIAL IDENTITY -->
+
+                    <div class="form-heading">
+
+                        <span>01</span>
+
+                        Official Identity
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field full">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your official name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label>
+                                Designation
+                            </label>
+
+                            <input
+                                type="text"
+                                id="designation"
+                                placeholder="e.g. District Officer"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label>
+                                Employee / Official ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="employeeId"
+                                placeholder="Enter official ID"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="field full">
+
+                            <label>
+                                Department / Ministry
+                            </label>
+
+                            <input
+                                type="text"
+                                id="department"
+                                placeholder="Enter department or ministry"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CONTACT -->
+
+                    <div class="form-heading">
+
+                        <span>02</span>
+
+                        Official Contact
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label>
+                                Official Mobile Number
+                            </label>
+
+                            <div class="phone-box">
+
+                                <span>
+                                    +91
+                                </span>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="10-digit number"
+                                    maxlength="10"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label>
+                                Official Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="name@gov.in"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- JURISDICTION -->
+
+                    <div class="form-heading">
+
+                        <span>03</span>
+
+                        Jurisdiction
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label>
+                                State / UT
+                            </label>
+
+                            <select id="state" required>
+
+                                <option
+                                    value=""
+                                    selected
+                                    disabled
+                                >
+                                    Select State / UT
+                                </option>
+
+                                <option>
+                                    Andhra Pradesh
+                                </option>
+
+                                <option>
+                                    Assam
+                                </option>
+
+                                <option>
+                                    Bihar
+                                </option>
+
+                                <option>
+                                    Delhi
+                                </option>
+
+                                <option>
+                                    Gujarat
+                                </option>
+
+                                <option>
+                                    Haryana
+                                </option>
+
+                                <option>
+                                    Karnataka
+                                </option>
+
+                                <option>
+                                    Kerala
+                                </option>
+
+                                <option>
+                                    Madhya Pradesh
+                                </option>
+
+                                <option>
+                                    Maharashtra
+                                </option>
+
+                                <option>
+                                    Odisha
+                                </option>
+
+                                <option>
+                                    Punjab
+                                </option>
+
+                                <option>
+                                    Rajasthan
+                                </option>
+
+                                <option>
+                                    Tamil Nadu
+                                </option>
+
+                                <option>
+                                    Telangana
+                                </option>
+
+                                <option>
+                                    Uttar Pradesh
+                                </option>
+
+                                <option>
+                                    Uttarakhand
+                                </option>
+
+                                <option>
+                                    West Bengal
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label>
+                                District
+                            </label>
+
+                            <input
+                                type="text"
+                                id="district"
+                                placeholder="Enter district"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="field full">
+
+                            <label>
+                                Office / Organisation
+                            </label>
+
+                            <input
+                                type="text"
+                                id="office"
+                                placeholder="Enter office or organisation"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SECURITY -->
+
+                    <div class="form-heading">
+
+                        <span>04</span>
+
+                        Secure Access
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label>
+                                Create Password
+                            </label>
+
+                            <div class="password-box">
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Create password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="show-password"
+                                    data-target="password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label>
+                                Confirm Password
+                            </label>
+
+                            <div class="password-box">
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="show-password"
+                                    data-target="confirmPassword"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- AUTH CODE -->
+
+                    <div class="verification-box">
+
+                        <div class="verification-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Government Verification
+                            </h4>
+
+                            <p>
+                                Your account will require
+                                verification by the designated
+                                administrator before dashboard
+                                access is activated.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TERMS -->
+
+                    <label class="agreement">
+
+                        <input
+                            type="checkbox"
+                            id="agreement"
+                            required
+                        >
+
+                        <span>
+
+                            I confirm that I am an authorised
+                            government representative and that
+                            the information provided is accurate.
+
+                        </span>
+
+                    </label>
+
+
+
+                    <div
+                        id="signupMessage"
+                        class="message"
+                    ></div>
+
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        <span>
+                            Submit for Verification
+                        </span>
+
+                        <strong>
+                            →
+                        </strong>
+
+                    </button>
+
+
+                    <p class="security-note">
+
+                        Access is subject to official
+                        verification and authorization.
+
+                    </p>
+
+
+                </form>
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form
+                    id="loginForm"
+                    class="form hidden"
+                    novalidate
+                >
+
+
+                    <div class="login-intro">
+
+                        <div class="login-lock">
+                            🔐
+                        </div>
+
+                        <h3>
+                            Welcome back
+                        </h3>
+
+                        <p>
+                            Sign in to your authorized
+                            government dashboard.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="field">
+
+                        <label>
+                            Official Email / Employee ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="loginIdentity"
+                            placeholder="Enter official email or ID"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="field">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <div class="password-box">
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                data-target="loginPassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="login-options">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Remember this device
+
+                        </label>
+
+
+                        <a href="#">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+
+                    <div
+                        id="loginMessage"
+                        class="message"
+                    ></div>
+
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        <span>
+                            Sign In to Dashboard
+                        </span>
+
+                        <strong>
+                            →
+                        </strong>
+
+                    </button>
+
+
+                    <div class="otp-note">
+
+                        <strong>
+                            Two-step verification
+                        </strong>
+
+                        <p>
+                            Your organization may require
+                            an OTP or additional verification
+                            before access is granted.
+                        </p>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script
+        src="government-login.js"
+    ></script>
+
+
+</body>
+
+</html>

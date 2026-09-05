@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | Trainee Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="trainee-login.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         BACKGROUND
+    =============================== -->
+
+    <div class="background">
+
+        <div class="background-grid"></div>
+
+        <div class="soft-shape shape-one"></div>
+
+        <div class="soft-shape shape-two"></div>
+
+    </div>
+
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <div class="brand-icon">
+                S
+            </div>
+
+            <div>
+
+                <h2>
+                    SkillTrack
+                </h2>
+
+                <span>
+                    Trainee Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <div class="secure-badge">
+
+            <span class="secure-dot"></span>
+
+            Secure Government Portal
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN
+    =============================== -->
+
+    <main class="page-container">
+
+
+        <!-- LEFT INFORMATION -->
+
+        <section class="intro-section">
+
+            <div class="intro-content">
+
+                <div class="section-label">
+                    TRAINEE SERVICES
+                </div>
+
+
+                <h1>
+
+                    Build your
+
+                    <span>
+                        SkillTrack
+                    </span>
+
+                    journey.
+
+                </h1>
+
+
+                <p class="intro-text">
+
+                    Create your trainee profile and keep your
+                    training, certification, employment and
+                    career outcomes connected in one place.
+
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Track your outcomes
+                            </h3>
+
+                            <p>
+                                Update your current career status
+                                after completing training.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Keep your profile updated
+                            </h3>
+
+                            <p>
+                                Maintain your personal, location
+                                and training information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Stay connected
+                            </h3>
+
+                            <p>
+                                Receive follow-up requests and
+                                important SkillTrack updates.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="journey-line">
+
+                    Training
+
+                    <span>→</span>
+
+                    Certification
+
+                    <span>→</span>
+
+                    Employment
+
+                    <span>→</span>
+
+                    Impact
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             RIGHT FORM
+        =============================== -->
+
+        <section class="auth-section">
+
+            <div class="auth-card">
+
+
+                <!-- HEADER -->
+
+                <div class="auth-header">
+
+                    <div>
+
+                        <p class="form-label">
+                            TRAINEE ACCOUNT
+                        </p>
+
+                        <h2 id="formTitle">
+                            Create your account
+                        </h2>
+
+                    </div>
+
+
+                    <div class="profile-symbol">
+                        👤
+                    </div>
+
+                </div>
+
+
+                <!-- MODE SWITCH -->
+
+                <div class="auth-tabs">
+
+                    <button
+                        class="tab active"
+                        id="signupTab"
+                        type="button"
+                    >
+                        Create Account
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        id="loginTab"
+                        type="button"
+                    >
+                        Sign In
+                    </button>
+
+                </div>
+
+
+                <!-- ==============================
+                     SIGN UP FORM
+                =============================== -->
+
+                <form
+                    id="signupForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+
+                    <!-- PERSONAL DETAILS -->
+
+                    <div class="form-section-title">
+
+                        <span>01</span>
+
+                        Personal Details
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field full">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="age">
+                                Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                min="15"
+                                max="100"
+                                placeholder="e.g. 21"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="gender">
+                                Gender
+                            </label>
+
+                            <select
+                                id="gender"
+                                required
+                            >
+
+                                <option
+                                    value=""
+                                    selected
+                                    disabled
+                                >
+                                    Select gender
+                                </option>
+
+                                <option value="male">
+                                    Male
+                                </option>
+
+                                <option value="female">
+                                    Female
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                                <option value="prefer-not">
+                                    Prefer not to say
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- CONTACT -->
+
+                    <div class="form-section-title">
+
+                        <span>02</span>
+
+                        Contact Information
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="phone">
+                                Mobile Number
+                            </label>
+
+                            <div class="phone-input">
+
+                                <span>
+                                    +91
+                                </span>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="10-digit mobile number"
+                                    maxlength="10"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="name@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="form-section-title">
+
+                        <span>03</span>
+
+                        Location
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="state">
+                                State / UT
+                            </label>
+
+                            <select
+                                id="state"
+                                required
+                            >
+
+                                <option
+                                    value=""
+                                    selected
+                                    disabled
+                                >
+                                    Select state
+                                </option>
+
+                                <option>Andhra Pradesh</option>
+                                <option>Assam</option>
+                                <option>Bihar</option>
+                                <option>Delhi</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jharkhand</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Odisha</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Tamil Nadu</option>
+                                <option>Telangana</option>
+                                <option>Uttar Pradesh</option>
+                                <option>Uttarakhand</option>
+                                <option>West Bengal</option>
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="district">
+                                District
+                            </label>
+
+                            <input
+                                type="text"
+                                id="district"
+                                placeholder="Enter district"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label for="city">
+                                City / Block / Town
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="Enter city, block or town"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="form-section-title">
+
+                        <span>05</span>
+
+                        Account Security
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="password-input">
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Create password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="password-input">
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="confirmPassword"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- PASSWORD STRENGTH -->
+
+                    <div class="password-strength">
+
+                        <div class="strength-bar">
+
+                            <span id="strengthFill"></span>
+
+                        </div>
+
+                        <small id="strengthText">
+                            Password strength
+                        </small>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <label class="checkbox-row">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        <span>
+
+                            I confirm that the information
+                            provided is accurate and I agree
+                            to the SkillTrack terms and privacy
+                            policy.
+
+                        </span>
+
+                    </label>
+
+
+                    <!-- MESSAGE -->
+
+                    <div
+                        class="form-message"
+                        id="formMessage"
+                    ></div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        <span>
+                            Create Trainee Account
+                        </span>
+
+                        <span class="submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p class="demo-note">
+
+                        SkillTrack prototype • Your information
+                        is securely stored in the application database.
+
+                    </p>
+
+
+                </form>
+
+
+                <!-- ==============================
+                     LOGIN FORM
+                =============================== -->
+
+                <form
+                    id="loginForm"
+                    class="auth-form hidden"
+                    novalidate
+                >
+
+
+                    <div class="login-welcome">
+
+                        <div class="login-icon">
+                            🔐
+                        </div>
+
+                        <h3>
+                            Welcome back
+                        </h3>
+
+                        <p>
+                            Sign in to continue your
+                            SkillTrack journey.
+                        </p>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="loginEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <div class="password-input">
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="loginPassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                            >
+
+                            Remember me
+
+                        </label>
+
+
+                        <a
+                            href="#"
+                            id="forgotPassword"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="form-message"
+                        id="loginMessage"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        <span>
+                            Sign In
+                        </span>
+
+                        <span class="submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p class="demo-note">
+
+                        SkillTrack authentication is powered
+                        by Supabase.
+
+                    </p>
+
+
+                </form>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================================
+         SUPABASE
+    ================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+
+    <!-- =================================================
+         EXISTING SKILLTRACK JAVASCRIPT
+    ================================================== -->
+
+    <script src="trainee-login.js"></script>
+
+
+    <!-- =================================================
+         SUPABASE AUTHENTICATION
+    ================================================== -->
+
+    <script>
+
+        /*
+        =====================================================
+        TRAINEE REGISTRATION
+        =====================================================
+        */
+
+        document
+            .getElementById("signupForm")
+            .addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+                    const message =
+                        document.getElementById("formMessage");
+
+
+                    // Get form values
+
+                    const name =
+                        document.getElementById("name")
+                            .value.trim();
+
+                    const age =
+                        document.getElementById("age")
+                            .value;
+
+                    const gender =
+                        document.getElementById("gender")
+                            .value;
+
+                    const phone =
+                        document.getElementById("phone")
+                            .value.trim();
+
+                    const email =
+                        document.getElementById("email")
+                            .value.trim();
+
+                    const state =
+                        document.getElementById("state")
+                            .value;
+
+                    const district =
+                        document.getElementById("district")
+                            .value.trim();
+
+                    const city =
+                        document.getElementById("city")
+                            .value.trim();
+
+                    const password =
+                        document.getElementById("password")
+                            .value;
+
+                    const confirmPassword =
+                        document.getElementById("confirmPassword")
+                            .value;
+
+                    const terms =
+                        document.getElementById("terms")
+                            .checked;
+
+
+                    /*
+                    ================================
+                    VALIDATION
+                    ================================
+                    */
+
+                    if (!name ||
+                        !age ||
+                        !gender ||
+                        !phone ||
+                        !email ||
+                        !state ||
+                        !district ||
+                        !city ||
+                        !password) {
+
+                        message.textContent =
+                            "Please fill in all required fields.";
+
+                        return;
+                    }
+
+
+                    if (password !== confirmPassword) {
+
+                        message.textContent =
+                            "Passwords do not match.";
+
+                        return;
+                    }
+
+
+                    if (!terms) {
+
+                        message.textContent =
+                            "Please accept the terms and privacy policy.";
+
+                        return;
+                    }
+
+
+                    if (!/^[0-9]{10}$/.test(phone)) {
+
+                        message.textContent =
+                            "Please enter a valid 10-digit mobile number.";
+
+                        return;
+                    }
+
+
+                    /*
+                    ================================
+                    CREATE SUPABASE AUTH USER
+                    ================================
+                    */
+
+                    message.textContent =
+                        "Creating your account...";
+
+
+                    const { data, error } =
+                        await supabaseClient.auth.signUp({
+
+                            email: email,
+
+                            password: password,
+
+                            options: {
+
+                                data: {
+
+                                    full_name: name,
+
+                                    age: age,
+
+                                    gender: gender,
+
+                                    phone: phone,
+
+                                    state: state,
+
+                                    district: district,
+
+                                    city: city
+
+                                }
+
+                            }
+
+                        });
+
+
+                    if (error) {
+
+                        console.error(
+                            "SIGNUP ERROR:",
+                            error
+                        );
+
+                        message.textContent =
+                            error.message;
+
+                        return;
+                    }
+
+
+                    const user = data.user;
+
+
+                    if (!user) {
+
+                        message.textContent =
+                            "Account creation failed.";
+
+                        return;
+                    }
+
+
+                    /*
+                    ================================
+                    SAVE TRAINEE PROFILE
+                    ================================
+                    */
+
+                    message.textContent =
+                        "Saving your trainee profile...";
+
+
+                    const { error: profileError } =
+                        await supabaseClient
+                            .from("trainees")
+                            .insert({
+
+                                id: user.id,
+
+                                full_name: name,
+
+                                age: Number(age),
+
+                                gender: gender,
+
+                                phone: phone,
+
+                                email: email,
+
+                                state: state,
+
+                                district: district,
+
+                                city: city,
+
+                                consent_flag: true,
+
+                                consent_ts: new Date().toISOString()
+
+                            });
+
+
+                    if (profileError) {
+
+                        console.error(
+                            "PROFILE ERROR:",
+                            profileError
+                        );
+
+                        message.textContent =
+                            "Account created, but profile could not be saved. "
+                            + profileError.message;
+
+                        return;
+                    }
+
+
+                    /*
+                    ================================
+                    SUCCESS
+                    ================================
+                    */
+
+                    message.textContent =
+                        "Account created successfully!";
+
+                    console.log(
+                        "TRAINEE CREATED:",
+                        user
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "trainee-dashboard.html";
+
+                        },
+                        1200
+                    );
+
+                },
+                true
+            );
+
+
+        /*
+        =====================================================
+        TRAINEE LOGIN
+        =====================================================
+        */
+
+        document
+            .getElementById("loginForm")
+            .addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+
+                    const message =
+                        document.getElementById("loginMessage");
+
+
+                    const email =
+                        document.getElementById("loginEmail")
+                            .value.trim();
+
+                    const password =
+                        document.getElementById("loginPassword")
+                            .value;
+
+
+                    if (!email || !password) {
+
+                        message.textContent =
+                            "Please enter your email and password.";
+
+                        return;
+                    }
+
+
+                    message.textContent =
+                        "Signing in...";
+
+
+                    /*
+                    ================================
+                    SUPABASE LOGIN
+                    ================================
+                    */
+
+                    const { data, error } =
+                        await supabaseClient.auth
+                            .signInWithPassword({
+
+                                email: email,
+
+                                password: password
+
+                            });
+
+
+                    if (error) {
+
+                        console.error(
+                            "LOGIN ERROR:",
+                            error
+                        );
+
+                        message.textContent =
+                            error.message;
+
+                        return;
+                    }
+
+
+                    /*
+                    ================================
+                    LOGIN SUCCESS
+                    ================================
+                    */
+
+                    console.log(
+                        "LOGGED IN USER:",
+                        data.user
+                    );
+
+
+                    message.textContent =
+                        "Login successful!";
+
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "trainee-dashboard.html";
+
+                        },
+                        800
+                    );
+
+                },
+                true
+            );
+
+
+        /*
+        =====================================================
+        FORGOT PASSWORD
+        =====================================================
+        */
+
+        document
+            .getElementById("forgotPassword")
+            .addEventListener(
+                "click",
+                async function (event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        document.getElementById("loginEmail")
+                            .value.trim();
+
+                    const message =
+                        document.getElementById("loginMessage");
+
+
+                    if (!email) {
+
+                        message.textContent =
+                            "Enter your email first.";
+
+                        return;
+                    }
+
+
+                    const { error } =
+                        await supabaseClient.auth
+                            .resetPasswordForEmail(
+                                email,
+                                {
+                                    redirectTo:
+                                        window.location.origin +
+                                        "/reset-password.html"
+                                }
+                            );
+
+
+                    if (error) {
+
+                        message.textContent =
+                            error.message;
+
+                        return;
+                    }
+
+
+                    message.textContent =
+                        "Password reset email sent.";
+
+                }
+            );
+
+    </script>
+
+
+</body>
+
+</html>

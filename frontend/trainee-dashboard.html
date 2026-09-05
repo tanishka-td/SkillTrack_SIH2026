@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | Trainee Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="trainee-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="brand-block">
+
+            <div class="brand-logo">
+                S
+            </div>
+
+            <div>
+
+                <h2>
+                    SkillTrack
+                </h2>
+
+                <span>
+                    Trainee Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- MINI PROFILE -->
+
+        <div class="mini-profile">
+
+            <div
+                class="avatar"
+                id="sidebarAvatar"
+            >
+                TR
+            </div>
+
+            <div>
+
+                <strong id="sidebarName">
+                    Loading...
+                </strong>
+
+                <span id="traineeId">
+                    Trainee ID: Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+
+            <p class="nav-heading">
+                MAIN
+            </p>
+
+
+            <a
+                href="trainee-dashboard.html"
+                class="nav-link active"
+            >
+
+                <span>
+                    ▦
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="trainee-training.html"
+                class="nav-link"
+            >
+
+                <span>
+                    ◈
+                </span>
+
+                My Training
+
+            </a>
+
+
+            <a
+                href="trainee-certificate.html"
+                class="nav-link"
+            >
+
+                <span>
+                    ◫
+                </span>
+
+                My Certificate
+
+            </a>
+
+
+            <a
+                href="trainee-status.html"
+                class="nav-link"
+            >
+
+                <span>
+                    ◉
+                </span>
+
+                Current Status
+
+            </a>
+
+
+            <a
+                href="trainee-followups.html"
+                class="nav-link"
+            >
+
+                <span>
+                    ◷
+                </span>
+
+                Follow-ups
+
+                <b>
+                    1
+                </b>
+
+            </a>
+
+
+            <p class="nav-heading account-heading">
+                ACCOUNT
+            </p>
+
+
+            <a
+                href="trainee-profile.html"
+                class="nav-link"
+            >
+
+                <span>
+                    ◎
+                </span>
+
+                My Profile
+
+            </a>
+
+
+            <a
+                href="trainee-help.html"
+                class="nav-link"
+            >
+
+                <span>
+                    ?
+                </span>
+
+                Help & Support
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <div class="system-status">
+
+                <i></i>
+
+                System Operational
+
+            </div>
+
+
+            <button
+                class="logout"
+                id="logoutBtn"
+            >
+
+                ↪ Sign Out
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="left-top">
+
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <small>
+                        TRAINEE DASHBOARD
+                    </small>
+
+
+                    <h1 id="welcomeMessage">
+                        Good morning
+                    </h1>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="right-top">
+
+
+                <button
+                    class="notification"
+                    id="notificationBtn"
+                >
+
+                    🔔
+
+                    <em></em>
+
+                </button>
+
+
+                <a
+                    href="trainee-profile.html"
+                    class="user-box"
+                >
+
+
+                    <div
+                        class="top-avatar"
+                        id="topAvatar"
+                    >
+                        TR
+                    </div>
+
+
+                    <div>
+
+                        <strong id="topUserName">
+                            Loading...
+                        </strong>
+
+                        <span>
+                            Trainee
+                        </span>
+
+                    </div>
+
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <main class="content">
+
+
+            <!-- =================================================
+                 WELCOME CARD
+            ================================================== -->
+
+            <section class="welcome-card">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR SKILLTRACK JOURNEY
+                    </span>
+
+
+                    <h2>
+                        Keep your career
+                        journey updated.
+                    </h2>
+
+
+                    <p>
+
+                        Your training, certification and
+                        employment information helps SkillTrack
+                        measure long-term outcomes.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="completion">
+
+
+                    <div class="progress-circle">
+
+                        <strong id="profilePercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Profile completion
+                        </span>
+
+
+                        <strong id="completionText">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STATS
+            ================================================== -->
+
+            <section class="stats">
+
+
+                <!-- TRAINING -->
+
+                <article class="stat-card">
+
+
+                    <div class="stat-icon blue">
+                        ◈
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Training
+                        </span>
+
+
+                        <strong>
+                            Not Available
+                        </strong>
+
+
+                        <small>
+                            Training module
+                        </small>
+
+                    </div>
+
+
+                    <b class="tick">
+                        ✓
+                    </b>
+
+
+                </article>
+
+
+
+                <!-- CERTIFICATE -->
+
+                <article class="stat-card">
+
+
+                    <div class="stat-icon purple">
+                        ◫
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Certificate
+                        </span>
+
+
+                        <strong>
+                            Not Available
+                        </strong>
+
+
+                        <small>
+                            Certificate module
+                        </small>
+
+                    </div>
+
+
+                    <b class="tick">
+                        ✓
+                    </b>
+
+
+                </article>
+
+
+
+                <!-- STATUS -->
+
+                <article class="stat-card">
+
+
+                    <div class="stat-icon green">
+                        ◉
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Current Status
+                        </span>
+
+
+                        <strong id="dashboardStatus">
+                            Profile Active
+                        </strong>
+
+
+                        <small>
+                            Based on trainee profile
+                        </small>
+
+                    </div>
+
+
+                    <b class="tick">
+                        ●
+                    </b>
+
+
+                </article>
+
+
+
+                <!-- FOLLOW UP -->
+
+                <article class="stat-card">
+
+
+                    <div class="stat-icon orange">
+                        ◷
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Next Follow-up
+                        </span>
+
+
+                        <strong>
+                            Coming Soon
+                        </strong>
+
+
+                        <small>
+                            Follow-up module
+                        </small>
+
+                    </div>
+
+
+                    <b class="warning">
+                        !
+                    </b>
+
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN GRID
+            ================================================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- =================================================
+                     CAREER JOURNEY
+                ================================================== -->
+
+                <article class="panel">
+
+
+                    <div class="panel-heading">
+
+
+                        <div>
+
+                            <span>
+                                CAREER JOURNEY
+                            </span>
+
+
+                            <h2>
+                                Training to Impact
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="trainee-followups.html"
+                            class="small-btn"
+                        >
+                            View details
+                        </a>
+
+
+                    </div>
+
+
+
+                    <div class="journey">
+
+
+                        <div class="journey-item done">
+
+
+                            <div class="journey-dot">
+                                ✓
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Registration Completed
+                                </strong>
+
+
+                                <span>
+                                    Your SkillTrack profile has been created.
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="journey-item current">
+
+
+                            <div class="journey-dot">
+                                ●
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Profile Active
+                                </strong>
+
+
+                                <span>
+                                    Your trainee information is stored securely.
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="journey-item">
+
+
+                            <div class="journey-dot">
+                                2
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Training
+                                </strong>
+
+
+                                <span>
+                                    Training information will appear here.
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="journey-item">
+
+
+                            <div class="journey-dot">
+                                3
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Certification
+                                </strong>
+
+
+                                <span>
+                                    Certification information will appear here.
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="journey-item">
+
+
+                            <div class="journey-dot">
+                                4
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Employment
+                                </strong>
+
+
+                                <span>
+                                    Employment outcome will be tracked here.
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="journey-item">
+
+
+                            <div class="journey-dot">
+                                5
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Long-term Impact
+                                </strong>
+
+
+                                <span>
+                                    Follow-up and outcome analysis.
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CURRENT STATUS
+                ================================================== -->
+
+                <article class="panel">
+
+
+                    <div class="panel-heading">
+
+
+                        <div>
+
+                            <span>
+                                CURRENT STATUS
+                            </span>
+
+
+                            <h2>
+                                What are you doing now?
+                            </h2>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <p class="status-description">
+
+                        Select the option that best describes
+                        your current career situation.
+
+                    </p>
+
+
+
+                    <div class="quick-status">
+
+
+                        <button
+                            type="button"
+                            data-status="Employed"
+                        >
+
+                            <span>
+                                💼
+                            </span>
+
+
+                            <strong>
+                                Got a job
+                            </strong>
+
+
+                            <small>
+                                Employed
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            data-status="Business"
+                        >
+
+                            <span>
+                                🏢
+                            </span>
+
+
+                            <strong>
+                                Started business
+                            </strong>
+
+
+                            <small>
+                                Self-employed
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            data-status="Apprenticeship"
+                        >
+
+                            <span>
+                                🎓
+                            </span>
+
+
+                            <strong>
+                                Apprenticeship
+                            </strong>
+
+
+                            <small>
+                                Apprentice
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            data-status="Unemployed"
+                        >
+
+                            <span>
+                                ○
+                            </span>
+
+
+                            <strong>
+                                Looking for work
+                            </strong>
+
+
+                            <small>
+                                Unemployed
+                            </small>
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <a
+                        href="trainee-status.html"
+                        class="primary-btn full"
+                    >
+
+                        Update my status →
+
+                    </a>
+
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 LOWER GRID
+            ================================================== -->
+
+            <section class="lower-grid">
+
+
+                <!-- =================================================
+                     TRAINING
+                ================================================== -->
+
+                <article class="panel">
+
+
+                    <div class="panel-heading">
+
+
+                        <div>
+
+                            <span>
+                                MY TRAINING
+                            </span>
+
+
+                            <h2>
+                                Course Information
+                            </h2>
+
+                        </div>
+
+
+                        <span class="verified">
+                            ✓ Ready
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="course-summary">
+
+
+                        <div class="course-icon">
+                            ST
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Training information
+                            </strong>
+
+
+                            <span>
+                                Will be connected to backend
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="details-list">
+
+
+                        <div>
+
+                            <span>
+                                Training Centre
+                            </span>
+
+
+                            <strong>
+                                Not available
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Duration
+                            </span>
+
+
+                            <strong>
+                                Not available
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Completion
+                            </span>
+
+
+                            <strong>
+                                Not available
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <a
+                        href="trainee-training.html"
+                        class="outline-btn full"
+                    >
+
+                        View Training →
+
+                    </a>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CERTIFICATE
+                ================================================== -->
+
+                <article class="panel">
+
+
+                    <div class="panel-heading">
+
+
+                        <div>
+
+                            <span>
+                                MY CERTIFICATE
+                            </span>
+
+
+                            <h2>
+                                Digital Credential
+                            </h2>
+
+                        </div>
+
+
+                        <span class="verified">
+                            ✓ Ready
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="certificate-mini">
+
+
+                        <div class="certificate-symbol">
+                            ✓
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Certificate information
+                            </strong>
+
+
+                            <span>
+                                Will be connected to backend
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <a
+                        href="trainee-certificate.html"
+                        class="outline-btn full"
+                    >
+
+                        View Certificate →
+
+                    </a>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PROFILE
+                ================================================== -->
+
+                <article class="panel">
+
+
+                    <div class="panel-heading">
+
+
+                        <div>
+
+                            <span>
+                                MY PROFILE
+                            </span>
+
+
+                            <h2>
+                                Personal Information
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="trainee-profile.html"
+                            class="small-btn"
+                        >
+
+                            Edit
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <div class="profile-mini">
+
+
+                        <!-- NAME -->
+
+                        <div>
+
+                            <span>
+                                Name
+                            </span>
+
+
+                            <strong id="profileName">
+                                Loading...
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- LOCATION -->
+
+                        <div>
+
+                            <span>
+                                Location
+                            </span>
+
+
+                            <strong id="profileLocation">
+                                Loading...
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div>
+
+                            <span>
+                                Email
+                            </span>
+
+
+                            <strong id="profileEmail">
+                                Loading...
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <a
+                        href="trainee-profile.html"
+                        class="outline-btn full"
+                    >
+
+                        Open Profile →
+
+                    </a>
+
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY
+            ================================================== -->
+
+            <section class="panel activity">
+
+
+                <div class="panel-heading">
+
+
+                    <div>
+
+                        <span>
+                            RECENT ACTIVITY
+                        </span>
+
+
+                        <h2>
+                            Your latest updates
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="trainee-followups.html"
+                        class="small-btn"
+                    >
+
+                        View all
+
+                    </a>
+
+
+                </div>
+
+
+
+                <div class="activity-item">
+
+
+                    <div class="activity-icon">
+                        ✓
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Trainee profile created
+                        </strong>
+
+
+                        <span>
+                            Your SkillTrack trainee profile is now active.
+                        </span>
+
+                    </div>
+
+
+                    <time>
+                        Now
+                    </time>
+
+
+                </div>
+
+
+
+                <div class="activity-item">
+
+
+                    <div class="activity-icon">
+                        ◉
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Account connected
+                        </strong>
+
+
+                        <span>
+                            Your account is connected to SkillTrack.
+                        </span>
+
+                    </div>
+
+
+                    <time>
+                        Now
+                    </time>
+
+
+                </div>
+
+
+
+                <div class="activity-item">
+
+
+                    <div class="activity-icon">
+                        ◈
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Outcome tracking ready
+                        </strong>
+
+
+                        <span>
+                            Your future employment updates can be tracked here.
+                        </span>
+
+                    </div>
+
+
+                    <time>
+                        Ready
+                    </time>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="footer">
+
+
+            <span>
+                © 2026 SkillTrack
+            </span>
+
+
+            <span>
+                Government Digital Skill Outcome Platform
+            </span>
+
+
+            <span>
+                Privacy • Terms • Support
+            </span>
+
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SUPABASE LIBRARY
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+
+<!-- =========================================================
+     YOUR SUPABASE CONNECTION
+========================================================= -->
+
+<script src="supabase.js"></script>
+
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+// ============================================================
+// LOAD DASHBOARD
+// ============================================================
+
+async function loadDashboard() {
+
+    console.log(
+        "Loading SkillTrack dashboard..."
+    );
+
+
+    // --------------------------------------------------------
+    // Check logged-in user
+    // --------------------------------------------------------
+
+    const {
+        data: {
+            user
+        },
+        error: userError
+    } =
+        await supabaseClient.auth.getUser();
+
+
+    // --------------------------------------------------------
+    // Authentication error
+    // --------------------------------------------------------
+
+    if (userError) {
+
+        console.error(
+            "Authentication error:",
+            userError
+        );
+
+        window.location.href =
+            "trainee-login.html";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // No logged-in user
+    // --------------------------------------------------------
+
+    if (!user) {
+
+        console.log(
+            "No logged-in user."
+        );
+
+        window.location.href =
+            "trainee-login.html";
+
+        return;
+    }
+
+
+    console.log(
+        "Logged-in user:",
+        user
+    );
+
+
+    // --------------------------------------------------------
+    // Get trainee profile
+    // --------------------------------------------------------
+
+    const {
+        data: trainee,
+        error: traineeError
+    } =
+        await supabaseClient
+            .from("trainees")
+            .select("*")
+            .eq("id", user.id)
+            .single();
+
+
+    // --------------------------------------------------------
+    // Database error
+    // --------------------------------------------------------
+
+    if (traineeError) {
+
+        console.error(
+            "Trainee database error:",
+            traineeError
+        );
+
+        alert(
+            "Unable to load your trainee profile."
+        );
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // No trainee record
+    // --------------------------------------------------------
+
+    if (!trainee) {
+
+        console.error(
+            "No trainee profile found."
+        );
+
+        alert(
+            "Trainee profile not found."
+        );
+
+        return;
+    }
+
+
+    console.log(
+        "Trainee data:",
+        trainee
+    );
+
+
+    // --------------------------------------------------------
+    // Update dashboard
+    // --------------------------------------------------------
+
+    updateDashboard(
+        trainee,
+        user
+    );
+
+}
+
+
+
+// ============================================================
+// UPDATE DASHBOARD
+// ============================================================
+
+function updateDashboard(
+    trainee,
+    user
+) {
+
+
+    // ========================================================
+    // FULL NAME
+    // ========================================================
+
+    const name =
+        trainee.full_name ||
+        "Trainee";
+
+
+    // ========================================================
+    // FIRST NAME
+    // ========================================================
+
+    const firstName =
+        name
+            .trim()
+            .split(/\s+/)[0];
+
+
+    // ========================================================
+    // GREETING
+    // ========================================================
+
+    const welcome =
+        document.getElementById(
+            "welcomeMessage"
+        );
+
+
+    if (welcome) {
+
+        welcome.textContent =
+            "Good morning, " +
+            firstName;
+
+    }
+
+
+    // ========================================================
+    // SIDEBAR NAME
+    // ========================================================
+
+    const sidebarName =
+        document.getElementById(
+            "sidebarName"
+        );
+
+
+    if (sidebarName) {
+
+        sidebarName.textContent =
+            name;
+
+    }
+
+
+    // ========================================================
+    // TOP NAME
+    // ========================================================
+
+    const topName =
+        document.getElementById(
+            "topUserName"
+        );
+
+
+    if (topName) {
+
+        topName.textContent =
+            name;
+
+    }
+
+
+    // ========================================================
+    // INITIALS
+    // ========================================================
+
+    const initials =
+        getInitials(name);
+
+
+    const sidebarAvatar =
+        document.getElementById(
+            "sidebarAvatar"
+        );
+
+
+    if (sidebarAvatar) {
+
+        sidebarAvatar.textContent =
+            initials;
+
+    }
+
+
+    const topAvatar =
+        document.getElementById(
+            "topAvatar"
+        );
+
+
+    if (topAvatar) {
+
+        topAvatar.textContent =
+            initials;
+
+    }
+
+
+    // ========================================================
+    // TRAINEE ID
+    // ========================================================
+
+    const traineeId =
+        generateTraineeId(
+            user.id
+        );
+
+
+    const traineeIdElement =
+        document.getElementById(
+            "traineeId"
+        );
+
+
+    if (traineeIdElement) {
+
+        traineeIdElement.textContent =
+            "Trainee ID: " +
+            traineeId;
+
+    }
+
+
+    // ========================================================
+    // PROFILE NAME
+    // ========================================================
+
+    const profileName =
+        document.getElementById(
+            "profileName"
+        );
+
+
+    if (profileName) {
+
+        profileName.textContent =
+            name;
+
+    }
+
+
+    // ========================================================
+    // EMAIL
+    // ========================================================
+
+    const email =
+        trainee.email ||
+        user.email ||
+        "Not available";
+
+
+    const profileEmail =
+        document.getElementById(
+            "profileEmail"
+        );
+
+
+    if (profileEmail) {
+
+        profileEmail.textContent =
+            email;
+
+    }
+
+
+    // ========================================================
+    // LOCATION
+    // ========================================================
+
+    const location =
+        buildLocation(
+            trainee
+        );
+
+
+    const profileLocation =
+        document.getElementById(
+            "profileLocation"
+        );
+
+
+    if (profileLocation) {
+
+        profileLocation.textContent =
+            location;
+
+    }
+
+
+    // ========================================================
+    // PROFILE COMPLETION
+    // ========================================================
+
+    calculateProfileCompletion(
+        trainee
+    );
+
+
+    console.log(
+        "Dashboard successfully updated."
+    );
+
+}
+
+
+
+// ============================================================
+// GET INITIALS
+// ============================================================
+
+function getInitials(
+    name
+) {
+
+    const parts =
+        name
+            .trim()
+            .split(/\s+/);
+
+
+    if (parts.length === 1) {
+
+        return parts[0]
+            .substring(0, 2)
+            .toUpperCase();
+
+    }
+
+
+    return (
+        parts[0].charAt(0) +
+        parts[parts.length - 1].charAt(0)
+    ).toUpperCase();
+
+}
+
+
+
+// ============================================================
+// GENERATE TRAINEE ID
+// ============================================================
+
+function generateTraineeId(
+    uuid
+) {
+
+    const cleanUuid =
+        uuid.replace(
+            /-/g,
+            ""
+        );
+
+
+    const shortUuid =
+        cleanUuid
+            .substring(
+                0,
+                6
+            )
+            .toUpperCase();
+
+
+    return "ST-" + shortUuid;
+
+}
+
+
+
+// ============================================================
+// BUILD LOCATION
+// ============================================================
+
+function buildLocation(
+    trainee
+) {
+
+    const locations = [];
+
+
+    if (trainee.city) {
+
+        locations.push(
+            trainee.city
+        );
+
+    }
+
+
+    if (trainee.district) {
+
+        locations.push(
+            trainee.district
+        );
+
+    }
+
+
+    if (trainee.state) {
+
+        locations.push(
+            trainee.state
+        );
+
+    }
+
+
+    if (locations.length === 0) {
+
+        return "Not available";
+
+    }
+
+
+    return locations.join(
+        ", "
+    );
+
+}
+
+
+
+// ============================================================
+// PROFILE COMPLETION
+// ============================================================
+
+function calculateProfileCompletion(
+    trainee
+) {
+
+
+    const fields = [
+
+        trainee.full_name,
+
+        trainee.age,
+
+        trainee.gender,
+
+        trainee.phone,
+
+        trainee.email,
+
+        trainee.state,
+
+        trainee.district,
+
+        trainee.city
+
+    ];
+
+
+    let completed = 0;
+
+
+    fields.forEach(
+        function(field) {
+
+            if (
+                field !== null &&
+                field !== undefined &&
+                String(field).trim() !== ""
+            ) {
+
+                completed++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                completed /
+                fields.length
+            ) * 100
+        );
+
+
+    // --------------------------------------------------------
+    // Percentage
+    // --------------------------------------------------------
+
+    const percentageElement =
+        document.getElementById(
+            "profilePercentage"
+        );
+
+
+    if (percentageElement) {
+
+        percentageElement.textContent =
+            percentage + "%";
+
+    }
+
+
+    // --------------------------------------------------------
+    // Completion text
+    // --------------------------------------------------------
+
+    const completionText =
+        document.getElementById(
+            "completionText"
+        );
+
+
+    if (completionText) {
+
+        if (percentage === 100) {
+
+            completionText.textContent =
+                "Complete";
+
+        }
+        else if (percentage >= 75) {
+
+            completionText.textContent =
+                "Almost there";
+
+        }
+        else if (percentage >= 50) {
+
+            completionText.textContent =
+                "Needs updating";
+
+        }
+        else {
+
+            completionText.textContent =
+                "Incomplete";
+
+        }
+
+    }
+
+}
+
+
+
+// ============================================================
+// SIGN OUT
+// ============================================================
+
+async function signOut() {
+
+    console.log(
+        "Signing out..."
+    );
+
+
+    const {
+        error
+    } =
+        await supabaseClient.auth.signOut();
+
+
+    if (error) {
+
+        console.error(
+            "Sign out error:",
+            error
+        );
+
+        alert(
+            "Unable to sign out. Please try again."
+        );
+
+        return;
+    }
+
+
+    window.location.href =
+        "trainee-login.html";
+
+}
+
+
+
+// ============================================================
+// SIGN OUT BUTTON
+// ============================================================
+
+const logoutButton =
+    document.getElementById(
+        "logoutBtn"
+    );
+
+
+if (logoutButton) {
+
+    logoutButton.addEventListener(
+        "click",
+        signOut
+    );
+
+}
+
+
+
+// ============================================================
+// QUICK STATUS BUTTONS
+// ============================================================
+
+const statusButtons =
+    document.querySelectorAll(
+        ".quick-status button"
+    );
+
+
+statusButtons.forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const status =
+                    button.dataset.status;
+
+
+                console.log(
+                    "Selected status:",
+                    status
+                );
+
+
+                /*
+                 * Employment status will be saved
+                 * to the database once we create
+                 * the employment_records table.
+                 */
+
+                alert(
+                    "Status selected: " +
+                    status +
+                    "\n\nEmployment tracking will be connected next."
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+// ============================================================
+// MOBILE MENU
+// ============================================================
+
+const menuButton =
+    document.getElementById(
+        "menuBtn"
+    );
+
+
+const sidebar =
+    document.getElementById(
+        "sidebar"
+    );
+
+
+if (
+    menuButton &&
+    sidebar
+) {
+
+    menuButton.addEventListener(
+        "click",
+        function() {
+
+            sidebar.classList.toggle(
+                "open"
+            );
+
+        }
+    );
+
+}
+
+
+
+// ============================================================
+// START
+// ============================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadDashboard();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

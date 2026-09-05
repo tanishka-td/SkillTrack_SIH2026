@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | My Profile</title>
+
+    <link
+        rel="stylesheet"
+        href="trainee-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="page-topbar">
+
+
+    <a href="trainee-dashboard.html">
+        ← Back to Dashboard
+    </a>
+
+
+    <div class="inner-brand">
+
+        <div class="inner-logo">
+            S
+        </div>
+
+
+        <div>
+
+            <strong>
+                SkillTrack
+            </strong>
+
+            <span>
+                My Profile
+            </span>
+
+        </div>
+
+    </div>
+
+
+</header>
+
+
+
+<main class="inner-content">
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="page-heading">
+
+        <p>
+            MY PROFILE
+        </p>
+
+
+        <h1>
+            Personal Information
+        </h1>
+
+
+        <span>
+            Keep your trainee information accurate and updated.
+        </span>
+
+    </div>
+
+
+
+    <!-- PROFILE BANNER -->
+
+    <section class="profile-banner">
+
+
+        <div
+            class="profile-large-avatar"
+            id="profileAvatar"
+        >
+            TR
+        </div>
+
+
+        <div>
+
+            <h2 id="displayName">
+                Loading...
+            </h2>
+
+
+            <p id="displayTraineeId">
+                Trainee ID: Loading...
+            </p>
+
+        </div>
+
+
+        <div class="profile-completion">
+
+            <span>
+                Profile completion
+            </span>
+
+
+            <strong id="profileCompletion">
+                0%
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- PROFILE SECTIONS -->
+
+    <section class="profile-sections">
+
+
+        <!-- ==============================================
+             PERSONAL DETAILS
+        =============================================== -->
+
+        <div class="profile-section">
+
+
+            <h3>
+                Personal Details
+            </h3>
+
+
+            <div class="profile-grid">
+
+
+                <div class="field">
+
+                    <label for="profileName">
+                        Full Name
+                    </label>
+
+
+                    <input
+                        id="profileName"
+                        type="text"
+                        placeholder="Enter your full name"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+
+                    <input
+                        id="age"
+                        type="number"
+                        min="1"
+                        max="100"
+                        placeholder="Enter your age"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="gender">
+                        Gender
+                    </label>
+
+
+                    <select id="gender">
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==============================================
+             CONTACT INFORMATION
+        =============================================== -->
+
+        <div class="profile-section">
+
+
+            <h3>
+                Contact Information
+            </h3>
+
+
+            <div class="profile-grid">
+
+
+                <div class="field">
+
+                    <label for="phone">
+                        Mobile Number
+                    </label>
+
+
+                    <input
+                        id="phone"
+                        type="tel"
+                        placeholder="Enter mobile number"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Enter email address"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==============================================
+             LOCATION
+        =============================================== -->
+
+        <div class="profile-section">
+
+
+            <h3>
+                Location
+            </h3>
+
+
+            <div class="profile-grid">
+
+
+                <div class="field">
+
+                    <label for="state">
+                        State / UT
+                    </label>
+
+
+                    <select id="state">
+
+                        <option value="">
+                            Select State / UT
+                        </option>
+
+                        <option value="Andhra Pradesh">
+                            Andhra Pradesh
+                        </option>
+
+                        <option value="Delhi">
+                            Delhi
+                        </option>
+
+                        <option value="Haryana">
+                            Haryana
+                        </option>
+
+                        <option value="Karnataka">
+                            Karnataka
+                        </option>
+
+                        <option value="Maharashtra">
+                            Maharashtra
+                        </option>
+
+                        <option value="Punjab">
+                            Punjab
+                        </option>
+
+                        <option value="Rajasthan">
+                            Rajasthan
+                        </option>
+
+                        <option value="Tamil Nadu">
+                            Tamil Nadu
+                        </option>
+
+                        <option value="Telangana">
+                            Telangana
+                        </option>
+
+                        <option value="Uttar Pradesh">
+                            Uttar Pradesh
+                        </option>
+
+                        <option value="West Bengal">
+                            West Bengal
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="district">
+                        District
+                    </label>
+
+
+                    <input
+                        id="district"
+                        type="text"
+                        placeholder="Enter district"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="city">
+                        City / Town
+                    </label>
+
+
+                    <input
+                        id="city"
+                        type="text"
+                        placeholder="Enter city or town"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SAVE -->
+
+        <button
+            class="primary-btn"
+            id="saveProfile"
+            type="button"
+        >
+            Save Changes
+        </button>
+
+
+
+        <!-- MESSAGE -->
+
+        <div
+            class="message"
+            id="profileMessage"
+        ></div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ======================================================
+     SUPABASE
+======================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="supabase.js"></script>
+
+
+
+<!-- ======================================================
+     PROFILE JAVASCRIPT
+======================================================= -->
+
+<script>
+
+
+// ==========================================================
+// GLOBAL
+// ==========================================================
+
+let currentUser = null;
+
+let currentTrainee = null;
+
+
+
+// ==========================================================
+// LOAD PROFILE
+// ==========================================================
+
+async function loadProfile() {
+
+
+    console.log(
+        "Loading trainee profile..."
+    );
+
+
+    // ------------------------------------------------------
+    // Get logged-in user
+    // ------------------------------------------------------
+
+    const {
+        data: {
+            user
+        },
+        error: authError
+    } =
+        await supabaseClient.auth.getUser();
+
+
+    // ------------------------------------------------------
+    // Auth error
+    // ------------------------------------------------------
+
+    if (authError) {
+
+        console.error(
+            "Authentication error:",
+            authError
+        );
+
+        window.location.href =
+            "trainee-login.html";
+
+        return;
+
+    }
+
+
+    // ------------------------------------------------------
+    // No user
+    // ------------------------------------------------------
+
+    if (!user) {
+
+        console.log(
+            "No logged-in user."
+        );
+
+        window.location.href =
+            "trainee-login.html";
+
+        return;
+
+    }
+
+
+    currentUser = user;
+
+
+    console.log(
+        "Logged-in user:",
+        user
+    );
+
+
+
+    // ------------------------------------------------------
+    // Get trainee record
+    // ------------------------------------------------------
+
+    const {
+        data: trainee,
+        error: traineeError
+    } =
+        await supabaseClient
+            .from("trainees")
+            .select("*")
+            .eq("id", user.id)
+            .single();
+
+
+    // ------------------------------------------------------
+    // Error
+    // ------------------------------------------------------
+
+    if (traineeError) {
+
+        console.error(
+            "Trainee profile error:",
+            traineeError
+        );
+
+
+        showMessage(
+            "Unable to load your profile.",
+            "error"
+        );
+
+
+        return;
+
+    }
+
+
+    // ------------------------------------------------------
+    // Save trainee globally
+    // ------------------------------------------------------
+
+    currentTrainee =
+        trainee;
+
+
+    console.log(
+        "Trainee data:",
+        trainee
+    );
+
+
+    // ------------------------------------------------------
+    // Put database data into form
+    // ------------------------------------------------------
+
+    fillProfileForm(
+        trainee,
+        user
+    );
+
+
+}
+
+
+
+// ==========================================================
+// FILL PROFILE FORM
+// ==========================================================
+
+function fillProfileForm(
+    trainee,
+    user
+) {
+
+
+    // ------------------------------------------------------
+    // Name
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "profileName"
+    ).value =
+        trainee.full_name || "";
+
+
+
+    // ------------------------------------------------------
+    // Age
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "age"
+    ).value =
+        trainee.age || "";
+
+
+
+    // ------------------------------------------------------
+    // Gender
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "gender"
+    ).value =
+        trainee.gender || "";
+
+
+
+    // ------------------------------------------------------
+    // Phone
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "phone"
+    ).value =
+        trainee.phone || "";
+
+
+
+    // ------------------------------------------------------
+    // Email
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "email"
+    ).value =
+        trainee.email ||
+        user.email ||
+        "";
+
+
+
+    // ------------------------------------------------------
+    // State
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "state"
+    ).value =
+        trainee.state || "";
+
+
+
+    // ------------------------------------------------------
+    // District
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "district"
+    ).value =
+        trainee.district || "";
+
+
+
+    // ------------------------------------------------------
+    // City
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "city"
+    ).value =
+        trainee.city || "";
+
+
+
+    // ------------------------------------------------------
+    // Display information
+    // ------------------------------------------------------
+
+    updateProfileHeader(
+        trainee,
+        user
+    );
+
+
+}
+
+
+
+// ==========================================================
+// UPDATE PROFILE HEADER
+// ==========================================================
+
+function updateProfileHeader(
+    trainee,
+    user
+) {
+
+
+    const name =
+        trainee.full_name ||
+        "Trainee";
+
+
+    // ------------------------------------------------------
+    // Name
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "displayName"
+    ).textContent =
+        name;
+
+
+
+    // ------------------------------------------------------
+    // Trainee ID
+    // ------------------------------------------------------
+
+    const traineeId =
+        generateTraineeId(
+            user.id
+        );
+
+
+    document.getElementById(
+        "displayTraineeId"
+    ).textContent =
+        "Trainee ID: " +
+        traineeId;
+
+
+
+    // ------------------------------------------------------
+    // Avatar
+    // ------------------------------------------------------
+
+    document.getElementById(
+        "profileAvatar"
+    ).textContent =
+        getInitials(
+            name
+        );
+
+
+
+    // ------------------------------------------------------
+    // Completion
+    // ------------------------------------------------------
+
+    const percentage =
+        calculateCompletion(
+            trainee
+        );
+
+
+    document.getElementById(
+        "profileCompletion"
+    ).textContent =
+        percentage + "%";
+
+
+}
+
+
+
+// ==========================================================
+// SAVE PROFILE
+// ==========================================================
+
+async function saveProfile() {
+
+
+    if (!currentUser) {
+
+        showMessage(
+            "You are not logged in.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const saveButton =
+        document.getElementById(
+            "saveProfile"
+        );
+
+
+    // ------------------------------------------------------
+    // Get form values
+    // ------------------------------------------------------
+
+    const fullName =
+        document
+            .getElementById("profileName")
+            .value
+            .trim();
+
+
+    const ageValue =
+        document
+            .getElementById("age")
+            .value;
+
+
+    const gender =
+        document
+            .getElementById("gender")
+            .value;
+
+
+    const phone =
+        document
+            .getElementById("phone")
+            .value
+            .trim();
+
+
+    const email =
+        document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+    const state =
+        document
+            .getElementById("state")
+            .value;
+
+
+    const district =
+        document
+            .getElementById("district")
+            .value
+            .trim();
+
+
+    const city =
+        document
+            .getElementById("city")
+            .value
+            .trim();
+
+
+
+    // ------------------------------------------------------
+    // Basic validation
+    // ------------------------------------------------------
+
+    if (!fullName) {
+
+        showMessage(
+            "Please enter your full name.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (
+        ageValue &&
+        (
+            Number(ageValue) < 1 ||
+            Number(ageValue) > 100
+        )
+    ) {
+
+        showMessage(
+            "Please enter a valid age.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+
+    // ------------------------------------------------------
+    // Disable button
+    // ------------------------------------------------------
+
+    saveButton.disabled =
+        true;
+
+    saveButton.textContent =
+        "Saving...";
+
+
+
+    // ------------------------------------------------------
+    // Update database
+    // ------------------------------------------------------
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("trainees")
+            .update({
+
+                full_name:
+                    fullName,
+
+                age:
+                    ageValue
+                        ? Number(ageValue)
+                        : null,
+
+                gender:
+                    gender || null,
+
+                phone:
+                    phone || null,
+
+                email:
+                    email || null,
+
+                state:
+                    state || null,
+
+                district:
+                    district || null,
+
+                city:
+                    city || null,
+
+                updated_at:
+                    new Date().toISOString()
+
+            })
+            .eq(
+                "id",
+                currentUser.id
+            )
+            .select()
+            .single();
+
+
+
+    // ------------------------------------------------------
+    // Database error
+    // ------------------------------------------------------
+
+    if (error) {
+
+        console.error(
+            "Save profile error:",
+            error
+        );
+
+
+        showMessage(
+            error.message ||
+            "Unable to save your profile.",
+            "error"
+        );
+
+
+        saveButton.disabled =
+            false;
+
+        saveButton.textContent =
+            "Save Changes";
+
+
+        return;
+
+    }
+
+
+
+    // ------------------------------------------------------
+    // Update local data
+    // ------------------------------------------------------
+
+    currentTrainee =
+        data;
+
+
+
+    // ------------------------------------------------------
+    // Update header
+    // ------------------------------------------------------
+
+    updateProfileHeader(
+        data,
+        currentUser
+    );
+
+
+
+    // ------------------------------------------------------
+    // Success
+    // ------------------------------------------------------
+
+    showMessage(
+        "Profile updated successfully.",
+        "success"
+    );
+
+
+
+    // ------------------------------------------------------
+    // Restore button
+    // ------------------------------------------------------
+
+    saveButton.disabled =
+        false;
+
+    saveButton.textContent =
+        "Save Changes";
+
+
+    console.log(
+        "Profile saved:",
+        data
+    );
+
+}
+
+
+
+// ==========================================================
+// PROFILE COMPLETION
+// ==========================================================
+
+function calculateCompletion(
+    trainee
+) {
+
+
+    const fields = [
+
+        trainee.full_name,
+
+        trainee.age,
+
+        trainee.gender,
+
+        trainee.phone,
+
+        trainee.email,
+
+        trainee.state,
+
+        trainee.district,
+
+        trainee.city
+
+    ];
+
+
+    let completed =
+        0;
+
+
+    fields.forEach(
+        function(field) {
+
+            if (
+                field !== null &&
+                field !== undefined &&
+                String(field).trim() !== ""
+            ) {
+
+                completed++;
+
+            }
+
+        }
+    );
+
+
+    return Math.round(
+        (
+            completed /
+            fields.length
+        ) * 100
+    );
+
+}
+
+
+
+// ==========================================================
+// GET INITIALS
+// ==========================================================
+
+function getInitials(
+    name
+) {
+
+
+    const parts =
+        name
+            .trim()
+            .split(/\s+/);
+
+
+    if (
+        parts.length === 1
+    ) {
+
+        return parts[0]
+            .substring(0, 2)
+            .toUpperCase();
+
+    }
+
+
+    return (
+
+        parts[0].charAt(0) +
+
+        parts[
+            parts.length - 1
+        ].charAt(0)
+
+    ).toUpperCase();
+
+}
+
+
+
+// ==========================================================
+// GENERATE TRAINEE ID
+// ==========================================================
+
+function generateTraineeId(
+    uuid
+) {
+
+
+    const cleanUuid =
+        uuid.replace(
+            /-/g,
+            ""
+        );
+
+
+    return (
+        "ST-" +
+        cleanUuid
+            .substring(0, 6)
+            .toUpperCase()
+    );
+
+}
+
+
+
+// ==========================================================
+// MESSAGE
+// ==========================================================
+
+function showMessage(
+    message,
+    type
+) {
+
+
+    const element =
+        document.getElementById(
+            "profileMessage"
+        );
+
+
+    element.textContent =
+        message;
+
+
+    element.className =
+        "message " +
+        type;
+
+
+}
+
+
+
+// ==========================================================
+// SAVE BUTTON
+// ==========================================================
+
+document
+    .getElementById("saveProfile")
+    .addEventListener(
+        "click",
+        saveProfile
+    );
+
+
+
+// ==========================================================
+// START
+// ==========================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadProfile();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
