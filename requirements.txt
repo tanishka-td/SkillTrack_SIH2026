@@ -1,0 +1,13 @@
+sqlalchemy
+supabase
+faker
+pandas
+numpy
+scikit-learn
+xgboost
+streamlit
+plotly
+fastapi
+uvicorn
+anthropic
+python-dotenv
