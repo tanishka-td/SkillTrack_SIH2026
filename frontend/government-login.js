@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("loginMessage");
 
 
-
     /* =====================================
        SWITCH TO LOGIN
     ===================================== */
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     );
-
 
 
     /* =====================================
@@ -79,51 +77,44 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-
     /* =====================================
        SHOW / HIDE PASSWORD
     ===================================== */
 
-    document.querySelectorAll(
-        ".show-password"
-    ).forEach(button => {
+    document
+        .querySelectorAll(".show-password")
+        .forEach(button => {
 
-        button.addEventListener(
-            "click",
-            () => {
+            button.addEventListener(
+                "click",
+                () => {
 
-                const target =
-                    document.getElementById(
-                        button.dataset.target
-                    );
+                    const target =
+                        document.getElementById(
+                            button.dataset.target
+                        );
 
 
-                if (
-                    target.type ===
-                    "password"
-                ) {
+                    if (
+                        target.type === "password"
+                    ) {
 
-                    target.type =
-                        "text";
+                        target.type = "text";
 
-                    button.textContent =
-                        "Hide";
+                        button.textContent = "Hide";
 
-                } else {
+                    } else {
 
-                    target.type =
-                        "password";
+                        target.type = "password";
 
-                    button.textContent =
-                        "Show";
+                        button.textContent = "Show";
+
+                    }
 
                 }
+            );
 
-            }
-        );
-
-    });
-
+        });
 
 
     /* =====================================
@@ -148,42 +139,49 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-
     /* =====================================
        SIGN UP
     ===================================== */
 
     signupForm.addEventListener(
         "submit",
-        event => {
+        async event => {
 
             event.preventDefault();
 
             clearMessages();
 
 
+            /* ---------------------------------
+               GET FORM VALUES
+            --------------------------------- */
+
             const fullName =
-                document.getElementById(
-                    "fullName"
-                ).value.trim();
+                document
+                    .getElementById("fullName")
+                    .value
+                    .trim();
 
 
             const designation =
-                document.getElementById(
-                    "designation"
-                ).value.trim();
+                document
+                    .getElementById("designation")
+                    .value
+                    .trim();
 
 
             const employeeId =
-                document.getElementById(
-                    "employeeId"
-                ).value.trim();
+                document
+                    .getElementById("employeeId")
+                    .value
+                    .trim();
 
 
             const department =
-                document.getElementById(
-                    "department"
-                ).value.trim();
+                document
+                    .getElementById("department")
+                    .value
+                    .trim();
 
 
             const phoneValue =
@@ -191,53 +189,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             const email =
-                document.getElementById(
-                    "email"
-                ).value.trim();
+                document
+                    .getElementById("email")
+                    .value
+                    .trim()
+                    .toLowerCase();
 
 
             const state =
-                document.getElementById(
-                    "state"
-                ).value;
+                document
+                    .getElementById("state")
+                    .value;
 
 
             const district =
-                document.getElementById(
-                    "district"
-                ).value.trim();
+                document
+                    .getElementById("district")
+                    .value
+                    .trim();
 
 
             const office =
-                document.getElementById(
-                    "office"
-                ).value.trim();
+                document
+                    .getElementById("office")
+                    .value
+                    .trim();
 
 
             const password =
-                document.getElementById(
-                    "password"
-                ).value;
+                document
+                    .getElementById("password")
+                    .value;
 
 
             const confirmPassword =
-                document.getElementById(
-                    "confirmPassword"
-                ).value;
+                document
+                    .getElementById("confirmPassword")
+                    .value;
 
 
             const agreement =
-                document.getElementById(
-                    "agreement"
-                ).checked;
+                document
+                    .getElementById("agreement")
+                    .checked;
 
 
+            /* =================================
+               VALIDATION
+            ================================= */
 
-            /* NAME */
-
-            if (
-                fullName.length < 3
-            ) {
+            if (fullName.length < 3) {
 
                 showError(
                     signupMessage,
@@ -249,12 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* DESIGNATION */
-
-            if (
-                designation.length < 2
-            ) {
+            if (designation.length < 2) {
 
                 showError(
                     signupMessage,
@@ -266,12 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* OFFICIAL ID */
-
-            if (
-                employeeId.length < 3
-            ) {
+            if (employeeId.length < 3) {
 
                 showError(
                     signupMessage,
@@ -283,12 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* DEPARTMENT */
-
-            if (
-                department.length < 2
-            ) {
+            if (department.length < 2) {
 
                 showError(
                     signupMessage,
@@ -299,9 +285,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-
-
-            /* PHONE */
 
             if (
                 !/^[6-9]\d{9}$/.test(
@@ -319,9 +302,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* EMAIL */
-
             if (
                 !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
                     email
@@ -338,9 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* STATE */
-
             if (!state) {
 
                 showError(
@@ -353,12 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* DISTRICT */
-
-            if (
-                district.length < 2
-            ) {
+            if (district.length < 2) {
 
                 showError(
                     signupMessage,
@@ -370,12 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* OFFICE */
-
-            if (
-                office.length < 2
-            ) {
+            if (office.length < 2) {
 
                 showError(
                     signupMessage,
@@ -387,12 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* PASSWORD */
-
-            if (
-                password.length < 8
-            ) {
+            if (password.length < 8) {
 
                 showError(
                     signupMessage,
@@ -404,13 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-
-            /* PASSWORD MATCH */
-
-            if (
-                password !==
-                confirmPassword
-            ) {
+            if (password !== confirmPassword) {
 
                 showError(
                     signupMessage,
@@ -421,9 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-
-
-            /* AUTHORIZATION */
 
             if (!agreement) {
 
@@ -437,36 +390,158 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
+            /* =================================
+               DISABLE BUTTON
+            ================================= */
 
-            /* SUCCESS */
-
-            showSuccess(
-                signupMessage,
-                "Registration submitted successfully. Your account is pending verification."
-            );
+            const submitButton =
+                signupForm.querySelector(
+                    ".submit-button"
+                );
 
 
-            /*
-                DEMO ONLY
+            const originalText =
+                submitButton
+                    .querySelector("span")
+                    .textContent;
 
-                In production this should send
-                the registration to the backend
-                and administrator verification
-                system.
-            */
 
-            setTimeout(
-                () => {
+            submitButton.disabled = true;
 
-                    loginTab.click();
+            submitButton
+                .querySelector("span")
+                .textContent =
+                "Creating account...";
 
-                },
-                1800
-            );
+
+            /* =================================
+               CREATE SUPABASE ACCOUNT
+            ================================= */
+
+            try {
+
+                const {
+                    data,
+                    error
+                } =
+                    await supabaseClient.auth.signUp({
+
+                        email: email,
+
+                        password: password,
+
+                        options: {
+
+                            data: {
+
+                                full_name:
+                                    fullName,
+
+                                designation:
+                                    designation,
+
+                                employee_id:
+                                    employeeId,
+
+                                department:
+                                    department,
+
+                                phone:
+                                    phoneValue,
+
+                                state:
+                                    state,
+
+                                district:
+                                    district,
+
+                                office:
+                                    office
+
+                            }
+
+                        }
+
+                    });
+
+
+                if (error) {
+
+                    throw error;
+
+                }
+
+
+                /* =================================
+                   SUCCESS
+                ================================= */
+
+                showSuccess(
+                    signupMessage,
+                    "Registration submitted successfully. Your account is pending government verification."
+                );
+
+
+                signupForm.reset();
+
+
+                /*
+                 * Supabase may require email
+                 * confirmation before login.
+                 */
+
+                setTimeout(
+                    () => {
+
+                        loginTab.click();
+
+                    },
+                    2200
+                );
+
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Government registration error:",
+                    error
+                );
+
+
+                let message =
+                    "Registration failed. Please try again.";
+
+
+                if (
+                    error.message
+                ) {
+
+                    message =
+                        error.message;
+
+                }
+
+
+                showError(
+                    signupMessage,
+                    message
+                );
+
+            }
+            finally {
+
+                submitButton.disabled = false;
+
+                submitButton
+                    .querySelector("span")
+                    .textContent =
+                    originalText;
+
+            }
 
         }
     );
-
 
 
     /* =====================================
@@ -475,25 +550,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener(
         "submit",
-        event => {
+        async event => {
 
             event.preventDefault();
 
             clearMessages();
 
 
+            /* ---------------------------------
+               GET LOGIN VALUES
+            --------------------------------- */
+
             const identity =
-                document.getElementById(
-                    "loginIdentity"
-                ).value.trim();
+                document
+                    .getElementById("loginIdentity")
+                    .value
+                    .trim();
 
 
             const password =
-                document.getElementById(
-                    "loginPassword"
-                ).value;
+                document
+                    .getElementById("loginPassword")
+                    .value;
 
 
+            /* =================================
+               VALIDATION
+            ================================= */
 
             if (!identity) {
 
@@ -505,7 +588,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
 
             }
-
 
 
             if (!password) {
@@ -520,33 +602,278 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
+            /* =================================
+               DISABLE BUTTON
+            ================================= */
 
-            showSuccess(
-                loginMessage,
-                "Credentials accepted. Preparing secure verification..."
-            );
+            const submitButton =
+                loginForm.querySelector(
+                    ".submit-button"
+                );
 
 
-            /*
-                DEMO ONLY
+            const originalText =
+                submitButton
+                    .querySelector("span")
+                    .textContent;
 
-                Replace with real authentication
-                and OTP verification.
-            */
 
-            setTimeout(
-                () => {
+            submitButton.disabled = true;
 
-                    window.location.href =
-                        "government-dashboard.html";
+            submitButton
+                .querySelector("span")
+                .textContent =
+                "Signing in...";
 
-                },
-                1400
-            );
+
+            try {
+
+                let loginEmail =
+                    identity;
+
+
+                /* =================================
+                   CHECK IF EMPLOYEE ID
+                ================================= */
+
+                if (
+                    !identity.includes("@")
+                ) {
+
+                    const {
+                        data,
+                        error
+                    } =
+                        await supabaseClient
+                            .rpc(
+                                "get_government_email",
+                                {
+                                    p_employee_id:
+                                        identity
+                                }
+                            );
+
+
+                    if (error) {
+
+                        console.error(
+                            "Employee ID lookup error:",
+                            error
+                        );
+
+                        throw new Error(
+                            "Unable to find your employee ID. Please try using your official email."
+                        );
+
+                    }
+
+
+                    if (!data) {
+
+                        throw new Error(
+                            "No government account was found with that employee ID."
+                        );
+
+                    }
+
+
+                    loginEmail =
+                        data;
+
+                }
+
+
+                /* =================================
+                   SUPABASE LOGIN
+                ================================= */
+
+                const {
+                    data,
+                    error
+                } =
+                    await supabaseClient.auth
+                        .signInWithPassword({
+
+                            email:
+                                loginEmail,
+
+                            password:
+                                password
+
+                        });
+
+
+                if (error) {
+
+                    throw error;
+
+                }
+
+
+                if (!data.user) {
+
+                    throw new Error(
+                        "Login failed. Please try again."
+                    );
+
+                }
+
+
+                /* =================================
+                   GET GOVERNMENT PROFILE
+                ================================= */
+
+                const {
+                    data: profile,
+                    error: profileError
+                } =
+                    await supabaseClient
+                        .from("government_users")
+                        .select(`
+                            id,
+                            user_id,
+                            full_name,
+                            designation,
+                            employee_id,
+                            department,
+                            phone,
+                            email,
+                            state,
+                            district,
+                            office,
+                            is_verified
+                        `)
+                        .eq(
+                            "user_id",
+                            data.user.id
+                        )
+                        .maybeSingle();
+
+
+                /* =================================
+                   PROFILE ERROR
+                ================================= */
+
+                if (profileError) {
+
+                    console.error(
+                        "Government profile fetch error:",
+                        profileError
+                    );
+
+
+                    await supabaseClient.auth.signOut();
+
+
+                    throw new Error(
+                        "Unable to load your government profile. Please contact the administrator."
+                    );
+
+                }
+
+
+                /* =================================
+                   PROFILE NOT FOUND
+                ================================= */
+
+                if (!profile) {
+
+                    await supabaseClient.auth.signOut();
+
+
+                    throw new Error(
+                        "Government profile not found. Please complete registration again."
+                    );
+
+                }
+
+
+                /* =================================
+                   CHECK VERIFICATION
+                ================================= */
+
+                if (!profile.is_verified) {
+
+                    await supabaseClient.auth.signOut();
+
+
+                    throw new Error(
+                        "Your account has been created, but it is still pending government verification."
+                    );
+
+                }
+
+
+                /* =================================
+                   SAVE PROFILE FOR CURRENT PAGE
+                ================================= */
+
+                window.currentGovernmentOfficer =
+                    profile;
+
+
+                /* =================================
+                   LOGIN SUCCESS
+                ================================= */
+
+                showSuccess(
+                    loginMessage,
+                    `Welcome, ${profile.full_name}. Opening your government dashboard...`
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        window.location.href =
+                            "government-dashboard.html";
+
+                    },
+                    900
+                );
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Government login error:",
+                    error
+                );
+
+
+                let message =
+                    "Unable to sign in. Please check your credentials.";
+
+
+                if (
+                    error.message
+                ) {
+
+                    message =
+                        error.message;
+
+                }
+
+
+                showError(
+                    loginMessage,
+                    message
+                );
+
+            }
+            finally {
+
+                submitButton.disabled = false;
+
+                submitButton
+                    .querySelector("span")
+                    .textContent =
+                    originalText;
+
+            }
 
         }
     );
-
 
 
     /* =====================================

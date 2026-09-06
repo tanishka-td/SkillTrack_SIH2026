@@ -5,19 +5,549 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         SkillTrack | Government Dashboard
     </title>
 
-    <link
-        rel="stylesheet"
-        href="government-dashboard.css"
-    >
+    <link rel="stylesheet" href="government-dashboard.css">
+
+
+    <style id="skilltrack-dashboard-runtime-styles">
+        .advanced-analytics-panel {
+            margin-top: 24px;
+            padding: 24px;
+            background: #ffffff;
+            border: 1px solid #dbe4ee;
+            border-radius: 14px;
+        }
+
+        .advanced-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .advanced-header span {
+            font-size: 10px;
+            letter-spacing: 1.4px;
+            color: #718198;
+            font-weight: 700;
+        }
+
+        .advanced-header h2 {
+            margin: 5px 0;
+        }
+
+        .advanced-header p {
+            margin: 0;
+            color: #718198;
+            font-size: 13px;
+            line-height: 1.6;
+            max-width: 720px;
+        }
+
+        .advanced-status {
+            padding: 10px 12px;
+            background: #f5f8fb;
+            border-radius: 8px;
+            color: #516176;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .advanced-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .advanced-summary-card,
+        .advanced-data-card {
+            border: 1px solid #e1e8f0;
+            border-radius: 10px;
+            background: #fbfcfe;
+        }
+
+        .advanced-summary-card {
+            padding: 16px;
+        }
+
+        .advanced-summary-card span {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: #718198;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .advanced-summary-card strong {
+            display: block;
+            font-size: 23px;
+            color: #17233a;
+        }
+
+        .advanced-summary-card small {
+            display: block;
+            margin-top: 6px;
+            color: #718198;
+            line-height: 1.4;
+        }
+
+        .advanced-data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .advanced-data-card {
+            padding: 16px;
+        }
+
+        .advanced-data-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .advanced-data-card h3 {
+            margin: 0 0 4px;
+            color: #17233a;
+            font-size: 15px;
+        }
+
+        .advanced-data-card>p {
+            margin: 0 0 12px;
+            color: #718198;
+            font-size: 12px;
+        }
+
+        .advanced-table-wrap {
+            overflow-x: auto;
+        }
+
+        .advanced-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .advanced-table th,
+        .advanced-table td {
+            padding: 9px 8px;
+            border-bottom: 1px solid #e7edf3;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .advanced-table th {
+            color: #718198;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .7px;
+        }
+
+        .advanced-list {
+            margin: 0;
+            padding-left: 18px;
+            color: #344258;
+            font-size: 12px;
+            line-height: 1.65;
+        }
+
+        .advanced-note {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 7px;
+            background: #fff8eb;
+            color: #75521a;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .advanced-json {
+            margin: 0;
+            padding: 10px;
+            background: #f3f6f9;
+            border-radius: 7px;
+            overflow: auto;
+            max-height: 260px;
+            font-size: 11px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        /* =====================================================
+           ANALYTICS DATA / ML RESULT STYLES
+           ===================================================== */
+
+        .analytics-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid #e7edf3;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .analytics-table {
+            width: 100%;
+            min-width: 520px;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .analytics-table th,
+        .analytics-table td {
+            padding: 9px 10px;
+            border-bottom: 1px solid #e7edf3;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .analytics-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .analytics-table th {
+            color: #718198;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .65px;
+            background: #f8fafc;
+        }
+
+        .analytics-table td strong {
+            color: #073b61;
+        }
+
+        .analytics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .analytics-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 10px 11px;
+            border: 1px solid #e7edf3;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #344258;
+            font-size: 12px;
+        }
+
+        .analytics-row > span {
+            min-width: 0;
+        }
+
+        .analytics-row > span > strong,
+        .analytics-row > span > small {
+            display: block;
+        }
+
+        .analytics-row small {
+            margin-top: 3px;
+            color: #8794a7;
+            font-size: 10px;
+        }
+
+        .analytics-row-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .analytics-row-stack {
+            display: block;
+        }
+
+        .analytics-row-stack .analytics-row-main {
+            margin-bottom: 7px;
+        }
+
+        .analytics-progress {
+            width: 100%;
+            height: 5px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: #e8eef4;
+        }
+
+        .analytics-progress span {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: #006da8;
+        }
+
+        .analytics-empty {
+            padding: 13px;
+            border: 1px dashed #d7e0e9;
+            border-radius: 8px;
+            color: #718198;
+            background: #f8fafc;
+            font-size: 12px;
+        }
+
+        .analytics-success {
+            color: #087443;
+            background: #f2fbf6;
+            border-color: #ccebd9;
+        }
+
+        .analytics-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 7px;
+            border-radius: 999px;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+
+        .analytics-badge.warning {
+            color: #8a5a00;
+            background: #fff5dc;
+        }
+
+        .analytics-badge.positive {
+            color: #087443;
+            background: #eaf8f0;
+        }
+
+        .ml-result {
+            padding: 13px;
+            border: 1px solid #e1e8f0;
+            border-radius: 9px;
+            background: #ffffff;
+        }
+
+        .ml-result-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .ml-result-heading strong,
+        .ml-result > strong {
+            color: #17233a;
+            font-size: 12px;
+        }
+
+        .ml-demo-badge {
+            padding: 4px 7px;
+            border-radius: 999px;
+            background: #eef5fb;
+            color: #17618d;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .ml-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .ml-metric {
+            padding: 10px;
+            border-radius: 8px;
+            background: #f7f9fb;
+        }
+
+        .ml-metric span,
+        .ml-meta-grid span,
+        .ml-features > span {
+            display: block;
+            color: #718198;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+        }
+
+        .ml-metric strong {
+            display: block;
+            margin-top: 4px;
+            color: #073b61;
+            font-size: 20px;
+        }
+
+        .ml-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            margin-top: 8px;
+            padding-top: 9px;
+            border-top: 1px solid #e7edf3;
+        }
+
+        .ml-meta-grid strong {
+            display: block;
+            margin-top: 3px;
+            color: #344258;
+            font-size: 12px;
+        }
+
+        .ml-features {
+            margin-top: 10px;
+            padding-top: 9px;
+            border-top: 1px solid #e7edf3;
+        }
+
+        .ml-features > div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 6px;
+        }
+
+        .ml-features > div span {
+            padding: 4px 7px;
+            border-radius: 5px;
+            background: #f1f5f8;
+            color: #516176;
+            font-size: 10px;
+        }
+
+        .ml-note,
+        .ml-result-empty p {
+            margin: 10px 0 0;
+            color: #7b8798;
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .ml-message {
+            margin-top: 8px;
+            color: #344258;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .filter-status {
+            margin-top: 9px;
+            color: #718198;
+            font-size: 11px;
+        }
+
+        .settings-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 28, 45, .42);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .settings-overlay.show {
+            display: flex;
+        }
+
+        .settings-card {
+            width: min(520px, 100%);
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #dbe4ee;
+            padding: 24px;
+            box-shadow: 0 20px 60px rgba(20, 35, 55, .18);
+        }
+
+        .settings-card h2 {
+            margin: 0 0 5px;
+            color: #17233a;
+        }
+
+        .settings-card>p {
+            margin: 0 0 18px;
+            color: #718198;
+            font-size: 13px;
+        }
+
+        .settings-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #e7edf3;
+        }
+
+        .settings-row strong {
+            display: block;
+            color: #25344b;
+            font-size: 13px;
+        }
+
+        .settings-row span {
+            display: block;
+            margin-top: 4px;
+            color: #718198;
+            font-size: 11px;
+            line-height: 1.45;
+        }
+
+        .settings-row input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .settings-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 9px;
+            margin-top: 18px;
+        }
+
+        .settings-actions button {
+            border: 1px solid #d6e0ea;
+            background: #ffffff;
+            border-radius: 7px;
+            padding: 9px 13px;
+            cursor: pointer;
+        }
+
+        .settings-actions .primary {
+            background: #073b61;
+            border-color: #073b61;
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+
+            .advanced-summary-grid,
+            .advanced-data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .advanced-data-card.full-width {
+                grid-column: auto;
+            }
+
+            .advanced-header {
+                flex-direction: column;
+            }
+        }
+
+        body.reduce-dashboard-motion * {
+            scroll-behavior: auto !important;
+            transition: none !important;
+            animation: none !important;
+        }
+    </style>
 
 </head>
 
@@ -29,10 +559,7 @@
          MOBILE OVERLAY
     ====================================================== -->
 
-    <div
-        class="mobile-overlay"
-        id="mobileOverlay"
-    ></div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
 
 
@@ -40,10 +567,7 @@
          SIDEBAR
     ====================================================== -->
 
-    <aside
-        class="sidebar"
-        id="sidebar"
-    >
+    <aside class="sidebar" id="sidebar">
 
 
         <!-- BRAND -->
@@ -74,18 +598,18 @@
 
         <div class="official-user">
 
-            <div class="official-avatar">
-                RK
+            <div class="official-avatar" id="officialAvatar">
+                --
             </div>
 
             <div>
 
-                <strong>
-                    Rajesh Kumar
+                <strong id="officialName">
+                    Loading...
                 </strong>
 
-                <span>
-                    District Officer
+                <span id="officialDesignation">
+                    Loading...
                 </span>
 
             </div>
@@ -104,10 +628,7 @@
             </p>
 
 
-            <a
-                href="government-dashboard.html"
-                class="nav-link active"
-            >
+            <a href="government-dashboard.html" class="nav-link active">
 
                 <span class="nav-icon">
                     ▦
@@ -118,10 +639,7 @@
             </a>
 
 
-            <a
-                href="#outcomes"
-                class="nav-link"
-            >
+            <a href="#outcomes" class="nav-link">
 
                 <span class="nav-icon">
                     ◉
@@ -132,10 +650,7 @@
             </a>
 
 
-            <a
-                href="#districts"
-                class="nav-link"
-            >
+            <a href="#districts" class="nav-link">
 
                 <span class="nav-icon">
                     ▤
@@ -146,10 +661,7 @@
             </a>
 
 
-            <a
-                href="#courses"
-                class="nav-link"
-            >
+            <a href="#courses" class="nav-link">
 
                 <span class="nav-icon">
                     ◈
@@ -160,10 +672,7 @@
             </a>
 
 
-            <a
-                href="#followups"
-                class="nav-link"
-            >
+            <a href="#followups" class="nav-link">
 
                 <span class="nav-icon">
                     ◷
@@ -182,30 +691,18 @@
             <p class="nav-label second">
                 MANAGEMENT
             </p>
-
-
-            <a
-                href="#verification"
-                class="nav-link"
-            >
+            <a href="#advancedAnalytics" class="nav-link">
 
                 <span class="nav-icon">
-                    ✓
+                    ◇
                 </span>
 
-                Verification Queue
-
-                <b class="red">
-                    8
-                </b>
+                Analytics &amp; ML
 
             </a>
 
 
-            <a
-                href="#reports"
-                class="nav-link"
-            >
+            <a href="#reports" class="nav-link">
 
                 <span class="nav-icon">
                     ▣
@@ -216,10 +713,7 @@
             </a>
 
 
-            <a
-                href="#settings"
-                class="nav-link"
-            >
+            <a href="#settings" class="nav-link">
 
                 <span class="nav-icon">
                     ⚙
@@ -248,10 +742,7 @@
             </div>
 
 
-            <button
-                class="logout-btn"
-                id="logoutBtn"
-            >
+            <button class="logout-btn" id="logoutBtn">
 
                 ↪
 
@@ -282,10 +773,7 @@
 
             <div class="top-left">
 
-                <button
-                    class="menu-btn"
-                    id="menuBtn"
-                >
+                <button class="menu-btn" id="menuBtn">
                     ☰
                 </button>
 
@@ -315,17 +803,14 @@
                         Current jurisdiction
                     </span>
 
-                    <strong>
-                        Delhi
+                    <strong id="officialJurisdiction">
+                        Loading...
                     </strong>
 
                 </div>
 
 
-                <button
-                    class="notification-btn"
-                    id="notificationBtn"
-                >
+                <button class="notification-btn" id="notificationBtn">
 
                     🔔
 
@@ -336,18 +821,18 @@
 
                 <div class="user-profile">
 
-                    <div class="top-avatar">
-                        RK
+                    <div class="top-avatar" id="topAvatar">
+                        --
                     </div>
 
                     <div>
 
-                        <strong>
-                            Rajesh Kumar
+                        <strong id="topOfficialName">
+                            Loading...
                         </strong>
 
-                        <span>
-                            District Officer
+                        <span id="topOfficialDesignation">
+                            Loading...
                         </span>
 
                     </div>
@@ -421,10 +906,7 @@
                     </label>
 
 
-                    <button
-                        class="export-btn"
-                        id="exportBtn"
-                    >
+                    <button class="export-btn" id="exportBtn">
 
                         ↓ Export Report
 
@@ -467,6 +949,10 @@
                         <select id="stateFilter">
 
                             <option>
+                                All States
+                            </option>
+
+                            <option>
                                 Delhi
                             </option>
 
@@ -476,14 +962,6 @@
 
                             <option>
                                 Uttar Pradesh
-                            </option>
-
-                            <option>
-                                Maharashtra
-                            </option>
-
-                            <option>
-                                All States
                             </option>
 
                         </select>
@@ -558,15 +1036,20 @@
                 </div>
 
 
-                <button
-                    class="reset-btn"
-                    id="resetFilters"
-                >
+                <button class="reset-btn" id="resetFilters">
 
                     Reset
 
                 </button>
 
+
+                <p id="filterStatus" style="margin:12px 0 0; font-size:11px; color:#718198;">
+                    Showing all available API data.
+                </p>
+
+                <div class="filter-status" id="filterStatus" aria-live="polite">
+                    Showing all available data.
+                </div>
 
             </section>
 
@@ -594,11 +1077,8 @@
                     </div>
 
 
-                    <strong
-                        class="counter"
-                        data-value="24860"
-                    >
-                        0
+                    <strong class="counter" id="totalTrainees" data-value="0">
+                        Loading...
                     </strong>
 
 
@@ -608,8 +1088,8 @@
                             Across selected jurisdiction
                         </span>
 
-                        <b class="positive">
-                            +8.4%
+                        <b id="totalTraineesMeta">
+                            Loading live data
                         </b>
 
                     </div>
@@ -633,12 +1113,8 @@
                     </div>
 
 
-                    <strong
-                        class="counter"
-                        data-value="91"
-                        data-suffix="%"
-                    >
-                        0%
+                    <strong class="counter" id="trainingCompletion" data-value="0" data-suffix="%">
+                        N/A
                     </strong>
 
 
@@ -648,8 +1124,8 @@
                             Programme completion
                         </span>
 
-                        <b class="positive">
-                            +3.2%
+                        <b id="completionMeta">
+                            Not provided by current API
                         </b>
 
                     </div>
@@ -673,12 +1149,8 @@
                     </div>
 
 
-                    <strong
-                        class="counter"
-                        data-value="74"
-                        data-suffix="%"
-                    >
-                        0%
+                    <strong class="counter" id="employmentRate" data-value="0" data-suffix="%">
+                        Loading...
                     </strong>
 
 
@@ -688,8 +1160,8 @@
                             Verified employment
                         </span>
 
-                        <b class="positive">
-                            +6.1%
+                        <b id="employmentMeta">
+                            Loading live data
                         </b>
 
                     </div>
@@ -713,11 +1185,8 @@
                     </div>
 
 
-                    <strong
-                        class="counter"
-                        data-value="18420"
-                    >
-                        0
+                    <strong class="counter" id="verifiedOutcomes" data-value="0">
+                        N/A
                     </strong>
 
 
@@ -727,8 +1196,8 @@
                             Records verified
                         </span>
 
-                        <b class="positive">
-                            +12.7%
+                        <b id="verificationMeta">
+                            Not provided by current API
                         </b>
 
                     </div>
@@ -744,10 +1213,7 @@
                  RETENTION
             ================================================== -->
 
-            <section
-                class="retention-section"
-                id="followups"
-            >
+            <section class="retention-section" id="followups">
 
 
                 <div class="section-header">
@@ -779,7 +1245,7 @@
                     <div class="retention-card">
 
                         <div class="retention-number">
-                            78%
+                            Loading...
                         </div>
 
                         <div>
@@ -805,7 +1271,7 @@
                     <div class="retention-card">
 
                         <div class="retention-number">
-                            73%
+                            Loading...
                         </div>
 
                         <div>
@@ -831,7 +1297,7 @@
                     <div class="retention-card">
 
                         <div class="retention-number">
-                            67%
+                            Loading...
                         </div>
 
                         <div>
@@ -888,10 +1354,7 @@
 
                 <!-- OUTCOME DISTRIBUTION -->
 
-                <article
-                    class="panel outcome-panel"
-                    id="outcomes"
-                >
+                <article class="panel outcome-panel" id="outcomes">
 
 
                     <div class="panel-header">
@@ -909,10 +1372,7 @@
                         </div>
 
 
-                        <button
-                            class="icon-btn"
-                            id="outcomeInfo"
-                        >
+                        <button class="icon-btn" id="outcomeInfo">
                             i
                         </button>
 
@@ -922,16 +1382,16 @@
                     <div class="donut-area">
 
 
-                        <div class="donut">
+                        <div class="donut" id="outcomeDonut">
 
                             <div>
 
-                                <strong>
-                                    24.8K
+                                <strong id="outcomeTotal">
+                                    Loading...
                                 </strong>
 
                                 <span>
-                                    Trainees
+                                    Completed trainees
                                 </span>
 
                             </div>
@@ -941,47 +1401,16 @@
 
                         <div class="legend">
 
-
                             <div>
 
                                 <i class="legend-dot employed"></i>
 
                                 <span>
-                                    Employed
+                                    Employed / Placed
                                 </span>
 
-                                <strong>
-                                    74%
-                                </strong>
-
-                            </div>
-
-
-                            <div>
-
-                                <i class="legend-dot business"></i>
-
-                                <span>
-                                    Business
-                                </span>
-
-                                <strong>
-                                    9%
-                                </strong>
-
-                            </div>
-
-
-                            <div>
-
-                                <i class="legend-dot apprenticeship"></i>
-
-                                <span>
-                                    Apprenticeship
-                                </span>
-
-                                <strong>
-                                    7%
+                                <strong id="outcomeEmployed">
+                                    Loading...
                                 </strong>
 
                             </div>
@@ -992,202 +1421,12 @@
                                 <i class="legend-dot unemployed"></i>
 
                                 <span>
-                                    Unemployed
+                                    Not placed
                                 </span>
 
-                                <strong>
-                                    10%
+                                <strong id="outcomeNotPlaced">
+                                    Loading...
                                 </strong>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-                </article>
-
-
-
-                <!-- DISTRICT PERFORMANCE -->
-
-                <article
-                    class="panel district-panel"
-                    id="districts"
-                >
-
-
-                    <div class="panel-header">
-
-                        <div>
-
-                            <span>
-                                DISTRICT ANALYSIS
-                            </span>
-
-                            <h2>
-                                District Performance
-                            </h2>
-
-                        </div>
-
-
-                        <select
-                            class="small-select"
-                            id="districtMetric"
-                        >
-
-                            <option>
-                                Employment Rate
-                            </option>
-
-                            <option>
-                                Completion Rate
-                            </option>
-
-                            <option>
-                                Verification Rate
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="district-list">
-
-
-                        <div class="district-row">
-
-                            <div class="rank">
-                                01
-                            </div>
-
-                            <div class="district-info">
-
-                                <strong>
-                                    North West Delhi
-                                </strong>
-
-                                <span>
-                                    6,840 trainees
-                                </span>
-
-                            </div>
-
-                            <div class="district-value">
-
-                                <strong>
-                                    81%
-                                </strong>
-
-                                <div class="bar">
-                                    <span style="width:81%"></span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="district-row">
-
-                            <div class="rank">
-                                02
-                            </div>
-
-                            <div class="district-info">
-
-                                <strong>
-                                    South Delhi
-                                </strong>
-
-                                <span>
-                                    5,230 trainees
-                                </span>
-
-                            </div>
-
-                            <div class="district-value">
-
-                                <strong>
-                                    77%
-                                </strong>
-
-                                <div class="bar">
-                                    <span style="width:77%"></span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="district-row">
-
-                            <div class="rank">
-                                03
-                            </div>
-
-                            <div class="district-info">
-
-                                <strong>
-                                    Central Delhi
-                                </strong>
-
-                                <span>
-                                    4,912 trainees
-                                </span>
-
-                            </div>
-
-                            <div class="district-value">
-
-                                <strong>
-                                    72%
-                                </strong>
-
-                                <div class="bar">
-                                    <span style="width:72%"></span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="district-row">
-
-                            <div class="rank">
-                                04
-                            </div>
-
-                            <div class="district-info">
-
-                                <strong>
-                                    East Delhi
-                                </strong>
-
-                                <span>
-                                    4,102 trainees
-                                </span>
-
-                            </div>
-
-                            <div class="district-value">
-
-                                <strong>
-                                    68%
-                                </strong>
-
-                                <div class="bar">
-                                    <span style="width:68%"></span>
-                                </div>
 
                             </div>
 
@@ -1208,10 +1447,7 @@
                  COURSE PERFORMANCE
             ================================================== -->
 
-            <section
-                class="panel course-panel"
-                id="courses"
-            >
+            <section class="panel course-panel" id="courses">
 
 
                 <div class="panel-header">
@@ -1229,10 +1465,7 @@
                     </div>
 
 
-                    <button
-                        class="small-btn"
-                        id="courseDetailsBtn"
-                    >
+                    <button class="small-btn" id="courseDetailsBtn">
                         View details
                     </button>
 
@@ -1278,7 +1511,7 @@
                         </thead>
 
 
-                        <tbody>
+                        <tbody id="courseTableBody">
 
 
                             <tr>
@@ -1505,145 +1738,149 @@
 
 
             </section>
+            <!-- =================================================
+                 ADVANCED ANALYTICS + ML
+            ================================================== -->
 
+            <section class="advanced-analytics-panel" id="advancedAnalytics">
+
+                <div class="advanced-header">
+
+                    <div>
+                        <span>BACKEND INTELLIGENCE</span>
+
+                        <h2>
+                            Analytics &amp; ML
+                        </h2>
+
+                        <p>
+                            Live programme analytics from the SkillTrack Analytics API.
+                            Machine-learning results are shown separately as illustrative predictions.
+                        </p>
+                    </div>
+
+                    <button type="button" class="small-btn" id="refreshAnalyticsBtn">
+                        Refresh data
+                    </button>
+
+                </div>
+
+                <div class="advanced-status" id="advancedStatus" aria-live="polite">
+                    Loading analytics...
+                </div>
+
+                <div class="advanced-summary-grid" id="advancedSummaryGrid">
+
+                    <article class="advanced-summary-card">
+                        <span>PROGRAMME IMPACT</span>
+                        <strong id="impactIndex">Loading...</strong>
+                        <small>Overall impact index</small>
+                    </article>
+
+                    <article class="advanced-summary-card">
+                        <span>COMPOSITE SCORE</span>
+                        <strong id="compositeScore">Loading...</strong>
+                        <small>Overall programme performance</small>
+                    </article>
+
+                    <article class="advanced-summary-card">
+                        <span>ANOMALIES</span>
+                        <strong id="anomalyCount">Loading...</strong>
+                        <small>Detected statistical anomalies</small>
+                    </article>
+
+                    <article class="advanced-summary-card">
+                        <span>ML STATUS</span>
+                        <strong id="mlStatus">Loading...</strong>
+                        <small>Placement and attrition models</small>
+                    </article>
+
+                </div>
+
+                <div class="advanced-data-grid" id="advancedDataGrid">
+
+                    <article class="advanced-data-card">
+                        <h3>Provider Placement</h3>
+                        <p>Placement performance by training provider.</p>
+                        <div id="providerPlacement">Loading...</div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Wage Growth</h3>
+                        <p>Post-placement wage growth by programme.</p>
+                        <div id="wageGrowth">Loading...</div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Training Relevance</h3>
+                        <p>Relevance between training and employment.</p>
+                        <div id="relevance">Loading...</div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Skill Gap</h3>
+                        <p>Skills requiring additional programme attention.</p>
+                        <div id="skillGap">Loading...</div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Non-Placement Reasons</h3>
+                        <p>Major reasons associated with non-placement.</p>
+                        <div id="nonPlacementReasons">Loading...</div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Attrition Reasons</h3>
+                        <p>Major reasons associated with trainee attrition.</p>
+                        <div id="attritionReasons">Loading...</div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Anomaly Detection</h3>
+                        <p>Statistical anomalies detected by the backend.</p>
+                        <div id="anomalies">Loading...</div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Placement Prediction</h3>
+                        <p>Illustrative model evaluation using the available training data.</p>
+                        <div id="placementPrediction">Loading...</div>
+                        <div class="advanced-note">
+                            <strong>ML Demo:</strong>
+                            This endpoint is illustrative and should not be treated as a production guarantee.
+                        </div>
+                    </article>
+
+                    <article class="advanced-data-card">
+                        <h3>Attrition Prediction</h3>
+                        <p>Illustrative machine-learning prediction.</p>
+                        <div id="attritionPrediction">Loading...</div>
+                        <div class="advanced-note">
+                            <strong>ML Demo:</strong>
+                            This endpoint is illustrative and should not be treated as a production guarantee.
+                        </div>
+                    </article>
+
+                    <article class="advanced-data-card full-width">
+                        <h3>Government Insights</h3>
+                        <p>Key insights generated from programme data.</p>
+                        <div id="insights">Loading insights...</div>
+                    </article>
+
+                </div>
+
+            </section>
 
 
             <!-- =================================================
-                 VERIFICATION + ALERTS
+                 PROGRAMME ALERTS
             ================================================== -->
 
             <section class="bottom-grid">
 
-
-                <!-- VERIFICATION -->
-
-                <article
-                    class="panel"
-                    id="verification"
-                >
-
-
-                    <div class="panel-header">
-
-                        <div>
-
-                            <span>
-                                EMPLOYER VERIFICATION
-                            </span>
-
-                            <h2>
-                                Verification Queue
-                            </h2>
-
-                        </div>
-
-
-                        <span class="queue-count">
-                            8 Pending
-                        </span>
-
-                    </div>
-
-
-                    <div class="queue-list">
-
-
-                        <div class="queue-item">
-
-                            <div class="queue-avatar">
-                                AS
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    Aman Sharma
-                                </strong>
-
-                                <span>
-                                    Web Developer • Digital Solutions
-                                </span>
-
-                            </div>
-
-                            <button>
-                                Review
-                            </button>
-
-                        </div>
-
-
-                        <div class="queue-item">
-
-                            <div class="queue-avatar">
-                                RK
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    Rohan Kumar
-                                </strong>
-
-                                <span>
-                                    Electrician • ABC Services
-                                </span>
-
-                            </div>
-
-                            <button>
-                                Review
-                            </button>
-
-                        </div>
-
-
-                        <div class="queue-item">
-
-                            <div class="queue-avatar">
-                                PM
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    Priya Mehta
-                                </strong>
-
-                                <span>
-                                    Data Analyst • TechWorks
-                                </span>
-
-                            </div>
-
-                            <button>
-                                Review
-                            </button>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <button
-                        class="full-outline"
-                        id="verificationBtn"
-                    >
-                        Open Verification Queue →
-                    </button>
-
-
-                </article>
-
-
-
                 <!-- ALERTS -->
 
-                <article
-                    class="panel"
-                    id="reports"
-                >
+                <article class="panel" id="reports">
 
 
                     <div class="panel-header">
@@ -1749,8 +1986,8 @@
 
             <div class="last-updated">
 
-                <span>
-                    Last updated: 1 September 2026, 20:45 IST
+                <span id="lastUpdated">
+                    Last updated: Loading...
                 </span>
 
                 <span>
@@ -1788,20 +2025,64 @@
 
 
     <!-- =====================================================
+         SETTINGS
+    ====================================================== -->
+
+    <div class="settings-overlay" id="settingsOverlay">
+
+        <div class="settings-card">
+
+            <h2>
+                Dashboard Settings
+            </h2>
+
+            <p>
+                Customize how the government dashboard behaves.
+            </p>
+
+            <label class="settings-row">
+                <div>
+                    <strong>Automatic Refresh</strong>
+                    <span>Refresh dashboard data every 5 minutes.</span>
+                </div>
+                <input type="checkbox" id="autoRefreshSetting">
+            </label>
+
+            <label class="settings-row">
+                <div>
+                    <strong>Show Analytics &amp; ML</strong>
+                    <span>Display advanced analytics and ML results.</span>
+                </div>
+                <input type="checkbox" id="showAnalyticsSetting" checked>
+            </label>
+
+            <label class="settings-row">
+                <div>
+                    <strong>Dashboard Animations</strong>
+                    <span>Enable dashboard animations and transitions.</span>
+                </div>
+                <input type="checkbox" id="animationsSetting" checked>
+            </label>
+
+            <div class="settings-actions">
+                <button type="button" id="cancelSettings">Cancel</button>
+                <button type="button" id="saveSettings" class="primary">Save Settings</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
          INFO MODAL
     ====================================================== -->
 
-    <div
-        class="modal"
-        id="infoModal"
-    >
+    <div class="modal" id="infoModal">
 
         <div class="modal-card">
 
-            <button
-                class="modal-close"
-                data-close
-            >
+            <button class="modal-close" data-close>
                 ×
             </button>
 
@@ -1821,10 +2102,7 @@
             </p>
 
 
-            <button
-                class="primary-btn"
-                data-close
-            >
+            <button class="primary-btn" data-close>
                 Close
             </button>
 
@@ -1834,7 +2112,218 @@
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
     <script src="government-dashboard.js"></script>
+
+    <!-- =========================================================
+         DASHBOARD DISPLAY BRIDGE
+         Keeps the existing dashboard JS intact while making
+         the current HTML IDs and filters work with live data.
+         ========================================================= -->
+    <script>
+        (function () {
+            function textOf(el) {
+                return el ? el.textContent.trim() : "";
+            }
+
+            function numberFromText(value) {
+                const match = String(value).replace(/,/g, "").match(/-?\d+(?:\.\d+)?/);
+                return match ? Number(match[0]) : 0;
+            }
+
+            function getSelected(id) {
+                const el = document.getElementById(id);
+                return el ? el.value.trim() : "";
+            }
+
+            function updateFilterDisplay() {
+                const state = getSelected("stateFilter").toLowerCase();
+                const district = getSelected("districtFilter").toLowerCase();
+                const programme = getSelected("programmeFilter").toLowerCase();
+                const status = document.getElementById("filterStatus");
+
+                if (!status) return;
+
+                if (district && district !== "all districts") {
+                    status.textContent =
+                        `Showing ${getSelected("districtFilter")} district data. Course-by-district breakdown is not provided by the current API.`;
+                    return;
+                }
+
+                if (programme && programme !== "all programmes") {
+                    status.textContent =
+                        `Showing ${getSelected("programmeFilter")} programme data.`;
+                    return;
+                }
+
+                if (state && state !== "all states") {
+                    status.textContent =
+                        "State filtering is not available from the current Analytics API.";
+                    return;
+                }
+
+                status.textContent = "Showing all available API data.";
+            }
+
+            function updateVisibleKpis() {
+                const district = getSelected("districtFilter").toLowerCase();
+                const programme = getSelected("programmeFilter").toLowerCase();
+                const state = getSelected("stateFilter").toLowerCase();
+
+                const totalEl = document.getElementById("totalTrainees");
+                const employmentEl = document.getElementById("employmentRate");
+                const totalMeta = document.getElementById("totalTraineesMeta");
+                const employmentMeta = document.getElementById("employmentMeta");
+
+                let completed = 0;
+                let placed = 0;
+                let source = "Live API data";
+
+                const districtRows = Array.from(document.querySelectorAll(".district-row"))
+                    .filter(row => row.style.display !== "none");
+
+                const courseRows = Array.from(document.querySelectorAll("#courseTableBody tr"))
+                    .filter(row => row.style.display !== "none")
+                    .filter(row => !row.querySelector("td[colspan]"));
+
+                if (district && district !== "all districts") {
+                    if (districtRows.length === 1) {
+                        const info = districtRows[0].querySelector(".district-info span");
+                        const rateEl = districtRows[0].querySelector(".district-value strong");
+                        completed = numberFromText(textOf(info));
+                        const rate = numberFromText(textOf(rateEl));
+                        placed = Math.round(completed * rate / 100);
+                        source = `Filtered: ${getSelected("districtFilter")}`;
+                    }
+                } else if (programme && programme !== "all programmes") {
+                    courseRows.forEach(row => {
+                        const cells = row.querySelectorAll("td");
+                        if (cells.length >= 4) {
+                            completed += numberFromText(textOf(cells[1]));
+                            placed += numberFromText(textOf(cells[2]));
+                        }
+                    });
+                    source = `Filtered: ${getSelected("programmeFilter")}`;
+                } else if (courseRows.length) {
+                    courseRows.forEach(row => {
+                        const cells = row.querySelectorAll("td");
+                        if (cells.length >= 4) {
+                            completed += numberFromText(textOf(cells[1]));
+                            placed += numberFromText(textOf(cells[2]));
+                        }
+                    });
+                }
+
+                if (state && state !== "all states") {
+                    completed = 0;
+                    placed = 0;
+                    source = "State filter unavailable from API";
+                }
+
+                if (totalEl) {
+                    totalEl.textContent = completed > 0
+                        ? completed.toLocaleString("en-IN")
+                        : "N/A";
+                    totalEl.dataset.value = completed;
+                }
+
+                if (employmentEl) {
+                    const rate = completed > 0
+                        ? Number((placed / completed * 100).toFixed(1))
+                        : null;
+                    employmentEl.textContent = rate === null ? "N/A" : `${rate}%`;
+                    employmentEl.dataset.value = rate === null ? 0 : rate;
+                    employmentEl.dataset.suffix = "%";
+                }
+
+                if (totalMeta) totalMeta.textContent = source;
+                if (employmentMeta) employmentMeta.textContent = source;
+
+                updateOutcome(completed, placed);
+            }
+
+            function updateOutcome(total, placed) {
+                const donut = document.getElementById("outcomeDonut");
+                const totalEl = document.getElementById("outcomeTotal");
+                const employedEl = document.getElementById("outcomeEmployed");
+                const notPlacedEl = document.getElementById("outcomeNotPlaced");
+
+                if (!totalEl || !employedEl || !notPlacedEl) return;
+
+                if (total <= 0) {
+                    totalEl.textContent = "N/A";
+                    employedEl.textContent = "N/A";
+                    notPlacedEl.textContent = "N/A";
+                    if (donut) donut.style.background = "#e2e8f0";
+                    return;
+                }
+
+                const employedRate = Number((placed / total * 100).toFixed(1));
+                const notPlacedRate = Number((100 - employedRate).toFixed(1));
+
+                totalEl.textContent = total.toLocaleString("en-IN");
+                employedEl.textContent = `${employedRate}%`;
+                notPlacedEl.textContent = `${notPlacedRate}%`;
+
+                if (donut) {
+                    donut.style.background =
+                        `conic-gradient(#00699a 0 ${employedRate}%, #d97706 ${employedRate}% 100%)`;
+                }
+            }
+
+            function runFilterUpdate() {
+                if (typeof applyAllFilters === "function") {
+                    applyAllFilters();
+                }
+
+                window.setTimeout(function () {
+                    updateFilterDisplay();
+                    updateVisibleKpis();
+                }, 50);
+            }
+
+            function connectFilters() {
+                ["stateFilter", "districtFilter", "programmeFilter"].forEach(function (id) {
+                    const el = document.getElementById(id);
+                    if (el && !el.dataset.bridgeConnected) {
+                        el.addEventListener("change", runFilterUpdate);
+                        el.dataset.bridgeConnected = "true";
+                    }
+                });
+
+                const reset = document.getElementById("resetFilters");
+                if (reset && !reset.dataset.bridgeConnected) {
+                    reset.addEventListener("click", function () {
+                        const state = document.getElementById("stateFilter");
+                        const district = document.getElementById("districtFilter");
+                        const programme = document.getElementById("programmeFilter");
+
+                        if (state) state.value = "All States";
+                        if (district) district.value = "All Districts";
+                        if (programme) programme.value = "All Programmes";
+
+                        window.setTimeout(runFilterUpdate, 50);
+                    });
+                    reset.dataset.bridgeConnected = "true";
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                connectFilters();
+                window.setTimeout(function () {
+                    updateFilterDisplay();
+                    updateVisibleKpis();
+                }, 500);
+
+                window.setInterval(function () {
+                    connectFilters();
+                    updateFilterDisplay();
+                    updateVisibleKpis();
+                }, 1000);
+            });
+        })();
+    </script>
 
 </body>
 

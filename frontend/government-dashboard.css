@@ -3724,3 +3724,206 @@ tbody tr:hover {
     }
 
 }
+/* =========================================================
+   GOVERNMENT INSIGHTS
+   ========================================================= */
+
+#insights {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+
+#insights .insight-item {
+    position: relative;
+
+    padding: 12px 16px 12px 38px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    color: #24344d;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+#insights .insight-item::before {
+
+    content: "•";
+
+    position: absolute;
+
+    left: 16px;
+
+    top: 10px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #006fae;
+}
+
+
+#insights .insight-item:hover {
+
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+}
+
+
+/* =========================================================
+   REMOVE RAW MARKDOWN ASTERISKS
+   ========================================================= */
+
+#insights .insight-item strong {
+
+    font-weight: 700;
+
+    color: #102a43;
+}
+
+
+/* =========================================================
+   ML RESULT
+   ========================================================= */
+
+.ml-result {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    line-height: 1.5;
+}
+
+
+.ml-result > strong {
+
+    font-size: 14px;
+
+    color: #102a43;
+}
+
+
+.ml-result > span {
+
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   ML EMPTY STATE
+   ========================================================= */
+
+.ml-empty-state {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 7px;
+}
+
+
+.ml-empty-state strong {
+
+    font-size: 13px;
+
+    color: #334155;
+}
+
+
+.ml-empty-state span {
+
+    font-size: 12px;
+
+    color: #64748b;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ML BADGE
+   ========================================================= */
+
+.ml-demo-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    padding: 3px 8px;
+
+    border-radius: 999px;
+
+    background: #fff7ed;
+
+    border: 1px solid #fed7aa;
+
+    color: #9a3412;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   ML NOTE
+   ========================================================= */
+
+.ml-note {
+
+    margin: 0;
+
+    padding-top: 8px;
+
+    border-top: 1px solid #e2e8f0;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
