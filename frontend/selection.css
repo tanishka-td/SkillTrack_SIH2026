@@ -6,17 +6,13 @@
 ===================================== */
 
 * {
-
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
-
 }
 
 
 body {
-
     min-height: 100vh;
 
     font-family: "DM Sans", sans-serif;
@@ -26,7 +22,6 @@ body {
     background: #f7f9fc;
 
     overflow-x: hidden;
-
 }
 
 
@@ -35,7 +30,6 @@ body {
 ===================================== */
 
 .background {
-
     position: fixed;
 
     inset: 0;
@@ -45,19 +39,16 @@ body {
     overflow: hidden;
 
     background:
-
         linear-gradient(
             135deg,
             #ffffff,
             #f6f8fb,
             #eef2f6
         );
-
 }
 
 
 .background::before {
-
     content: "";
 
     position: absolute;
@@ -84,7 +75,6 @@ body {
         35s
         linear
         infinite;
-
 }
 
 
@@ -93,11 +83,9 @@ body {
 ===================================== */
 
 .blob {
-
     position: absolute;
 
     width: 450px;
-
     height: 450px;
 
     border-radius: 50%;
@@ -105,16 +93,13 @@ body {
     filter: blur(150px);
 
     opacity: 0.07;
-
 }
 
 
 .blob-1 {
-
     background: #2563eb;
 
     top: -200px;
-
     left: -200px;
 
     animation:
@@ -123,16 +108,13 @@ body {
         ease-in-out
         infinite
         alternate;
-
 }
 
 
 .blob-2 {
-
     background: #64748b;
 
     bottom: -220px;
-
     right: -200px;
 
     animation:
@@ -141,7 +123,6 @@ body {
         ease-in-out
         infinite
         alternate;
-
 }
 
 
@@ -150,7 +131,6 @@ body {
 ===================================== */
 
 .navbar {
-
     padding:
         22px
         8%;
@@ -168,12 +148,10 @@ body {
         navReveal
         0.8s
         ease;
-
 }
 
 
 .logo {
-
     display: flex;
 
     align-items: center;
@@ -183,14 +161,11 @@ body {
     text-decoration: none;
 
     color: #172033;
-
 }
 
 
 .logo-icon {
-
     width: 42px;
-
     height: 42px;
 
     display: flex;
@@ -206,16 +181,13 @@ body {
     color: white;
 
     font-weight: 700;
-
 }
 
 
 .logo h2 {
-
     font-family: "Outfit";
 
     font-size: 23px;
-
 }
 
 
@@ -224,7 +196,6 @@ body {
 ===================================== */
 
 .selection-container {
-
     min-height:
         calc(100vh - 100px);
 
@@ -239,7 +210,6 @@ body {
     padding:
         50px
         20px;
-
 }
 
 
@@ -248,7 +218,6 @@ body {
 ===================================== */
 
 .heading {
-
     text-align: center;
 
     opacity: 0;
@@ -258,12 +227,10 @@ body {
         0.9s
         ease
         forwards;
-
 }
 
 
 .heading p {
-
     color: #64748b;
 
     font-size: 11px;
@@ -271,12 +238,10 @@ body {
     letter-spacing: 2px;
 
     margin-bottom: 15px;
-
 }
 
 
 .heading h1 {
-
     font-family: "Outfit";
 
     font-size:
@@ -291,16 +256,13 @@ body {
     margin-bottom: 18px;
 
     color: #172033;
-
 }
 
 
 .heading span {
-
     color: #64748b;
 
     font-size: 16px;
-
 }
 
 
@@ -309,13 +271,11 @@ body {
 ===================================== */
 
 .role-container {
-
     margin-top: 55px;
 
     display: grid;
 
     grid-template-columns:
-
         repeat(
             2,
             minmax(
@@ -326,6 +286,9 @@ body {
 
     gap: 28px;
 
+    /* Makes both cards stretch equally */
+
+    align-items: stretch;
 }
 
 
@@ -334,7 +297,6 @@ body {
 ===================================== */
 
 .role-card {
-
     padding: 42px;
 
     border-radius: 14px;
@@ -361,25 +323,27 @@ body {
         ease
         forwards;
 
+    /* REQUIRED FOR BUTTON ALIGNMENT */
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
 }
 
 
 .role-card:nth-child(1) {
-
     animation-delay: 0.25s;
-
 }
 
 
 .role-card:nth-child(2) {
-
     animation-delay: 0.45s;
-
 }
 
 
 .role-card:hover {
-
     transform:
         translateY(-8px);
 
@@ -389,7 +353,6 @@ body {
     box-shadow:
         0 20px 45px
         rgba(15, 23, 42, 0.12);
-
 }
 
 
@@ -398,9 +361,7 @@ body {
 ===================================== */
 
 .icon {
-
     width: 64px;
-
     height: 64px;
 
     display: flex;
@@ -422,15 +383,12 @@ body {
 
     transition:
         transform 0.35s ease;
-
 }
 
 
 .role-card:hover .icon {
-
     transform:
         translateY(-4px);
-
 }
 
 
@@ -439,7 +397,6 @@ body {
 ===================================== */
 
 .role-card h2 {
-
     font-family: "Outfit";
 
     font-size: 25px;
@@ -447,12 +404,10 @@ body {
     margin-bottom: 14px;
 
     color: #172033;
-
 }
 
 
 .role-card p {
-
     color: #64748b;
 
     line-height: 1.7;
@@ -460,7 +415,6 @@ body {
     min-height: 100px;
 
     font-size: 15px;
-
 }
 
 
@@ -469,10 +423,14 @@ body {
 ===================================== */
 
 .role-card button {
-
     width: 100%;
 
-    margin-top: 28px;
+    /*
+       This pushes both buttons to
+       the bottom of equally-sized cards
+    */
+
+    margin-top: auto;
 
     padding: 15px;
 
@@ -493,33 +451,28 @@ body {
     transition:
         transform 0.25s ease,
         background 0.25s ease;
-
 }
 
 
 .role-card button:hover {
-
     transform:
         translateY(-2px);
 
     background: #1e4f86;
-
 }
 
 
-/* Government Button */
+/* =====================================
+   GOVERNMENT BUTTON
+===================================== */
 
 .government-card button {
-
     background: #334155;
-
 }
 
 
 .government-card button:hover {
-
     background: #475569;
-
 }
 
 
@@ -528,7 +481,6 @@ body {
 ===================================== */
 
 .bottom-text {
-
     margin-top: 45px;
 
     color: #94a3b8;
@@ -545,7 +497,6 @@ body {
         ease
         0.9s
         forwards;
-
 }
 
 
@@ -556,21 +507,17 @@ body {
 @keyframes navReveal {
 
     from {
-
         opacity: 0;
 
         transform:
             translateY(-20px);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
-
     }
 
 }
@@ -579,21 +526,17 @@ body {
 @keyframes headingReveal {
 
     from {
-
         opacity: 0;
 
         transform:
             translateY(25px);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
-
     }
 
 }
@@ -602,21 +545,17 @@ body {
 @keyframes cardReveal {
 
     from {
-
         opacity: 0;
 
         transform:
             translateY(35px);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
-
     }
 
 }
@@ -625,15 +564,11 @@ body {
 @keyframes fadeIn {
 
     from {
-
         opacity: 0;
-
     }
 
     to {
-
         opacity: 1;
-
     }
 
 }
@@ -642,17 +577,13 @@ body {
 @keyframes gridMove {
 
     from {
-
         transform:
             translate(0, 0);
-
     }
 
     to {
-
         transform:
             translate(70px, 70px);
-
     }
 
 }
@@ -661,17 +592,13 @@ body {
 @keyframes slowBlobOne {
 
     from {
-
         transform:
             translate(0, 0);
-
     }
 
     to {
-
         transform:
             translate(100px, 80px);
-
     }
 
 }
@@ -680,17 +607,13 @@ body {
 @keyframes slowBlobTwo {
 
     from {
-
         transform:
             translate(0, 0);
-
     }
 
     to {
-
         transform:
             translate(-90px, -70px);
-
     }
 
 }
@@ -703,18 +626,14 @@ body {
 @media (max-width: 800px) {
 
     .role-container {
-
         grid-template-columns: 1fr;
-
     }
 
 
     .role-card {
-
         max-width: 450px;
 
         width: 100%;
-
     }
 
 }
@@ -723,34 +642,26 @@ body {
 @media (max-width: 500px) {
 
     .navbar {
-
         padding:
             18px
             22px;
-
     }
 
 
     .selection-container {
-
         padding:
             40px
             20px;
-
     }
 
 
     .role-card {
-
         padding: 32px;
-
     }
 
 
     .heading h1 {
-
         font-size: 40px;
-
     }
 
 }
