@@ -7510,3 +7510,91 @@ body {
     }
 
 }
+/* Certificate Status Dropdown */
+.field select {
+    height: 44px;
+    width: 100%;
+    border: 1px solid #d9e1e8;
+    border-radius: 6px;
+    padding: 0 12px;
+    outline: none;
+    background: white;
+    color: #475569;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.field select:focus {
+    border-color: #7898b8;
+    box-shadow: 0 0 0 3px rgba(23, 59, 99, 0.05);
+}
+#trainingForm > p {
+    margin: 14px 0 22px 0;
+    padding: 0;
+
+    font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.15px;
+
+    color: #64748b;
+}
+#trainingForm .panel-heading h2 {
+    font-family: "Outfit", "Segoe UI", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #334155;
+    text-align: left;
+    margin: 0;
+}
+#trainingForm .panel-heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+#trainingForm .checkbox-row {
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+#trainingForm .checkbox-row span {
+    line-height: 1.6;
+}
+#trainingForm .training-form-actions {
+    margin-top: 35px;
+}
+/* Training page heading spacing */
+.page-heading h1 {
+    margin-bottom: 10px;
+}
+
+.page-heading span {
+    display: block;
+    margin-top: 4px;
+    line-height: 1.6;
+}
+
+.training-actions {
+    margin-top: 22px;
+}
+/* Training form field size */
+#trainingForm .field input,
+#trainingForm .field select {
+    height: 48px;
+    font-size: 12px;
+    padding: 0 14px;
+}
+#trainingForm .field label {
+    font-size: 15px;
+}
+#trainingForm #cancelTraining {
+    padding: 7px 24px;
+    font-size: 14px;
+}
+#trainingForm #saveTraining {
+    padding: 15px 28px;
+    font-size: 14px;
+    min-height: 48px;
+}
