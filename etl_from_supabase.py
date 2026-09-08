@@ -318,7 +318,7 @@ def sync_followups(session, trainee_id_map):
 
 
 def main():
-    engine = init_db("data/skilling_outcomes.db")
+    engine = init_db("data/skilling_outcomes_demo.db")
     Session = sessionmaker(bind=engine)
     session = Session()
 

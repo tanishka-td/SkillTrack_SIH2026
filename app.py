@@ -15,7 +15,7 @@ import nlp_analysis as nlp
 import ml_models as ml
 
 st.set_page_config(page_title="Skilling Outcomes Analytics", layout="wide")
-engine = get_engine("data/skilling_outcomes.db")
+engine = get_engine("data/skilling_outcomes_demo.db")
 
 st.title("Skilling Outcomes & Impact Measurement — Analytics Dashboard")
 st.caption("Running on synthetic data. See sidebar for what's demo-only vs production-ready.")

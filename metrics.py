@@ -280,7 +280,7 @@ def attrition_reasons(engine):
 
 
 if __name__ == "__main__":
-    engine = get_engine("data/skilling_outcomes.db")
+    engine = get_engine("data/skilling_outcomes_demo.db")
     print("\n--- Placement rate by course ---")
     print(placement_rate(engine, "course")[["group_key", "completed", "placed", "placement_rate_pct"]])
     print("\n--- Employment type distribution ---")

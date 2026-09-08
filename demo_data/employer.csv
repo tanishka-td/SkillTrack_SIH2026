@@ -1,0 +1,31 @@
+employer_id,employer_name,sector,district_id
+1,"Choudhury, Bakshi and Maharaj",IT/ITES,5
+2,Kapoor and Sons,IT/ITES,5
+3,"Chaudry, Chahal and Sami",IT/ITES,1
+4,Balan Inc,IT/ITES,5
+5,Kaul PLC,IT/ITES,2
+6,"Bala, Issac and Saini",IT/ITES,5
+7,Sen PLC,Healthcare Support,4
+8,Ahuja-Dutta,Healthcare Support,2
+9,"Sami, Oak and Mall",Healthcare Support,4
+10,Kale LLC,Healthcare Support,5
+11,Chanda Group,Healthcare Support,3
+12,Parmer LLC,Healthcare Support,1
+13,"Lalla, Bassi and Sharaf",Retail,2
+14,"Dash, Radhakrishnan and Brar",Retail,4
+15,"Memon, Pathak and Handa",Retail,3
+16,"Boase, Bath and Kari",Retail,3
+17,Buch-Kaul,Retail,2
+18,Rai LLC,Retail,2
+19,Patla-Gaba,Construction,3
+20,Pant-Kadakia,Construction,1
+21,"Loke, Bora and Garg",Construction,1
+22,"Konda, Gade and Shere",Construction,4
+23,Madan-Kanda,Construction,1
+24,"Nair, Bhalla and Karnik",Construction,3
+25,Mutti Group,Hospitality,3
+26,Bhatti-Kakar,Hospitality,5
+27,"Murty, Kala and Tata",Hospitality,3
+28,Shanker-Dhar,Hospitality,1
+29,Dewan-Koshy,Hospitality,4
+30,"Yohannan, Lall and Sangha",Hospitality,5

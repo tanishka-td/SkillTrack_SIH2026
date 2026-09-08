@@ -1,0 +1,648 @@
+reason_id,category,reason_code,reason_label,raw_text,linked_placement_id,linked_history_id
+1,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,2,
+2,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,5,
+3,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,6,4.0
+4,non_placement,low_wage,Wage offered too low,Wage offered too low,7,
+5,non_placement,low_wage,Wage offered too low,Wage offered too low,11,
+6,non_placement,further_study,Pursuing further education,Pursuing further education,12,
+7,non_placement,low_wage,Wage offered too low,Wage offered too low,18,
+8,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,19,13.0
+9,non_placement,low_wage,Wage offered too low,Wage offered too low,23,
+10,non_placement,low_wage,Wage offered too low,Wage offered too low,27,
+11,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,29,
+12,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,31,
+13,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,32,
+14,non_placement,health,Health-related reasons,Health-related reasons,34,
+15,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,36,
+16,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,37,
+17,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,38,24.0
+18,attrition,family_reasons,Family circumstances changed,Family circumstances changed,53,39.0
+19,non_placement,low_wage,Wage offered too low,Wage offered too low,56,
+20,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,58,
+21,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,59,43.0
+22,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,60,
+23,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,62,
+24,non_placement,health,Health-related reasons,Health-related reasons,66,
+25,non_placement,low_wage,Wage offered too low,Wage offered too low,69,
+26,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,71,51.0
+27,non_placement,further_study,Pursuing further education,Pursuing further education,72,
+28,non_placement,low_wage,Wage offered too low,Wage offered too low,82,
+29,non_placement,low_wage,Wage offered too low,Wage offered too low,87,
+30,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,90,67.0
+31,non_placement,health,Health-related reasons,Health-related reasons,92,
+32,attrition,health,Health-related reasons,Health-related reasons,98,74.0
+33,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,102,
+34,non_placement,low_wage,Wage offered too low,Wage offered too low,107,
+35,attrition,family_reasons,Family circumstances changed,Family circumstances changed,112,86.0
+36,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,113,
+37,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,129,102.0
+38,non_placement,low_wage,Wage offered too low,Wage offered too low,131,
+39,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,138,110.0
+40,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,144,
+41,attrition,family_reasons,Family circumstances changed,Family circumstances changed,145,116.0
+42,non_placement,low_wage,Wage offered too low,Wage offered too low,149,
+43,non_placement,further_study,Pursuing further education,Pursuing further education,153,
+44,attrition,family_reasons,Family circumstances changed,Family circumstances changed,154,123.0
+45,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,155,124.0
+46,attrition,workplace_issues,Workplace conditions / employer issues,Workplace conditions / employer issues,157,126.0
+47,attrition,family_reasons,Family circumstances changed,Family circumstances changed,159,128.0
+48,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,164,
+49,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,168,136.0
+50,attrition,family_reasons,Family circumstances changed,Family circumstances changed,171,139.0
+51,non_placement,low_wage,Wage offered too low,Wage offered too low,173,
+52,non_placement,low_wage,Wage offered too low,Wage offered too low,174,
+53,non_placement,further_study,Pursuing further education,Pursuing further education,175,
+54,attrition,family_reasons,Family circumstances changed,Family circumstances changed,181,146.0
+55,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,182,
+56,attrition,workplace_issues,Workplace conditions / employer issues,Workplace conditions / employer issues,186,150.0
+57,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,187,
+58,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,191,154.0
+59,non_placement,low_wage,Wage offered too low,Wage offered too low,194,
+60,non_placement,low_wage,Wage offered too low,Wage offered too low,196,
+61,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,200,
+62,non_placement,low_wage,Wage offered too low,Wage offered too low,202,
+63,non_placement,low_wage,Wage offered too low,Wage offered too low,206,
+64,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,209,167.0
+65,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,210,168.0
+66,non_placement,health,Health-related reasons,Health-related reasons,212,
+67,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,222,179.0
+68,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,224,
+69,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,228,
+70,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,230,
+71,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,236,190.0
+72,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,240,194.0
+73,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,245,199.0
+74,non_placement,further_study,Pursuing further education,Pursuing further education,247,
+75,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,248,
+76,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,250,202.0
+77,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,252,
+78,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,253,
+79,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,255,
+80,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,259,208.0
+81,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,269,218.0
+82,non_placement,low_wage,Wage offered too low,Wage offered too low,270,
+83,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,272,
+84,non_placement,further_study,Pursuing further education,Pursuing further education,273,
+85,non_placement,low_wage,Wage offered too low,Wage offered too low,279,
+86,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,285,
+87,attrition,family_reasons,Family circumstances changed,Family circumstances changed,286,230.0
+88,attrition,family_reasons,Family circumstances changed,Family circumstances changed,287,231.0
+89,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,289,
+90,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,292,
+91,non_placement,further_study,Pursuing further education,Pursuing further education,298,
+92,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,299,
+93,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,302,
+94,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,303,242.0
+95,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,304,
+96,non_placement,further_study,Pursuing further education,Pursuing further education,305,
+97,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,307,
+98,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,310,246.0
+99,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,313,249.0
+100,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,314,
+101,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,321,256.0
+102,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,324,259.0
+103,non_placement,further_study,Pursuing further education,Pursuing further education,327,
+104,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,331,
+105,non_placement,low_wage,Wage offered too low,Wage offered too low,339,
+106,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,359,
+107,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,360,
+108,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,361,
+109,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,362,291.0
+110,non_placement,further_study,Pursuing further education,Pursuing further education,366,
+111,non_placement,low_wage,Wage offered too low,Wage offered too low,368,
+112,non_placement,low_wage,Wage offered too low,Wage offered too low,372,
+113,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,375,301.0
+114,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,376,
+115,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,377,302.0
+116,non_placement,further_study,Pursuing further education,Pursuing further education,378,
+117,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,380,
+118,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,383,306.0
+119,non_placement,further_study,Pursuing further education,Pursuing further education,384,
+120,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,385,
+121,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,389,
+122,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,390,
+123,non_placement,low_wage,Wage offered too low,Wage offered too low,391,
+124,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,394,312.0
+125,non_placement,low_wage,Wage offered too low,Wage offered too low,395,
+126,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,396,
+127,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,397,
+128,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,399,
+129,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,400,
+130,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,401,
+131,non_placement,further_study,Pursuing further education,Pursuing further education,402,
+132,non_placement,further_study,Pursuing further education,Pursuing further education,404,
+133,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,405,
+134,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,406,
+135,non_placement,low_wage,Wage offered too low,Wage offered too low,407,
+136,non_placement,low_wage,Wage offered too low,Wage offered too low,412,
+137,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,416,322.0
+138,non_placement,low_wage,Wage offered too low,Wage offered too low,419,
+139,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,421,326.0
+140,non_placement,further_study,Pursuing further education,Pursuing further education,423,
+141,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,424,
+142,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,432,
+143,non_placement,further_study,Pursuing further education,Pursuing further education,434,
+144,non_placement,further_study,Pursuing further education,Pursuing further education,435,
+145,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,436,
+146,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,441,
+147,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,442,
+148,non_placement,low_wage,Wage offered too low,Wage offered too low,444,
+149,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,448,
+150,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,451,
+151,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,453,347.0
+152,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,455,349.0
+153,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,461,355.0
+154,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,462,
+155,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,463,
+156,non_placement,further_study,Pursuing further education,Pursuing further education,466,
+157,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,468,359.0
+158,attrition,family_reasons,Family circumstances changed,Family circumstances changed,472,363.0
+159,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,476,367.0
+160,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,477,368.0
+161,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,478,
+162,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,479,
+163,non_placement,low_wage,Wage offered too low,Wage offered too low,480,
+164,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,481,369.0
+165,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,484,
+166,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,486,373.0
+167,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,488,375.0
+168,non_placement,health,Health-related reasons,Health-related reasons,489,
+169,non_placement,low_wage,Wage offered too low,Wage offered too low,490,
+170,non_placement,health,Health-related reasons,Health-related reasons,492,
+171,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,494,
+172,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,496,
+173,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,497,379.0
+174,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,498,380.0
+175,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,499,381.0
+176,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,500,382.0
+177,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,502,
+178,non_placement,low_wage,Wage offered too low,Wage offered too low,504,
+179,non_placement,low_wage,Wage offered too low,Wage offered too low,505,
+180,non_placement,low_wage,Wage offered too low,Wage offered too low,507,
+181,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,508,
+182,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,512,389.0
+183,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,513,390.0
+184,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,514,391.0
+185,attrition,family_reasons,Family circumstances changed,Family circumstances changed,515,392.0
+186,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,516,393.0
+187,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,518,
+188,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,519,
+189,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,520,
+190,non_placement,low_wage,Wage offered too low,Wage offered too low,521,
+191,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,525,
+192,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,528,
+193,non_placement,low_wage,Wage offered too low,Wage offered too low,529,
+194,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,532,402.0
+195,non_placement,low_wage,Wage offered too low,Wage offered too low,535,
+196,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,540,
+197,non_placement,low_wage,Wage offered too low,Wage offered too low,542,
+198,non_placement,low_wage,Wage offered too low,Wage offered too low,547,
+199,non_placement,low_wage,Wage offered too low,Wage offered too low,549,
+200,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,550,
+201,non_placement,further_study,Pursuing further education,Pursuing further education,551,
+202,non_placement,low_wage,Wage offered too low,Wage offered too low,556,
+203,non_placement,low_wage,Wage offered too low,Wage offered too low,557,
+204,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,560,
+205,non_placement,low_wage,Wage offered too low,Wage offered too low,563,
+206,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,564,
+207,attrition,workplace_issues,Workplace conditions / employer issues,Workplace conditions / employer issues,566,424.0
+208,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,567,
+209,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,577,434.0
+210,non_placement,further_study,Pursuing further education,Pursuing further education,580,
+211,non_placement,low_wage,Wage offered too low,Wage offered too low,582,
+212,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,587,
+213,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,588,442.0
+214,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,589,443.0
+215,non_placement,low_wage,Wage offered too low,Wage offered too low,590,
+216,non_placement,further_study,Pursuing further education,Pursuing further education,592,
+217,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,595,447.0
+218,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,596,
+219,non_placement,further_study,Pursuing further education,Pursuing further education,598,
+220,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,599,
+221,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,600,
+222,non_placement,further_study,Pursuing further education,Pursuing further education,601,
+223,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,603,
+224,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,605,
+225,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,606,
+226,non_placement,further_study,Pursuing further education,Pursuing further education,607,
+227,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,609,
+228,non_placement,low_wage,Wage offered too low,Wage offered too low,611,
+229,non_placement,further_study,Pursuing further education,Pursuing further education,614,
+230,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,616,
+231,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,618,
+232,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,619,
+233,non_placement,further_study,Pursuing further education,Pursuing further education,620,
+234,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,625,
+235,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,627,462.0
+236,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,628,463.0
+237,non_placement,low_wage,Wage offered too low,Wage offered too low,629,
+238,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,633,467.0
+239,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,634,
+240,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,637,470.0
+241,non_placement,low_wage,Wage offered too low,Wage offered too low,638,
+242,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,639,471.0
+243,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,640,
+244,non_placement,low_wage,Wage offered too low,Wage offered too low,643,
+245,non_placement,low_wage,Wage offered too low,Wage offered too low,644,
+246,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,649,
+247,non_placement,low_wage,Wage offered too low,Wage offered too low,650,
+248,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,652,
+249,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,654,
+250,non_placement,low_wage,Wage offered too low,Wage offered too low,656,
+251,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,657,
+252,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,662,
+253,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,663,
+254,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,664,
+255,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,665,
+256,non_placement,further_study,Pursuing further education,Pursuing further education,667,
+257,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,668,
+258,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,669,486.0
+259,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,674,
+260,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,675,
+261,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,679,
+262,non_placement,low_wage,Wage offered too low,Wage offered too low,680,
+263,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,685,498.0
+264,attrition,family_reasons,Family circumstances changed,Family circumstances changed,691,504.0
+265,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,692,
+266,non_placement,low_wage,Wage offered too low,Wage offered too low,693,
+267,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,696,
+268,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,699,
+269,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,701,510.0
+270,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,702,
+271,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,704,
+272,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,706,
+273,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,707,
+274,attrition,workplace_issues,Workplace conditions / employer issues,Workplace conditions / employer issues,709,514.0
+275,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,710,
+276,non_placement,low_wage,Wage offered too low,Wage offered too low,712,
+277,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,715,
+278,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,718,
+279,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,719,
+280,attrition,family_reasons,Family circumstances changed,Family circumstances changed,721,521.0
+281,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,722,
+282,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,725,
+283,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,726,
+284,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,727,
+285,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,729,525.0
+286,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,730,
+287,non_placement,low_wage,Wage offered too low,Wage offered too low,736,
+288,non_placement,further_study,Pursuing further education,Pursuing further education,737,
+289,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,739,
+290,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,741,
+291,non_placement,health,Health-related reasons,Health-related reasons,742,
+292,non_placement,low_wage,Wage offered too low,Wage offered too low,743,
+293,non_placement,low_wage,Wage offered too low,Wage offered too low,746,
+294,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,748,
+295,attrition,family_reasons,Family circumstances changed,Family circumstances changed,749,536.0
+296,non_placement,low_wage,Wage offered too low,Wage offered too low,750,
+297,non_placement,further_study,Pursuing further education,Pursuing further education,751,
+298,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,755,
+299,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,758,
+300,non_placement,health,Health-related reasons,Health-related reasons,761,
+301,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,762,
+302,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,763,544.0
+303,non_placement,further_study,Pursuing further education,Pursuing further education,764,
+304,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,765,
+305,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,768,547.0
+306,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,771,
+307,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,774,552.0
+308,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,775,
+309,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,776,
+310,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,777,553.0
+311,attrition,family_reasons,Family circumstances changed,Family circumstances changed,780,556.0
+312,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,781,
+313,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,782,557.0
+314,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,784,
+315,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,789,
+316,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,790,563.0
+317,non_placement,low_wage,Wage offered too low,Wage offered too low,794,
+318,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,796,
+319,non_placement,low_wage,Wage offered too low,Wage offered too low,799,
+320,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,801,
+321,non_placement,low_wage,Wage offered too low,Wage offered too low,802,
+322,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,804,
+323,non_placement,low_wage,Wage offered too low,Wage offered too low,805,
+324,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,807,
+325,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,809,574.0
+326,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,814,
+327,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,815,
+328,non_placement,further_study,Pursuing further education,Pursuing further education,816,
+329,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,818,
+330,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,819,
+331,non_placement,low_wage,Wage offered too low,Wage offered too low,821,
+332,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,822,
+333,non_placement,low_wage,Wage offered too low,Wage offered too low,824,
+334,non_placement,low_wage,Wage offered too low,Wage offered too low,825,
+335,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,827,583.0
+336,non_placement,further_study,Pursuing further education,Pursuing further education,828,
+337,non_placement,further_study,Pursuing further education,Pursuing further education,829,
+338,non_placement,low_wage,Wage offered too low,Wage offered too low,830,
+339,attrition,family_reasons,Family circumstances changed,Family circumstances changed,831,584.0
+340,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,832,585.0
+341,non_placement,low_wage,Wage offered too low,Wage offered too low,834,
+342,non_placement,further_study,Pursuing further education,Pursuing further education,835,
+343,non_placement,low_wage,Wage offered too low,Wage offered too low,837,
+344,non_placement,further_study,Pursuing further education,Pursuing further education,838,
+345,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,842,591.0
+346,non_placement,low_wage,Wage offered too low,Wage offered too low,844,
+347,non_placement,low_wage,Wage offered too low,Wage offered too low,846,
+348,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,848,595.0
+349,attrition,family_reasons,Family circumstances changed,Family circumstances changed,851,598.0
+350,non_placement,health,Health-related reasons,Health-related reasons,858,
+351,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,859,605.0
+352,non_placement,low_wage,Wage offered too low,Wage offered too low,864,
+353,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,866,611.0
+354,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,869,614.0
+355,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,870,
+356,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,874,
+357,attrition,family_reasons,Family circumstances changed,Family circumstances changed,878,621.0
+358,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,879,622.0
+359,non_placement,low_wage,Wage offered too low,Wage offered too low,882,
+360,non_placement,health,Health-related reasons,Health-related reasons,885,
+361,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,888,
+362,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,889,
+363,non_placement,low_wage,Wage offered too low,Wage offered too low,890,
+364,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,892,630.0
+365,non_placement,low_wage,Wage offered too low,Wage offered too low,893,
+366,non_placement,low_wage,Wage offered too low,Wage offered too low,894,
+367,non_placement,low_wage,Wage offered too low,Wage offered too low,897,
+368,non_placement,further_study,Pursuing further education,Pursuing further education,899,
+369,non_placement,low_wage,Wage offered too low,Wage offered too low,901,
+370,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,904,
+371,non_placement,low_wage,Wage offered too low,Wage offered too low,907,
+372,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,908,
+373,attrition,family_reasons,Family circumstances changed,Family circumstances changed,911,641.0
+374,non_placement,health,Health-related reasons,Health-related reasons,912,
+375,non_placement,low_wage,Wage offered too low,Wage offered too low,914,
+376,non_placement,health,Health-related reasons,Health-related reasons,915,
+377,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,917,
+378,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,919,
+379,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,920,
+380,non_placement,low_wage,Wage offered too low,Wage offered too low,921,
+381,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,922,
+382,non_placement,health,Health-related reasons,Health-related reasons,923,
+383,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,925,
+384,non_placement,low_wage,Wage offered too low,Wage offered too low,926,
+385,non_placement,low_wage,Wage offered too low,Wage offered too low,928,
+386,non_placement,low_wage,Wage offered too low,Wage offered too low,929,
+387,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,930,647.0
+388,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,934,651.0
+389,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,939,656.0
+390,non_placement,low_wage,Wage offered too low,Wage offered too low,940,
+391,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,941,657.0
+392,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,942,
+393,attrition,health,Health-related reasons,Health-related reasons,946,661.0
+394,non_placement,health,Health-related reasons,Health-related reasons,948,
+395,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,950,
+396,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,955,
+397,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,956,
+398,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,959,670.0
+399,non_placement,low_wage,Wage offered too low,Wage offered too low,961,
+400,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,962,
+401,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,965,
+402,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,967,
+403,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,972,
+404,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,974,
+405,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,975,
+406,non_placement,low_wage,Wage offered too low,Wage offered too low,980,
+407,non_placement,low_wage,Wage offered too low,Wage offered too low,981,
+408,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,983,
+409,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,984,
+410,non_placement,low_wage,Wage offered too low,Wage offered too low,985,
+411,non_placement,low_wage,Wage offered too low,Wage offered too low,989,
+412,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,990,
+413,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,992,
+414,non_placement,low_wage,Wage offered too low,Wage offered too low,994,
+415,non_placement,low_wage,Wage offered too low,Wage offered too low,995,
+416,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,996,
+417,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,997,
+418,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,999,
+419,non_placement,low_wage,Wage offered too low,Wage offered too low,1000,
+420,attrition,family_reasons,Family circumstances changed,Family circumstances changed,1001,691.0
+421,non_placement,low_wage,Wage offered too low,Wage offered too low,1004,
+422,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1007,
+423,non_placement,low_wage,Wage offered too low,Wage offered too low,1008,
+424,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1009,
+425,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1010,
+426,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1012,
+427,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1014,
+428,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1016,
+429,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,1017,699.0
+430,non_placement,low_wage,Wage offered too low,Wage offered too low,1018,
+431,attrition,family_reasons,Family circumstances changed,Family circumstances changed,1019,700.0
+432,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1020,
+433,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1022,
+434,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1023,
+435,non_placement,low_wage,Wage offered too low,Wage offered too low,1024,
+436,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1025,702.0
+437,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1026,
+438,non_placement,health,Health-related reasons,Health-related reasons,1027,
+439,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1028,703.0
+440,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1029,
+441,non_placement,low_wage,Wage offered too low,Wage offered too low,1030,
+442,attrition,workplace_issues,Workplace conditions / employer issues,Workplace conditions / employer issues,1037,710.0
+443,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1038,
+444,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1040,
+445,non_placement,health,Health-related reasons,Health-related reasons,1041,
+446,non_placement,further_study,Pursuing further education,Pursuing further education,1043,
+447,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,1046,715.0
+448,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1047,716.0
+449,non_placement,low_wage,Wage offered too low,Wage offered too low,1049,
+450,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1052,720.0
+451,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1053,721.0
+452,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1055,723.0
+453,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1056,
+454,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1057,724.0
+455,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1058,
+456,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1061,
+457,non_placement,further_study,Pursuing further education,Pursuing further education,1062,
+458,non_placement,low_wage,Wage offered too low,Wage offered too low,1067,
+459,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1068,
+460,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1072,
+461,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1073,
+462,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1074,
+463,non_placement,further_study,Pursuing further education,Pursuing further education,1075,
+464,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1076,
+465,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1079,
+466,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1080,
+467,non_placement,low_wage,Wage offered too low,Wage offered too low,1083,
+468,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1085,
+469,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1087,
+470,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,1090,742.0
+471,non_placement,health,Health-related reasons,Health-related reasons,1091,
+472,non_placement,further_study,Pursuing further education,Pursuing further education,1092,
+473,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1094,744.0
+474,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1095,
+475,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1097,
+476,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1098,
+477,non_placement,low_wage,Wage offered too low,Wage offered too low,1099,
+478,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1100,
+479,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1101,
+480,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1102,
+481,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1103,
+482,non_placement,further_study,Pursuing further education,Pursuing further education,1104,
+483,non_placement,low_wage,Wage offered too low,Wage offered too low,1105,
+484,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1106,
+485,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1107,
+486,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1109,747.0
+487,non_placement,low_wage,Wage offered too low,Wage offered too low,1112,
+488,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1115,752.0
+489,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1118,
+490,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1119,
+491,non_placement,further_study,Pursuing further education,Pursuing further education,1120,
+492,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,1121,755.0
+493,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1122,
+494,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1125,
+495,non_placement,low_wage,Wage offered too low,Wage offered too low,1126,
+496,non_placement,further_study,Pursuing further education,Pursuing further education,1128,
+497,non_placement,low_wage,Wage offered too low,Wage offered too low,1129,
+498,non_placement,further_study,Pursuing further education,Pursuing further education,1130,
+499,non_placement,low_wage,Wage offered too low,Wage offered too low,1131,
+500,non_placement,low_wage,Wage offered too low,Wage offered too low,1135,
+501,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1136,
+502,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1137,
+503,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1138,
+504,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1139,
+505,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1140,
+506,non_placement,low_wage,Wage offered too low,Wage offered too low,1141,
+507,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1142,
+508,non_placement,further_study,Pursuing further education,Pursuing further education,1144,
+509,non_placement,health,Health-related reasons,Health-related reasons,1145,
+510,non_placement,further_study,Pursuing further education,Pursuing further education,1146,
+511,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1147,
+512,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1149,
+513,non_placement,health,Health-related reasons,Health-related reasons,1150,
+514,non_placement,low_wage,Wage offered too low,Wage offered too low,1151,
+515,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1152,764.0
+516,non_placement,low_wage,Wage offered too low,Wage offered too low,1154,
+517,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1155,
+518,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1156,
+519,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1158,
+520,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1159,
+521,non_placement,low_wage,Wage offered too low,Wage offered too low,1160,
+522,attrition,health,Health-related reasons,Health-related reasons,1163,769.0
+523,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1164,
+524,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1166,
+525,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1167,
+526,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1171,
+527,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1172,
+528,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1177,
+529,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1179,
+530,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1181,
+531,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1182,
+532,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1183,780.0
+533,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1184,
+534,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,1185,781.0
+535,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1188,
+536,non_placement,low_wage,Wage offered too low,Wage offered too low,1189,
+537,non_placement,low_wage,Wage offered too low,Wage offered too low,1192,
+538,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,1193,786.0
+539,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1200,
+540,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1202,
+541,non_placement,low_wage,Wage offered too low,Wage offered too low,1203,
+542,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1204,
+543,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1205,
+544,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1206,
+545,non_placement,further_study,Pursuing further education,Pursuing further education,1207,
+546,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1209,
+547,attrition,family_reasons,Family circumstances changed,Family circumstances changed,1212,797.0
+548,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1213,
+549,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1214,
+550,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1216,
+551,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1217,799.0
+552,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1219,
+553,non_placement,low_wage,Wage offered too low,Wage offered too low,1221,
+554,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1222,
+555,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1223,
+556,attrition,health,Health-related reasons,Health-related reasons,1225,803.0
+557,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1226,
+558,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1227,
+559,non_placement,health,Health-related reasons,Health-related reasons,1228,
+560,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1229,
+561,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1230,
+562,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1231,804.0
+563,non_placement,low_wage,Wage offered too low,Wage offered too low,1232,
+564,non_placement,further_study,Pursuing further education,Pursuing further education,1234,
+565,attrition,family_reasons,Family circumstances changed,Family circumstances changed,1235,806.0
+566,non_placement,low_wage,Wage offered too low,Wage offered too low,1236,
+567,non_placement,further_study,Pursuing further education,Pursuing further education,1237,
+568,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1239,
+569,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1240,808.0
+570,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1241,809.0
+571,non_placement,further_study,Pursuing further education,Pursuing further education,1244,
+572,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1245,
+573,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1246,
+574,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1250,
+575,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1251,
+576,non_placement,low_wage,Wage offered too low,Wage offered too low,1252,
+577,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1253,815.0
+578,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1254,
+579,non_placement,low_wage,Wage offered too low,Wage offered too low,1256,
+580,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,1257,817.0
+581,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1259,
+582,non_placement,low_wage,Wage offered too low,Wage offered too low,1260,
+583,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1263,
+584,attrition,workplace_issues,Workplace conditions / employer issues,Workplace conditions / employer issues,1264,821.0
+585,non_placement,low_wage,Wage offered too low,Wage offered too low,1265,
+586,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1266,
+587,non_placement,low_wage,Wage offered too low,Wage offered too low,1267,
+588,non_placement,further_study,Pursuing further education,Pursuing further education,1269,
+589,attrition,family_reasons,Family circumstances changed,Family circumstances changed,1270,823.0
+590,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1271,
+591,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1273,
+592,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1275,
+593,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1276,
+594,non_placement,low_wage,Wage offered too low,Wage offered too low,1277,
+595,non_placement,further_study,Pursuing further education,Pursuing further education,1279,
+596,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1281,
+597,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1282,
+598,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,1283,828.0
+599,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1284,
+600,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1285,
+601,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1287,
+602,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1288,
+603,attrition,family_reasons,Family circumstances changed,Family circumstances changed,1291,832.0
+604,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1292,
+605,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1296,
+606,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1298,
+607,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1299,
+608,non_placement,low_wage,Wage offered too low,Wage offered too low,1300,
+609,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1301,
+610,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1305,
+611,non_placement,low_wage,Wage offered too low,Wage offered too low,1306,
+612,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1307,840.0
+613,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1309,842.0
+614,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1311,
+615,non_placement,low_wage,Wage offered too low,Wage offered too low,1312,
+616,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1314,
+617,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1315,
+618,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1316,
+619,non_placement,low_wage,Wage offered too low,Wage offered too low,1317,
+620,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1318,
+621,non_placement,further_study,Pursuing further education,Pursuing further education,1320,
+622,non_placement,low_wage,Wage offered too low,Wage offered too low,1324,
+623,attrition,low_wage,Left due to low wage relative to workload,Left due to low wage relative to workload,1327,851.0
+624,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1328,
+625,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1330,
+626,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1331,
+627,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1334,
+628,attrition,location_mismatch,Commute / relocation issues,Commute / relocation issues,1335,855.0
+629,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1339,859.0
+630,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1341,
+631,non_placement,low_wage,Wage offered too low,Wage offered too low,1343,
+632,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1344,
+633,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1346,
+634,non_placement,low_wage,Wage offered too low,Wage offered too low,1347,
+635,attrition,better_opportunity,Moved to a better opportunity,Moved to a better opportunity,1348,863.0
+636,non_placement,health,Health-related reasons,Health-related reasons,1349,
+637,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1350,
+638,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1352,
+639,non_placement,family_reasons,Family responsibilities / not permitted to work,Family responsibilities / not permitted to work,1357,
+640,non_placement,no_jobs_available,No suitable openings in area,No suitable openings in area,1359,
+641,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1360,
+642,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1361,
+643,non_placement,low_wage,Wage offered too low,Wage offered too low,1364,
+644,attrition,skill_mismatch,Job did not match trained skillset,Job did not match trained skillset,1365,872.0
+645,non_placement,skill_mismatch,Felt underprepared / skill mismatch,Felt underprepared / skill mismatch,1369,
+646,attrition,health,Health-related reasons,Health-related reasons,1370,876.0
+647,non_placement,location_mismatch,Job location too far / relocation not feasible,Job location too far / relocation not feasible,1373,

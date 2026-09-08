@@ -32,7 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-engine = get_engine("data/skilling_outcomes.db")
+engine = get_engine("data/skilling_outcomes_demo.db")
 API_KEY = os.environ.get("ANALYTICS_API_KEY")  # set this in deployment; None = auth disabled (dev only)
 
 

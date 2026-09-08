@@ -178,11 +178,11 @@ class Reason(Base):
     linked_history_id = Column(Integer, ForeignKey("employment_history.history_id"), nullable=True)
 
 
-def get_engine(db_path="data/skilling_outcomes.db"):
+def get_engine(db_path="data/skilling_outcomes_demo.db"):
     return create_engine(f"sqlite:///{db_path}")
 
 
-def init_db(db_path="data/skilling_outcomes.db"):
+def init_db(db_path="data/skilling_outcomes_demo.db"):
     engine = get_engine(db_path)
     Base.metadata.create_all(engine)
     return engine
@@ -190,4 +190,4 @@ def init_db(db_path="data/skilling_outcomes.db"):
 
 if __name__ == "__main__":
     engine = init_db()
-    print("Schema created at data/skilling_outcomes.db")
+    print("Schema created at data/skilling_outcomes_demo.db")

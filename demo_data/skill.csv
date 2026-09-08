@@ -1,0 +1,27 @@
+skill_id,skill_name,skill_category
+1,MS Excel,IT/ITES
+2,Data Entry,IT/ITES
+3,Basic SQL,IT/ITES
+4,Communication,IT/ITES
+5,CRM Tools,IT/ITES
+6,HTML/CSS,IT/ITES
+7,Troubleshooting,IT/ITES
+8,Patient Care,Healthcare Support
+9,First Aid,Healthcare Support
+10,Vitals Monitoring,Healthcare Support
+11,Hygiene Protocols,Healthcare Support
+12,POS Systems,Retail
+13,Customer Service,Retail
+14,Inventory Management,Retail
+15,Masonry,Construction
+16,Wiring Basics,Construction
+17,Safety Protocols,Construction
+18,Tool Handling,Construction
+19,Housekeeping,Hospitality
+20,Guest Service,Hospitality
+21,Food Safety,Hospitality
+22,IT/ITES - Digital Tools (emerging),IT/ITES
+23,Healthcare Support - Digital Tools (emerging),Healthcare Support
+24,Retail - Digital Tools (emerging),Retail
+25,Construction - Digital Tools (emerging),Construction
+26,Hospitality - Digital Tools (emerging),Hospitality

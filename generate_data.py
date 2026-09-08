@@ -352,7 +352,7 @@ def generate_trainees_and_outcomes(session, cohorts, districts, skills_by_name, 
 
 
 def main():
-    engine = init_db("data/skilling_outcomes.db")
+    engine = init_db("data/skilling_outcomes_demo.db")
     Session = sessionmaker(bind=engine)
     session = Session()
 
@@ -362,7 +362,7 @@ def main():
     session.commit()
     generate_trainees_and_outcomes(session, cohorts, districts, skills_by_name, weak_provider, employers)
 
-    print("Synthetic dataset generated at data/skilling_outcomes.db")
+    print("Synthetic dataset generated at data/skilling_outcomes_demo.db")
     print(f"  Districts: {len(districts)}, Providers: {len(providers)}, Courses: {len(courses)}, Cohorts: {len(cohorts)}")
     print(f"  Weak provider (deliberately lower placement rate): {weak_provider.provider_name}")
 

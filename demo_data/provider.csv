@@ -1,0 +1,11 @@
+provider_id,provider_name,district_id,provider_type
+1,Gautam Buddh Nagar Skill Centre 1,1,ngo
+2,Ghaziabad Skill Centre 2,2,ngo
+3,Gurugram Skill Centre 3,3,govt
+4,Faridabad Skill Centre 4,4,ngo
+5,Jaipur Skill Centre 5,5,private
+6,Gautam Buddh Nagar Skill Centre 6,1,govt
+7,Ghaziabad Skill Centre 7,2,govt
+8,Gurugram Skill Centre 8,3,govt
+9,Faridabad Skill Centre 9,4,govt
+10,Jaipur Skill Centre 10,5,govt

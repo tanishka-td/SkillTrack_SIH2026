@@ -1,0 +1,1374 @@
+placement_id,trainee_id,training_id,placement_type,employer_id,job_title,job_sector,start_date,source,verification_status,non_placement_reason_text
+1,1,1,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-06-14,dashboard,confirmed,
+2,2,2,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+3,3,3,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-06-07,dashboard,unverified,
+4,4,4,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-06-29,dashboard,unverified,
+5,5,5,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+6,6,6,wage_employment,4.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-04-27,dashboard,unverified,
+7,7,7,not_placed,,,,,dashboard,unverified,Wage offered too low
+8,8,8,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-05-27,dashboard,confirmed,
+9,9,9,self_employment,,IT/ITES Associate,IT/ITES,2025-06-26,dashboard,confirmed,
+10,10,10,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-05-29,dashboard,unverified,
+11,11,11,not_placed,,,,,dashboard,unverified,Wage offered too low
+12,12,12,not_placed,,,,,dashboard,unverified,Pursuing further education
+13,13,13,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-06-05,dashboard,confirmed,
+14,14,14,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-05-19,dashboard,confirmed,
+15,15,15,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-06-28,dashboard,unverified,
+16,16,16,wage_employment,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-06-01,dashboard,confirmed,
+17,17,17,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-04-21,dashboard,unverified,
+18,18,18,not_placed,,,,,dashboard,unverified,Wage offered too low
+19,19,19,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-06-29,dashboard,confirmed,
+20,20,20,wage_employment,6.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-06-11,dashboard,unverified,
+21,22,22,apprenticeship,2.0,IT/ITES Associate,IT/ITES,2025-04-23,dashboard,unverified,
+22,23,23,apprenticeship,1.0,IT/ITES Associate,IT/ITES,2025-06-04,dashboard,unverified,
+23,24,24,not_placed,,,,,dashboard,unverified,Wage offered too low
+24,25,25,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-06-03,dashboard,confirmed,
+25,26,26,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-05-23,dashboard,confirmed,
+26,27,27,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-05-14,dashboard,disputed,
+27,28,28,not_placed,,,,,dashboard,unverified,Wage offered too low
+28,29,29,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-06-20,dashboard,confirmed,
+29,30,30,not_placed,,,,,dashboard,unverified,No suitable openings in area
+30,31,31,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-04-26,dashboard,unverified,
+31,32,32,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+32,33,33,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+33,34,34,self_employment,,IT/ITES Associate,IT/ITES,2025-06-16,dashboard,unverified,
+34,35,35,not_placed,,,,,dashboard,unverified,Health-related reasons
+35,36,36,self_employment,,IT/ITES Associate,IT/ITES,2025-04-29,dashboard,confirmed,
+36,37,37,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+37,38,38,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+38,40,40,self_employment,,IT/ITES Associate,IT/ITES,2025-06-28,dashboard,confirmed,
+39,41,41,self_employment,,IT/ITES Associate,IT/ITES,2025-05-14,dashboard,unverified,
+40,42,42,wage_employment,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-06-05,dashboard,confirmed,
+41,43,43,wage_employment,4.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-04-25,dashboard,confirmed,
+42,44,44,self_employment,,IT/ITES Associate,IT/ITES,2025-06-10,dashboard,confirmed,
+43,45,45,apprenticeship,1.0,IT/ITES Associate,IT/ITES,2025-05-03,dashboard,confirmed,
+44,47,47,self_employment,,IT/ITES Associate,IT/ITES,2025-05-22,dashboard,confirmed,
+45,48,48,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-06-06,dashboard,unverified,
+46,49,49,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-05-03,dashboard,unverified,
+47,50,50,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-06-14,dashboard,unverified,
+48,52,52,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-04-24,dashboard,confirmed,
+49,53,53,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-05-27,dashboard,unverified,
+50,55,55,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-06-13,dashboard,confirmed,
+51,56,56,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-05-09,dashboard,confirmed,
+52,57,57,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-05-27,dashboard,unverified,
+53,58,58,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-06-09,dashboard,confirmed,
+54,59,59,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-06-02,dashboard,unverified,
+55,60,60,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-05-11,dashboard,confirmed,
+56,61,61,not_placed,,,,,dashboard,unverified,Wage offered too low
+57,62,62,self_employment,,IT/ITES Associate,IT/ITES,2025-05-06,dashboard,confirmed,
+58,63,63,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+59,64,64,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-06-27,dashboard,confirmed,
+60,65,65,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+61,66,66,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-04-23,dashboard,confirmed,
+62,67,67,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+63,68,68,self_employment,,IT/ITES Associate,IT/ITES,2025-05-25,dashboard,unverified,
+64,69,69,self_employment,,IT/ITES Associate,IT/ITES,2025-03-10,dashboard,unverified,
+65,70,70,wage_employment,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-11,dashboard,confirmed,
+66,71,71,not_placed,,,,,dashboard,unverified,Health-related reasons
+67,72,72,apprenticeship,6.0,IT/ITES Associate,IT/ITES,2025-02-15,dashboard,unverified,
+68,73,73,self_employment,,IT/ITES Associate,IT/ITES,2025-04-04,dashboard,unverified,
+69,74,74,not_placed,,,,,dashboard,unverified,Wage offered too low
+70,75,75,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-04-03,dashboard,confirmed,
+71,76,76,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-01-30,dashboard,unverified,
+72,77,77,not_placed,,,,,dashboard,unverified,Pursuing further education
+73,79,79,self_employment,,IT/ITES Associate,IT/ITES,2025-02-08,dashboard,confirmed,
+74,80,80,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-01-26,dashboard,confirmed,
+75,81,81,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-03-25,dashboard,unverified,
+76,82,82,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-27,dashboard,confirmed,
+77,83,83,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-04-01,dashboard,confirmed,
+78,84,84,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-01-28,dashboard,unverified,
+79,85,85,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-02-16,dashboard,confirmed,
+80,86,86,apprenticeship,6.0,IT/ITES Associate,IT/ITES,2025-03-04,dashboard,unverified,
+81,88,88,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-02-19,dashboard,unverified,
+82,89,89,not_placed,,,,,dashboard,unverified,Wage offered too low
+83,90,90,apprenticeship,4.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-13,dashboard,confirmed,
+84,91,91,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-02-17,dashboard,unverified,
+85,92,92,apprenticeship,2.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-05,dashboard,unverified,
+86,93,93,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-03-25,dashboard,confirmed,
+87,94,94,not_placed,,,,,dashboard,unverified,Wage offered too low
+88,95,95,apprenticeship,2.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-17,dashboard,disputed,
+89,96,96,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-04-04,dashboard,unverified,
+90,97,97,self_employment,,IT/ITES Associate,IT/ITES,2025-01-30,dashboard,unverified,
+91,98,98,apprenticeship,2.0,IT/ITES Associate,IT/ITES,2025-02-06,dashboard,confirmed,
+92,100,100,not_placed,,,,,dashboard,unverified,Health-related reasons
+93,101,101,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-02-28,dashboard,unverified,
+94,103,103,self_employment,,IT/ITES Associate,IT/ITES,2025-03-22,dashboard,confirmed,
+95,104,104,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-02-06,dashboard,confirmed,
+96,105,105,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-23,dashboard,confirmed,
+97,106,106,apprenticeship,2.0,IT/ITES Associate,IT/ITES,2025-04-03,dashboard,confirmed,
+98,107,107,wage_employment,6.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-18,dashboard,confirmed,
+99,109,109,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-02-12,dashboard,confirmed,
+100,110,110,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-03-19,dashboard,disputed,
+101,111,111,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-02-07,dashboard,confirmed,
+102,112,112,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+103,113,113,self_employment,,IT/ITES Associate,IT/ITES,2025-03-17,dashboard,unverified,
+104,114,114,self_employment,,IT/ITES Associate,IT/ITES,2025-02-24,dashboard,confirmed,
+105,115,115,apprenticeship,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-05,dashboard,confirmed,
+106,117,117,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-01-24,dashboard,confirmed,
+107,118,118,not_placed,,,,,dashboard,unverified,Wage offered too low
+108,119,119,self_employment,,IT/ITES Associate,IT/ITES,2025-02-14,dashboard,unverified,
+109,120,120,self_employment,,IT/ITES Associate,IT/ITES,2025-02-10,dashboard,confirmed,
+110,121,121,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-03-01,dashboard,unverified,
+111,122,122,self_employment,,IT/ITES Associate,IT/ITES,2025-03-25,dashboard,confirmed,
+112,123,123,self_employment,,IT/ITES Associate,IT/ITES,2025-02-01,dashboard,confirmed,
+113,124,124,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+114,125,125,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-03-07,dashboard,confirmed,
+115,126,126,apprenticeship,1.0,IT/ITES Associate,IT/ITES,2025-04-04,dashboard,unverified,
+116,128,128,self_employment,,IT/ITES Associate,IT/ITES,2025-02-18,dashboard,unverified,
+117,129,129,self_employment,,IT/ITES Associate,IT/ITES,2025-03-12,dashboard,confirmed,
+118,130,130,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-22,dashboard,confirmed,
+119,131,131,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-02-09,dashboard,confirmed,
+120,132,132,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-02,dashboard,confirmed,
+121,133,133,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-01-31,dashboard,confirmed,
+122,134,134,apprenticeship,5.0,IT/ITES Associate,IT/ITES,2025-02-11,dashboard,disputed,
+123,135,135,self_employment,,IT/ITES Associate,IT/ITES,2025-03-11,dashboard,disputed,
+124,136,136,apprenticeship,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-01-28,dashboard,confirmed,
+125,137,137,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-05-26,dashboard,confirmed,
+126,138,138,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-05-17,dashboard,unverified,
+127,139,139,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-06-04,dashboard,confirmed,
+128,140,140,apprenticeship,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-05-03,dashboard,unverified,
+129,141,141,apprenticeship,4.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-04-29,dashboard,disputed,
+130,142,142,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-04-23,dashboard,unverified,
+131,144,144,not_placed,,,,,dashboard,unverified,Wage offered too low
+132,145,145,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-06-05,dashboard,unverified,
+133,146,146,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-06-13,dashboard,unverified,
+134,147,147,self_employment,,IT/ITES Associate,IT/ITES,2025-05-13,dashboard,confirmed,
+135,148,148,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-05-07,dashboard,unverified,
+136,149,149,apprenticeship,2.0,IT/ITES Associate,IT/ITES,2025-05-17,dashboard,unverified,
+137,150,150,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-04-13,dashboard,confirmed,
+138,151,151,self_employment,,IT/ITES Associate,IT/ITES,2025-06-05,dashboard,unverified,
+139,152,152,self_employment,,IT/ITES Associate,IT/ITES,2025-05-18,dashboard,unverified,
+140,153,153,wage_employment,6.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-04-08,dashboard,unverified,
+141,154,154,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-06-08,dashboard,unverified,
+142,155,155,apprenticeship,6.0,IT/ITES Associate,IT/ITES,2025-05-03,dashboard,confirmed,
+143,156,156,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-04-27,dashboard,confirmed,
+144,157,157,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+145,159,159,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-05-05,dashboard,confirmed,
+146,160,160,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-05-22,dashboard,confirmed,
+147,161,161,self_employment,,IT/ITES Associate,IT/ITES,2025-05-02,dashboard,unverified,
+148,162,162,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-04-28,dashboard,confirmed,
+149,163,163,not_placed,,,,,dashboard,unverified,Wage offered too low
+150,164,164,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-05-17,dashboard,disputed,
+151,165,165,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-05-27,dashboard,unverified,
+152,166,166,self_employment,,IT/ITES Associate,IT/ITES,2025-05-10,dashboard,confirmed,
+153,167,167,not_placed,,,,,dashboard,unverified,Pursuing further education
+154,168,168,self_employment,,IT/ITES Associate,IT/ITES,2025-04-04,dashboard,confirmed,
+155,169,169,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-05-16,dashboard,disputed,
+156,171,171,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-04-16,dashboard,unverified,
+157,173,173,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-04-06,dashboard,confirmed,
+158,174,174,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-04-21,dashboard,unverified,
+159,175,175,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-06-08,dashboard,confirmed,
+160,176,176,apprenticeship,3.0,IT/ITES Associate,IT/ITES,2025-04-20,dashboard,confirmed,
+161,177,177,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-04-17,dashboard,unverified,
+162,178,178,self_employment,,IT/ITES Associate,IT/ITES,2025-05-11,dashboard,confirmed,
+163,179,179,wage_employment,1.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-04-30,dashboard,confirmed,
+164,180,180,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+165,181,181,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-04-27,dashboard,unverified,
+166,182,182,apprenticeship,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-05-25,dashboard,confirmed,
+167,183,183,self_employment,,IT/ITES Associate,IT/ITES,2025-06-07,dashboard,unverified,
+168,184,184,self_employment,,IT/ITES Associate,IT/ITES,2025-04-16,dashboard,unverified,
+169,185,185,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-05-28,dashboard,unverified,
+170,186,186,self_employment,,IT/ITES Associate,IT/ITES,2025-04-10,dashboard,confirmed,
+171,187,187,self_employment,,IT/ITES Associate,IT/ITES,2025-05-10,dashboard,confirmed,
+172,188,188,apprenticeship,4.0,IT/ITES Associate,IT/ITES,2025-05-25,dashboard,confirmed,
+173,189,189,not_placed,,,,,dashboard,unverified,Wage offered too low
+174,190,190,not_placed,,,,,dashboard,unverified,Wage offered too low
+175,192,192,not_placed,,,,,dashboard,unverified,Pursuing further education
+176,193,193,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-05-19,dashboard,unverified,
+177,194,194,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-04-26,dashboard,unverified,
+178,195,195,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-05-03,dashboard,unverified,
+179,196,196,wage_employment,3.0,IT/ITES Associate,IT/ITES,2025-05-07,dashboard,confirmed,
+180,197,197,apprenticeship,1.0,IT/ITES Associate,IT/ITES,2025-04-24,dashboard,confirmed,
+181,199,199,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-05-23,dashboard,confirmed,
+182,200,200,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+183,201,201,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-05-03,dashboard,confirmed,
+184,202,202,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-05-23,dashboard,unverified,
+185,203,203,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-06-11,dashboard,confirmed,
+186,204,204,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-04-19,dashboard,disputed,
+187,205,205,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+188,206,206,wage_employment,2.0,IT/ITES Associate,IT/ITES,2024-10-13,dashboard,unverified,
+189,207,207,self_employment,,IT/ITES Helper (low-relevance role),IT/ITES,2024-11-26,dashboard,unverified,
+190,208,208,self_employment,,IT/ITES Associate,IT/ITES,2024-11-27,dashboard,unverified,
+191,209,209,wage_employment,4.0,IT/ITES Associate,IT/ITES,2024-12-18,dashboard,confirmed,
+192,210,210,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-10-21,dashboard,confirmed,
+193,211,211,apprenticeship,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-12-21,dashboard,disputed,
+194,212,212,not_placed,,,,,dashboard,unverified,Wage offered too low
+195,213,213,wage_employment,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-11-12,dashboard,confirmed,
+196,214,214,not_placed,,,,,dashboard,unverified,Wage offered too low
+197,216,216,self_employment,,IT/ITES Associate,IT/ITES,2024-12-01,dashboard,disputed,
+198,217,217,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-12-18,dashboard,confirmed,
+199,218,218,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-10-22,dashboard,unverified,
+200,219,219,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+201,221,221,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-10-24,dashboard,unverified,
+202,222,222,not_placed,,,,,dashboard,unverified,Wage offered too low
+203,223,223,self_employment,,IT/ITES Associate,IT/ITES,2024-12-17,dashboard,disputed,
+204,224,224,wage_employment,2.0,IT/ITES Associate,IT/ITES,2024-10-15,dashboard,unverified,
+205,225,225,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-11-15,dashboard,disputed,
+206,226,226,not_placed,,,,,dashboard,unverified,Wage offered too low
+207,227,227,self_employment,,IT/ITES Associate,IT/ITES,2024-10-18,dashboard,confirmed,
+208,228,228,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-11-06,dashboard,unverified,
+209,229,229,self_employment,,IT/ITES Associate,IT/ITES,2024-11-03,dashboard,confirmed,
+210,230,230,wage_employment,5.0,IT/ITES Associate,IT/ITES,2024-10-12,dashboard,confirmed,
+211,231,231,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-11-03,dashboard,confirmed,
+212,232,232,not_placed,,,,,dashboard,unverified,Health-related reasons
+213,233,233,apprenticeship,5.0,IT/ITES Associate,IT/ITES,2024-12-14,dashboard,unverified,
+214,235,235,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-11-24,dashboard,disputed,
+215,236,236,wage_employment,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-11-23,dashboard,unverified,
+216,237,237,self_employment,,IT/ITES Associate,IT/ITES,2024-11-19,dashboard,confirmed,
+217,238,238,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-10-23,dashboard,confirmed,
+218,239,239,self_employment,,IT/ITES Associate,IT/ITES,2024-12-20,dashboard,confirmed,
+219,240,240,self_employment,,IT/ITES Associate,IT/ITES,2024-12-11,dashboard,confirmed,
+220,241,241,wage_employment,5.0,IT/ITES Associate,IT/ITES,2024-10-21,dashboard,confirmed,
+221,242,242,wage_employment,4.0,IT/ITES Associate,IT/ITES,2024-10-20,dashboard,unverified,
+222,243,243,apprenticeship,4.0,IT/ITES Associate,IT/ITES,2024-11-25,dashboard,unverified,
+223,244,244,wage_employment,2.0,IT/ITES Associate,IT/ITES,2024-12-11,dashboard,unverified,
+224,245,245,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+225,246,246,wage_employment,4.0,IT/ITES Associate,IT/ITES,2024-12-20,dashboard,unverified,
+226,247,247,self_employment,,IT/ITES Associate,IT/ITES,2024-12-20,dashboard,confirmed,
+227,248,248,wage_employment,4.0,IT/ITES Associate,IT/ITES,2024-10-22,dashboard,unverified,
+228,249,249,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+229,250,250,self_employment,,IT/ITES Associate,IT/ITES,2024-10-18,dashboard,unverified,
+230,251,251,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+231,252,252,self_employment,,IT/ITES Associate,IT/ITES,2024-11-11,dashboard,unverified,
+232,254,254,self_employment,,IT/ITES Associate,IT/ITES,2024-11-04,dashboard,confirmed,
+233,255,255,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-12-07,dashboard,confirmed,
+234,256,256,wage_employment,5.0,IT/ITES Associate,IT/ITES,2024-11-26,dashboard,confirmed,
+235,257,257,self_employment,,IT/ITES Helper (low-relevance role),IT/ITES,2024-11-11,dashboard,confirmed,
+236,258,258,apprenticeship,5.0,IT/ITES Associate,IT/ITES,2024-10-17,dashboard,confirmed,
+237,259,259,self_employment,,IT/ITES Associate,IT/ITES,2024-11-08,dashboard,confirmed,
+238,260,260,self_employment,,IT/ITES Associate,IT/ITES,2024-12-11,dashboard,unverified,
+239,261,261,wage_employment,2.0,IT/ITES Associate,IT/ITES,2024-12-11,dashboard,confirmed,
+240,262,262,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-11-22,dashboard,confirmed,
+241,263,263,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-10-28,dashboard,confirmed,
+242,265,265,wage_employment,5.0,IT/ITES Associate,IT/ITES,2024-10-12,dashboard,confirmed,
+243,266,266,self_employment,,IT/ITES Associate,IT/ITES,2024-11-28,dashboard,unverified,
+244,267,267,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-11-27,dashboard,confirmed,
+245,268,268,wage_employment,5.0,IT/ITES Associate,IT/ITES,2024-11-18,dashboard,unverified,
+246,269,269,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-11-10,dashboard,unverified,
+247,270,270,not_placed,,,,,dashboard,unverified,Pursuing further education
+248,271,271,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+249,272,272,apprenticeship,2.0,IT/ITES Associate,IT/ITES,2024-11-28,dashboard,confirmed,
+250,273,273,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-07-24,dashboard,unverified,
+251,274,274,wage_employment,6.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-06-30,dashboard,confirmed,
+252,275,275,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+253,276,276,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+254,277,277,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-06-22,dashboard,confirmed,
+255,278,278,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+256,279,279,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-06-01,dashboard,confirmed,
+257,280,280,wage_employment,4.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-07-06,dashboard,confirmed,
+258,281,281,wage_employment,4.0,IT/ITES Associate,IT/ITES,2024-07-20,dashboard,unverified,
+259,282,282,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-05-20,dashboard,confirmed,
+260,283,283,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-05-27,dashboard,unverified,
+261,284,284,self_employment,,IT/ITES Associate,IT/ITES,2024-06-20,dashboard,confirmed,
+262,285,285,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-05-28,dashboard,confirmed,
+263,286,286,wage_employment,2.0,IT/ITES Associate,IT/ITES,2024-06-01,dashboard,unverified,
+264,287,287,self_employment,,IT/ITES Associate,IT/ITES,2024-07-23,dashboard,disputed,
+265,288,288,apprenticeship,5.0,IT/ITES Associate,IT/ITES,2024-06-29,dashboard,confirmed,
+266,289,289,self_employment,,IT/ITES Helper (low-relevance role),IT/ITES,2024-07-08,dashboard,confirmed,
+267,290,290,wage_employment,5.0,IT/ITES Associate,IT/ITES,2024-07-05,dashboard,disputed,
+268,291,291,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-07-13,dashboard,unverified,
+269,292,292,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-07-13,dashboard,confirmed,
+270,293,293,not_placed,,,,,dashboard,unverified,Wage offered too low
+271,294,294,self_employment,,IT/ITES Associate,IT/ITES,2024-06-24,dashboard,confirmed,
+272,295,295,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+273,296,296,not_placed,,,,,dashboard,unverified,Pursuing further education
+274,297,297,self_employment,,IT/ITES Associate,IT/ITES,2024-05-30,dashboard,confirmed,
+275,298,298,apprenticeship,1.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-06-04,dashboard,unverified,
+276,299,299,self_employment,,IT/ITES Associate,IT/ITES,2024-06-17,dashboard,confirmed,
+277,300,300,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-07-21,dashboard,confirmed,
+278,301,301,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-07-14,dashboard,confirmed,
+279,302,302,not_placed,,,,,dashboard,unverified,Wage offered too low
+280,303,303,wage_employment,5.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-07-09,dashboard,confirmed,
+281,305,305,apprenticeship,4.0,IT/ITES Associate,IT/ITES,2024-05-20,dashboard,confirmed,
+282,306,306,wage_employment,4.0,IT/ITES Associate,IT/ITES,2024-05-27,dashboard,unverified,
+283,307,307,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-05-24,dashboard,unverified,
+284,308,308,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-07-19,dashboard,confirmed,
+285,309,309,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+286,310,310,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-05-20,dashboard,unverified,
+287,311,311,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-07-11,dashboard,disputed,
+288,312,312,self_employment,,IT/ITES Associate,IT/ITES,2024-07-04,dashboard,confirmed,
+289,313,313,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+290,316,316,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-07-07,dashboard,unverified,
+291,317,317,wage_employment,2.0,IT/ITES Associate,IT/ITES,2024-06-04,dashboard,unverified,
+292,318,318,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+293,319,319,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-05-28,dashboard,unverified,
+294,320,320,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-07-01,dashboard,unverified,
+295,321,321,apprenticeship,2.0,IT/ITES Associate,IT/ITES,2024-05-22,dashboard,unverified,
+296,323,323,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-06-04,dashboard,unverified,
+297,324,324,self_employment,,IT/ITES Associate,IT/ITES,2024-07-02,dashboard,confirmed,
+298,325,325,not_placed,,,,,dashboard,unverified,Pursuing further education
+299,326,326,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+300,327,327,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-07-06,dashboard,confirmed,
+301,328,328,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-07-02,dashboard,confirmed,
+302,329,329,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+303,330,330,wage_employment,1.0,IT/ITES Associate,IT/ITES,2024-06-19,dashboard,unverified,
+304,331,331,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+305,332,332,not_placed,,,,,dashboard,unverified,Pursuing further education
+306,333,333,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2024-06-17,dashboard,confirmed,
+307,334,334,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+308,335,335,wage_employment,2.0,IT/ITES Associate,IT/ITES,2024-07-22,dashboard,disputed,
+309,336,336,wage_employment,3.0,IT/ITES Associate,IT/ITES,2024-07-09,dashboard,confirmed,
+310,337,337,wage_employment,6.0,IT/ITES Associate,IT/ITES,2024-07-10,dashboard,unverified,
+311,338,338,self_employment,,IT/ITES Associate,IT/ITES,2024-06-12,dashboard,confirmed,
+312,339,339,self_employment,,IT/ITES Associate,IT/ITES,2024-05-17,dashboard,unverified,
+313,340,340,wage_employment,5.0,IT/ITES Associate,IT/ITES,2024-05-18,dashboard,disputed,
+314,341,341,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+315,342,342,wage_employment,1.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-01-24,dashboard,unverified,
+316,343,343,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-01-23,dashboard,confirmed,
+317,344,344,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-02-07,dashboard,confirmed,
+318,345,345,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-03-24,dashboard,confirmed,
+319,346,346,apprenticeship,3.0,IT/ITES Associate,IT/ITES,2025-01-25,dashboard,confirmed,
+320,347,347,apprenticeship,2.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-13,dashboard,confirmed,
+321,348,348,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-03-26,dashboard,confirmed,
+322,349,349,self_employment,,IT/ITES Associate,IT/ITES,2025-02-21,dashboard,unverified,
+323,350,350,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-03-30,dashboard,confirmed,
+324,351,351,wage_employment,2.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-27,dashboard,confirmed,
+325,352,352,self_employment,,IT/ITES Associate,IT/ITES,2025-02-27,dashboard,confirmed,
+326,353,353,self_employment,,IT/ITES Associate,IT/ITES,2025-03-23,dashboard,unverified,
+327,354,354,not_placed,,,,,dashboard,unverified,Pursuing further education
+328,355,355,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-18,dashboard,confirmed,
+329,356,356,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-02-24,dashboard,unverified,
+330,357,357,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-02,dashboard,confirmed,
+331,358,358,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+332,359,359,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-02-14,dashboard,unverified,
+333,360,360,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-01-21,dashboard,confirmed,
+334,361,361,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-03-01,dashboard,disputed,
+335,362,362,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-14,dashboard,confirmed,
+336,363,363,self_employment,,IT/ITES Associate,IT/ITES,2025-02-17,dashboard,unverified,
+337,364,364,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-02-11,dashboard,unverified,
+338,365,365,wage_employment,4.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-28,dashboard,confirmed,
+339,366,366,not_placed,,,,,dashboard,unverified,Wage offered too low
+340,367,367,self_employment,,IT/ITES Associate,IT/ITES,2025-03-10,dashboard,unverified,
+341,368,368,self_employment,,IT/ITES Associate,IT/ITES,2025-02-21,dashboard,unverified,
+342,370,370,self_employment,,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-14,dashboard,confirmed,
+343,371,371,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-01-25,dashboard,confirmed,
+344,372,372,self_employment,,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-08,dashboard,unverified,
+345,373,373,wage_employment,5.0,IT/ITES Associate,IT/ITES,2025-03-25,dashboard,confirmed,
+346,374,374,self_employment,,IT/ITES Associate,IT/ITES,2025-03-29,dashboard,unverified,
+347,375,375,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-05,dashboard,unverified,
+348,376,376,self_employment,,IT/ITES Associate,IT/ITES,2025-01-24,dashboard,unverified,
+349,377,377,self_employment,,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-05,dashboard,unverified,
+350,378,378,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-02-02,dashboard,unverified,
+351,379,379,apprenticeship,6.0,IT/ITES Associate,IT/ITES,2025-03-09,dashboard,unverified,
+352,380,380,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-02-27,dashboard,confirmed,
+353,382,382,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-01-30,dashboard,disputed,
+354,383,383,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-02-27,dashboard,confirmed,
+355,384,384,wage_employment,6.0,IT/ITES Associate,IT/ITES,2025-03-26,dashboard,unverified,
+356,385,385,wage_employment,1.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-11,dashboard,unverified,
+357,386,386,self_employment,,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-07,dashboard,confirmed,
+358,387,387,wage_employment,1.0,IT/ITES Associate,IT/ITES,2025-02-10,dashboard,confirmed,
+359,388,388,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+360,389,389,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+361,390,390,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+362,391,391,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-02-28,dashboard,unverified,
+363,392,392,wage_employment,4.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-01-20,dashboard,confirmed,
+364,393,393,wage_employment,4.0,IT/ITES Associate,IT/ITES,2025-02-23,dashboard,confirmed,
+365,394,394,self_employment,,IT/ITES Associate,IT/ITES,2025-03-04,dashboard,confirmed,
+366,395,395,not_placed,,,,,dashboard,unverified,Pursuing further education
+367,396,396,apprenticeship,2.0,IT/ITES Associate,IT/ITES,2025-03-15,dashboard,confirmed,
+368,397,397,not_placed,,,,,dashboard,unverified,Wage offered too low
+369,398,398,self_employment,,IT/ITES Associate,IT/ITES,2025-02-05,dashboard,confirmed,
+370,399,399,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-14,dashboard,unverified,
+371,400,400,self_employment,,IT/ITES Associate,IT/ITES,2025-03-12,dashboard,unverified,
+372,401,401,not_placed,,,,,dashboard,unverified,Wage offered too low
+373,402,402,wage_employment,6.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-03-08,dashboard,unverified,
+374,403,403,wage_employment,2.0,IT/ITES Associate,IT/ITES,2025-03-17,dashboard,unverified,
+375,404,404,wage_employment,2.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-01-29,dashboard,confirmed,
+376,405,405,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+377,406,406,self_employment,,IT/ITES Associate,IT/ITES,2025-03-17,dashboard,confirmed,
+378,407,407,not_placed,,,,,dashboard,unverified,Pursuing further education
+379,408,408,wage_employment,3.0,IT/ITES Helper (low-relevance role),IT/ITES,2025-02-04,dashboard,confirmed,
+380,409,409,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+381,410,410,apprenticeship,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-01-11,dashboard,confirmed,
+382,412,412,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-30,dashboard,unverified,
+383,413,413,self_employment,,Healthcare Support Associate,Healthcare Support,2024-12-13,dashboard,confirmed,
+384,414,414,not_placed,,,,,dashboard,unverified,Pursuing further education
+385,415,415,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+386,416,416,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2025-01-12,dashboard,confirmed,
+387,417,417,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2024-12-23,dashboard,confirmed,
+388,418,418,wage_employment,12.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-01-26,dashboard,confirmed,
+389,419,419,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+390,420,420,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+391,421,421,not_placed,,,,,dashboard,unverified,Wage offered too low
+392,422,422,wage_employment,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-28,dashboard,confirmed,
+393,423,423,wage_employment,12.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-11-28,dashboard,unverified,
+394,424,424,apprenticeship,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-20,dashboard,confirmed,
+395,425,425,not_placed,,,,,dashboard,unverified,Wage offered too low
+396,426,426,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+397,427,427,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+398,428,428,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-01-17,dashboard,confirmed,
+399,429,429,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+400,430,430,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+401,431,431,not_placed,,,,,dashboard,unverified,No suitable openings in area
+402,432,432,not_placed,,,,,dashboard,unverified,Pursuing further education
+403,433,433,self_employment,,Healthcare Support Associate,Healthcare Support,2024-12-07,dashboard,confirmed,
+404,434,434,not_placed,,,,,dashboard,unverified,Pursuing further education
+405,435,435,not_placed,,,,,dashboard,unverified,No suitable openings in area
+406,437,437,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+407,439,439,not_placed,,,,,dashboard,unverified,Wage offered too low
+408,440,440,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-01-11,dashboard,unverified,
+409,441,441,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2024-12-12,dashboard,unverified,
+410,442,442,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2024-12-08,dashboard,unverified,
+411,443,443,self_employment,,Healthcare Support Associate,Healthcare Support,2024-12-08,dashboard,confirmed,
+412,444,444,not_placed,,,,,dashboard,unverified,Wage offered too low
+413,445,445,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-01-17,dashboard,confirmed,
+414,446,446,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-01-19,dashboard,unverified,
+415,447,447,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-01-03,dashboard,unverified,
+416,448,448,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-23,dashboard,unverified,
+417,449,449,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-11-29,dashboard,confirmed,
+418,450,450,apprenticeship,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-26,dashboard,unverified,
+419,451,451,not_placed,,,,,dashboard,unverified,Wage offered too low
+420,452,452,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-02,dashboard,confirmed,
+421,453,453,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-17,dashboard,confirmed,
+422,455,455,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2025-01-17,dashboard,confirmed,
+423,456,456,not_placed,,,,,dashboard,unverified,Pursuing further education
+424,457,457,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+425,458,458,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-01-23,dashboard,unverified,
+426,459,459,self_employment,,Healthcare Support Associate,Healthcare Support,2024-12-30,dashboard,confirmed,
+427,460,460,apprenticeship,8.0,Healthcare Support Associate,Healthcare Support,2024-12-11,dashboard,unverified,
+428,461,461,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-01-05,dashboard,unverified,
+429,462,462,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-01-17,dashboard,confirmed,
+430,463,463,wage_employment,9.0,Healthcare Support Associate,Healthcare Support,2024-12-15,dashboard,unverified,
+431,464,464,apprenticeship,7.0,Healthcare Support Associate,Healthcare Support,2025-01-15,dashboard,confirmed,
+432,466,466,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+433,467,467,apprenticeship,8.0,Healthcare Support Associate,Healthcare Support,2024-12-21,dashboard,confirmed,
+434,468,468,not_placed,,,,,dashboard,unverified,Pursuing further education
+435,469,469,not_placed,,,,,dashboard,unverified,Pursuing further education
+436,470,470,not_placed,,,,,dashboard,unverified,No suitable openings in area
+437,471,471,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-12-11,dashboard,confirmed,
+438,472,472,self_employment,,Healthcare Support Associate,Healthcare Support,2025-01-05,dashboard,confirmed,
+439,474,474,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2024-12-23,dashboard,confirmed,
+440,475,475,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2025-01-17,dashboard,confirmed,
+441,476,476,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+442,477,477,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+443,478,478,wage_employment,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-05-08,dashboard,confirmed,
+444,479,479,not_placed,,,,,dashboard,unverified,Wage offered too low
+445,481,481,self_employment,,Healthcare Support Associate,Healthcare Support,2025-04-30,dashboard,unverified,
+446,483,483,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-05-09,dashboard,confirmed,
+447,484,484,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-06-02,dashboard,confirmed,
+448,485,485,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+449,486,486,apprenticeship,8.0,Healthcare Support Associate,Healthcare Support,2025-06-01,dashboard,confirmed,
+450,487,487,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-17,dashboard,unverified,
+451,488,488,not_placed,,,,,dashboard,unverified,No suitable openings in area
+452,489,489,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-06-21,dashboard,confirmed,
+453,490,490,wage_employment,9.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-23,dashboard,confirmed,
+454,491,491,wage_employment,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-05-16,dashboard,unverified,
+455,492,492,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-06-15,dashboard,confirmed,
+456,493,493,self_employment,,Healthcare Support Associate,Healthcare Support,2025-05-12,dashboard,confirmed,
+457,494,494,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-06-14,dashboard,confirmed,
+458,495,495,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-05-18,dashboard,confirmed,
+459,496,496,wage_employment,9.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-05,dashboard,disputed,
+460,497,497,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-05-28,dashboard,confirmed,
+461,498,498,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2025-05-29,dashboard,unverified,
+462,499,499,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+463,500,500,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+464,501,501,self_employment,,Healthcare Support Associate,Healthcare Support,2025-06-07,dashboard,confirmed,
+465,502,502,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-05-12,dashboard,confirmed,
+466,503,503,not_placed,,,,,dashboard,unverified,Pursuing further education
+467,504,504,apprenticeship,9.0,Healthcare Support Associate,Healthcare Support,2025-06-15,dashboard,unverified,
+468,506,506,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-05-21,dashboard,confirmed,
+469,507,507,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-30,dashboard,confirmed,
+470,509,509,self_employment,,Healthcare Support Associate,Healthcare Support,2025-06-15,dashboard,confirmed,
+471,510,510,wage_employment,9.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-30,dashboard,disputed,
+472,511,511,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-06-22,dashboard,unverified,
+473,512,512,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2025-05-03,dashboard,unverified,
+474,513,513,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-05-11,dashboard,confirmed,
+475,515,515,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-05-01,dashboard,confirmed,
+476,516,516,self_employment,,Healthcare Support Associate,Healthcare Support,2025-06-11,dashboard,confirmed,
+477,517,517,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-12,dashboard,confirmed,
+478,518,518,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+479,519,519,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+480,520,520,not_placed,,,,,dashboard,unverified,Wage offered too low
+481,522,522,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-05-25,dashboard,unverified,
+482,523,523,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-06-02,dashboard,disputed,
+483,524,524,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2025-06-14,dashboard,confirmed,
+484,525,525,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+485,526,526,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2025-05-17,dashboard,confirmed,
+486,527,527,self_employment,,Healthcare Support Associate,Healthcare Support,2025-05-29,dashboard,unverified,
+487,528,528,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-05-06,dashboard,unverified,
+488,529,529,self_employment,,Healthcare Support Associate,Healthcare Support,2025-05-31,dashboard,confirmed,
+489,530,530,not_placed,,,,,dashboard,unverified,Health-related reasons
+490,531,531,not_placed,,,,,dashboard,unverified,Wage offered too low
+491,532,532,self_employment,,Healthcare Support Associate,Healthcare Support,2025-05-12,dashboard,unverified,
+492,533,533,not_placed,,,,,dashboard,unverified,Health-related reasons
+493,534,534,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-12,dashboard,unverified,
+494,535,535,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+495,536,536,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-06-13,dashboard,confirmed,
+496,537,537,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+497,538,538,self_employment,,Healthcare Support Associate,Healthcare Support,2025-06-09,dashboard,confirmed,
+498,539,539,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-25,dashboard,disputed,
+499,540,540,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2025-05-25,dashboard,confirmed,
+500,541,541,apprenticeship,12.0,Healthcare Support Associate,Healthcare Support,2025-05-29,dashboard,confirmed,
+501,542,542,apprenticeship,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-06-05,dashboard,confirmed,
+502,544,544,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+503,545,545,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-07-21,dashboard,confirmed,
+504,546,546,not_placed,,,,,dashboard,unverified,Wage offered too low
+505,547,547,not_placed,,,,,dashboard,unverified,Wage offered too low
+506,548,548,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-07-17,dashboard,unverified,
+507,549,549,not_placed,,,,,dashboard,unverified,Wage offered too low
+508,550,550,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+509,551,551,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-08-28,dashboard,unverified,
+510,552,552,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-07-21,dashboard,unverified,
+511,553,553,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-07-24,dashboard,confirmed,
+512,554,554,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-08-27,dashboard,disputed,
+513,555,555,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-09-03,dashboard,unverified,
+514,556,556,self_employment,,Healthcare Support Associate,Healthcare Support,2025-09-03,dashboard,confirmed,
+515,557,557,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-09-07,dashboard,confirmed,
+516,558,558,self_employment,,Healthcare Support Associate,Healthcare Support,2025-08-07,dashboard,confirmed,
+517,559,559,self_employment,,Healthcare Support Associate,Healthcare Support,2025-07-30,dashboard,confirmed,
+518,560,560,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+519,561,561,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+520,562,562,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+521,563,563,not_placed,,,,,dashboard,unverified,Wage offered too low
+522,564,564,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-09-09,dashboard,confirmed,
+523,565,565,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-07-16,dashboard,confirmed,
+524,566,566,wage_employment,9.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-08-18,dashboard,confirmed,
+525,567,567,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+526,568,568,apprenticeship,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-09-13,dashboard,confirmed,
+527,569,569,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-07-09,dashboard,confirmed,
+528,570,570,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+529,571,571,not_placed,,,,,dashboard,unverified,Wage offered too low
+530,572,572,apprenticeship,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-09-01,dashboard,unverified,
+531,573,573,wage_employment,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-09-03,dashboard,confirmed,
+532,574,574,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-07-11,dashboard,confirmed,
+533,576,576,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2025-07-28,dashboard,unverified,
+534,577,577,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2025-08-01,dashboard,confirmed,
+535,578,578,not_placed,,,,,dashboard,unverified,Wage offered too low
+536,581,581,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-08-11,dashboard,unverified,
+537,582,582,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2025-09-09,dashboard,confirmed,
+538,583,583,self_employment,,Healthcare Support Associate,Healthcare Support,2025-08-04,dashboard,confirmed,
+539,584,584,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2025-07-24,dashboard,confirmed,
+540,585,585,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+541,586,586,self_employment,,Healthcare Support Associate,Healthcare Support,2025-08-19,dashboard,unverified,
+542,587,587,not_placed,,,,,dashboard,unverified,Wage offered too low
+543,588,588,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2025-09-07,dashboard,confirmed,
+544,589,589,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-09-03,dashboard,unverified,
+545,590,590,self_employment,,Healthcare Support Associate,Healthcare Support,2025-08-09,dashboard,unverified,
+546,591,591,self_employment,,Healthcare Support Associate,Healthcare Support,2025-09-07,dashboard,confirmed,
+547,592,592,not_placed,,,,,dashboard,unverified,Wage offered too low
+548,593,593,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-08-11,dashboard,confirmed,
+549,594,594,not_placed,,,,,dashboard,unverified,Wage offered too low
+550,595,595,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+551,596,596,not_placed,,,,,dashboard,unverified,Pursuing further education
+552,597,597,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2025-09-04,dashboard,confirmed,
+553,598,598,wage_employment,12.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-08-14,dashboard,confirmed,
+554,599,599,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-08-25,dashboard,unverified,
+555,600,600,apprenticeship,7.0,Healthcare Support Associate,Healthcare Support,2025-08-23,dashboard,disputed,
+556,601,601,not_placed,,,,,dashboard,unverified,Wage offered too low
+557,602,602,not_placed,,,,,dashboard,unverified,Wage offered too low
+558,603,603,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2025-07-26,dashboard,unverified,
+559,604,604,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-09-11,dashboard,confirmed,
+560,605,605,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+561,606,606,apprenticeship,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-07-29,dashboard,unverified,
+562,607,607,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-07-08,dashboard,confirmed,
+563,608,608,not_placed,,,,,dashboard,unverified,Wage offered too low
+564,609,609,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+565,611,611,wage_employment,9.0,Healthcare Support Associate,Healthcare Support,2025-07-28,dashboard,unverified,
+566,612,612,wage_employment,7.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2025-07-15,dashboard,confirmed,
+567,613,613,not_placed,,,,,dashboard,unverified,No suitable openings in area
+568,614,614,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-10-06,dashboard,confirmed,
+569,616,616,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2024-11-11,dashboard,confirmed,
+570,617,617,wage_employment,11.0,Healthcare Support Associate,Healthcare Support,2024-10-11,dashboard,unverified,
+571,618,618,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-11-08,dashboard,unverified,
+572,619,619,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2024-09-28,dashboard,unverified,
+573,620,620,wage_employment,9.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-11-08,dashboard,confirmed,
+574,621,621,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2024-10-28,dashboard,confirmed,
+575,623,623,apprenticeship,10.0,Healthcare Support Associate,Healthcare Support,2024-10-22,dashboard,confirmed,
+576,624,624,self_employment,,Healthcare Support Associate,Healthcare Support,2024-10-16,dashboard,unverified,
+577,625,625,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-09-23,dashboard,unverified,
+578,628,628,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-11-14,dashboard,confirmed,
+579,629,629,wage_employment,9.0,Healthcare Support Associate,Healthcare Support,2024-10-09,dashboard,confirmed,
+580,630,630,not_placed,,,,,dashboard,unverified,Pursuing further education
+581,631,631,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-10-29,dashboard,confirmed,
+582,632,632,not_placed,,,,,dashboard,unverified,Wage offered too low
+583,633,633,wage_employment,10.0,Healthcare Support Associate,Healthcare Support,2024-10-01,dashboard,confirmed,
+584,634,634,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-10-25,dashboard,confirmed,
+585,635,635,wage_employment,9.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-10-11,dashboard,unverified,
+586,636,636,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2024-11-11,dashboard,confirmed,
+587,637,637,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+588,638,638,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2024-11-04,dashboard,unverified,
+589,639,639,wage_employment,10.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-10-23,dashboard,confirmed,
+590,640,640,not_placed,,,,,dashboard,unverified,Wage offered too low
+591,641,641,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-11-04,dashboard,confirmed,
+592,642,642,not_placed,,,,,dashboard,unverified,Pursuing further education
+593,644,644,wage_employment,9.0,Healthcare Support Associate,Healthcare Support,2024-09-22,dashboard,unverified,
+594,645,645,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2024-10-07,dashboard,unverified,
+595,646,646,self_employment,,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-11-13,dashboard,unverified,
+596,648,648,not_placed,,,,,dashboard,unverified,No suitable openings in area
+597,649,649,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2024-10-12,dashboard,confirmed,
+598,650,650,not_placed,,,,,dashboard,unverified,Pursuing further education
+599,651,651,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+600,652,652,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+601,653,653,not_placed,,,,,dashboard,unverified,Pursuing further education
+602,654,654,apprenticeship,9.0,Healthcare Support Associate,Healthcare Support,2024-09-30,dashboard,confirmed,
+603,655,655,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+604,656,656,wage_employment,9.0,Healthcare Support Associate,Healthcare Support,2024-11-21,dashboard,confirmed,
+605,657,657,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+606,658,658,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+607,660,660,not_placed,,,,,dashboard,unverified,Pursuing further education
+608,661,661,apprenticeship,12.0,Healthcare Support Associate,Healthcare Support,2024-09-17,dashboard,unverified,
+609,662,662,not_placed,,,,,dashboard,unverified,No suitable openings in area
+610,663,663,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2024-11-08,dashboard,confirmed,
+611,664,664,not_placed,,,,,dashboard,unverified,Wage offered too low
+612,665,665,wage_employment,8.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-09-12,dashboard,unverified,
+613,666,666,wage_employment,12.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-10-29,dashboard,unverified,
+614,667,667,not_placed,,,,,dashboard,unverified,Pursuing further education
+615,668,668,self_employment,,Healthcare Support Associate,Healthcare Support,2024-09-13,dashboard,confirmed,
+616,669,669,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+617,670,670,wage_employment,7.0,Healthcare Support Associate,Healthcare Support,2024-11-06,dashboard,confirmed,
+618,671,671,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+619,672,672,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+620,673,673,not_placed,,,,,dashboard,unverified,Pursuing further education
+621,674,674,wage_employment,12.0,Healthcare Support Associate,Healthcare Support,2024-09-20,dashboard,confirmed,
+622,675,675,wage_employment,11.0,Healthcare Support Helper (low-relevance role),Healthcare Support,2024-10-04,dashboard,confirmed,
+623,677,677,apprenticeship,12.0,Healthcare Support Associate,Healthcare Support,2024-11-13,dashboard,unverified,
+624,678,678,wage_employment,9.0,Healthcare Support Associate,Healthcare Support,2024-11-21,dashboard,confirmed,
+625,679,679,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+626,680,680,wage_employment,8.0,Healthcare Support Associate,Healthcare Support,2024-10-31,dashboard,unverified,
+627,681,681,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2025-04-26,dashboard,disputed,
+628,682,682,apprenticeship,15.0,Retail Associate,Retail,2025-05-28,dashboard,confirmed,
+629,683,683,not_placed,,,,,dashboard,unverified,Wage offered too low
+630,684,684,self_employment,,Retail Associate,Retail,2025-04-19,dashboard,confirmed,
+631,685,685,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-05-17,dashboard,confirmed,
+632,686,686,wage_employment,17.0,Retail Associate,Retail,2025-05-26,dashboard,disputed,
+633,687,687,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2025-05-29,dashboard,confirmed,
+634,688,688,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+635,689,689,wage_employment,16.0,Retail Helper (low-relevance role),Retail,2025-05-16,dashboard,unverified,
+636,691,691,wage_employment,15.0,Retail Associate,Retail,2025-05-14,dashboard,confirmed,
+637,692,692,wage_employment,13.0,Retail Associate,Retail,2025-04-14,dashboard,confirmed,
+638,693,693,not_placed,,,,,dashboard,unverified,Wage offered too low
+639,694,694,wage_employment,18.0,Retail Associate,Retail,2025-05-09,dashboard,unverified,
+640,696,696,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+641,697,697,wage_employment,14.0,Retail Associate,Retail,2025-04-17,dashboard,unverified,
+642,698,698,self_employment,,Retail Associate,Retail,2025-04-09,dashboard,confirmed,
+643,700,700,not_placed,,,,,dashboard,unverified,Wage offered too low
+644,701,701,not_placed,,,,,dashboard,unverified,Wage offered too low
+645,702,702,self_employment,,Retail Associate,Retail,2025-06-01,dashboard,unverified,
+646,703,703,wage_employment,13.0,Retail Associate,Retail,2025-04-15,dashboard,confirmed,
+647,704,704,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2025-05-16,dashboard,confirmed,
+648,705,705,wage_employment,17.0,Retail Associate,Retail,2025-05-30,dashboard,disputed,
+649,706,706,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+650,708,708,not_placed,,,,,dashboard,unverified,Wage offered too low
+651,709,709,wage_employment,17.0,Retail Helper (low-relevance role),Retail,2025-04-29,dashboard,confirmed,
+652,710,710,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+653,711,711,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2025-04-28,dashboard,unverified,
+654,713,713,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+655,714,714,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2025-06-05,dashboard,unverified,
+656,715,715,not_placed,,,,,dashboard,unverified,Wage offered too low
+657,716,716,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+658,717,717,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-04-01,dashboard,confirmed,
+659,718,718,self_employment,,Retail Helper (low-relevance role),Retail,2025-04-12,dashboard,unverified,
+660,719,719,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2025-05-08,dashboard,confirmed,
+661,720,720,wage_employment,13.0,Retail Associate,Retail,2025-05-06,dashboard,unverified,
+662,721,721,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+663,722,722,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+664,723,723,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+665,724,724,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+666,725,725,self_employment,,Retail Helper (low-relevance role),Retail,2025-04-12,dashboard,unverified,
+667,726,726,not_placed,,,,,dashboard,unverified,Pursuing further education
+668,727,727,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+669,728,728,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2025-04-15,dashboard,unverified,
+670,729,729,wage_employment,14.0,Retail Associate,Retail,2025-05-21,dashboard,unverified,
+671,730,730,self_employment,,Retail Helper (low-relevance role),Retail,2025-05-01,dashboard,unverified,
+672,731,731,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-05-28,dashboard,confirmed,
+673,732,732,self_employment,,Retail Helper (low-relevance role),Retail,2025-04-10,dashboard,unverified,
+674,733,733,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+675,735,735,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+676,736,736,wage_employment,15.0,Retail Associate,Retail,2025-05-24,dashboard,unverified,
+677,737,737,apprenticeship,14.0,Retail Helper (low-relevance role),Retail,2025-05-13,dashboard,confirmed,
+678,738,738,self_employment,,Retail Associate,Retail,2025-05-09,dashboard,disputed,
+679,739,739,not_placed,,,,,dashboard,unverified,No suitable openings in area
+680,740,740,not_placed,,,,,dashboard,unverified,Wage offered too low
+681,741,741,self_employment,,Retail Associate,Retail,2025-06-05,dashboard,unverified,
+682,742,742,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2025-03-31,dashboard,confirmed,
+683,743,743,self_employment,,Retail Associate,Retail,2025-05-31,dashboard,unverified,
+684,744,744,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-03-28,dashboard,confirmed,
+685,745,745,self_employment,,Retail Helper (low-relevance role),Retail,2025-05-27,dashboard,confirmed,
+686,746,746,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-04-30,dashboard,unverified,
+687,747,747,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2025-04-13,dashboard,unverified,
+688,748,748,apprenticeship,18.0,Retail Helper (low-relevance role),Retail,2025-03-30,dashboard,confirmed,
+689,749,749,self_employment,,Retail Associate,Retail,2025-01-01,dashboard,confirmed,
+690,750,750,wage_employment,14.0,Retail Associate,Retail,2025-03-01,dashboard,confirmed,
+691,751,751,self_employment,,Retail Helper (low-relevance role),Retail,2025-01-10,dashboard,confirmed,
+692,752,752,not_placed,,,,,dashboard,unverified,No suitable openings in area
+693,753,753,not_placed,,,,,dashboard,unverified,Wage offered too low
+694,754,754,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2024-12-31,dashboard,confirmed,
+695,755,755,wage_employment,15.0,Retail Associate,Retail,2025-01-27,dashboard,confirmed,
+696,756,756,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+697,758,758,wage_employment,17.0,Retail Associate,Retail,2025-01-20,dashboard,confirmed,
+698,759,759,self_employment,,Retail Helper (low-relevance role),Retail,2025-01-14,dashboard,confirmed,
+699,760,760,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+700,761,761,self_employment,,Retail Helper (low-relevance role),Retail,2025-02-03,dashboard,unverified,
+701,762,762,self_employment,,Retail Helper (low-relevance role),Retail,2025-02-21,dashboard,confirmed,
+702,763,763,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+703,764,764,self_employment,,Retail Helper (low-relevance role),Retail,2025-02-02,dashboard,unverified,
+704,765,765,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+705,766,766,self_employment,,Retail Associate,Retail,2025-01-09,dashboard,unverified,
+706,768,768,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+707,769,769,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+708,770,770,wage_employment,18.0,Retail Associate,Retail,2025-02-07,dashboard,confirmed,
+709,771,771,wage_employment,16.0,Retail Associate,Retail,2025-02-26,dashboard,unverified,
+710,772,772,not_placed,,,,,dashboard,unverified,No suitable openings in area
+711,773,773,wage_employment,13.0,Retail Associate,Retail,2025-02-25,dashboard,unverified,
+712,774,774,not_placed,,,,,dashboard,unverified,Wage offered too low
+713,775,775,self_employment,,Retail Helper (low-relevance role),Retail,2025-02-21,dashboard,confirmed,
+714,776,776,apprenticeship,14.0,Retail Helper (low-relevance role),Retail,2025-03-07,dashboard,confirmed,
+715,777,777,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+716,778,778,wage_employment,13.0,Retail Associate,Retail,2025-02-17,dashboard,unverified,
+717,779,779,wage_employment,18.0,Retail Associate,Retail,2025-01-19,dashboard,confirmed,
+718,780,780,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+719,781,781,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+720,782,782,wage_employment,13.0,Retail Associate,Retail,2025-02-22,dashboard,confirmed,
+721,783,783,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2025-01-13,dashboard,confirmed,
+722,784,784,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+723,785,785,wage_employment,15.0,Retail Associate,Retail,2025-03-07,dashboard,confirmed,
+724,786,786,self_employment,,Retail Helper (low-relevance role),Retail,2025-02-07,dashboard,confirmed,
+725,787,787,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+726,788,788,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+727,789,789,not_placed,,,,,dashboard,unverified,No suitable openings in area
+728,790,790,self_employment,,Retail Helper (low-relevance role),Retail,2025-02-08,dashboard,unverified,
+729,791,791,wage_employment,14.0,Retail Associate,Retail,2025-01-10,dashboard,confirmed,
+730,792,792,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+731,793,793,self_employment,,Retail Helper (low-relevance role),Retail,2025-03-06,dashboard,confirmed,
+732,794,794,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2024-12-28,dashboard,unverified,
+733,796,796,wage_employment,17.0,Retail Helper (low-relevance role),Retail,2025-02-15,dashboard,confirmed,
+734,797,797,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-01-14,dashboard,confirmed,
+735,798,798,self_employment,,Retail Associate,Retail,2025-02-10,dashboard,confirmed,
+736,799,799,not_placed,,,,,dashboard,unverified,Wage offered too low
+737,800,800,not_placed,,,,,dashboard,unverified,Pursuing further education
+738,801,801,wage_employment,18.0,Retail Associate,Retail,2025-02-18,dashboard,unverified,
+739,802,802,not_placed,,,,,dashboard,unverified,No suitable openings in area
+740,803,803,self_employment,,Retail Helper (low-relevance role),Retail,2025-03-01,dashboard,unverified,
+741,804,804,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+742,805,805,not_placed,,,,,dashboard,unverified,Health-related reasons
+743,806,806,not_placed,,,,,dashboard,unverified,Wage offered too low
+744,807,807,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2025-02-13,dashboard,unverified,
+745,808,808,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-02-10,dashboard,unverified,
+746,809,809,not_placed,,,,,dashboard,unverified,Wage offered too low
+747,810,810,wage_employment,14.0,Retail Associate,Retail,2025-01-17,dashboard,confirmed,
+748,811,811,not_placed,,,,,dashboard,unverified,No suitable openings in area
+749,813,813,self_employment,,Retail Helper (low-relevance role),Retail,2025-02-04,dashboard,unverified,
+750,814,814,not_placed,,,,,dashboard,unverified,Wage offered too low
+751,815,815,not_placed,,,,,dashboard,unverified,Pursuing further education
+752,816,816,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2025-02-01,dashboard,confirmed,
+753,817,817,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-10-12,dashboard,unverified,
+754,819,819,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2024-09-29,dashboard,unverified,
+755,820,820,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+756,821,821,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-11-29,dashboard,confirmed,
+757,822,822,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-10-27,dashboard,confirmed,
+758,823,823,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+759,824,824,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-11-27,dashboard,confirmed,
+760,825,825,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2024-10-24,dashboard,unverified,
+761,826,826,not_placed,,,,,dashboard,unverified,Health-related reasons
+762,827,827,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+763,828,828,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-11-22,dashboard,confirmed,
+764,830,830,not_placed,,,,,dashboard,unverified,Pursuing further education
+765,831,831,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+766,832,832,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-11-28,dashboard,unverified,
+767,833,833,wage_employment,13.0,Retail Associate,Retail,2024-11-29,dashboard,confirmed,
+768,834,834,self_employment,,Retail Associate,Retail,2024-10-25,dashboard,confirmed,
+769,835,835,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2024-10-13,dashboard,unverified,
+770,836,836,wage_employment,13.0,Retail Associate,Retail,2024-10-25,dashboard,confirmed,
+771,837,837,not_placed,,,,,dashboard,unverified,No suitable openings in area
+772,838,838,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-11-14,dashboard,confirmed,
+773,839,839,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-11-11,dashboard,confirmed,
+774,840,840,wage_employment,17.0,Retail Helper (low-relevance role),Retail,2024-09-26,dashboard,unverified,
+775,841,841,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+776,842,842,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+777,843,843,wage_employment,15.0,Retail Associate,Retail,2024-09-27,dashboard,unverified,
+778,844,844,self_employment,,Retail Associate,Retail,2024-10-07,dashboard,confirmed,
+779,845,845,wage_employment,14.0,Retail Associate,Retail,2024-09-22,dashboard,unverified,
+780,846,846,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2024-10-28,dashboard,confirmed,
+781,847,847,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+782,848,848,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-10-13,dashboard,confirmed,
+783,849,849,self_employment,,Retail Associate,Retail,2024-10-13,dashboard,unverified,
+784,850,850,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+785,851,851,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2024-10-12,dashboard,confirmed,
+786,852,852,self_employment,,Retail Helper (low-relevance role),Retail,2024-10-16,dashboard,confirmed,
+787,853,853,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2024-11-28,dashboard,confirmed,
+788,854,854,wage_employment,15.0,Retail Associate,Retail,2024-09-22,dashboard,unverified,
+789,855,855,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+790,856,856,wage_employment,17.0,Retail Helper (low-relevance role),Retail,2024-11-25,dashboard,unverified,
+791,858,858,wage_employment,17.0,Retail Helper (low-relevance role),Retail,2024-10-19,dashboard,unverified,
+792,859,859,wage_employment,13.0,Retail Associate,Retail,2024-10-05,dashboard,unverified,
+793,860,860,self_employment,,Retail Helper (low-relevance role),Retail,2024-11-30,dashboard,confirmed,
+794,861,861,not_placed,,,,,dashboard,unverified,Wage offered too low
+795,862,862,self_employment,,Retail Helper (low-relevance role),Retail,2024-11-15,dashboard,confirmed,
+796,863,863,not_placed,,,,,dashboard,unverified,No suitable openings in area
+797,865,865,wage_employment,18.0,Retail Associate,Retail,2024-11-11,dashboard,unverified,
+798,866,866,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-10-07,dashboard,disputed,
+799,867,867,not_placed,,,,,dashboard,unverified,Wage offered too low
+800,868,868,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2024-10-03,dashboard,unverified,
+801,869,869,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+802,871,871,not_placed,,,,,dashboard,unverified,Wage offered too low
+803,872,872,wage_employment,14.0,Retail Associate,Retail,2024-10-26,dashboard,confirmed,
+804,874,874,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+805,875,875,not_placed,,,,,dashboard,unverified,Wage offered too low
+806,876,876,wage_employment,16.0,Retail Helper (low-relevance role),Retail,2024-10-31,dashboard,confirmed,
+807,877,877,not_placed,,,,,dashboard,unverified,No suitable openings in area
+808,878,878,apprenticeship,18.0,Retail Associate,Retail,2024-09-30,dashboard,confirmed,
+809,880,880,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2024-10-31,dashboard,disputed,
+810,881,881,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2024-09-22,dashboard,unverified,
+811,882,882,self_employment,,Retail Helper (low-relevance role),Retail,2024-11-16,dashboard,unverified,
+812,883,883,apprenticeship,13.0,Retail Helper (low-relevance role),Retail,2024-10-11,dashboard,unverified,
+813,884,884,apprenticeship,18.0,Retail Helper (low-relevance role),Retail,2024-11-06,dashboard,unverified,
+814,885,885,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+815,886,886,not_placed,,,,,dashboard,unverified,No suitable openings in area
+816,887,887,not_placed,,,,,dashboard,unverified,Pursuing further education
+817,888,888,wage_employment,17.0,Retail Helper (low-relevance role),Retail,2024-12-06,dashboard,unverified,
+818,889,889,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+819,890,890,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+820,891,891,wage_employment,15.0,Retail Helper (low-relevance role),Retail,2024-12-21,dashboard,unverified,
+821,893,893,not_placed,,,,,dashboard,unverified,Wage offered too low
+822,894,894,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+823,895,895,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2025-01-28,dashboard,confirmed,
+824,896,896,not_placed,,,,,dashboard,unverified,Wage offered too low
+825,897,897,not_placed,,,,,dashboard,unverified,Wage offered too low
+826,898,898,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-02-07,dashboard,confirmed,
+827,900,900,apprenticeship,15.0,Retail Helper (low-relevance role),Retail,2024-12-11,dashboard,unverified,
+828,902,902,not_placed,,,,,dashboard,unverified,Pursuing further education
+829,903,903,not_placed,,,,,dashboard,unverified,Pursuing further education
+830,904,904,not_placed,,,,,dashboard,unverified,Wage offered too low
+831,905,905,self_employment,,Retail Helper (low-relevance role),Retail,2025-01-05,dashboard,unverified,
+832,906,906,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2024-12-21,dashboard,unverified,
+833,907,907,apprenticeship,17.0,Retail Helper (low-relevance role),Retail,2025-01-09,dashboard,confirmed,
+834,908,908,not_placed,,,,,dashboard,unverified,Wage offered too low
+835,910,910,not_placed,,,,,dashboard,unverified,Pursuing further education
+836,911,911,wage_employment,14.0,Retail Associate,Retail,2025-02-01,dashboard,confirmed,
+837,912,912,not_placed,,,,,dashboard,unverified,Wage offered too low
+838,913,913,not_placed,,,,,dashboard,unverified,Pursuing further education
+839,914,914,wage_employment,15.0,Retail Associate,Retail,2025-02-01,dashboard,confirmed,
+840,915,915,wage_employment,16.0,Retail Helper (low-relevance role),Retail,2025-01-25,dashboard,unverified,
+841,916,916,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-02-11,dashboard,confirmed,
+842,917,917,wage_employment,13.0,Retail Associate,Retail,2025-01-10,dashboard,confirmed,
+843,919,919,wage_employment,17.0,Retail Associate,Retail,2025-01-31,dashboard,confirmed,
+844,920,920,not_placed,,,,,dashboard,unverified,Wage offered too low
+845,921,921,wage_employment,16.0,Retail Associate,Retail,2024-12-05,dashboard,unverified,
+846,922,922,not_placed,,,,,dashboard,unverified,Wage offered too low
+847,923,923,self_employment,,Retail Helper (low-relevance role),Retail,2024-12-16,dashboard,confirmed,
+848,924,924,self_employment,,Retail Helper (low-relevance role),Retail,2025-01-30,dashboard,unverified,
+849,925,925,apprenticeship,17.0,Retail Associate,Retail,2024-12-25,dashboard,unverified,
+850,926,926,wage_employment,16.0,Retail Helper (low-relevance role),Retail,2025-02-04,dashboard,confirmed,
+851,927,927,wage_employment,17.0,Retail Associate,Retail,2025-01-17,dashboard,unverified,
+852,929,929,self_employment,,Retail Associate,Retail,2025-01-02,dashboard,unverified,
+853,930,930,self_employment,,Retail Helper (low-relevance role),Retail,2025-01-17,dashboard,confirmed,
+854,931,931,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2025-01-05,dashboard,unverified,
+855,932,932,apprenticeship,18.0,Retail Helper (low-relevance role),Retail,2025-02-10,dashboard,unverified,
+856,933,933,wage_employment,13.0,Retail Helper (low-relevance role),Retail,2025-01-18,dashboard,disputed,
+857,934,934,wage_employment,17.0,Retail Helper (low-relevance role),Retail,2025-01-31,dashboard,unverified,
+858,935,935,not_placed,,,,,dashboard,unverified,Health-related reasons
+859,936,936,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2025-01-21,dashboard,confirmed,
+860,937,937,self_employment,,Retail Helper (low-relevance role),Retail,2025-01-05,dashboard,confirmed,
+861,938,938,wage_employment,13.0,Retail Associate,Retail,2025-02-10,dashboard,unverified,
+862,939,939,wage_employment,15.0,Retail Associate,Retail,2025-01-12,dashboard,unverified,
+863,940,940,self_employment,,Retail Helper (low-relevance role),Retail,2025-01-02,dashboard,unverified,
+864,941,941,not_placed,,,,,dashboard,unverified,Wage offered too low
+865,942,942,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2025-02-12,dashboard,unverified,
+866,943,943,wage_employment,18.0,Retail Helper (low-relevance role),Retail,2025-01-14,dashboard,unverified,
+867,944,944,wage_employment,15.0,Retail Associate,Retail,2024-12-12,dashboard,unverified,
+868,946,946,wage_employment,16.0,Retail Associate,Retail,2025-01-30,dashboard,unverified,
+869,947,947,wage_employment,14.0,Retail Associate,Retail,2024-12-10,dashboard,confirmed,
+870,948,948,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+871,949,949,wage_employment,17.0,Retail Associate,Retail,2025-01-30,dashboard,unverified,
+872,950,950,wage_employment,14.0,Retail Helper (low-relevance role),Retail,2024-12-15,dashboard,unverified,
+873,951,951,wage_employment,17.0,Retail Associate,Retail,2025-01-06,dashboard,unverified,
+874,952,952,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+875,953,953,wage_employment,21.0,Construction Associate,Construction,2025-09-10,dashboard,unverified,
+876,954,954,wage_employment,20.0,Construction Associate,Construction,2025-08-05,dashboard,unverified,
+877,955,955,wage_employment,24.0,Construction Associate,Construction,2025-08-05,dashboard,confirmed,
+878,957,957,wage_employment,19.0,Construction Helper (low-relevance role),Construction,2025-08-13,dashboard,unverified,
+879,958,958,wage_employment,22.0,Construction Associate,Construction,2025-08-23,dashboard,unverified,
+880,959,959,self_employment,,Construction Helper (low-relevance role),Construction,2025-09-03,dashboard,unverified,
+881,960,960,apprenticeship,21.0,Construction Associate,Construction,2025-09-16,dashboard,unverified,
+882,961,961,not_placed,,,,,dashboard,unverified,Wage offered too low
+883,962,962,self_employment,,Construction Helper (low-relevance role),Construction,2025-07-16,dashboard,confirmed,
+884,963,963,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2025-08-07,dashboard,unverified,
+885,964,964,not_placed,,,,,dashboard,unverified,Health-related reasons
+886,965,965,apprenticeship,24.0,Construction Associate,Construction,2025-08-04,dashboard,unverified,
+887,966,966,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2025-09-13,dashboard,confirmed,
+888,967,967,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+889,968,968,not_placed,,,,,dashboard,unverified,No suitable openings in area
+890,969,969,not_placed,,,,,dashboard,unverified,Wage offered too low
+891,970,970,wage_employment,22.0,Construction Associate,Construction,2025-08-23,dashboard,unverified,
+892,971,971,wage_employment,24.0,Construction Helper (low-relevance role),Construction,2025-08-28,dashboard,confirmed,
+893,972,972,not_placed,,,,,dashboard,unverified,Wage offered too low
+894,973,973,not_placed,,,,,dashboard,unverified,Wage offered too low
+895,974,974,wage_employment,23.0,Construction Associate,Construction,2025-08-09,dashboard,confirmed,
+896,975,975,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-08-30,dashboard,disputed,
+897,976,976,not_placed,,,,,dashboard,unverified,Wage offered too low
+898,978,978,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-09-08,dashboard,unverified,
+899,979,979,not_placed,,,,,dashboard,unverified,Pursuing further education
+900,980,980,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-09-01,dashboard,confirmed,
+901,981,981,not_placed,,,,,dashboard,unverified,Wage offered too low
+902,982,982,self_employment,,Construction Associate,Construction,2025-09-14,dashboard,confirmed,
+903,983,983,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-07-26,dashboard,unverified,
+904,984,984,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+905,986,986,self_employment,,Construction Helper (low-relevance role),Construction,2025-07-24,dashboard,unverified,
+906,987,987,self_employment,,Construction Helper (low-relevance role),Construction,2025-08-26,dashboard,unverified,
+907,988,988,not_placed,,,,,dashboard,unverified,Wage offered too low
+908,990,990,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+909,991,991,wage_employment,19.0,Construction Helper (low-relevance role),Construction,2025-09-23,dashboard,confirmed,
+910,992,992,wage_employment,23.0,Construction Associate,Construction,2025-07-22,dashboard,unverified,
+911,993,993,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-08-11,dashboard,confirmed,
+912,994,994,not_placed,,,,,dashboard,unverified,Health-related reasons
+913,995,995,self_employment,,Construction Associate,Construction,2025-08-06,dashboard,unverified,
+914,996,996,not_placed,,,,,dashboard,unverified,Wage offered too low
+915,997,997,not_placed,,,,,dashboard,unverified,Health-related reasons
+916,998,998,wage_employment,24.0,Construction Helper (low-relevance role),Construction,2025-09-21,dashboard,confirmed,
+917,999,999,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+918,1000,1000,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-09-09,dashboard,confirmed,
+919,1001,1001,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+920,1002,1002,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+921,1003,1003,not_placed,,,,,dashboard,unverified,Wage offered too low
+922,1004,1004,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+923,1005,1005,not_placed,,,,,dashboard,unverified,Health-related reasons
+924,1006,1006,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2025-08-11,dashboard,unverified,
+925,1007,1007,not_placed,,,,,dashboard,unverified,No suitable openings in area
+926,1008,1008,not_placed,,,,,dashboard,unverified,Wage offered too low
+927,1009,1009,self_employment,,Construction Helper (low-relevance role),Construction,2025-07-18,dashboard,unverified,
+928,1010,1010,not_placed,,,,,dashboard,unverified,Wage offered too low
+929,1011,1011,not_placed,,,,,dashboard,unverified,Wage offered too low
+930,1012,1012,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2025-07-18,dashboard,confirmed,
+931,1013,1013,wage_employment,21.0,Construction Associate,Construction,2025-07-24,dashboard,confirmed,
+932,1014,1014,self_employment,,Construction Associate,Construction,2025-08-17,dashboard,unverified,
+933,1015,1015,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-09-05,dashboard,confirmed,
+934,1016,1016,wage_employment,23.0,Construction Associate,Construction,2025-08-25,dashboard,confirmed,
+935,1017,1017,self_employment,,Construction Helper (low-relevance role),Construction,2025-07-21,dashboard,confirmed,
+936,1018,1018,apprenticeship,20.0,Construction Helper (low-relevance role),Construction,2025-08-23,dashboard,unverified,
+937,1019,1019,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2025-08-08,dashboard,confirmed,
+938,1020,1020,wage_employment,19.0,Construction Associate,Construction,2025-08-25,dashboard,unverified,
+939,1021,1021,wage_employment,24.0,Construction Helper (low-relevance role),Construction,2025-01-29,dashboard,disputed,
+940,1022,1022,not_placed,,,,,dashboard,unverified,Wage offered too low
+941,1023,1023,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-03-08,dashboard,confirmed,
+942,1024,1024,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+943,1026,1026,apprenticeship,19.0,Construction Associate,Construction,2025-02-18,dashboard,unverified,
+944,1027,1027,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-03-06,dashboard,confirmed,
+945,1028,1028,apprenticeship,20.0,Construction Associate,Construction,2025-02-02,dashboard,confirmed,
+946,1029,1029,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-01-11,dashboard,confirmed,
+947,1030,1030,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-01-24,dashboard,confirmed,
+948,1031,1031,not_placed,,,,,dashboard,unverified,Health-related reasons
+949,1032,1032,wage_employment,19.0,Construction Helper (low-relevance role),Construction,2025-02-02,dashboard,confirmed,
+950,1034,1034,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+951,1035,1035,self_employment,,Construction Associate,Construction,2025-01-03,dashboard,confirmed,
+952,1036,1036,wage_employment,19.0,Construction Helper (low-relevance role),Construction,2025-03-06,dashboard,confirmed,
+953,1037,1037,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2025-01-07,dashboard,confirmed,
+954,1038,1038,self_employment,,Construction Associate,Construction,2025-02-14,dashboard,unverified,
+955,1039,1039,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+956,1040,1040,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+957,1041,1041,wage_employment,19.0,Construction Associate,Construction,2025-01-20,dashboard,unverified,
+958,1042,1042,wage_employment,19.0,Construction Associate,Construction,2025-01-25,dashboard,confirmed,
+959,1043,1043,self_employment,,Construction Associate,Construction,2025-02-22,dashboard,unverified,
+960,1044,1044,apprenticeship,21.0,Construction Associate,Construction,2025-01-28,dashboard,confirmed,
+961,1045,1045,not_placed,,,,,dashboard,unverified,Wage offered too low
+962,1046,1046,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+963,1047,1047,self_employment,,Construction Helper (low-relevance role),Construction,2025-01-05,dashboard,unverified,
+964,1048,1048,self_employment,,Construction Associate,Construction,2025-02-19,dashboard,unverified,
+965,1049,1049,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+966,1050,1050,apprenticeship,24.0,Construction Helper (low-relevance role),Construction,2025-03-07,dashboard,unverified,
+967,1051,1051,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+968,1052,1052,wage_employment,24.0,Construction Associate,Construction,2025-03-11,dashboard,confirmed,
+969,1053,1053,self_employment,,Construction Associate,Construction,2025-01-14,dashboard,confirmed,
+970,1054,1054,wage_employment,22.0,Construction Associate,Construction,2025-02-28,dashboard,confirmed,
+971,1055,1055,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-03-05,dashboard,unverified,
+972,1056,1056,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+973,1057,1057,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-02-24,dashboard,unverified,
+974,1058,1058,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+975,1059,1059,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+976,1060,1060,wage_employment,19.0,Construction Associate,Construction,2025-01-03,dashboard,confirmed,
+977,1061,1061,self_employment,,Construction Associate,Construction,2025-01-20,dashboard,unverified,
+978,1062,1062,wage_employment,22.0,Construction Associate,Construction,2025-01-09,dashboard,confirmed,
+979,1063,1063,self_employment,,Construction Associate,Construction,2025-01-20,dashboard,unverified,
+980,1064,1064,not_placed,,,,,dashboard,unverified,Wage offered too low
+981,1065,1065,not_placed,,,,,dashboard,unverified,Wage offered too low
+982,1067,1067,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-01-26,dashboard,unverified,
+983,1068,1068,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+984,1069,1069,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+985,1070,1070,not_placed,,,,,dashboard,unverified,Wage offered too low
+986,1071,1071,apprenticeship,19.0,Construction Helper (low-relevance role),Construction,2025-01-28,dashboard,disputed,
+987,1072,1072,wage_employment,19.0,Construction Associate,Construction,2025-03-09,dashboard,unverified,
+988,1073,1073,wage_employment,22.0,Construction Associate,Construction,2025-02-08,dashboard,unverified,
+989,1074,1074,not_placed,,,,,dashboard,unverified,Wage offered too low
+990,1075,1075,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+991,1076,1076,self_employment,,Construction Associate,Construction,2025-01-03,dashboard,unverified,
+992,1077,1077,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+993,1078,1078,self_employment,,Construction Associate,Construction,2025-02-01,dashboard,unverified,
+994,1079,1079,not_placed,,,,,dashboard,unverified,Wage offered too low
+995,1080,1080,not_placed,,,,,dashboard,unverified,Wage offered too low
+996,1081,1081,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+997,1082,1082,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+998,1083,1083,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2025-01-21,dashboard,unverified,
+999,1084,1084,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1000,1085,1085,not_placed,,,,,dashboard,unverified,Wage offered too low
+1001,1086,1086,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2024-12-31,dashboard,confirmed,
+1002,1087,1087,wage_employment,22.0,Construction Associate,Construction,2025-01-11,dashboard,confirmed,
+1003,1088,1088,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2025-01-29,dashboard,confirmed,
+1004,1089,1089,not_placed,,,,,dashboard,unverified,Wage offered too low
+1005,1090,1090,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2024-11-13,dashboard,unverified,
+1006,1091,1091,wage_employment,22.0,Construction Associate,Construction,2024-12-18,dashboard,confirmed,
+1007,1092,1092,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1008,1093,1093,not_placed,,,,,dashboard,unverified,Wage offered too low
+1009,1094,1094,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1010,1095,1095,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1011,1096,1096,self_employment,,Construction Helper (low-relevance role),Construction,2024-12-31,dashboard,confirmed,
+1012,1097,1097,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1013,1098,1098,self_employment,,Construction Associate,Construction,2024-11-10,dashboard,confirmed,
+1014,1100,1100,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1015,1101,1101,wage_employment,21.0,Construction Associate,Construction,2024-11-19,dashboard,unverified,
+1016,1102,1102,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1017,1103,1103,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2025-01-02,dashboard,unverified,
+1018,1104,1104,not_placed,,,,,dashboard,unverified,Wage offered too low
+1019,1105,1105,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2024-12-08,dashboard,unverified,
+1020,1106,1106,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1021,1107,1107,wage_employment,22.0,Construction Associate,Construction,2024-12-01,dashboard,unverified,
+1022,1108,1108,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1023,1109,1109,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1024,1110,1110,not_placed,,,,,dashboard,unverified,Wage offered too low
+1025,1111,1111,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2024-11-28,dashboard,confirmed,
+1026,1112,1112,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1027,1113,1113,not_placed,,,,,dashboard,unverified,Health-related reasons
+1028,1114,1114,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2024-11-23,dashboard,unverified,
+1029,1115,1115,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1030,1116,1116,not_placed,,,,,dashboard,unverified,Wage offered too low
+1031,1117,1117,self_employment,,Construction Helper (low-relevance role),Construction,2024-11-27,dashboard,confirmed,
+1032,1118,1118,wage_employment,24.0,Construction Associate,Construction,2024-12-18,dashboard,unverified,
+1033,1119,1119,apprenticeship,22.0,Construction Associate,Construction,2024-12-31,dashboard,confirmed,
+1034,1120,1120,wage_employment,22.0,Construction Associate,Construction,2024-11-25,dashboard,confirmed,
+1035,1121,1121,apprenticeship,22.0,Construction Helper (low-relevance role),Construction,2024-11-10,dashboard,unverified,
+1036,1122,1122,wage_employment,23.0,Construction Associate,Construction,2024-11-17,dashboard,unverified,
+1037,1123,1123,self_employment,,Construction Helper (low-relevance role),Construction,2024-11-26,dashboard,unverified,
+1038,1124,1124,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1039,1125,1125,wage_employment,21.0,Construction Associate,Construction,2024-12-10,dashboard,unverified,
+1040,1126,1126,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1041,1129,1129,not_placed,,,,,dashboard,unverified,Health-related reasons
+1042,1130,1130,wage_employment,20.0,Construction Associate,Construction,2024-12-17,dashboard,unverified,
+1043,1131,1131,not_placed,,,,,dashboard,unverified,Pursuing further education
+1044,1132,1132,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2024-12-24,dashboard,confirmed,
+1045,1133,1133,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2024-12-10,dashboard,unverified,
+1046,1134,1134,apprenticeship,24.0,Construction Associate,Construction,2024-11-14,dashboard,unverified,
+1047,1135,1135,wage_employment,23.0,Construction Associate,Construction,2024-12-05,dashboard,unverified,
+1048,1136,1136,apprenticeship,24.0,Construction Associate,Construction,2024-11-24,dashboard,unverified,
+1049,1137,1137,not_placed,,,,,dashboard,unverified,Wage offered too low
+1050,1138,1138,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2024-12-13,dashboard,confirmed,
+1051,1139,1139,self_employment,,Construction Associate,Construction,2024-12-28,dashboard,confirmed,
+1052,1140,1140,apprenticeship,19.0,Construction Associate,Construction,2024-12-29,dashboard,confirmed,
+1053,1141,1141,wage_employment,19.0,Construction Helper (low-relevance role),Construction,2024-12-12,dashboard,unverified,
+1054,1142,1142,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2024-11-14,dashboard,confirmed,
+1055,1143,1143,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2024-12-27,dashboard,confirmed,
+1056,1144,1144,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1057,1145,1145,wage_employment,24.0,Construction Helper (low-relevance role),Construction,2024-11-20,dashboard,confirmed,
+1058,1147,1147,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1059,1148,1148,wage_employment,23.0,Construction Associate,Construction,2025-01-16,dashboard,confirmed,
+1060,1149,1149,wage_employment,19.0,Construction Associate,Construction,2024-11-21,dashboard,unverified,
+1061,1150,1150,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1062,1151,1151,not_placed,,,,,dashboard,unverified,Pursuing further education
+1063,1153,1153,wage_employment,20.0,Construction Associate,Construction,2024-12-01,dashboard,unverified,
+1064,1155,1155,wage_employment,22.0,Construction Associate,Construction,2024-12-15,dashboard,confirmed,
+1065,1156,1156,self_employment,,Construction Associate,Construction,2024-11-09,dashboard,confirmed,
+1066,1157,1157,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2024-06-12,dashboard,confirmed,
+1067,1158,1158,not_placed,,,,,dashboard,unverified,Wage offered too low
+1068,1159,1159,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1069,1161,1161,self_employment,,Construction Helper (low-relevance role),Construction,2024-07-20,dashboard,confirmed,
+1070,1162,1162,wage_employment,19.0,Construction Helper (low-relevance role),Construction,2024-06-18,dashboard,unverified,
+1071,1163,1163,wage_employment,24.0,Construction Associate,Construction,2024-07-26,dashboard,disputed,
+1072,1164,1164,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1073,1165,1165,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1074,1166,1166,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1075,1167,1167,not_placed,,,,,dashboard,unverified,Pursuing further education
+1076,1168,1168,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1077,1169,1169,wage_employment,19.0,Construction Associate,Construction,2024-06-01,dashboard,confirmed,
+1078,1170,1170,wage_employment,23.0,Construction Associate,Construction,2024-07-19,dashboard,confirmed,
+1079,1172,1172,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1080,1173,1173,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1081,1174,1174,wage_employment,23.0,Construction Associate,Construction,2024-05-27,dashboard,confirmed,
+1082,1176,1176,wage_employment,20.0,Construction Associate,Construction,2024-07-07,dashboard,unverified,
+1083,1178,1178,not_placed,,,,,dashboard,unverified,Wage offered too low
+1084,1179,1179,wage_employment,20.0,Construction Associate,Construction,2024-06-26,dashboard,unverified,
+1085,1180,1180,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1086,1181,1181,wage_employment,21.0,Construction Helper (low-relevance role),Construction,2024-07-04,dashboard,confirmed,
+1087,1183,1183,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1088,1184,1184,wage_employment,19.0,Construction Associate,Construction,2024-07-22,dashboard,unverified,
+1089,1185,1185,wage_employment,23.0,Construction Helper (low-relevance role),Construction,2024-07-16,dashboard,unverified,
+1090,1187,1187,wage_employment,23.0,Construction Associate,Construction,2024-06-13,dashboard,confirmed,
+1091,1188,1188,not_placed,,,,,dashboard,unverified,Health-related reasons
+1092,1190,1190,not_placed,,,,,dashboard,unverified,Pursuing further education
+1093,1191,1191,wage_employment,24.0,Construction Helper (low-relevance role),Construction,2024-06-23,dashboard,unverified,
+1094,1192,1192,apprenticeship,23.0,Construction Helper (low-relevance role),Construction,2024-06-04,dashboard,unverified,
+1095,1193,1193,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1096,1194,1194,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2024-07-05,dashboard,unverified,
+1097,1195,1195,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1098,1196,1196,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1099,1197,1197,not_placed,,,,,dashboard,unverified,Wage offered too low
+1100,1198,1198,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1101,1199,1199,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1102,1200,1200,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1103,1201,1201,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1104,1202,1202,not_placed,,,,,dashboard,unverified,Pursuing further education
+1105,1203,1203,not_placed,,,,,dashboard,unverified,Wage offered too low
+1106,1204,1204,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1107,1205,1205,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1108,1206,1206,self_employment,,Construction Helper (low-relevance role),Construction,2024-07-18,dashboard,confirmed,
+1109,1207,1207,wage_employment,20.0,Construction Helper (low-relevance role),Construction,2024-07-18,dashboard,confirmed,
+1110,1208,1208,wage_employment,22.0,Construction Helper (low-relevance role),Construction,2024-06-01,dashboard,confirmed,
+1111,1210,1210,self_employment,,Construction Associate,Construction,2024-06-21,dashboard,unverified,
+1112,1211,1211,not_placed,,,,,dashboard,unverified,Wage offered too low
+1113,1212,1212,wage_employment,21.0,Construction Associate,Construction,2024-06-22,dashboard,confirmed,
+1114,1213,1213,wage_employment,20.0,Construction Associate,Construction,2024-07-20,dashboard,confirmed,
+1115,1214,1214,self_employment,,Construction Associate,Construction,2024-06-20,dashboard,confirmed,
+1116,1215,1215,wage_employment,19.0,Construction Associate,Construction,2024-06-07,dashboard,confirmed,
+1117,1216,1216,wage_employment,21.0,Construction Associate,Construction,2024-07-13,dashboard,confirmed,
+1118,1217,1217,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1119,1218,1218,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1120,1219,1219,not_placed,,,,,dashboard,unverified,Pursuing further education
+1121,1220,1220,apprenticeship,20.0,Construction Helper (low-relevance role),Construction,2024-06-30,dashboard,unverified,
+1122,1221,1221,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1123,1222,1222,self_employment,,Construction Associate,Construction,2024-07-12,dashboard,unverified,
+1124,1223,1223,wage_employment,24.0,Construction Associate,Construction,2024-07-18,dashboard,unverified,
+1125,1224,1224,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1126,1225,1225,not_placed,,,,,dashboard,unverified,Wage offered too low
+1127,1226,1226,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-18,dashboard,confirmed,
+1128,1227,1227,not_placed,,,,,dashboard,unverified,Pursuing further education
+1129,1228,1228,not_placed,,,,,dashboard,unverified,Wage offered too low
+1130,1230,1230,not_placed,,,,,dashboard,unverified,Pursuing further education
+1131,1231,1231,not_placed,,,,,dashboard,unverified,Wage offered too low
+1132,1232,1232,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-14,dashboard,unverified,
+1133,1234,1234,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-02,dashboard,unverified,
+1134,1235,1235,wage_employment,25.0,Hospitality Associate,Hospitality,2024-05-10,dashboard,confirmed,
+1135,1236,1236,not_placed,,,,,dashboard,unverified,Wage offered too low
+1136,1237,1237,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1137,1238,1238,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1138,1239,1239,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1139,1240,1240,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1140,1241,1241,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1141,1242,1242,not_placed,,,,,dashboard,unverified,Wage offered too low
+1142,1243,1243,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1143,1244,1244,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2024-05-31,dashboard,confirmed,
+1144,1245,1245,not_placed,,,,,dashboard,unverified,Pursuing further education
+1145,1246,1246,not_placed,,,,,dashboard,unverified,Health-related reasons
+1146,1247,1247,not_placed,,,,,dashboard,unverified,Pursuing further education
+1147,1248,1248,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1148,1249,1249,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-06-21,dashboard,confirmed,
+1149,1250,1250,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1150,1251,1251,not_placed,,,,,dashboard,unverified,Health-related reasons
+1151,1253,1253,not_placed,,,,,dashboard,unverified,Wage offered too low
+1152,1254,1254,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-05-20,dashboard,unverified,
+1153,1255,1255,wage_employment,30.0,Hospitality Associate,Hospitality,2024-05-04,dashboard,confirmed,
+1154,1256,1256,not_placed,,,,,dashboard,unverified,Wage offered too low
+1155,1257,1257,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1156,1258,1258,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1157,1259,1259,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-05-17,dashboard,unverified,
+1158,1260,1260,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1159,1261,1261,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1160,1262,1262,not_placed,,,,,dashboard,unverified,Wage offered too low
+1161,1263,1263,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-07-06,dashboard,confirmed,
+1162,1264,1264,wage_employment,28.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-21,dashboard,unverified,
+1163,1265,1265,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-13,dashboard,unverified,
+1164,1266,1266,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1165,1267,1267,apprenticeship,26.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-25,dashboard,confirmed,
+1166,1268,1268,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1167,1269,1269,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1168,1270,1270,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-01,dashboard,confirmed,
+1169,1271,1271,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-06-05,dashboard,unverified,
+1170,1272,1272,wage_employment,26.0,Hospitality Associate,Hospitality,2024-06-26,dashboard,unverified,
+1171,1273,1273,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1172,1274,1274,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1173,1275,1275,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2024-05-15,dashboard,unverified,
+1174,1276,1276,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-06,dashboard,unverified,
+1175,1277,1277,apprenticeship,30.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-03,dashboard,confirmed,
+1176,1278,1278,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-05-29,dashboard,unverified,
+1177,1279,1279,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1178,1280,1280,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-23,dashboard,confirmed,
+1179,1281,1281,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1180,1282,1282,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2024-05-01,dashboard,confirmed,
+1181,1283,1283,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1182,1284,1284,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1183,1285,1285,wage_employment,28.0,Hospitality Helper (low-relevance role),Hospitality,2024-05-29,dashboard,unverified,
+1184,1286,1286,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1185,1287,1287,apprenticeship,29.0,Hospitality Associate,Hospitality,2024-05-22,dashboard,unverified,
+1186,1289,1289,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2024-05-28,dashboard,confirmed,
+1187,1290,1290,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2024-05-09,dashboard,unverified,
+1188,1291,1291,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1189,1292,1292,not_placed,,,,,dashboard,unverified,Wage offered too low
+1190,1293,1293,wage_employment,28.0,Hospitality Associate,Hospitality,2025-07-07,dashboard,confirmed,
+1191,1294,1294,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-09,dashboard,confirmed,
+1192,1295,1295,not_placed,,,,,dashboard,unverified,Wage offered too low
+1193,1296,1296,wage_employment,28.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-08,dashboard,confirmed,
+1194,1298,1298,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2025-06-04,dashboard,disputed,
+1195,1300,1300,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-07-15,dashboard,confirmed,
+1196,1301,1301,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-01,dashboard,unverified,
+1197,1302,1302,self_employment,,Hospitality Associate,Hospitality,2025-05-23,dashboard,unverified,
+1198,1304,1304,wage_employment,26.0,Hospitality Associate,Hospitality,2025-06-16,dashboard,unverified,
+1199,1305,1305,wage_employment,26.0,Hospitality Associate,Hospitality,2025-05-25,dashboard,unverified,
+1200,1306,1306,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1201,1307,1307,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-04,dashboard,disputed,
+1202,1309,1309,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1203,1310,1310,not_placed,,,,,dashboard,unverified,Wage offered too low
+1204,1311,1311,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1205,1312,1312,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1206,1313,1313,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1207,1314,1314,not_placed,,,,,dashboard,unverified,Pursuing further education
+1208,1315,1315,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2025-05-26,dashboard,unverified,
+1209,1316,1316,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1210,1317,1317,apprenticeship,26.0,Hospitality Associate,Hospitality,2025-06-03,dashboard,confirmed,
+1211,1318,1318,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2025-06-24,dashboard,confirmed,
+1212,1319,1319,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2025-05-22,dashboard,disputed,
+1213,1320,1320,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1214,1321,1321,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1215,1322,1322,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-17,dashboard,confirmed,
+1216,1323,1323,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1217,1324,1324,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-10,dashboard,confirmed,
+1218,1325,1325,wage_employment,28.0,Hospitality Associate,Hospitality,2025-06-15,dashboard,unverified,
+1219,1326,1326,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1220,1327,1327,apprenticeship,27.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-19,dashboard,unverified,
+1221,1328,1328,not_placed,,,,,dashboard,unverified,Wage offered too low
+1222,1329,1329,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1223,1331,1331,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1224,1332,1332,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2025-05-22,dashboard,confirmed,
+1225,1333,1333,self_employment,,Hospitality Associate,Hospitality,2025-06-12,dashboard,unverified,
+1226,1334,1334,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1227,1335,1335,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1228,1336,1336,not_placed,,,,,dashboard,unverified,Health-related reasons
+1229,1337,1337,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1230,1338,1338,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1231,1339,1339,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2025-05-25,dashboard,confirmed,
+1232,1340,1340,not_placed,,,,,dashboard,unverified,Wage offered too low
+1233,1341,1341,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2025-05-23,dashboard,confirmed,
+1234,1342,1342,not_placed,,,,,dashboard,unverified,Pursuing further education
+1235,1343,1343,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-06-01,dashboard,confirmed,
+1236,1344,1344,not_placed,,,,,dashboard,unverified,Wage offered too low
+1237,1345,1345,not_placed,,,,,dashboard,unverified,Pursuing further education
+1238,1346,1346,wage_employment,29.0,Hospitality Associate,Hospitality,2025-05-28,dashboard,unverified,
+1239,1347,1347,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1240,1348,1348,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-06-20,dashboard,unverified,
+1241,1349,1349,apprenticeship,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-06-27,dashboard,confirmed,
+1242,1350,1350,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-06-01,dashboard,confirmed,
+1243,1351,1351,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-06-04,dashboard,confirmed,
+1244,1352,1352,not_placed,,,,,dashboard,unverified,Pursuing further education
+1245,1354,1354,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1246,1355,1355,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1247,1356,1356,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-05-24,dashboard,confirmed,
+1248,1357,1357,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-07-04,dashboard,unverified,
+1249,1358,1358,wage_employment,26.0,Hospitality Associate,Hospitality,2025-06-10,dashboard,confirmed,
+1250,1359,1359,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1251,1361,1361,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1252,1362,1362,not_placed,,,,,dashboard,unverified,Wage offered too low
+1253,1363,1363,apprenticeship,25.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-23,dashboard,unverified,
+1254,1364,1364,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1255,1365,1365,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-25,dashboard,confirmed,
+1256,1366,1366,not_placed,,,,,dashboard,unverified,Wage offered too low
+1257,1367,1367,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-07-28,dashboard,confirmed,
+1258,1368,1368,apprenticeship,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-29,dashboard,confirmed,
+1259,1369,1369,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1260,1370,1370,not_placed,,,,,dashboard,unverified,Wage offered too low
+1261,1371,1371,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-28,dashboard,confirmed,
+1262,1372,1372,wage_employment,28.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-02,dashboard,confirmed,
+1263,1373,1373,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1264,1374,1374,apprenticeship,28.0,Hospitality Associate,Hospitality,2024-06-29,dashboard,confirmed,
+1265,1375,1375,not_placed,,,,,dashboard,unverified,Wage offered too low
+1266,1376,1376,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1267,1377,1377,not_placed,,,,,dashboard,unverified,Wage offered too low
+1268,1378,1378,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-07-14,dashboard,confirmed,
+1269,1379,1379,not_placed,,,,,dashboard,unverified,Pursuing further education
+1270,1380,1380,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-12,dashboard,unverified,
+1271,1382,1382,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1272,1383,1383,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-08-13,dashboard,unverified,
+1273,1384,1384,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1274,1385,1385,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-06,dashboard,unverified,
+1275,1386,1386,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1276,1387,1387,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1277,1388,1388,not_placed,,,,,dashboard,unverified,Wage offered too low
+1278,1389,1389,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-26,dashboard,unverified,
+1279,1390,1390,not_placed,,,,,dashboard,unverified,Pursuing further education
+1280,1391,1391,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-18,dashboard,confirmed,
+1281,1392,1392,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1282,1395,1395,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1283,1396,1396,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-08-09,dashboard,disputed,
+1284,1398,1398,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1285,1399,1399,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1286,1400,1400,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-29,dashboard,confirmed,
+1287,1401,1401,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1288,1402,1402,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1289,1403,1403,self_employment,,Hospitality Associate,Hospitality,2024-07-22,dashboard,unverified,
+1290,1404,1404,self_employment,,Hospitality Associate,Hospitality,2024-06-07,dashboard,confirmed,
+1291,1405,1405,wage_employment,26.0,Hospitality Associate,Hospitality,2024-07-12,dashboard,unverified,
+1292,1407,1407,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1293,1408,1408,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-08-08,dashboard,unverified,
+1294,1409,1409,wage_employment,29.0,Hospitality Associate,Hospitality,2024-07-22,dashboard,confirmed,
+1295,1410,1410,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-14,dashboard,confirmed,
+1296,1411,1411,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1297,1412,1412,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-14,dashboard,unverified,
+1298,1413,1413,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1299,1414,1414,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1300,1415,1415,not_placed,,,,,dashboard,unverified,Wage offered too low
+1301,1416,1416,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1302,1417,1417,wage_employment,26.0,Hospitality Associate,Hospitality,2024-08-12,dashboard,confirmed,
+1303,1418,1418,apprenticeship,27.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-26,dashboard,confirmed,
+1304,1419,1419,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-07-30,dashboard,confirmed,
+1305,1420,1420,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1306,1421,1421,not_placed,,,,,dashboard,unverified,Wage offered too low
+1307,1422,1422,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2024-06-21,dashboard,unverified,
+1308,1424,1424,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-06-25,dashboard,unverified,
+1309,1425,1425,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2024-06-10,dashboard,unverified,
+1310,1426,1426,wage_employment,28.0,Hospitality Helper (low-relevance role),Hospitality,2024-07-17,dashboard,unverified,
+1311,1427,1427,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1312,1429,1429,not_placed,,,,,dashboard,unverified,Wage offered too low
+1313,1430,1430,apprenticeship,29.0,Hospitality Associate,Hospitality,2025-03-28,dashboard,unverified,
+1314,1431,1431,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1315,1432,1432,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1316,1433,1433,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1317,1434,1434,not_placed,,,,,dashboard,unverified,Wage offered too low
+1318,1435,1435,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1319,1436,1436,wage_employment,28.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-22,dashboard,confirmed,
+1320,1437,1437,not_placed,,,,,dashboard,unverified,Pursuing further education
+1321,1438,1438,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-03-02,dashboard,unverified,
+1322,1440,1440,apprenticeship,26.0,Hospitality Associate,Hospitality,2025-03-03,dashboard,unverified,
+1323,1442,1442,apprenticeship,28.0,Hospitality Helper (low-relevance role),Hospitality,2025-02-28,dashboard,unverified,
+1324,1444,1444,not_placed,,,,,dashboard,unverified,Wage offered too low
+1325,1445,1445,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-02-20,dashboard,unverified,
+1326,1446,1446,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-21,dashboard,confirmed,
+1327,1447,1447,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2025-04-25,dashboard,confirmed,
+1328,1448,1448,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1329,1449,1449,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-21,dashboard,unverified,
+1330,1450,1450,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1331,1451,1451,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1332,1452,1452,wage_employment,27.0,Hospitality Associate,Hospitality,2025-04-18,dashboard,confirmed,
+1333,1453,1453,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-20,dashboard,unverified,
+1334,1454,1454,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1335,1455,1455,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2025-02-20,dashboard,unverified,
+1336,1456,1456,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-03-21,dashboard,unverified,
+1337,1457,1457,wage_employment,26.0,Hospitality Associate,Hospitality,2025-04-03,dashboard,unverified,
+1338,1458,1458,wage_employment,27.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-16,dashboard,confirmed,
+1339,1459,1459,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-04-21,dashboard,confirmed,
+1340,1460,1460,wage_employment,26.0,Hospitality Helper (low-relevance role),Hospitality,2025-02-24,dashboard,confirmed,
+1341,1461,1461,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible
+1342,1462,1462,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2025-02-27,dashboard,unverified,
+1343,1463,1463,not_placed,,,,,dashboard,unverified,Wage offered too low
+1344,1464,1464,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1345,1465,1465,wage_employment,28.0,Hospitality Helper (low-relevance role),Hospitality,2025-04-06,dashboard,unverified,
+1346,1466,1466,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1347,1467,1467,not_placed,,,,,dashboard,unverified,Wage offered too low
+1348,1468,1468,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2025-02-25,dashboard,confirmed,
+1349,1469,1469,not_placed,,,,,dashboard,unverified,Health-related reasons
+1350,1470,1470,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1351,1471,1471,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-29,dashboard,confirmed,
+1352,1472,1472,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1353,1474,1474,wage_employment,30.0,Hospitality Associate,Hospitality,2025-03-31,dashboard,unverified,
+1354,1475,1475,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-31,dashboard,confirmed,
+1355,1476,1476,self_employment,,Hospitality Associate,Hospitality,2025-02-22,dashboard,confirmed,
+1356,1477,1477,wage_employment,25.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-25,dashboard,unverified,
+1357,1478,1478,not_placed,,,,,dashboard,unverified,Family responsibilities / not permitted to work
+1358,1479,1479,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2025-04-14,dashboard,unverified,
+1359,1481,1481,not_placed,,,,,dashboard,unverified,No suitable openings in area
+1360,1482,1482,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1361,1483,1483,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1362,1485,1485,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-04-08,dashboard,unverified,
+1363,1486,1486,wage_employment,30.0,Hospitality Associate,Hospitality,2025-03-03,dashboard,confirmed,
+1364,1487,1487,not_placed,,,,,dashboard,unverified,Wage offered too low
+1365,1488,1488,wage_employment,25.0,Hospitality Associate,Hospitality,2025-03-28,dashboard,confirmed,
+1366,1489,1489,wage_employment,29.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-03,dashboard,confirmed,
+1367,1490,1490,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-03-26,dashboard,confirmed,
+1368,1491,1491,wage_employment,30.0,Hospitality Helper (low-relevance role),Hospitality,2025-03-07,dashboard,unverified,
+1369,1492,1492,not_placed,,,,,dashboard,unverified,Felt underprepared / skill mismatch
+1370,1493,1493,self_employment,,Hospitality Associate,Hospitality,2025-04-06,dashboard,unverified,
+1371,1494,1494,self_employment,,Hospitality Helper (low-relevance role),Hospitality,2025-03-20,dashboard,confirmed,
+1372,1495,1495,wage_employment,26.0,Hospitality Associate,Hospitality,2025-02-20,dashboard,unverified,
+1373,1496,1496,not_placed,,,,,dashboard,unverified,Job location too far / relocation not feasible

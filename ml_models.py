@@ -185,7 +185,7 @@ def attrition_prediction_demo(engine):
 
 
 if __name__ == "__main__":
-    engine = get_engine("data/skilling_outcomes.db")
+    engine = get_engine("data/skilling_outcomes_demo.db")
 
     print("--- Anomaly detection (cohort placement-rate outliers) ---")
     print(detect_cohort_anomalies(engine))
