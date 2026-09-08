@@ -6776,3 +6776,737 @@ body {
     }
 
 }
+/* ==================================================
+   PROFILE PAGE – SAFE UI ENHANCEMENTS
+   Add at the END of trainee-dashboard.css
+================================================== */
+
+
+/* ======================================
+   PAGE HEADING
+====================================== */
+
+.page-heading {
+
+    margin-bottom: 28px;
+
+    animation:
+        fadeUp
+        0.6s
+        ease;
+
+}
+
+
+.page-heading p {
+
+    font-weight:
+        700;
+
+    color:
+        var(--navy);
+
+}
+
+
+.page-heading h1 {
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+/* ======================================
+   PROFILE BANNER
+====================================== */
+
+.profile-banner {
+
+    min-height:
+        155px;
+
+    padding:
+        28px 30px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        18px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #f8fbfe,
+            #ffffff
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        12px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            0.04
+        );
+
+    animation:
+        fadeUp
+        0.7s
+        ease;
+
+}
+
+
+/* Decorative background circle */
+
+.profile-banner::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    border-radius:
+        50%;
+
+    right:
+        -100px;
+
+    top:
+        -120px;
+
+    border:
+        32px solid
+        rgba(
+            23,
+            59,
+            99,
+            0.035
+        );
+
+}
+
+
+/* ======================================
+   LARGE AVATAR
+====================================== */
+
+.profile-large-avatar {
+
+    width:
+        76px;
+
+    height:
+        76px;
+
+    flex:
+        0 0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--navy);
+
+    color:
+        white;
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    font-size:
+        22px;
+
+    font-weight:
+        700;
+
+    border:
+        5px solid
+        white;
+
+    box-shadow:
+        0 0 0 2px
+        #dbe7f1;
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    transition:
+        transform
+        0.3s
+        ease;
+
+}
+
+
+.profile-banner:hover
+.profile-large-avatar {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* ======================================
+   PROFILE NAME
+====================================== */
+
+.profile-banner h2 {
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    color:
+        #173b63;
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        5px;
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+.profile-banner p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+/* ======================================
+   PROFILE COMPLETION
+====================================== */
+
+.profile-completion {
+
+    margin-left:
+        auto;
+
+    min-width:
+        180px;
+
+    padding:
+        14px 16px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    border:
+        1px solid
+        #e0e7ee;
+
+    border-radius:
+        9px;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.profile-completion span {
+
+    display:
+        block;
+
+    color:
+        #94a3b8;
+
+    font-size:
+        9px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.profile-completion strong {
+
+    color:
+        var(--navy);
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    font-size:
+        22px;
+
+}
+
+
+/* ======================================
+   PROFILE SECTIONS
+====================================== */
+
+.profile-sections {
+
+    margin-top:
+        18px;
+
+}
+
+
+.profile-section {
+
+    padding:
+        25px;
+
+    margin-bottom:
+        18px;
+
+    background:
+        white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        10px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(
+            15,
+            23,
+            42,
+            0.025
+        );
+
+    transition:
+        transform
+        0.25s
+        ease,
+
+        box-shadow
+        0.25s
+        ease;
+
+}
+
+
+.profile-section:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 9px 24px
+        rgba(
+            15,
+            23,
+            42,
+            0.05
+        );
+
+}
+
+
+.profile-section h3 {
+
+    font-family:
+        "Outfit",
+        sans-serif;
+
+    color:
+        #334155;
+
+    font-size:
+        18px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+/* ======================================
+   FORM GRID
+====================================== */
+
+.profile-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        18px;
+
+}
+
+
+/* ======================================
+   FORM FIELDS
+====================================== */
+
+.profile-section
+.field {
+
+    margin-bottom:
+        0;
+
+}
+
+
+.profile-section
+.field label {
+
+    font-size:
+        10px;
+
+    color:
+        #475569;
+
+    font-weight:
+        600;
+
+}
+
+
+.profile-section
+.field input,
+
+.profile-section
+.field select {
+
+    width:
+        100%;
+
+    height:
+        44px;
+
+    padding:
+        0 13px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        #d9e1e8;
+
+    border-radius:
+        7px;
+
+    outline:
+        none;
+
+    font-family:
+        inherit;
+
+    color:
+        #334155;
+
+    font-size:
+        11px;
+
+    transition:
+        border-color
+        0.2s
+        ease,
+
+        box-shadow
+        0.2s
+        ease,
+
+        transform
+        0.2s
+        ease;
+
+}
+
+
+.profile-section
+.field input::placeholder {
+
+    color:
+        #b0bac5;
+
+}
+
+
+.profile-section
+.field input:focus,
+
+.profile-section
+.field select:focus {
+
+    border-color:
+        #7898b8;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            40,
+            91,
+            143,
+            0.08
+        );
+
+}
+
+
+/* ======================================
+   SAVE BUTTON AREA
+====================================== */
+
+.profile-sections
+.primary-btn {
+
+    margin-top:
+        6px;
+
+    min-width:
+        150px;
+
+    box-shadow:
+        0 6px 15px
+        rgba(
+            23,
+            59,
+            99,
+            0.12
+        );
+
+}
+
+
+.profile-sections
+.primary-btn:disabled {
+
+    opacity:
+        0.7;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+}
+
+
+/* ======================================
+   SUCCESS / ERROR MESSAGE
+====================================== */
+
+.profile-sections
+.message {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    margin-top:
+        12px;
+
+    padding:
+        0;
+
+    font-size:
+        11px;
+
+    font-weight:
+        500;
+
+}
+
+
+.message.success {
+
+    color:
+        #15803d;
+
+}
+
+
+.message.error {
+
+    color:
+        #dc2626;
+
+}
+
+
+/* ======================================
+   RESPONSIVE PROFILE PAGE
+====================================== */
+
+@media (
+    max-width:
+    800px
+) {
+
+    .profile-banner {
+
+        align-items:
+            flex-start;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .profile-completion {
+
+        margin-left:
+            0;
+
+    }
+
+
+    .profile-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+@media (
+    max-width:
+    560px
+) {
+
+    .profile-banner {
+
+        padding:
+            23px;
+
+    }
+
+
+    .profile-large-avatar {
+
+        width:
+            65px;
+
+        height:
+            65px;
+
+        font-size:
+            18px;
+
+    }
+
+
+    .profile-banner h2 {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .profile-completion {
+
+        width:
+            100%;
+
+    }
+
+
+    .profile-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .profile-section {
+
+        padding:
+            20px;
+
+    }
+
+
+    .profile-sections
+    .primary-btn {
+
+        width:
+            100%;
+
+    }
+
+}
