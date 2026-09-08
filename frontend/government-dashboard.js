@@ -65,7 +65,6 @@ async function fetchAPI(endpoint) {
         `${API_BASE_URL}${endpoint}`,
         {
             method: "GET",
-
             headers: {
                 "X-API-Key": API_KEY,
                 "Accept": "application/json"
@@ -84,13 +83,11 @@ async function fetchAPI(endpoint) {
                 await response.json();
 
             if (errorData.detail) {
-
                 message +=
                     ` - ${errorData.detail}`;
             }
 
-        }
-        catch (error) {
+        } catch (error) {
 
             console.warn(
                 "API error response was not JSON."
@@ -113,22 +110,16 @@ document.addEventListener(
     () => {
 
         loadSettings();
-
         setupSidebar();
-
         setupNavigation();
-
         setupModal();
-
         setupFilters();
-
         setupButtons();
-
         setupSettings();
 
         loadOfficerProfile();
-
         initializeDashboard();
+
     }
 );
 
@@ -143,43 +134,25 @@ async function initializeDashboard() {
         "SkillTrack Government Dashboard starting..."
     );
 
-    await Promise.allSettled(
-        [
-
-            loadCourseData(),
-
-            loadDistrictData(),
-
-            loadProviderData(),
-
-            loadRetention(),
-
-            loadWageGrowth(),
-
-            loadRelevance(),
-
-            loadCompositeScore(),
-
-            loadSkillGap(),
-
-            loadImpactIndex(),
-
-            loadNonPlacementReasons(),
-
-            loadAttritionReasons(),
-
-            loadInsights(),
-
-            loadAnomalies(),
-
-            loadPlacementPrediction(),
-
-            loadAttritionPrediction()
-        ]
-    );
+    await Promise.allSettled([
+        loadCourseData(),
+        loadDistrictData(),
+        loadProviderData(),
+        loadRetention(),
+        loadWageGrowth(),
+        loadRelevance(),
+        loadCompositeScore(),
+        loadSkillGap(),
+        loadImpactIndex(),
+        loadNonPlacementReasons(),
+        loadAttritionReasons(),
+        loadInsights(),
+        loadAnomalies(),
+        loadPlacementPrediction(),
+        loadAttritionPrediction()
+    ]);
 
     applyDashboardSettings();
-
     updateLastUpdated();
 
     console.log(
@@ -195,22 +168,15 @@ async function initializeDashboard() {
 function setupSidebar() {
 
     const sidebar =
-        document.getElementById(
-            "sidebar"
-        );
+        document.getElementById("sidebar");
 
     const menuBtn =
-        document.getElementById(
-            "menuBtn"
-        );
+        document.getElementById("menuBtn");
 
     const mobileOverlay =
-        document.getElementById(
-            "mobileOverlay"
-        );
+        document.getElementById("mobileOverlay");
 
     if (!sidebar || !menuBtn) {
-
         return;
     }
 
@@ -218,21 +184,16 @@ function setupSidebar() {
         "click",
         () => {
 
-            sidebar.classList.toggle(
-                "open"
-            );
+            sidebar.classList.toggle("open");
 
             if (mobileOverlay) {
-
-                mobileOverlay.classList.toggle(
-                    "show"
-                );
+                mobileOverlay.classList.toggle("show");
             }
+
         }
     );
 
     if (mobileOverlay) {
-
         mobileOverlay.addEventListener(
             "click",
             closeSidebar
@@ -244,27 +205,17 @@ function setupSidebar() {
 function closeSidebar() {
 
     const sidebar =
-        document.getElementById(
-            "sidebar"
-        );
+        document.getElementById("sidebar");
 
     const mobileOverlay =
-        document.getElementById(
-            "mobileOverlay"
-        );
+        document.getElementById("mobileOverlay");
 
     if (sidebar) {
-
-        sidebar.classList.remove(
-            "open"
-        );
+        sidebar.classList.remove("open");
     }
 
     if (mobileOverlay) {
-
-        mobileOverlay.classList.remove(
-            "show"
-        );
+        mobileOverlay.classList.remove("show");
     }
 }
 
@@ -276,64 +227,47 @@ function closeSidebar() {
 function setupNavigation() {
 
     document
-        .querySelectorAll(
-            ".nav-link"
-        )
-        .forEach(
-            link => {
+        .querySelectorAll(".nav-link")
+        .forEach(link => {
 
-                link.addEventListener(
-                    "click",
-                    () => {
+            link.addEventListener(
+                "click",
+                () => {
 
-                        document
-                            .querySelectorAll(
-                                ".nav-link"
-                            )
-                            .forEach(
-                                item => {
+                    document
+                        .querySelectorAll(".nav-link")
+                        .forEach(item => {
+                            item.classList.remove("active");
+                        });
 
-                                    item.classList.remove(
-                                        "active"
-                                    );
-                                }
-                            );
+                    link.classList.add("active");
 
-                        link.classList.add(
-                            "active"
-                        );
+                    closeSidebar();
 
-                        closeSidebar();
+                    const target =
+                        link.getAttribute("href");
 
-                        const target =
-                            link.getAttribute(
-                                "href"
-                            );
+                    if (
+                        target &&
+                        target.startsWith("#")
+                    ) {
 
-                        if (
-                            target &&
-                            target.startsWith("#")
-                        ) {
+                        const section =
+                            document.querySelector(target);
 
-                            const section =
-                                document.querySelector(
-                                    target
-                                );
+                        if (section) {
 
-                            if (section) {
+                            section.scrollIntoView({
+                                behavior: "smooth"
+                            });
 
-                                section.scrollIntoView(
-                                    {
-                                        behavior:
-                                            "smooth"
-                                    }
-                                );
-                            }
                         }
                     }
-                );
-            }
-        );
+
+                }
+            );
+
+        });
 }
 
 
@@ -344,91 +278,62 @@ function setupNavigation() {
 function setupModal() {
 
     const modal =
-        document.getElementById(
-            "infoModal"
-        );
+        document.getElementById("infoModal");
 
     if (!modal) {
-
         return;
     }
 
     document
-        .querySelectorAll(
-            "[data-close]"
-        )
-        .forEach(
-            button => {
+        .querySelectorAll("[data-close]")
+        .forEach(button => {
 
-                button.addEventListener(
-                    "click",
-                    () => {
+            button.addEventListener(
+                "click",
+                () => {
+                    modal.classList.remove("show");
+                }
+            );
 
-                        modal.classList.remove(
-                            "show"
-                        );
-                    }
-                );
-            }
-        );
+        });
 
     modal.addEventListener(
         "click",
         event => {
 
-            if (
-                event.target === modal
-            ) {
-
-                modal.classList.remove(
-                    "show"
-                );
+            if (event.target === modal) {
+                modal.classList.remove("show");
             }
+
         }
     );
 }
 
 
-function showModal(
-    title,
-    message
-) {
+function showModal(title, message) {
 
     const modal =
-        document.getElementById(
-            "infoModal"
-        );
+        document.getElementById("infoModal");
 
     const modalTitle =
-        document.getElementById(
-            "modalTitle"
-        );
+        document.getElementById("modalTitle");
 
     const modalText =
-        document.getElementById(
-            "modalText"
-        );
+        document.getElementById("modalText");
 
     if (!modal) {
-
         return;
     }
 
     if (modalTitle) {
-
-        modalTitle.textContent =
-            title;
+        modalTitle.textContent = title;
     }
 
     if (modalText) {
-
-        modalText.textContent =
-            message;
+        modalText.textContent = message;
     }
 
-    modal.classList.add(
-        "show"
-    );
+    modal.classList.add("show");
 }
 
 
@@ -461,7 +366,6 @@ async function loadOfficerProfile() {
                 .getUser();
 
         if (error) {
-
             throw error;
         }
 
@@ -481,11 +385,8 @@ async function loadOfficerProfile() {
             error: profileError
         } =
             await supabaseClient
-                .from(
-                    "government_users"
-                )
-                .select(
-                    `
+                .from("government_users")
+                .select(`
                     full_name,
                     designation,
                     employee_id,
@@ -496,16 +397,11 @@ async function loadOfficerProfile() {
                     district,
                     office,
                     is_verified
-                    `
-                )
-                .eq(
-                    "user_id",
-                    user.id
-                )
+                `)
+                .eq("user_id", user.id)
                 .maybeSingle();
 
         if (profileError) {
-
             throw profileError;
         }
 
@@ -518,12 +414,9 @@ async function loadOfficerProfile() {
             return;
         }
 
-        updateOfficerUI(
-            profile
-        );
+        updateOfficerUI(profile);
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Officer profile error:",
@@ -537,9 +430,7 @@ async function loadOfficerProfile() {
    OFFICER UI
    ========================================================= */
 
-function updateOfficerUI(
-    profile
-) {
+function updateOfficerUI(profile) {
 
     const name =
         profile.full_name ||
@@ -550,9 +441,7 @@ function updateOfficerUI(
         "Government Officer";
 
     const initials =
-        getInitials(
-            name
-        );
+        getInitials(name);
 
     const elements = {
 
@@ -593,43 +482,36 @@ function updateOfficerUI(
     };
 
     if (elements.officialName) {
-
         elements.officialName.textContent =
             name;
     }
 
     if (elements.officialDesignation) {
-
         elements.officialDesignation.textContent =
             designation;
     }
 
     if (elements.officialAvatar) {
-
         elements.officialAvatar.textContent =
             initials;
     }
 
     if (elements.topOfficialName) {
-
         elements.topOfficialName.textContent =
             name;
     }
 
     if (elements.topOfficialDesignation) {
-
         elements.topOfficialDesignation.textContent =
             designation;
     }
 
     if (elements.topAvatar) {
-
         elements.topAvatar.textContent =
             initials;
     }
 
     if (elements.jurisdiction) {
-
         elements.jurisdiction.textContent =
             profile.district ||
             profile.state ||
@@ -647,7 +529,6 @@ function getInitials(name) {
             .filter(Boolean);
 
     if (!words.length) {
-
         return "--";
     }
 
@@ -684,13 +565,10 @@ async function loadCourseData() {
                 : [];
 
         updateCourseTable();
-
         updateEmploymentKPI();
-
         updateTotalTrainees();
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Course API error:",
@@ -725,8 +603,7 @@ async function loadDistrictData() {
 
         updateDistrictTable();
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "District API error:",
@@ -761,8 +638,7 @@ async function loadProviderData() {
             providerPlacementData
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Provider API error:",
@@ -782,29 +658,63 @@ async function loadProviderData() {
 
 async function loadRetention() {
 
-    const months =
-        [3, 6, 12];
+    const months = [3, 6, 12];
 
-    for (
-        const month of months
-    ) {
+    // Show loading state first
+    document
+        .querySelectorAll(".retention-card")
+        .forEach(card => {
+
+            const number =
+                card.querySelector(".retention-number");
+
+            if (number) {
+                number.textContent = "Loading...";
+            }
+
+        });
+
+    // Run all three requests together
+    const requests = months.map(async month => {
 
         try {
 
+            const request = fetchAPI(
+                `/api/metrics/retention?month=${month}`
+            );
+
+            // Prevent one stuck API request from keeping
+            // the entire retention section on Loading...
+            const timeout = new Promise((_, reject) => {
+
+                setTimeout(() => {
+                    reject(
+                        new Error(
+                            `Retention API timeout for ${month} months`
+                        )
+                    );
+                }, 8000);
+
+            });
+
             const data =
-                await fetchAPI(
-                    `/api/metrics/retention?month=${month}`
-                );
+                await Promise.race([
+                    request,
+                    timeout
+                ]);
 
             const value =
-                extractPercentage(
-                    data
-                );
+                extractPercentage(data);
 
             if (value !== null) {
 
                 retentionData[month] =
-                    value;
+                    normalisePercentage(value);
+
+            } else {
+
+                retentionData[month] = null;
+
             }
 
         }
@@ -814,151 +724,57 @@ async function loadRetention() {
                 `Retention ${month}M error:`,
                 error
             );
+
+            retentionData[month] = null;
+
         }
-    }
+
+    });
+
+    await Promise.allSettled(requests);
 
     updateRetentionCards();
-}
 
+    // Never leave the UI stuck on "Loading..."
+    document
+        .querySelectorAll(".retention-card")
+        .forEach((card, index) => {
 
-function normalisePercentage(value) {
+            const month =
+                months[index];
 
-    let number =
-        Number(value);
-
-    if (isNaN(number)) {
-
-        return null;
-    }
-
-    if (
-        number > 0 &&
-        number <= 1
-    ) {
-
-        number *= 100;
-    }
-
-    return Number(
-        number.toFixed(1)
-    );
-}
-
-
-function extractPercentage(data) {
-
-    if (
-        data === null ||
-        data === undefined
-    ) {
-
-        return null;
-    }
-
-    if (
-        typeof data ===
-        "number"
-    ) {
-
-        return normalisePercentage(
-            data
-        );
-    }
-
-    if (
-        Array.isArray(data)
-    ) {
-
-        for (
-            const item of data
-        ) {
-
-            const result =
-                extractPercentage(
-                    item
+            const number =
+                card.querySelector(
+                    ".retention-number"
                 );
 
-            if (result !== null) {
+            const bar =
+                card.querySelector(
+                    ".mini-bar span"
+                );
 
-                return result;
-            }
-        }
-
-        return null;
-    }
-
-    if (
-        typeof data ===
-        "object"
-    ) {
-
-        const keys = [
-
-            "retention_rate_pct",
-            "retention_pct",
-            "retention_rate",
-            "retention",
-            "rate_pct",
-            "rate",
-            "percentage",
-            "percent",
-            "value"
-        ];
-
-        for (
-            const key of keys
-        ) {
+            const value =
+                retentionData[month];
 
             if (
-                data[key] !==
-                undefined &&
-                data[key] !==
-                null
+                value === null ||
+                value === undefined
             ) {
 
-                const result =
-                    normalisePercentage(
-                        data[key]
-                    );
-
-                if (result !== null) {
-
-                    return result;
+                if (number) {
+                    number.textContent =
+                        "Unavailable";
                 }
-            }
-        }
 
-        const nested = [
-
-            "data",
-            "result",
-            "metrics",
-            "retention_data"
-        ];
-
-        for (
-            const key of nested
-        ) {
-
-            if (
-                data[key] !==
-                undefined
-            ) {
-
-                const result =
-                    extractPercentage(
-                        data[key]
-                    );
-
-                if (result !== null) {
-
-                    return result;
+                if (bar) {
+                    bar.style.width = "0%";
                 }
-            }
-        }
-    }
 
-    return null;
+            }
+
+        });
+
+    updateRetentionTrend();
 }
 
 
@@ -968,8 +784,177 @@ function extractPercentage(data) {
 
 function updateRetentionCards() {
 
+    const cards =
+        document.querySelectorAll(
+            ".retention-card"
+        );
+
     const months =
         [3, 6, 12];
+
+    cards.forEach(
+        (card, index) => {
+
+            const month =
+                months[index];
+
+            const value =
+                retentionData[month];
+
+            const number =
+                card.querySelector(
+                    ".retention-number"
+                );
+
+            const bar =
+                card.querySelector(
+                    ".mini-bar span"
+                );
+
+            if (
+                value === null ||
+                value === undefined
+            ) {
+                return;
+            }
+
+            if (number) {
+
+                number.textContent =
+                    `${value}%`;
+
+            }
+
+            if (bar) {
+
+                bar.style.width =
+                    `${Math.min(
+                        Math.max(value, 0),
+                        100
+                    )}%`;
+
+            }
+
+        }
+    );
+}
+
+
+/* =========================================================
+   RETENTION TREND
+   ========================================================= */
+
+function updateRetentionTrend() {
+
+    const summary =
+        document.querySelector(
+            ".retention-summary"
+        );
+
+    if (!summary) {
+        return;
+    }
+
+    const trend =
+        summary.querySelector(
+            "strong"
+        );
+
+    const text =
+        summary.querySelector(
+            "p"
+        );
+
+    const r3 =
+        retentionData[3];
+
+    const r6 =
+        retentionData[6];
+
+    const r12 =
+        retentionData[12];
+
+    if (
+        r3 === null ||
+        r3 === undefined ||
+        r6 === null ||
+        r6 === undefined ||
+        r12 === null ||
+        r12 === undefined
+    ) {
+
+        if (trend) {
+            trend.textContent =
+                "Data unavailable";
+        }
+
+        if (text) {
+            text.textContent =
+                "Retention data is not available from the current API.";
+        }
+
+        return;
+    }
+
+    let trendText =
+        "Stable";
+
+    if (
+        r12 > r3 &&
+        r12 > r6
+    ) {
+
+        trendText =
+            "Improving";
+
+    }
+    else if (
+        r12 < r3 &&
+        r12 < r6
+    ) {
+
+        trendText =
+            "Declining";
+    }
+
+    if (trend) {
+        trend.textContent =
+            trendText;
+    }
+
+    if (text) {
+
+        if (trendText === "Improving") {
+
+            text.textContent =
+                "Long-term employment retention is improving across the reporting period.";
+
+        }
+        else if (trendText === "Declining") {
+
+            text.textContent =
+                "Long-term employment retention is declining across the reporting period.";
+
+        }
+        else {
+
+            text.textContent =
+                "Employment retention is relatively stable across the reporting period.";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   RETENTION UI
+   ========================================================= */
+
+function updateRetentionCards() {
+
+    const months = [3, 6, 12];
 
     const cards =
         document.querySelectorAll(
@@ -989,7 +974,6 @@ function updateRetentionCards() {
                 value === null ||
                 value === undefined
             ) {
-
                 return;
             }
 
@@ -1004,13 +988,11 @@ function updateRetentionCards() {
                 );
 
             if (number) {
-
                 number.textContent =
                     `${value}%`;
             }
 
             if (bar) {
-
                 bar.style.width =
                     `${value}%`;
             }
@@ -1026,13 +1008,11 @@ function updateRetentionCards() {
                 );
 
             if (valueElement) {
-
                 valueElement.textContent =
                     `${value}%`;
             }
 
             if (barElement) {
-
                 barElement.style.width =
                     `${value}%`;
             }
@@ -1047,16 +1027,14 @@ function updateRetentionCards() {
 
 function updateTotalTrainees() {
 
-    let total =
-        0;
+    let total = 0;
 
     coursePlacementData.forEach(
         course => {
 
             total +=
-                Number(
-                    course.completed
-                ) || 0;
+                Number(course.completed) || 0;
+
         }
     );
 
@@ -1068,9 +1046,7 @@ function updateTotalTrainees() {
     if (element) {
 
         element.textContent =
-            total.toLocaleString(
-                "en-IN"
-            );
+            total.toLocaleString("en-IN");
     }
 }
 
@@ -1081,29 +1057,22 @@ function updateTotalTrainees() {
 
 function updateEmploymentKPI() {
 
-    let completed =
-        0;
-
-    let placed =
-        0;
+    let completed = 0;
+    let placed = 0;
 
     coursePlacementData.forEach(
         course => {
 
             completed +=
-                Number(
-                    course.completed
-                ) || 0;
+                Number(course.completed) || 0;
 
             placed +=
-                Number(
-                    course.placed
-                ) || 0;
+                Number(course.placed) || 0;
+
         }
     );
 
     if (completed === 0) {
-
         return;
     }
 
@@ -1128,9 +1097,7 @@ function updateEmploymentKPI() {
     }
 
     const counters =
-        document.querySelectorAll(
-            ".counter"
-        );
+        document.querySelectorAll(".counter");
 
     if (counters[2]) {
 
@@ -1155,7 +1122,6 @@ function updateCourseTable() {
         );
 
     if (!tbody) {
-
         return;
     }
 
@@ -1179,17 +1145,14 @@ function updateCourseTable() {
 
             const name =
                 course.group_key ||
+                course.course_name ||
                 "Unknown Programme";
 
             const completed =
-                Number(
-                    course.completed
-                ) || 0;
+                Number(course.completed) || 0;
 
             const placed =
-                Number(
-                    course.placed
-                ) || 0;
+                Number(course.placed) || 0;
 
             let rate =
                 Number(
@@ -1212,24 +1175,16 @@ function updateCourseTable() {
                 );
 
             const status =
-                getCourseStatus(
-                    rate
-                );
+                getCourseStatus(rate);
 
             const initials =
-                getCourseInitials(
-                    name
-                );
+                getCourseInitials(name);
 
             const row =
-                document.createElement(
-                    "tr"
-                );
+                document.createElement("tr");
 
             row.innerHTML = `
-
                 <td>
-
                     <div class="course-name">
 
                         <div class="course-box ${getCourseBoxClass(index)}">
@@ -1237,7 +1192,6 @@ function updateCourseTable() {
                         </div>
 
                         <div>
-
                             <strong>
                                 ${escapeHTML(name)}
                             </strong>
@@ -1245,11 +1199,9 @@ function updateCourseTable() {
                             <span>
                                 Programme
                             </span>
-
                         </div>
 
                     </div>
-
                 </td>
 
                 <td>
@@ -1261,11 +1213,9 @@ function updateCourseTable() {
                 </td>
 
                 <td>
-
                     <b class="table-positive">
                         ${rate}%
                     </b>
-
                 </td>
 
                 <td>
@@ -1273,17 +1223,13 @@ function updateCourseTable() {
                 </td>
 
                 <td>
-
                     <span class="${getStatusClass(rate)}">
                         ${status}
                     </span>
-
                 </td>
             `;
 
-            tbody.appendChild(
-                row
-            );
+            tbody.appendChild(row);
         }
     );
 
@@ -1294,12 +1240,10 @@ function updateCourseTable() {
 function getCourseStatus(rate) {
 
     if (rate >= 75) {
-
         return "Good";
     }
 
     if (rate >= 60) {
-
         return "Watch";
     }
 
@@ -1311,7 +1255,9 @@ function getStatusClass(rate) {
 
     return rate >= 75
         ? "status-good"
-        : "status-watch";
+        : rate >= 60
+            ? "status-watch"
+            : "status-alert";
 }
 
 
@@ -1320,7 +1266,12 @@ function getCourseInitials(name) {
     const words =
         String(name)
             .trim()
-            .split(/\s+/);
+            .split(/\s+/)
+            .filter(Boolean);
+
+    if (!words.length) {
+        return "--";
+    }
 
     if (words.length === 1) {
 
@@ -1339,7 +1290,6 @@ function getCourseInitials(name) {
 function getCourseBoxClass(index) {
 
     const classes = [
-
         "blue",
         "purple",
         "orange",
@@ -1365,7 +1315,6 @@ function updateDistrictTable() {
         );
 
     if (!container) {
-
         return;
     }
 
@@ -1405,12 +1354,11 @@ function updateDistrictTable() {
 
             const name =
                 item.group_key ||
+                item.district ||
                 "Unknown District";
 
             const completed =
-                Number(
-                    item.completed
-                ) || 0;
+                Number(item.completed) || 0;
 
             const rate =
                 Number(
@@ -1418,22 +1366,14 @@ function updateDistrictTable() {
                 ) || 0;
 
             const row =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
             row.className =
                 "district-row";
 
             row.innerHTML = `
-
                 <div class="rank">
-                    ${String(
-                        index + 1
-                    ).padStart(
-                        2,
-                        "0"
-                    )}
+                    ${String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div class="district-info">
@@ -1456,27 +1396,20 @@ function updateDistrictTable() {
                     </strong>
 
                     <div class="bar">
-
                         <span
                             style="
                                 width:${Math.min(
-                                    Math.max(
-                                        rate,
-                                        0
-                                    ),
+                                    Math.max(rate, 0),
                                     100
                                 )}%
                             "
                         ></span>
-
                     </div>
 
                 </div>
             `;
 
-            container.appendChild(
-                row
-            );
+            container.appendChild(row);
         }
     );
 
@@ -1502,8 +1435,7 @@ async function loadWageGrowth() {
             wageGrowthData
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Wage growth error:",
@@ -1535,8 +1467,7 @@ async function loadRelevance() {
             relevanceData
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Relevance error:",
@@ -1575,14 +1506,11 @@ async function loadCompositeScore() {
             );
 
         displayValue(
-            [
-                "compositeScore"
-            ],
+            ["compositeScore"],
             value
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Composite score error:",
@@ -1614,8 +1542,7 @@ async function loadSkillGap() {
             skillGapData
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Skill gap error:",
@@ -1657,19 +1584,15 @@ async function loadImpactIndex() {
             value !== null &&
             value <= 1
         ) {
-
             value *= 100;
         }
 
         displayValue(
-            [
-                "impactIndex"
-            ],
+            ["impactIndex"],
             value
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Impact index error:",
@@ -1701,8 +1624,7 @@ async function loadNonPlacementReasons() {
             nonPlacementReasons
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Non-placement error:",
@@ -1734,8 +1656,7 @@ async function loadAttritionReasons() {
             attritionReasons
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Attrition reasons error:",
@@ -1766,8 +1687,7 @@ async function loadInsights() {
             insightsData
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Insights error:",
@@ -1795,16 +1715,12 @@ async function loadAnomalies() {
             );
 
         const count =
-            Array.isArray(
-                anomalyData
-            )
+            Array.isArray(anomalyData)
                 ? anomalyData.length
                 : 0;
 
         displayValue(
-            [
-                "anomalyCount"
-            ],
+            ["anomalyCount"],
             count
         );
 
@@ -1813,8 +1729,7 @@ async function loadAnomalies() {
             anomalyData
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Anomaly API error:",
@@ -1848,8 +1763,7 @@ async function loadPlacementPrediction() {
 
         updateMLStatus();
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Placement prediction error:",
@@ -1883,8 +1797,7 @@ async function loadAttritionPrediction() {
 
         updateMLStatus();
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Attrition prediction error:",
@@ -1910,7 +1823,6 @@ function updateMLStatus() {
         );
 
     if (!element) {
-
         return;
     }
 
@@ -1922,8 +1834,7 @@ function updateMLStatus() {
         element.textContent =
             "Available";
 
-    }
-    else {
+    } else {
 
         element.textContent =
             "Partial";
@@ -1935,10 +1846,7 @@ function updateMLStatus() {
    GENERIC ANALYTICS
    ========================================================= */
 
-function renderGenericAnalytics(
-    id,
-    data
-) {
+function renderGenericAnalytics(id, data) {
 
     const element =
         document.getElementById(id);
@@ -1951,10 +1859,12 @@ function renderGenericAnalytics(
         data === null ||
         data === undefined
     ) {
+
         element.innerHTML =
             `<div class="analytics-empty">
                 No data available.
             </div>`;
+
         return;
     }
 
@@ -1962,14 +1872,12 @@ function renderGenericAnalytics(
         typeof data === "string" ||
         typeof data === "number"
     ) {
+
         element.textContent =
             data;
+
         return;
     }
-
-    /* =====================================================
-       PROVIDER PLACEMENT
-       ===================================================== */
 
     if (id === "providerPlacement") {
 
@@ -1983,11 +1891,6 @@ function renderGenericAnalytics(
         return;
     }
 
-
-    /* =====================================================
-       WAGE GROWTH
-       ===================================================== */
-
     if (id === "wageGrowth") {
 
         renderWageGrowth(
@@ -1999,11 +1902,6 @@ function renderGenericAnalytics(
 
         return;
     }
-
-
-    /* =====================================================
-       RELEVANCE
-       ===================================================== */
 
     if (id === "relevance") {
 
@@ -2017,11 +1915,6 @@ function renderGenericAnalytics(
         return;
     }
 
-
-    /* =====================================================
-       SKILL GAP
-       ===================================================== */
-
     if (id === "skillGap") {
 
         renderSkillGap(
@@ -2034,11 +1927,6 @@ function renderGenericAnalytics(
         return;
     }
 
-
-    /* =====================================================
-       NON-PLACEMENT REASONS
-       ===================================================== */
-
     if (id === "nonPlacementReasons") {
 
         renderReasonList(
@@ -2050,11 +1938,6 @@ function renderGenericAnalytics(
         return;
     }
 
-
-    /* =====================================================
-       ATTRITION REASONS
-       ===================================================== */
-
     if (id === "attritionReasons") {
 
         renderReasonList(
@@ -2065,11 +1948,6 @@ function renderGenericAnalytics(
 
         return;
     }
-
-
-    /* =====================================================
-       ANOMALIES
-       ===================================================== */
 
     if (id === "anomalies") {
 
@@ -2083,25 +1961,12 @@ function renderGenericAnalytics(
         return;
     }
 
-
-    /* =====================================================
-       INSIGHTS
-       ===================================================== */
-
     if (id === "insights") {
 
-        renderInsights(
-            data
-        );
+        renderInsights(data);
 
         return;
     }
-
-
-    /* =====================================================
-       FALLBACK
-       Never dump raw JSON into the dashboard.
-       ===================================================== */
 
     renderKeyValueData(
         element,
@@ -2109,10 +1974,354 @@ function renderGenericAnalytics(
     );
 }
 
+
+/* =========================================================
+   PROVIDER PLACEMENT
+   ========================================================= */
+
+function renderProviderPlacement(
+    element,
+    data
+) {
+
+    if (!data.length) {
+
+        element.innerHTML =
+            `<div class="analytics-empty">
+                No provider placement data available.
+            </div>`;
+
+        return;
+    }
+
+    element.innerHTML =
+        data.map(item => {
+
+            const name =
+                item.group_key ||
+                item.provider_name ||
+                item.provider ||
+                "Unknown Provider";
+
+            const rate =
+                Number(
+                    item.placement_rate_pct
+                ) || 0;
+
+            const completed =
+                Number(item.completed) || 0;
+
+            return `
+                <div class="analytics-row">
+
+                    <div>
+                        <strong>
+                            ${escapeHTML(name)}
+                        </strong>
+
+                        <small>
+                            ${completed.toLocaleString("en-IN")}
+                            trainees
+                        </small>
+                    </div>
+
+                    <strong>
+                        ${rate.toFixed(1)}%
+                    </strong>
+
+                </div>
+            `;
+
+        }).join("");
+}
+
+
+/* =========================================================
+   WAGE GROWTH RENDERER
+   ========================================================= */
+
+function renderWageGrowth(
+    element,
+    data
+) {
+
+    if (!data.length) {
+
+        element.innerHTML =
+            `<div class="analytics-empty">
+                No wage growth data available.
+            </div>`;
+
+        return;
+    }
+
+    element.innerHTML =
+        data.map(item => {
+
+            const name =
+                item.group_key ||
+                item.course_name ||
+                "Unknown Course";
+
+            const growth =
+                Number(
+                    item.wage_growth_pct
+                );
+
+            const value =
+                Number.isFinite(growth)
+                    ? growth
+                    : 0;
+
+            return `
+                <div class="analytics-row">
+
+                    <div>
+                        <strong>
+                            ${escapeHTML(name)}
+                        </strong>
+                    </div>
+
+                    <strong>
+                        ${value.toFixed(1)}%
+                    </strong>
+
+                </div>
+            `;
+
+        }).join("");
+}
+
+
+/* =========================================================
+   RELEVANCE RENDERER
+   ========================================================= */
+
+function renderRelevance(
+    element,
+    data
+) {
+
+    if (!data.length) {
+
+        element.innerHTML =
+            `<div class="analytics-empty">
+                No training relevance data available.
+            </div>`;
+
+        return;
+    }
+
+    element.innerHTML =
+        data.map(item => {
+
+            const name =
+                item.course_name ||
+                item.group_key ||
+                "Unknown Course";
+
+            const score =
+                Number(
+                    item.relevance_score
+                );
+
+            const value =
+                Number.isFinite(score)
+                    ? score
+                    : 0;
+
+            return `
+                <div class="analytics-row">
+
+                    <div>
+                        <strong>
+                            ${escapeHTML(name)}
+                        </strong>
+                    </div>
+
+                    <strong>
+                        ${value.toFixed(1)}
+                    </strong>
+
+                </div>
+            `;
+
+        }).join("");
+}
+
+
+/* =========================================================
+   SKILL GAP RENDERER
+   ========================================================= */
+
+function renderSkillGap(
+    element,
+    data
+) {
+
+    if (!data.length) {
+
+        element.innerHTML =
+            `<div class="analytics-empty">
+                No skill gap data available.
+            </div>`;
+
+        return;
+    }
+
+    element.innerHTML =
+        data.map(item => {
+
+            const skill =
+                item.missing_skill ||
+                item.skill ||
+                "Unknown Skill";
+
+            const demand =
+                Number(
+                    item.demand_count
+                ) || 0;
+
+            return `
+                <div class="analytics-row">
+
+                    <div>
+                        <strong>
+                            ${escapeHTML(skill)}
+                        </strong>
+                    </div>
+
+                    <strong>
+                        ${demand.toLocaleString("en-IN")}
+                    </strong>
+
+                </div>
+            `;
+
+        }).join("");
+}
+
+
+/* =========================================================
+   REASON LIST
+   ========================================================= */
+
+function renderReasonList(
+    element,
+    data,
+    labelKey
+) {
+
+    let rows =
+        Array.isArray(data)
+            ? data
+            : Array.isArray(data?.reasons)
+                ? data.reasons
+                : [];
+
+    if (!rows.length) {
+
+        element.innerHTML =
+            `<div class="analytics-empty">
+                No data available.
+            </div>`;
+
+        return;
+    }
+
+    element.innerHTML =
+        rows.map(item => {
+
+            const label =
+                item[labelKey] ||
+                item.reason ||
+                item.label ||
+                "Unknown";
+
+            const count =
+                Number(
+                    item.n ??
+                    item.count ??
+                    item.total
+                ) || 0;
+
+            return `
+                <div class="analytics-row">
+
+                    <div>
+                        <strong>
+                            ${escapeHTML(label)}
+                        </strong>
+                    </div>
+
+                    <strong>
+                        ${count.toLocaleString("en-IN")}
+                    </strong>
+
+                </div>
+            `;
+
+        }).join("");
+}
+
+
+/* =========================================================
+   ANOMALIES
+   ========================================================= */
+
+function renderAnomalies(
+    element,
+    data
+) {
+
+    if (!data.length) {
+
+        element.innerHTML =
+            `<div class="analytics-empty">
+                No anomalies detected.
+            </div>`;
+
+        return;
+    }
+
+    element.innerHTML =
+        data.map(item => {
+
+            const group =
+                item.group_key ||
+                item.course_name ||
+                item.district ||
+                item.provider ||
+                "Anomaly";
+
+            const score =
+                item.z_score ??
+                item.score ??
+                "";
+
+            return `
+                <div class="analytics-row">
+
+                    <div>
+                        <strong>
+                            ${escapeHTML(group)}
+                        </strong>
+                    </div>
+
+                    <strong>
+                        ${escapeHTML(score)}
+                    </strong>
+
+                </div>
+            `;
+
+        }).join("");
+}
+
+
 /* =========================================================
    INSIGHTS
    ========================================================= */
-
 
 function renderInsights(data) {
 
@@ -2125,7 +2334,6 @@ function renderInsights(data) {
         return;
     }
 
-
     if (
         data === null ||
         data === undefined
@@ -2137,43 +2345,27 @@ function renderInsights(data) {
         return;
     }
 
-
-    /*
-       Backend returns:
-
-       {
-           insights: [...]
-       }
-    */
-
     let insights = [];
 
-
-    if (
-        Array.isArray(data)
-    ) {
+    if (Array.isArray(data)) {
 
         insights =
             data;
 
-    }
-    else if (
+    } else if (
         Array.isArray(data.insights)
     ) {
 
         insights =
             data.insights;
 
-    }
-    else if (
+    } else if (
         typeof data.insights === "string"
     ) {
 
         insights =
             [data.insights];
-
     }
-
 
     if (!insights.length) {
 
@@ -2183,27 +2375,25 @@ function renderInsights(data) {
         return;
     }
 
-
     element.innerHTML =
         insights
-            .map(
-                insight => {
+            .map(insight => {
 
-                    const text =
-                        typeof insight === "string"
-                            ? insight
-                            : String(insight);
+                const text =
+                    typeof insight === "string"
+                        ? insight
+                        : JSON.stringify(insight);
 
+                return `
+                    <div class="insight-item">
+                        ${escapeHTML(text)}
+                    </div>
+                `;
 
-                    return `
-                        <div class="insight-item">
-                            ${escapeHTML(text)}
-                        </div>
-                    `;
-                }
-            )
+            })
             .join("");
 }
+
 
 /* =========================================================
    ML PREDICTION
@@ -2220,12 +2410,6 @@ function renderPrediction(
     if (!element) {
         return;
     }
-    
-
-
-    /* =====================================================
-       NO DATA
-       ===================================================== */
 
     if (
         data === null ||
@@ -2241,7 +2425,6 @@ function renderPrediction(
         return;
     }
 
-
     const auc =
         data.auc_roc !== null &&
         data.auc_roc !== undefined &&
@@ -2250,7 +2433,6 @@ function renderPrediction(
         )
             ? Number(data.auc_roc)
             : null;
-
 
     const f1 =
         data.f1_score !== null &&
@@ -2261,29 +2443,20 @@ function renderPrediction(
             ? Number(data.f1_score)
             : null;
 
-
     const hasEvaluation =
         auc !== null ||
         f1 !== null;
-
 
     const note =
         data.note ||
         "Illustrative ML pipeline only.";
 
-
-    /* =====================================================
-       INSUFFICIENT DATA
-       ===================================================== */
-
     if (!hasEvaluation) {
 
         element.innerHTML = `
-
             <div class="ml-result ml-result-empty">
 
                 <div class="ml-result-heading">
-
                     <strong>
                         Demo model
                     </strong>
@@ -2291,30 +2464,21 @@ function renderPrediction(
                     <span class="ml-demo-badge">
                         Illustrative only
                     </span>
-
                 </div>
-
 
                 <div class="ml-message">
                     Not enough data to evaluate this model.
                 </div>
-
 
                 <p class="ml-note">
                     ${escapeHTML(note)}
                 </p>
 
             </div>
-
         `;
 
         return;
     }
-
-
-    /* =====================================================
-       SAMPLE COUNTS
-       ===================================================== */
 
     const train =
         Number(data.n_train) || 0;
@@ -2322,37 +2486,18 @@ function renderPrediction(
     const test =
         Number(data.n_test) || 0;
 
-
-    /* =====================================================
-       TOP FEATURES
-       ===================================================== */
-
     const topFeatures =
-        Array.isArray(
-            data.top_features
-        )
+        Array.isArray(data.top_features)
             ? data.top_features
             : [];
-
-
-    /* =====================================================
-       MODEL TITLE
-       ===================================================== */
 
     const title =
         id === "placementPrediction"
             ? "Placement model evaluation"
             : "Attrition model evaluation";
 
-
-    /* =====================================================
-       RENDER
-       ===================================================== */
-
     element.innerHTML = `
-
         <div class="ml-result">
-
 
             <div class="ml-result-heading">
 
@@ -2366,9 +2511,7 @@ function renderPrediction(
 
             </div>
 
-
             <div class="ml-metrics">
-
 
                 <div class="ml-metric">
 
@@ -2386,7 +2529,6 @@ function renderPrediction(
 
                 </div>
 
-
                 <div class="ml-metric">
 
                     <span>
@@ -2403,12 +2545,9 @@ function renderPrediction(
 
                 </div>
 
-
             </div>
 
-
             <div class="ml-meta-grid">
-
 
                 <div>
 
@@ -2422,7 +2561,6 @@ function renderPrediction(
 
                 </div>
 
-
                 <div>
 
                     <span>
@@ -2435,14 +2573,11 @@ function renderPrediction(
 
                 </div>
 
-
             </div>
-
 
             ${
                 topFeatures.length
                     ? `
-
                         <div class="ml-features">
 
                             <span>
@@ -2450,7 +2585,6 @@ function renderPrediction(
                             </span>
 
                             <div>
-
                                 ${
                                     topFeatures
                                         .map(
@@ -2464,27 +2598,21 @@ function renderPrediction(
                                         )
                                         .join("")
                                 }
-
                             </div>
 
                         </div>
-
                     `
                     : ""
             }
 
-
             <p class="ml-note">
-
                 ${escapeHTML(note)}
-
             </p>
 
-
         </div>
-
     `;
 }
+
 
 /* =========================================================
    NUMBER EXTRACTOR
@@ -2499,25 +2627,16 @@ function extractNumber(
         data === null ||
         data === undefined
     ) {
-
         return null;
     }
 
-    if (
-        typeof data ===
-        "number"
-    ) {
-
+    if (typeof data === "number") {
         return data;
     }
 
-    if (
-        Array.isArray(data)
-    ) {
+    if (Array.isArray(data)) {
 
-        for (
-            const item of data
-        ) {
+        for (const item of data) {
 
             const result =
                 extractNumber(
@@ -2526,7 +2645,6 @@ function extractNumber(
                 );
 
             if (result !== null) {
-
                 return result;
             }
         }
@@ -2534,37 +2652,25 @@ function extractNumber(
         return null;
     }
 
-    if (
-        typeof data ===
-        "object"
-    ) {
+    if (typeof data === "object") {
 
-        for (
-            const key of keys
-        ) {
+        for (const key of keys) {
 
             if (
-                data[key] !==
-                undefined &&
-                data[key] !==
-                null
+                data[key] !== undefined &&
+                data[key] !== null
             ) {
 
                 const number =
-                    Number(
-                        data[key]
-                    );
+                    Number(data[key]);
 
                 if (!isNaN(number)) {
-
                     return number;
                 }
             }
         }
 
-        for (
-            const key of Object.keys(data)
-        ) {
+        for (const key of Object.keys(data)) {
 
             if (
                 typeof data[key] ===
@@ -2578,7 +2684,6 @@ function extractNumber(
                     );
 
                 if (result !== null) {
-
                     return result;
                 }
             }
@@ -2602,39 +2707,29 @@ function displayValue(
         value === null ||
         value === undefined
     ) {
-
         return;
     }
 
-    ids.forEach(
-        id => {
+    ids.forEach(id => {
 
-            const element =
-                document.getElementById(
-                    id
-                );
+        const element =
+            document.getElementById(id);
 
-            if (!element) {
-
-                return;
-            }
-
-            if (
-                typeof value ===
-                "number"
-            ) {
-
-                element.textContent =
-                    value.toFixed(1);
-
-            }
-            else {
-
-                element.textContent =
-                    value;
-            }
+        if (!element) {
+            return;
         }
-    );
+
+        if (typeof value === "number") {
+
+            element.textContent =
+                value.toFixed(1);
+
+        } else {
+
+            element.textContent =
+                value;
+        }
+    });
 }
 
 
@@ -2708,21 +2803,15 @@ function setupFilters() {
             () => {
 
                 if (stateFilter) {
-
-                    stateFilter.selectedIndex =
-                        0;
+                    stateFilter.selectedIndex = 0;
                 }
 
                 if (districtFilter) {
-
-                    districtFilter.selectedIndex =
-                        0;
+                    districtFilter.selectedIndex = 0;
                 }
 
                 if (programmeFilter) {
-
-                    programmeFilter.selectedIndex =
-                        0;
+                    programmeFilter.selectedIndex = 0;
                 }
 
                 applyAllFilters();
@@ -2735,7 +2824,6 @@ function setupFilters() {
 function applyAllFilters() {
 
     applyDistrictFilter();
-
     applyProgrammeFilter();
 }
 
@@ -2748,7 +2836,6 @@ function applyDistrictFilter() {
         );
 
     if (!filter) {
-
         return;
     }
 
@@ -2758,27 +2845,22 @@ function applyDistrictFilter() {
             .toLowerCase();
 
     document
-        .querySelectorAll(
-            ".district-row"
-        )
-        .forEach(
-            row => {
+        .querySelectorAll(".district-row")
+        .forEach(row => {
 
-                const text =
-                    row.textContent
-                        .toLowerCase();
+            const text =
+                row.textContent
+                    .toLowerCase();
 
-                row.style.display =
-                    (
-                        selected === "" ||
-                        selected ===
-                        "all districts" ||
-                        text.includes(selected)
-                    )
-                        ? ""
-                        : "none";
-            }
-        );
+            row.style.display =
+                (
+                    selected === "" ||
+                    selected === "all districts" ||
+                    text.includes(selected)
+                )
+                    ? ""
+                    : "none";
+        });
 }
 
 
@@ -2790,7 +2872,6 @@ function applyProgrammeFilter() {
         );
 
     if (!filter) {
-
         return;
     }
 
@@ -2803,24 +2884,21 @@ function applyProgrammeFilter() {
         .querySelectorAll(
             ".course-panel tbody tr"
         )
-        .forEach(
-            row => {
+        .forEach(row => {
 
-                const text =
-                    row.textContent
-                        .toLowerCase();
+            const text =
+                row.textContent
+                    .toLowerCase();
 
-                row.style.display =
-                    (
-                        selected === "" ||
-                        selected ===
-                        "all programmes" ||
-                        text.includes(selected)
-                    )
-                        ? ""
-                        : "none";
-            }
-        );
+            row.style.display =
+                (
+                    selected === "" ||
+                    selected === "all programmes" ||
+                    text.includes(selected)
+                )
+                    ? ""
+                    : "none";
+        });
 }
 
 
@@ -2940,7 +3018,6 @@ async function logout() {
         );
 
     if (!confirmed) {
-
         return;
     }
 
@@ -2956,8 +3033,7 @@ async function logout() {
                 .signOut();
         }
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Logout error:",
@@ -2977,7 +3053,6 @@ async function logout() {
 function exportReport() {
 
     const report = `
-
 SKILLTRACK GOVERNMENT DASHBOARD REPORT
 ======================================
 
@@ -3017,28 +3092,18 @@ ${
 
 IMPACT INDEX
 ------------
-
-${formatObject(
-    impactIndexData
-)}
+${formatObject(impactIndexData)}
 
 COMPOSITE SCORE
 ---------------
-
-${formatObject(
-    compositeScoreData
-)}
+${formatObject(compositeScoreData)}
 
 INSIGHTS
 --------
-
-${formatObject(
-    insightsData
-)}
+${formatObject(insightsData)}
 
 DATA SOURCE
 -----------
-
 SkillTrack Analytics API
 
 `;
@@ -3047,20 +3112,15 @@ SkillTrack Analytics API
         new Blob(
             [report],
             {
-                type:
-                    "text/plain"
+                type: "text/plain"
             }
         );
 
     const url =
-        URL.createObjectURL(
-            blob
-        );
+        URL.createObjectURL(blob);
 
     const link =
-        document.createElement(
-            "a"
-        );
+        document.createElement("a");
 
     link.href =
         url;
@@ -3068,34 +3128,26 @@ SkillTrack Analytics API
     link.download =
         "SkillTrack-Government-Report.txt";
 
-    document.body.appendChild(
-        link
-    );
+    document.body.appendChild(link);
 
     link.click();
 
-    document.body.removeChild(
-        link
-    );
+    document.body.removeChild(link);
 
-    URL.revokeObjectURL(
-        url
-    );
+    URL.revokeObjectURL(url);
 }
 
 
 function getTotalCompleted() {
 
-    let total =
-        0;
+    let total = 0;
 
     coursePlacementData.forEach(
         course => {
 
             total +=
-                Number(
-                    course.completed
-                ) || 0;
+                Number(course.completed) || 0;
+
         }
     );
 
@@ -3117,7 +3169,6 @@ function setupSettings() {
         );
 
     if (!settingsLink) {
-
         return;
     }
 
@@ -3143,9 +3194,7 @@ function showSettings() {
     if (!modal) {
 
         modal =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
         modal.id =
             "settingsModal";
@@ -3154,13 +3203,11 @@ function showSettings() {
             "settings-modal";
 
         modal.innerHTML = `
-
             <div class="settings-box">
 
                 <div class="settings-header">
 
                     <div>
-
                         <p>
                             DASHBOARD SETTINGS
                         </p>
@@ -3168,7 +3215,6 @@ function showSettings() {
                         <h2>
                             Settings
                         </h2>
-
                     </div>
 
                     <button
@@ -3180,13 +3226,11 @@ function showSettings() {
 
                 </div>
 
-
                 <div class="settings-content">
 
                     <label class="setting-row">
 
                         <span>
-
                             <strong>
                                 Automatic Refresh
                             </strong>
@@ -3194,7 +3238,6 @@ function showSettings() {
                             <small>
                                 Refresh dashboard data every 5 minutes.
                             </small>
-
                         </span>
 
                         <input
@@ -3204,11 +3247,9 @@ function showSettings() {
 
                     </label>
 
-
                     <label class="setting-row">
 
                         <span>
-
                             <strong>
                                 Analytics & ML
                             </strong>
@@ -3216,7 +3257,6 @@ function showSettings() {
                             <small>
                                 Show advanced analytics and ML results.
                             </small>
-
                         </span>
 
                         <input
@@ -3226,11 +3266,9 @@ function showSettings() {
 
                     </label>
 
-
                     <label class="setting-row">
 
                         <span>
-
                             <strong>
                                 Dashboard Animations
                             </strong>
@@ -3238,7 +3276,6 @@ function showSettings() {
                             <small>
                                 Enable dashboard animations.
                             </small>
-
                         </span>
 
                         <input
@@ -3247,7 +3284,6 @@ function showSettings() {
                         >
 
                     </label>
-
 
                     <div class="settings-actions">
 
@@ -3272,37 +3308,26 @@ function showSettings() {
             </div>
         `;
 
-        document.body.appendChild(
-            modal
-        );
+        document.body.appendChild(modal);
 
         document
-            .getElementById(
-                "closeSettings"
-            )
+            .getElementById("closeSettings")
             .addEventListener(
                 "click",
                 () => {
-
-                    modal.classList.remove(
-                        "show"
-                    );
+                    modal.classList.remove("show");
                 }
             );
 
         document
-            .getElementById(
-                "saveSettings"
-            )
+            .getElementById("saveSettings")
             .addEventListener(
                 "click",
                 saveSettings
             );
 
         document
-            .getElementById(
-                "resetSettings"
-            )
+            .getElementById("resetSettings")
             .addEventListener(
                 "click",
                 resetSettings
@@ -3330,9 +3355,7 @@ function showSettings() {
         .checked =
         dashboardSettings.animations;
 
-    modal.classList.add(
-        "show"
-    );
+    modal.classList.add("show");
 }
 
 
@@ -3375,10 +3398,7 @@ function saveSettings() {
         );
 
     if (modal) {
-
-        modal.classList.remove(
-            "show"
-        );
+        modal.classList.remove("show");
     }
 
     showModal(
@@ -3403,15 +3423,13 @@ function loadSettings() {
 
         if (saved) {
 
-            dashboardSettings =
-                {
-                    ...dashboardSettings,
-                    ...JSON.parse(saved)
-                };
+            dashboardSettings = {
+                ...dashboardSettings,
+                ...JSON.parse(saved)
+            };
         }
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Settings load error:",
@@ -3428,11 +3446,8 @@ function loadSettings() {
 function resetSettings() {
 
     dashboardSettings = {
-
         autoRefresh: false,
-
         showAnalytics: true,
-
         animations: true
     };
 
@@ -3456,21 +3471,15 @@ function resetSettings() {
         );
 
     if (auto) {
-
-        auto.checked =
-            false;
+        auto.checked = false;
     }
 
     if (analytics) {
-
-        analytics.checked =
-            true;
+        analytics.checked = true;
     }
 
     if (animations) {
-
-        animations.checked =
-            true;
+        animations.checked = true;
     }
 
     applyDashboardSettings();
@@ -3507,8 +3516,7 @@ function applyDashboardSettings() {
 
         startAutoRefresh();
 
-    }
-    else {
+    } else {
 
         stopAutoRefresh();
     }
@@ -3526,9 +3534,7 @@ function startAutoRefresh() {
     autoRefreshTimer =
         setInterval(
             () => {
-
                 refreshDashboardData();
-
             },
             5 * 60 * 1000
         );
@@ -3543,8 +3549,7 @@ function stopAutoRefresh() {
             autoRefreshTimer
         );
 
-        autoRefreshTimer =
-            null;
+        autoRefreshTimer = null;
     }
 }
 
@@ -3573,40 +3578,23 @@ async function refreshDashboardData() {
             "Refreshing...";
     }
 
-    await Promise.allSettled(
-        [
-
-            loadCourseData(),
-
-            loadDistrictData(),
-
-            loadProviderData(),
-
-            loadRetention(),
-
-            loadWageGrowth(),
-
-            loadRelevance(),
-
-            loadCompositeScore(),
-
-            loadSkillGap(),
-
-            loadImpactIndex(),
-
-            loadNonPlacementReasons(),
-
-            loadAttritionReasons(),
-
-            loadInsights(),
-
-            loadAnomalies(),
-
-            loadPlacementPrediction(),
-
-            loadAttritionPrediction()
-        ]
-    );
+    await Promise.allSettled([
+        loadCourseData(),
+        loadDistrictData(),
+        loadProviderData(),
+        loadRetention(),
+        loadWageGrowth(),
+        loadRelevance(),
+        loadCompositeScore(),
+        loadSkillGap(),
+        loadImpactIndex(),
+        loadNonPlacementReasons(),
+        loadAttritionReasons(),
+        loadInsights(),
+        loadAnomalies(),
+        loadPlacementPrediction(),
+        loadAttritionPrediction()
+    ]);
 
     updateLastUpdated();
 
@@ -3648,7 +3636,6 @@ function updateLastUpdated() {
         );
 
     if (!element) {
-
         return;
     }
 
@@ -3673,12 +3660,9 @@ function updateLastUpdated() {
 function showAnalyticsError(id) {
 
     const element =
-        document.getElementById(
-            id
-        );
+        document.getElementById(id);
 
     if (!element) {
-
         return;
     }
 
@@ -3696,12 +3680,9 @@ function showDataError(
 ) {
 
     const element =
-        document.getElementById(
-            id
-        );
+        document.getElementById(id);
 
     if (!element) {
-
         return;
     }
 
@@ -3723,7 +3704,6 @@ function showDistrictError() {
         );
 
     if (!container) {
-
         return;
     }
 
@@ -3732,6 +3712,138 @@ function showDistrictError() {
             Unable to load district data.
         </div>
     `;
+}
+
+
+/* =========================================================
+   FALLBACK KEY VALUE RENDERER
+   ========================================================= */
+
+function renderKeyValueData(
+    element,
+    data
+) {
+
+    if (
+        data === null ||
+        data === undefined
+    ) {
+
+        element.innerHTML =
+            `<div class="analytics-empty">
+                No data available.
+            </div>`;
+
+        return;
+    }
+
+    if (Array.isArray(data)) {
+
+        if (!data.length) {
+
+            element.innerHTML =
+                `<div class="analytics-empty">
+                    No data available.
+                </div>`;
+
+            return;
+        }
+
+        element.innerHTML =
+            data.map(
+                item => {
+
+                    if (
+                        typeof item ===
+                        "object"
+                    ) {
+
+                        return `
+                            <div class="analytics-row">
+                                ${Object.entries(item)
+                                    .map(
+                                        ([key, value]) => `
+                                            <span>
+                                                <strong>
+                                                    ${escapeHTML(key)}:
+                                                </strong>
+                                                ${escapeHTML(value)}
+                                            </span>
+                                        `
+                                    )
+                                    .join("")}
+                            </div>
+                        `;
+                    }
+
+                    return `
+                        <div class="analytics-row">
+                            ${escapeHTML(item)}
+                        </div>
+                    `;
+                }
+            ).join("");
+
+        return;
+    }
+
+    if (
+        typeof data ===
+        "object"
+    ) {
+
+        element.innerHTML =
+            Object.entries(data)
+                .map(
+                    ([key, value]) => {
+
+                        const formatted =
+                            typeof value === "object"
+                                ? JSON.stringify(value)
+                                : String(value);
+
+                        return `
+                            <div class="analytics-row">
+
+                                <span>
+                                    <strong>
+                                        ${escapeHTML(key)}
+                                    </strong>
+                                </span>
+
+                                <span>
+                                    ${escapeHTML(formatted)}
+                                </span>
+
+                            </div>
+                        `;
+                    }
+                )
+                .join("");
+
+        return;
+    }
+
+    element.textContent =
+        String(data);
+}
+
+
+/* =========================================================
+   FORMAT INTEGER
+   ========================================================= */
+
+function formatInteger(value) {
+
+    const number =
+        Number(value);
+
+    if (!Number.isFinite(number)) {
+        return "0";
+    }
+
+    return Math.round(number)
+        .toLocaleString("en-IN");
 }
 
 
@@ -3749,19 +3861,11 @@ function formatObject(data) {
         return "No data available.";
     }
 
-    if (
-        typeof data ===
-        "string"
-    ) {
-
+    if (typeof data === "string") {
         return data;
     }
 
-    if (
-        typeof data ===
-        "number"
-    ) {
-
+    if (typeof data === "number") {
         return String(data);
     }
 
@@ -3773,8 +3877,7 @@ function formatObject(data) {
             2
         );
 
-    }
-    catch (error) {
+    } catch (error) {
 
         return String(data);
     }
@@ -3788,27 +3891,22 @@ function formatObject(data) {
 function escapeHTML(value) {
 
     return String(value)
-
         .replace(
             /&/g,
             "&amp;"
         )
-
         .replace(
             /</g,
             "&lt;"
         )
-
         .replace(
             />/g,
             "&gt;"
         )
-
         .replace(
             /"/g,
             "&quot;"
         )
-
         .replace(
             /'/g,
             "&#039;"
