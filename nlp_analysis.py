@@ -128,7 +128,7 @@ def generate_all_insights(engine):
 
 if __name__ == "__main__":
     from schema import get_engine
-    engine = get_engine("data/skilling_outcomes.db")
+    engine = get_engine("data/skilling_outcomes_demo.db")
 
     print("--- Non-placement reason classification (keyword demo version) ---")
     print(reason_frequency_table(engine, "non_placement"))
