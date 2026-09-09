@@ -1,21 +1,15 @@
 [project]
 name = "skilling-analytics"
 version = "0.1.0"
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.12,<3.13"
+
 dependencies = [
-    "sqlalchemy",
-    "supabase",
-    "faker",
-    "pandas",
-    "numpy",
-    "scikit-learn",
-    "xgboost",
-    "streamlit",
-    "plotly",
     "fastapi",
     "uvicorn",
-    "anthropic",
-    "python-dotenv"
+    "sqlalchemy",
+    "pandas",
+    "numpy",
+    "scikit-learn"
 ]
 
 [tool.vercel]
