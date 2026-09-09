@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api.py": {
+      "includeFiles": ["data/skilling_outcomes_demo.db"]
+    }
+  }
+}
