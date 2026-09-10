@@ -117,3 +117,149 @@ def get_placement_prediction(x_api_key: Optional[str] = Header(default=None)):
 def get_attrition_prediction(x_api_key: Optional[str] = Header(default=None)):
     check_auth(x_api_key)
     return ml.attrition_prediction_demo(engine)
+
+# =========================================================
+# EXTENDED ML / VALIDATION ENDPOINTS
+# =========================================================
+
+@app.get("/api/ml/dropout-risk")
+def get_dropout_risk(x_api_key: Optional[str] = Header(default=None)):
+    check_auth(x_api_key)
+
+    result = ml.dropout_prediction_model(engine)
+
+    if result.get("trained") and hasattr(result.get("at_risk_trainees"), "to_dict"):
+        result["at_risk_trainees"] = result["at_risk_trainees"].to_dict(orient="records")
+
+    # Never send internal model objects to the frontend
+    result.pop("_model", None)
+    result.pop("_columns", None)
+
+    return result
+
+
+@app.get("/api/ml/salary-model-summary")
+def get_salary_model_summary(x_api_key: Optional[str] = Header(default=None)):
+    check_auth(x_api_key)
+
+    result = ml.salary_prediction_model(engine)
+
+    # Remove Python model objects before JSON serialization
+    result.pop("_model", None)
+    result.pop("_columns", None)
+
+    return result
+
+
+@app.get("/api/followups/compliance")
+def get_followup_compliance(
+    group_by: str = "scheduled_month",
+    x_api_key: Optional[str] = Header(default=None)
+):
+    check_auth(x_api_key)
+
+    result = ml.followup_compliance_summary(engine, group_by)
+
+    return result.to_dict(orient="records")
+
+
+@app.get("/api/followups/risk")
+def get_followup_risk(x_api_key: Optional[str] = Header(default=None)):
+    check_auth(x_api_key)
+
+    return ml.followup_risk_model(engine)
+
+
+@app.get("/api/validation/employer-scorecard")
+def get_employer_scorecard(x_api_key: Optional[str] = Header(default=None)):
+    check_auth(x_api_key)
+
+    result = ml.employer_verification_scorecard(engine)
+
+    return result.to_dict(orient="records")
+
+
+@app.get("/api/validation/dispute-risk")
+def get_dispute_risk(x_api_key: Optional[str] = Header(default=None)):
+    check_auth(x_api_key)
+
+    return ml.dispute_risk_model(engine)
+
+
+@app.get("/api/validation/suspicious-placements")
+def get_suspicious_placements(
+    wage_z_threshold: float = 2.5,
+    x_api_key: Optional[str] = Header(default=None)
+):
+    check_auth(x_api_key)
+
+    result = ml.flag_suspicious_placements(
+        engine,
+        wage_z_threshold
+    )
+
+    return result.to_dict(orient="records")
+
+
+# =========================================================
+# JOB MATCHING
+# =========================================================
+
+@app.get("/api/ml/job-match/{trainee_id}")
+def get_job_match(
+    trainee_id: int,
+    top_n: int = 5,
+    x_api_key: Optional[str] = Header(default=None)
+):
+    check_auth(x_api_key)
+
+    result = ml.recommend_jobs_for_trainee(
+        engine,
+        trainee_id,
+        top_n
+    )
+
+    return result.to_dict(orient="records")
+
+
+# =========================================================
+# SALARY PREDICTION
+# =========================================================
+
+@app.get("/api/ml/salary-predict")
+def get_salary_prediction(
+    skill_count: int,
+    assessment_score: float,
+    duration_weeks: int,
+    prior_jobs: int,
+    job_sector: str,
+    placement_type: str,
+    gender: str,
+    category: str,
+    x_api_key: Optional[str] = Header(default=None)
+):
+    check_auth(x_api_key)
+
+    fitted = ml.salary_prediction_model(engine)
+
+    if not fitted.get("trained"):
+        return fitted
+
+    predicted = ml.predict_salary_for_input(
+        fitted,
+        skill_count=skill_count,
+        assessment_score=assessment_score,
+        duration_weeks=duration_weeks,
+        prior_jobs=prior_jobs,
+        job_sector=job_sector,
+        placement_type=placement_type,
+        gender=gender,
+        category=category,
+    )
+
+    return {
+        "predicted_starting_wage": predicted,
+        "note": fitted.get("note"),
+    }
+
+
