@@ -1,18 +1,15 @@
 """
-Streamlit analytics dashboard — the "government/provider dashboard" from
-Section 9 of the blueprint. Consumes the metrics/NLP/ML layers, which in
-production would sit behind the Results API rather than being called directly.
-
+Streamlit analytics dashboard
 Run: streamlit run app.py
 """
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-from schema import get_engine
-import metrics as m
-import nlp_analysis as nlp
-import ml_models as ml
+from database.schema import get_engine
+import analytics.metrics as m
+import analytics.nlp_analysis as nlp
+import analytics.ml_models as ml
 
 st.set_page_config(page_title="Skilling Outcomes Analytics", layout="wide")
 engine = get_engine("data/skilling_outcomes_demo.db")
@@ -23,11 +20,11 @@ st.caption("Running on synthetic data. See sidebar for what's demo-only vs produ
 with st.sidebar:
     st.header("About this build")
     st.markdown(
-        "- **Metrics** (placement, retention, wage, relevance): real formulas, valid on real data too.\n"
-        "- **NLP** (reason classification, insights): keyword-rule demo standing in for an LLM call.\n"
-        "- **ML prediction** (placement/attrition): pipeline works, but accuracy numbers are "
-        "**illustrative only** — synthetic data can't prove real-world predictive power.\n"
-        "- **Anomaly detection**: statistically valid now, on any dataset."
+        "Metrics (placement, retention, wage, relevance): real formulas, valid on real data too.\n"
+        "NLP (reason classification, insights): keyword-rule demo standing in for an LLM call.\n"
+        "ML prediction (placement/attrition): pipeline works, but accuracy numbers are "
+        "illustrative only — synthetic data can't prove real-world predictive power.\n"
+        "Anomaly detection: statistically valid now, on any dataset."
     )
     impact = m.overall_impact_index(engine)
     st.metric("Overall Programme Impact Index", impact)

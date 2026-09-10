@@ -19,6 +19,6 @@ RUN python build_data.py
 
 EXPOSE 8000
 ENV ANALYTICS_API_KEY=""
-ENV ANTHROPIC_API_KEY=""
+ENV GEMINI_API_KEY=""
 
 CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -9,5 +9,5 @@ streamlit
 plotly
 fastapi
 uvicorn
-anthropic
+google-genai
 python-dotenv

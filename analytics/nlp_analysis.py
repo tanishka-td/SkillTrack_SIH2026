@@ -1,25 +1,13 @@
 """
-AI/NLP layer — Section 5 of the blueprint.
-
-NOTE ON IMPLEMENTATION: this sandbox has no LLM API key wired up, so the reason
-classifier below uses a keyword/rule-based approach as the *demonstrable*
-version of 5(a). In production, swap `classify_reason_text()`'s body for a
-single LLM call with the taxonomy in the prompt (see the docstring inside it) —
-the function signature and downstream code do not need to change.
-
-5(b) Training-job relevance is implemented in metrics.py via Jaccard overlap
-(a valid embeddings-free version of the same idea — see blueprint Section 5b).
-
-5(e) Automated insight generation is implemented here as a template-based
-narrative generator over computed metrics — swap for an LLM call the same way.
+AI/NLP layer
 """
 import re
 import os
 from collections import Counter
 
-USE_LLM = bool(os.environ.get("ANTHROPIC_API_KEY"))
+USE_LLM = bool(os.environ.get("GEMINI_API_KEY"))
 if USE_LLM:
-    from llm_client import classify_reason_llm, generate_insight_llm
+    from llm_client import classify_reason_llm, generate_insight_llm, extract_skills_llm
 
 TAXONOMY = {
     "low_wage": ["low wage", "wage too low", "underpaid", "wage offered", "workload"],
@@ -38,8 +26,8 @@ def classify_reason_text(text: str) -> tuple[str, float]:
     """
     Classify a free-text reason into the fixed taxonomy.
 
-    Automatically uses a real Claude API call (llm_client.classify_reason_llm)
-    if ANTHROPIC_API_KEY is set in the environment. Otherwise falls back to
+    Automatically uses a real Gemini API call (llm_client.classify_reason_llm)
+    if GEMINI_API_KEY is set in the environment. Otherwise falls back to
     the keyword-rule demo version below, so this always runs even with no key.
     """
     if USE_LLM:
@@ -67,10 +55,6 @@ def reason_frequency_table(engine, category):
 
 
 def generate_insight(course_name: str, metrics: dict) -> str:
-    """
-    Narrative generator. Uses a real Claude API call if ANTHROPIC_API_KEY is
-    set; otherwise falls back to the template version below.
-    """
     if USE_LLM:
         return generate_insight_llm(course_name, metrics)
 
@@ -104,7 +88,10 @@ def generate_insight(course_name: str, metrics: dict) -> str:
 
 
 def generate_all_insights(engine):
-    import metrics as m
+    try:
+        import analytics.metrics as m  # when imported as a package (e.g. from api.py)
+    except ImportError:
+        import metrics as m  # when run standalone from inside analytics/
     pr = m.placement_rate(engine, "course")
     rel = m.training_job_relevance(engine, "course")
     wg = m.wage_growth(engine, "course")
@@ -127,8 +114,8 @@ def generate_all_insights(engine):
 
 
 if __name__ == "__main__":
-    from schema import get_engine
-    engine = get_engine("data/skilling_outcomes_demo.db")
+    from database.schema import get_engine
+    engine = get_engine("data/skilling_outcomes.db")
 
     print("--- Non-placement reason classification (keyword demo version) ---")
     print(reason_frequency_table(engine, "non_placement"))
@@ -139,3 +126,13 @@ if __name__ == "__main__":
     print("\n--- Auto-generated insights ---")
     for insight in generate_all_insights(engine):
         print("-", insight)
+
+def extract_job_skills(text: str) -> list[str]:
+    """
+    Extract skills from a job title/description using Gemini.
+    Falls back to an empty list when LLM is unavailable.
+    """
+    if not USE_LLM or not text:
+        return []
+
+    return extract_skills_llm(text)

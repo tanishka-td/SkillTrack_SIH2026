@@ -1,12 +1,5 @@
 """
-Results API — Section 9 of the blueprint. This is what your teammate's
-trainee dashboard (or a separate government/provider dashboard) calls,
-instead of touching this database or these Python files directly.
-
-Run locally:
-    uvicorn api:app --reload --port 8000
-Then open http://localhost:8000/docs for interactive API docs (auto-generated).
-
+Results API
 Auth: a single header-based API key check is included as a minimum viable
 guard (SIH-prototype level). Swap for real auth (JWT/OAuth) before any
 real deployment with real trainee data.
@@ -16,10 +9,10 @@ from fastapi import FastAPI, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
-from schema import get_engine
-import metrics as m
-import nlp_analysis as nlp
-import ml_models as ml
+from database.schema import get_engine
+import analytics.metrics as m
+import analytics.nlp_analysis as nlp
+import analytics.ml_models as ml
 
 app = FastAPI(title="Skilling Outcomes Analytics API", version="1.0")
 

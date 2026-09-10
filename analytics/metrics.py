@@ -1,10 +1,10 @@
 """
-Metrics engine — Section 4 of the blueprint.
+Metrics engine
 Pure SQL/pandas, no AI/ML. Each function returns a pandas DataFrame or a scalar.
 """
 import pandas as pd
 from sqlalchemy import text
-from schema import get_engine
+from database.schema import get_engine
 
 
 def _read(engine, query, params=None):
@@ -86,7 +86,7 @@ def time_to_placement(engine):
     summary.columns = ["course_name", "mean_days_to_placement", "median_days_to_placement"]
     return summary.round(1)
 
-
+# retention
 def retention_rate(engine, month_mark=6):
     """
     Retention at month N = placements still 'active' (or ended after N months)
@@ -108,7 +108,7 @@ def retention_rate(engine, month_mark=6):
     rate = still_employed.mean() * 100
     return {"month": month_mark, "retention_rate_pct": round(rate, 1), "n": len(df)}
 
-
+# attrition
 def attrition_rate(engine, month_mark=6):
     r = retention_rate(engine, month_mark)
     if r["retention_rate_pct"] is None:
@@ -193,7 +193,7 @@ def training_job_relevance(engine, group_by="course"):
     col = {"course": "course_name", "provider": "provider_name", "district": "district_name"}[group_by]
     return merged.groupby(col)["relevance_score"].mean().round(3).reset_index()
 
-
+# best course provider
 def course_provider_composite_score(engine, weights=(0.35, 0.30, 0.20, 0.15)):
     """
     Composite = w1*placement_rate + w2*retention_rate(6mo, approx per-course) +
@@ -224,6 +224,7 @@ def course_provider_composite_score(engine, weights=(0.35, 0.30, 0.20, 0.15)):
     return merged.sort_values("composite_score", ascending=False)
 
 
+# Skill gap
 def skill_gap(engine):
     """Skills demanded by jobs but absent from the course curriculum, per course."""
     q_course = """
