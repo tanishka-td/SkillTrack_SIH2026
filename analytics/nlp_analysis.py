@@ -7,7 +7,7 @@ from collections import Counter
 
 USE_LLM = bool(os.environ.get("GEMINI_API_KEY"))
 if USE_LLM:
-    from llm_client import classify_reason_llm, generate_insight_llm, extract_skills_llm
+    from analytics.llm_client import classify_reason_llm, generate_insight_llm, extract_skills_llm
 
 TAXONOMY = {
     "low_wage": ["low wage", "wage too low", "underpaid", "wage offered", "workload"],
