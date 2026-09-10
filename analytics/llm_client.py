@@ -43,7 +43,7 @@ Respond with ONLY valid JSON: {{"category": "...", "confidence": 0.0-1.0}}"""
     
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.6-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
@@ -67,15 +67,15 @@ Write a short, plain-language insight a programme manager could act on. No pream
     
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.6-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
                 max_output_tokens=200,
             ),
         )
         return response.text.strip()
-    except Exception as e:
-        return f"Unable to generate insight: {e}"
+    except Exception:
+        return ""
 
 
 def extract_skills_llm(job_title_or_description: str) -> list[str]:
@@ -89,7 +89,7 @@ def extract_skills_llm(job_title_or_description: str) -> list[str]:
     
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.6-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
