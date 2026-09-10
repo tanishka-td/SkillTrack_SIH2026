@@ -1,0 +1,235 @@
+/* =====================================================
+   OFFICIAL PROFILE PAGE STYLES
+   Extends design tokens from govt_dashboard.css
+   ===================================================== */
+
+/* Profile Hero Card */
+.profile-hero-card {
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-hero-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-large-avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #bae6fd;
+    flex-shrink: 0;
+}
+
+.avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #ffffff;
+    border: 2px solid var(--surface);
+    cursor: pointer;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.avatar-edit-btn:hover {
+    background: var(--primary-dark);
+}
+
+.profile-hero-info h2 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge-verified {
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: #ecfdf5;
+    color: #059669;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #a7f3d0;
+}
+
+.profile-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.profile-dept {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Two Column Layout */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Info List Styling */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--card-border-subtle);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-item label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.6px;
+}
+
+.info-item strong {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Jurisdiction Summary Cards */
+.jurisdiction-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.jurisdiction-stat-card {
+    background: var(--bg-canvas);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 14px;
+}
+
+.jurisdiction-stat-card span {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.jurisdiction-stat-card strong {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+/* Activity Timeline */
+.activity-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    padding-left: 8px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.timeline-dot.blue { background-color: var(--primary); }
+.timeline-dot.green { background-color: var(--accent-green); }
+.timeline-dot.orange { background-color: var(--accent-amber); }
+
+.timeline-content strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.timeline-content span {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile-hero-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

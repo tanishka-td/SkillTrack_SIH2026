@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillTrack | Trainee Dashboard</title>
+
+    <!-- Typography & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="trainee_dashboard.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- =====================================================
+         SIDEBAR NAVIGATION
+    ====================================================== -->
+      <aside class="sidebar" id="sidebar">
+        <a href="#" class="brand">
+          <span class="brand-icon"><i class="fa-solid fa-chart-line"></i></span>
+          <span>Skill<span>Track</span></span>
+        </a>
+
+        <div class="mini-profile">
+          <div class="avatar" id="sidebarAvatar">TR</div>
+          <div class="profile-info">
+            <strong id="sidebarName">Loading...</strong>
+            <span id="traineeId"
+              ><i class="fa-solid fa-id-badge"></i> ST-......</span
+            >
+          </div>
+        </div>
+
+        <nav class="navigation">
+          <p class="nav-heading">MAIN MENU</p>
+
+          <a href="trainee_dashboard.html" class="nav-link active">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="my_training.html" class="nav-link">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>My Training</span>
+          </a>
+
+          <a href="trainee_status.html" class="nav-link">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Current Status</span>
+          </a>
+
+          <a href="trainee_followups.html" class="nav-link">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>Follow-ups</span>
+          </a>
+
+          <p class="nav-heading account-heading">ACCOUNT</p>
+
+          <a href="trainee_profile.html" class="nav-link">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>My Profile</span>
+          </a>
+
+          <a href="trainee_help.html" class="nav-link">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Help & Support</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="system-status">
+            <span class="status-indicator"></span>
+            <span>System Operational</span>
+          </div>
+
+          <button class="logout" id="logoutBtn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- =====================================================
+         MAIN VIEWPORT
+    ====================================================== -->
+      <div class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+          <div class="left-top">
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="page-title">
+              <span class="portal-badge"
+                ><i class="fa-solid fa-shield-halved"></i> TRAINEE PORTAL</span
+              >
+              <h1 id="welcomeMessage">Good morning</h1>
+            </div>
+          </div>
+
+          <div class="right-top">
+            <button
+              class="notification"
+              id="notificationBtn"
+              aria-label="Notifications"
+            >
+              <i class="fa-regular fa-bell"></i>
+              <em></em>
+            </button>
+
+            <a href="trainee_profile.html" class="user-box">
+              <div class="top-avatar" id="topAvatar">TR</div>
+              <div class="user-details">
+                <strong id="topUserName">Loading...</strong>
+                <span>Verified Trainee</span>
+              </div>
+            </a>
+          </div>
+        </header>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="content">
+          <!-- WELCOME / BANNER CARD -->
+          <section class="welcome-card">
+            <div class="welcome-text">
+              <span class="eyebrow"
+                ><i class="fa-solid fa-bolt-lightning"></i> ACTIVE COHORT
+                JOURNEY</span
+              >
+              <h2>Track Your Verified Milestones</h2>
+              <p>
+                Keep your contact details and career milestones current.
+                Verified progression builds your long-term institutional record.
+              </p>
+            </div>
+
+            <div class="completion">
+              <div class="progress-wrapper">
+                <svg class="progress-ring" width="84" height="84">
+                  <circle class="progress-ring-bg" cx="42" cy="42" r="36" />
+                  <circle
+                    class="progress-ring-fill"
+                    id="progressCircle"
+                    cx="42"
+                    cy="42"
+                    r="36"
+                  />
+                </svg>
+                <strong id="profilePercentage">0%</strong>
+              </div>
+              <div class="completion-info">
+                <span>Profile Completion</span>
+                <strong id="completionText">Calculating...</strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- STATS COUNTERS -->
+          <section class="stats">
+            <article class="stat-card">
+              <div class="stat-icon blue">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <div class="stat-data">
+                <strong>TRAINING</strong>
+                <strong>In Progress</strong>
+                <small>Curriculum Module</small>
+              </div>
+              <span class="stat-badge success"
+                ><i class="fa-solid fa-check"></i
+              ></span>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-icon green">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="stat-data">
+                <strong>CURRENT STATUS</strong>
+                <strong id="dashboardStatus">Profile Active</strong>
+                <small>Real-time telemetry</small>
+              </div>
+              <span class="stat-badge green"
+                ><i class="fa-solid fa-signal"></i
+              ></span>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-icon orange">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div class="stat-data">
+                <strong>Follow-up Window</strong>
+                <strong>Month 3</strong>
+                <small>Next: 45 Days</small>
+              </div>
+              <span class="stat-badge orange"
+                ><i class="fa-solid fa-bell"></i
+              ></span>
+            </article>
+          </section>
+
+          <!-- MAIN GRID -->
+          <section class="dashboard-grid">
+            <!-- CAREER JOURNEY TIMELINE -->
+            <article class="panel journey-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="panel-kicker">MILESTONE TRACKER</span>
+                  <h2>Longitudinal Progress</h2>
+                </div>
+                <a href="trainee_followups.html" class="small-btn"
+                  >Details <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+
+              <div class="journey">
+                <div class="journey-item done">
+                  <div class="journey-dot">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <div class="journey-content">
+                    <strong>Enrollment & Onboarding</strong>
+                    <span
+                      >Identity confirmed and trainee file activated on
+                      portal.</span
+                    >
+                  </div>
+                </div>
+
+                <div class="journey-item current">
+                  <div class="journey-dot"></div>
+                  <div class="journey-content">
+                    <strong>Training & Cohort Engagement</strong>
+                    <span
+                      >Skill acquisition phase across scheduled curriculum
+                      modules.</span
+                    >
+                  </div>
+                </div>
+
+                <div class="journey-item">
+                  <div class="journey-dot">3</div>
+                  <div class="journey-content">
+                    <strong>Independent Assessment</strong>
+                    <span
+                      >Skill verification and qualification credentials.</span
+                    >
+                  </div>
+                </div>
+
+                <div class="journey-item">
+                  <div class="journey-dot">4</div>
+                  <div class="journey-content">
+                    <strong>Placement & Verification</strong>
+                    <span
+                      >1-Tap employer verification of employment or
+                      apprenticeship.</span
+                    >
+                  </div>
+                </div>
+
+                <div class="journey-item">
+                  <div class="journey-dot">5</div>
+                  <div class="journey-content">
+                    <strong>12-Month Retention Monitoring</strong>
+                    <span
+                      >Follow-up checkpoints to monitor job
+                      sustainability.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- QUICK STATUS UPDATE -->
+            <article class="panel action-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="panel-kicker">1-TAP TELEMETRY</span>
+                  <h2>Current Career Status</h2>
+                </div>
+              </div>
+
+              <p class="status-description">
+                Select your active status below to sync your record with the
+                policy evaluation engine.
+              </p>
+
+              <div class="quick-status">
+                <button type="button" data-status="Employed" class="status-btn">
+                  <span class="status-icon"
+                    ><i class="fa-solid fa-briefcase"></i
+                  ></span>
+                  <div class="status-meta">
+                    <strong>Employed</strong>
+                    <small>Full-time / Part-time</small>
+                  </div>
+                </button>
+
+                <button type="button" data-status="Business" class="status-btn">
+                  <span class="status-icon"
+                    ><i class="fa-solid fa-store"></i
+                  ></span>
+                  <div class="status-meta">
+                    <strong>Self-Employed</strong>
+                    <small>Venture / Freelance</small>
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  data-status="Apprenticeship"
+                  class="status-btn"
+                >
+                  <span class="status-icon"
+                    ><i class="fa-solid fa-user-graduate"></i
+                  ></span>
+                  <div class="status-meta">
+                    <strong>Apprentice</strong>
+                    <small>On-the-job training</small>
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  data-status="Unemployed"
+                  class="status-btn"
+                >
+                  <span class="status-icon"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                  ></span>
+                  <div class="status-meta">
+                    <strong>Job Seeking</strong>
+                    <small>Open for placement</small>
+                  </div>
+                </button>
+              </div>
+
+              <a href="trainee_status.html" class="primary-btn full">
+                <span>Detailed Update</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+          </section>
+
+          <!-- LOWER GRID -->
+          <section class="lower-grid">
+            <!-- COURSE CARD -->
+            <article class="panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="panel-kicker">ACADEMICS</span>
+                  <h2>Training Overview</h2>
+                </div>
+                <span class="badge verified"
+                  ><i class="fa-solid fa-circle-check"></i> Enrolled</span
+                >
+              </div>
+
+              <div class="course-summary">
+                <div class="course-icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="course-text">
+                  <strong>Full Stack Web Development</strong>
+                  <span>DDU-GKY Sponsored Cohort</span>
+                </div>
+              </div>
+
+              <div class="details-list">
+                <div class="detail-row">
+                  <span>Training Center</span>
+                  <strong>Zenith Skill Hub</strong>
+                </div>
+                <div class="detail-row">
+                  <span>Term Duration</span>
+                  <strong>6 Months</strong>
+                </div>
+                <div class="detail-row">
+                  <span>Attendance Score</span>
+                  <strong>94.2%</strong>
+                </div>
+              </div>
+
+              <a href="my_training.html" class="outline-btn full">
+                <span>Course Modules</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </article>
+
+            <!-- PROFILE MINI CARD -->
+            <article class="panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="panel-kicker">IDENTITY</span>
+                  <h2>Personal File</h2>
+                </div>
+                <a href="trainee_profile.html" class="small-btn">Edit File</a>
+              </div>
+
+              <div class="profile-mini">
+                <div class="profile-info-pill">
+                  <span class="label"
+                    ><i class="fa-regular fa-user"></i> Full Name</span
+                  >
+                  <strong id="profileName">Loading...</strong>
+                </div>
+                <div class="profile-info-pill">
+                  <span class="label"
+                    ><i class="fa-solid fa-location-dot"></i> Location</span
+                  >
+                  <strong id="profileLocation">Loading...</strong>
+                </div>
+                <div class="profile-info-pill">
+                  <span class="label"
+                    ><i class="fa-regular fa-envelope"></i> Email Address</span
+                  >
+                  <strong id="profileEmail">Loading...</strong>
+                </div>
+              </div>
+
+              <a href="trainee_profile.html" class="outline-btn full">
+                <span>Open Complete Profile</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+          </section>
+          <!-- AI CAREER INSIGHTS GRID -->
+           <!-- 4. JOB PLACEMENT PROBABILITY PREDICTOR -->
+  <article class="panel">
+    <div class="panel-heading">
+      <div>
+        <span class="panel-kicker">SUCCESS PROJECTION</span>
+        <h2>Placement Probability</h2>
+      </div>
+      <i class="fa-solid fa-bullseye" style="color: var(--primary);"></i>
+    </div>
+    
+    <div class="probability-display">
+      <div class="probability-ring-container">
+        <!-- Circular Progress or Percentage Indicator -->
+        <strong id="placementScore">88%</strong>
+        <span>Likelihood Score</span>
+      </div>
+      <div class="probability-status">
+        <span class="badge verified" id="probabilityBadge"><i class="fa-solid fa-bolt"></i> High Readiness</span>
+        <p id="probabilityText">Based on 94.2% attendance, complete profile milestones, and active skill badges.</p>
+      </div>
+    </div>
+
+    <div class="improvement-tips">
+      <p class="impact-title">Key Factors & Recommendations:</p>
+      <ul class="tips-list">
+        <li><i class="fa-solid fa-check-circle" style="color: #10b981;"></i> Strong attendance & coursework</li>
+        <li><i class="fa-solid fa-arrow-up" style="color: #f59e0b;"></i> Complete remaining portfolio project</li>
+      </ul>
+    </div>
+  </article>
+<section class="insights-grid">
+  <!-- 1. JOB MATCH RECOMMENDATIONS -->
+  <article class="panel">
+    <div class="panel-heading">
+      <div>
+        <span class="panel-kicker">AI RECOMMENDATIONS</span>
+        <h2>Top Job Matches</h2>
+      </div>
+      <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i>
+    </div>
+    
+    <div class="job-list">
+      <div class="job-item">
+        <div class="job-details">
+          <strong>Junior Frontend Developer</strong>
+          <span>TechNova Solutions • Remote</span>
+        </div>
+        <span class="match-badge high-match">92% Match</span>
+      </div>
+      <div class="job-item">
+        <div class="job-details">
+          <strong>Web App Intern</strong>
+          <span>Apex Systems • Delhi, NCR</span>
+        </div>
+        <span class="match-badge med-match">78% Match</span>
+      </div>
+    </div>
+    <a href="#" class="outline-btn full" style="margin-top: 1rem;">
+      <span>View All Matches</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </article>
+
+  <!-- 2. SALARY PREDICTION -->
+  <article class="panel">
+    <div class="panel-heading">
+      <div>
+        <span class="panel-kicker">MARKET VALUE</span>
+        <h2>Salary Prediction</h2>
+      </div>
+      <i class="fa-solid fa-chart-pie" style="color: var(--primary);"></i>
+    </div>
+    
+    <div class="salary-display">
+      <h3 id="predictedSalary">₹4.5L - ₹6.2L</h3>
+      <span class="salary-period">Estimated Annual CTC</span>
+    </div>
+    
+    <div class="skills-impact">
+      <p class="impact-title">Top Value-Driving Skills:</p>
+      <div class="skill-tags">
+        <span class="tag">React.js <i class="fa-solid fa-arrow-trend-up"></i></span>
+        <span class="tag">Node.js <i class="fa-solid fa-arrow-trend-up"></i></span>
+        <span class="tag">1 Yr Exp</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3. JOB RETENTION TRACKER -->
+  <article class="panel">
+    <div class="panel-heading">
+      <div>
+        <span class="panel-kicker">SUSTAINABILITY</span>
+        <h2>Job Retention</h2>
+      </div>
+      <span class="badge verified"><i class="fa-solid fa-fire"></i> Active</span>
+    </div>
+    
+    <div class="retention-stats">
+      <div class="retention-header">
+        <strong>Current Tenure</strong>
+        <span id="tenureMonths">8 Months</span>
+      </div>
+      <!-- Retention Progress Bar -->
+      <div class="retention-bar-bg">
+        <div class="retention-bar-fill" style="width: 66%;"></div>
+      </div>
+      <div class="retention-labels">
+        <span>0</span>
+        <span>12 Month Milestone</span>
+      </div>
+    </div>
+    
+    <p class="retention-insight">
+      <i class="fa-solid fa-circle-info"></i> You are 4 months away from the 1-year government retention milestone!
+    </p>
+  </article>
+</section>
+
+          <!-- RECENT ACTIVITY LOG -->
+          <section class="panel activity-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">AUDIT LOG</span>
+                <h2>Recent Events</h2>
+              </div>
+              <a href="trainee_followups.html" class="small-btn">View Log</a>
+            </div>
+
+            <div class="activity-stream">
+              <div class="activity-item">
+                <div class="activity-icon blue">
+                  <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <div class="activity-content">
+                  <strong>Trainee Record Initialized</strong>
+                  <span
+                    >Profile verified on government central repository.</span
+                  >
+                </div>
+                <time>Today</time>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon green">
+                  <i class="fa-solid fa-shield-check"></i>
+                </div>
+                <div class="activity-content">
+                  <strong>Credentials Authorized</strong>
+                  <span>Supabase auth handshake completed securely.</span>
+                </div>
+                <time>Active</time>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon purple">
+                  <i class="fa-solid fa-satellite-dish"></i>
+                </div>
+                <div class="activity-content">
+                  <strong>Tracking Gate Active</strong>
+                  <span>Awaiting employer feedback window at Month 3.</span>
+                </div>
+                <time>Standing</time>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <span
+            >&copy; 2026 SkillTrack &bull; Longitudinal Outcome Tracking
+            Platform</span
+          >
+          <span>Developed by Team ZENITH for Smart India Hackathon 2026</span>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="trainee_dashboard.js"></script>
+  </body>
+</html>

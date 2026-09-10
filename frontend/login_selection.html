@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillTrack — Select Portal</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- Design Tokens matched to styles.css --- */
+    :root {
+      --navy: #071a2f;
+      --navy-light: #0f2744;
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --cyan: #38bdf8;
+      --green: #10b981;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- Navigation Header --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 8%;
+      background-color: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--navy);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+
+    .brand span span {
+      color: var(--blue);
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-link:hover {
+      color: var(--blue);
+    }
+
+    /* --- Selection Hero --- */
+    .selection-hero {
+      padding: 4rem 8% 5rem 8%;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.08) 0%, rgba(248, 250, 252, 0) 65%);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #eff6ff;
+      color: var(--blue);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      border: 1px solid #dbeafe;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--navy);
+      text-align: center;
+      letter-spacing: -1px;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 580px;
+      margin-bottom: 3.5rem;
+    }
+
+    /* --- Cards Grid --- */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .portal-grid:hover .portal-card:not(:hover) {
+      opacity: 0.65;
+      transform: scale(0.98);
+    }
+
+    .portal-card {
+      background-color: var(--white);
+      padding: 3rem 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portal-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
+    }
+
+    .portal-card.trainee:hover {
+      border-color: var(--cyan);
+    }
+
+    .portal-card.government:hover {
+      border-color: var(--blue);
+    }
+
+    .card-header-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .trainee .card-header-icon {
+      background-color: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .government .card-header-icon {
+      background-color: #eff6ff;
+      color: var(--blue);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .card-action {
+      margin-top: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .trainee .card-action {
+      color: #0284c7;
+    }
+
+    .government .card-action {
+      color: var(--blue);
+    }
+
+    .portal-card:hover .card-action {
+      gap: 12px;
+    }
+
+    /* --- Footer --- */
+    footer {
+      padding: 2rem 8%;
+      background-color: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 820px) {
+      .portal-grid {
+        grid-template-columns: 1fr;
+      }
+      .portal-card {
+        padding: 2.2rem 1.8rem;
+      }
+      .portal-grid:hover .portal-card:not(:hover) {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <a class="brand" href="welcome.html">
+      <span class="brand-icon"><i class="fa-solid fa-chart-line"></i></span>
+      <span>Skill<span>Track</span></span>
+    </a>
+    <a href="welcome.html" class="nav-link">
+      <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+  </header>
+
+  <!-- Main Hero Content -->
+  <main class="selection-hero">
+    <div class="badge">
+      <span class="pulse"></span> System Gateway
+    </div>
+
+    <h1 class="hero-title">Select Your <span>Portal Workspace</span></h1>
+    <p class="hero-subtitle">
+      Access specialized dashboards designed for learner progression tracking or district-level skilling analytics.
+    </p>
+
+    <!-- Selection Grid -->
+    <div class="portal-grid">
+      
+      <!-- Trainee Option -->
+      <a href="trainee_login.html" class="portal-card trainee">
+        <div>
+          <div class="card-header-icon">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <h2 class="card-title">Trainee & Job Seeker</h2>
+          <p class="card-description">
+            Track your training milestones, verify certificates, view placement matches, and manage your skill profile.
+          </p>
+        </div>
+        <div class="card-action">
+          <span>Enter Learner Portal</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- Government / Admin Option -->
+      <a href="govt_login.html" class="portal-card government">
+        <div>
+          <div class="card-header-icon">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <h2 class="card-title">Officials & Providers</h2>
+          <p class="card-description">
+            Monitor scheme outcomes, evaluate provider performance, analyze placement statistics, and manage regional cohorts.
+          </p>
+        </div>
+        <div class="card-action">
+          <span>Access Official Dashboard</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>SkillTrack Analytics Platform &copy; 2026. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

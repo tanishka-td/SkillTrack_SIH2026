@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillTrack | Official Profile</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- FontAwesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <!-- Existing styles -->
+    <link rel="stylesheet" href="govt_dashboard.css">
+    <link rel="stylesheet" href="govt_profile.css">
+
+    <style>
+        /* =====================================================
+           SMALL DYNAMIC PROFILE HELPERS
+           ===================================================== */
+
+        .profile-edit-input {
+            width: 100%;
+            max-width: 100%;
+            padding: 9px 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            background: #ffffff;
+            color: #0f172a;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .profile-edit-input:focus {
+            border-color: #078dcc;
+            box-shadow: 0 0 0 3px rgba(7, 141, 204, 0.10);
+        }
+
+        .profile-hero-info .profile-edit-input {
+            margin: 2px 0;
+        }
+
+        .profile-hero-info h2 .profile-edit-input {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .profile-hero-info .profile-title .profile-edit-input {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .profile-hero-info .profile-dept .profile-edit-input {
+            font-size: 13px;
+        }
+
+        .badge-verified {
+            white-space: nowrap;
+        }
+
+        .export-btn.editing {
+            background: #078dcc;
+            color: #ffffff;
+        }
+
+        .profile-large-avatar span,
+        .official-avatar,
+        .top-avatar {
+            text-transform: uppercase;
+        }
+
+        .loading-text {
+            opacity: 0.55;
+        }
+
+        #profileNotification {
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .top-right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="mobile-overlay"
+        id="mobileOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <!-- Brand -->
+
+        <div class="brand-block">
+
+            <a
+                href="govt_dashboard.html"
+                class="brand-logo"
+                aria-label="SkillTrack Logo"
+            >
+                <i class="fa-solid fa-chart-line"></i>
+            </a>
+
+            <div>
+
+                <h2>
+                    Skill<span>Track</span>
+                </h2>
+
+                <span>
+                    Government Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DYNAMIC OFFICIAL CARD
+             ================================================= -->
+
+        <div class="official-user">
+
+            <div
+                class="official-avatar"
+                id="officialAvatar"
+            >
+                --
+            </div>
+
+            <div>
+
+                <strong id="officialName">
+                    Loading...
+                </strong>
+
+                <span id="officialDesignation">
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================= -->
+
+        <nav class="navigation">
+
+            <p class="nav-label">
+                Monitoring
+            </p>
+
+
+            <a
+                href="govt_dashboard.html"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="govt_dashboard.html#outcomes"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                Outcome Analytics
+
+            </a>
+
+
+            <a
+                href="govt_dashboard.html#districts"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ▤
+                </span>
+
+                District Performance
+
+            </a>
+
+
+            <p class="nav-label second">
+                Management
+            </p>
+
+
+            <a
+                href="#profile"
+                class="nav-link active"
+            >
+
+                <span class="nav-icon">
+                    👤
+                </span>
+
+                Official Profile
+
+            </a>
+
+
+            <a
+                href="govt_dashboard.html#reports"
+                class="nav-link"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                Reports
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR FOOTER
+             ================================================= -->
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+
+                <span></span>
+
+                System Operational
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                id="logoutBtn"
+                type="button"
+            >
+                ↪ Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <div class="main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    type="button"
+                    aria-label="Toggle menu"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <p>
+                        Government Portal
+                    </p>
+
+                    <h1>
+                        Official Account Settings
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DYNAMIC TOP RIGHT
+                 ================================================= -->
+
+            <div class="top-right">
+
+                <div class="jurisdiction">
+
+                    <span>
+                        Current jurisdiction
+                    </span>
+
+                    <strong id="officialJurisdiction">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="govt_profile.html"
+                    class="user-profile"
+                >
+
+                    <div
+                        class="top-avatar"
+                        id="topAvatar"
+                    >
+                        --
+                    </div>
+
+
+                    <div>
+
+                        <strong id="topOfficialName">
+                            Loading...
+                        </strong>
+
+                        <span id="topOfficialDesignation">
+                            Loading...
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+             ===================================================== -->
+
+        <main
+            class="content"
+            id="profile"
+        >
+
+
+            <!-- =================================================
+                 PROFILE HERO
+                 ================================================= -->
+
+            <section class="profile-hero-card">
+
+
+                <div class="profile-hero-main">
+
+
+                    <!-- Avatar -->
+
+                    <div class="profile-large-avatar">
+
+                        <span id="profileAvatar">
+                            --
+                        </span>
+
+
+                        <button
+                            class="avatar-edit-btn"
+                            type="button"
+                            title="Change Avatar"
+                        >
+
+                            <i class="fa-solid fa-camera"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Dynamic Profile Information -->
+
+                    <div class="profile-hero-info">
+
+
+                        <h2>
+
+                            <span id="profileName">
+                                Loading...
+                            </span>
+
+
+                            <span
+                                class="badge-verified"
+                                id="verificationBadge"
+                            >
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Verified Official
+
+                            </span>
+
+                        </h2>
+
+
+                        <p
+                            class="profile-title"
+                            id="profileDesignation"
+                        >
+                            Loading...
+                        </p>
+
+
+                        <p class="profile-dept">
+
+                            <i class="fa-solid fa-building-columns"></i>
+
+                            <span id="profileDepartment">
+                                Loading...
+                            </span>
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Edit -->
+
+                <div class="profile-hero-actions">
+
+                    <button
+                        class="export-btn"
+                        id="editProfileBtn"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-pen-to-square"></i>
+
+                        Edit Profile
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROFILE GRID
+                 ================================================= -->
+
+            <div class="profile-grid">
+
+
+                <!-- =================================================
+                     LEFT COLUMN
+                     ================================================= -->
+
+                <div class="profile-column">
+
+
+                    <!-- =================================================
+                         ADMINISTRATIVE DETAILS
+                         ================================================= -->
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span>
+                                    Official Information
+                                </span>
+
+                                <h2>
+                                    Administrative Details
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-list">
+
+
+                            <!-- Employee ID -->
+
+                            <div class="info-item">
+
+                                <label>
+                                    Employee ID
+                                </label>
+
+                                <strong id="profileEmployeeId">
+                                    Loading...
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Email -->
+
+                            <div class="info-item">
+
+                                <label>
+                                    Official Email
+                                </label>
+
+                                <strong id="profileEmail">
+                                    Loading...
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Phone -->
+
+                            <div class="info-item">
+
+                                <label>
+                                    Phone Number
+                                </label>
+
+                                <strong id="profilePhone">
+                                    Loading...
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Jurisdiction -->
+
+                            <div class="info-item">
+
+                                <label>
+                                    Assigned Jurisdiction
+                                </label>
+
+                                <strong id="profileAssignedJurisdiction">
+                                    Loading...
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Access -->
+
+                            <div class="info-item">
+
+                                <label>
+                                    Access Level
+                                </label>
+
+                                <span
+                                    class="status-good"
+                                    id="profileAccessLevel"
+                                >
+                                    Loading...
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         SECURITY
+                         ================================================= -->
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span>
+                                    Security & Credentials
+                                </span>
+
+                                <h2>
+                                    Access Control
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-list">
+
+
+                            <!-- 2FA -->
+
+                            <div class="info-item">
+
+                                <label>
+                                    Two-Factor Authentication (2FA)
+                                </label>
+
+                                <span
+                                    class="status-good"
+                                    id="profileTwoFA"
+                                >
+                                    Loading...
+                                </span>
+
+                            </div>
+
+
+                            <!-- Password -->
+
+                            <div class="info-item">
+
+                                <label>
+                                    Last Password Reset
+                                </label>
+
+                                <strong id="profilePasswordReset">
+                                    Loading...
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <button
+                            class="reset-btn"
+                            id="securityBtn"
+                            type="button"
+                            style="width:100%; margin-top:16px;"
+                        >
+
+                            Update Password & Security Keys
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RIGHT COLUMN
+                     ================================================= -->
+
+                <div class="profile-column">
+
+
+                    <!-- =================================================
+                         JURISDICTION SUMMARY
+                         ================================================= -->
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span>
+                                    Jurisdiction Summary
+                                </span>
+
+                                <h2>
+                                    Assigned Administrative Reach
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="jurisdiction-stats-grid">
+
+
+                            <!-- Monitored Centers -->
+
+                            <div class="jurisdiction-stat-card">
+
+                                <span>
+                                    Monitored Centers
+                                </span>
+
+                                <strong id="monitoredCenters">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Active Cohorts -->
+
+                            <div class="jurisdiction-stat-card">
+
+                                <span>
+                                    Active Cohorts
+                                </span>
+
+                                <strong id="activeCohorts">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Total Trainees -->
+
+                            <div class="jurisdiction-stat-card">
+
+                                <span>
+                                    Total Trainees
+                                </span>
+
+                                <strong id="totalJurisdictionTrainees">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Average Placement -->
+
+                            <div class="jurisdiction-stat-card">
+
+                                <span>
+                                    Average Placement
+                                </span>
+
+                                <strong id="averagePlacement">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         ACTIVITY
+                         ================================================= -->
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span>
+                                    Audit Trail
+                                </span>
+
+                                <h2>
+                                    Recent Account Activity
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="activity-timeline"
+                            id="activityTimeline"
+                        >
+
+                            <div class="timeline-item">
+
+                                <div class="timeline-dot blue"></div>
+
+                                <div class="timeline-content">
+
+                                    <strong>
+                                        Loading account activity...
+                                    </strong>
+
+                                    <span>
+                                        Please wait
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
+
+        <footer class="footer">
+
+            <span>
+                ©️ 2026 SkillTrack
+            </span>
+
+            <span>
+                Government Digital Skill Outcome Platform
+            </span>
+
+            <span>
+                Secure Government Access
+            </span>
+
+        </footer>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+         ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+
+    <!-- =====================================================
+         PROFILE JS
+         ===================================================== -->
+
+    <script src="govt_profile.js"></script>
+
+
+    <!-- =====================================================
+         JURISDICTION METRICS
+         ===================================================== -->
+
+    <script>
+        /*
+         * The main govt_profile.js can call this function
+         * after loading the official.
+         *
+         * It uses the same government_officials.user_id
+         * relationship as the government dashboard.
+         */
+
+        window.loadProfileMetrics = async function (official) {
+
+            if (
+                typeof supabaseClient === "undefined" ||
+                !official
+            ) {
+                return;
+            }
+
+            const district =
+                official.district;
+
+            if (!district) {
+                return;
+            }
+
+
+            /* ---------------------------------------------
+               TOTAL TRAINEES
+               --------------------------------------------- */
+
+            try {
+
+                const {
+                    count,
+                    error
+                } =
+                    await supabaseClient
+                        .from("profile")
+                        .select(
+                            "*",
+                            {
+                                count: "exact",
+                                head: true
+                            }
+                        )
+                        .eq(
+                            "district",
+                            district
+                        );
+
+
+                if (!error) {
+
+                    const element =
+                        document.getElementById(
+                            "totalJurisdictionTrainees"
+                        );
+
+                    if (element) {
+
+                        element.textContent =
+                            Number(
+                                count || 0
+                            ).toLocaleString(
+                                "en-IN"
+                            );
+
+                    }
+
+                }
+
+            }
+            catch (error) {
+
+                console.warn(
+                    "Trainee metric unavailable:",
+                    error
+                );
+
+            }
+
+
+            /* ---------------------------------------------
+               TRAINING CENTERS
+               --------------------------------------------- */
+
+            try {
+
+                const {
+                    count,
+                    error
+                } =
+                    await supabaseClient
+                        .from("training_centers")
+                        .select(
+                            "*",
+                            {
+                                count: "exact",
+                                head: true
+                            }
+                        )
+                        .eq(
+                            "district",
+                            district
+                        );
+
+
+                if (!error) {
+
+                    const element =
+                        document.getElementById(
+                            "monitoredCenters"
+                        );
+
+                    if (element) {
+
+                        element.textContent =
+                            Number(
+                                count || 0
+                            ).toLocaleString(
+                                "en-IN"
+                            );
+
+                    }
+
+                }
+
+            }
+            catch (error) {
+
+                console.warn(
+                    "Training center metric unavailable."
+                );
+
+            }
+
+
+            /* ---------------------------------------------
+               ACTIVE COHORTS
+               --------------------------------------------- */
+
+            try {
+
+                const {
+                    count,
+                    error
+                } =
+                    await supabaseClient
+                        .from("cohorts")
+                        .select(
+                            "*",
+                            {
+                                count: "exact",
+                                head: true
+                            }
+                        )
+                        .eq(
+                            "district",
+                            district
+                        );
+
+
+                if (!error) {
+
+                    const element =
+                        document.getElementById(
+                            "activeCohorts"
+                        );
+
+                    if (element) {
+
+                        element.textContent =
+                            Number(
+                                count || 0
+                            ).toLocaleString(
+                                "en-IN"
+                            );
+
+                    }
+
+                }
+
+            }
+            catch (error) {
+
+                console.warn(
+                    "Cohort metric unavailable."
+                );
+
+            }
+
+        };
+    </script>
+
+
+    <!-- =====================================================
+         CONNECT METRICS AFTER PROFILE LOAD
+         ===================================================== -->
+
+    <script>
+
+        /*
+         * Wait for govt_profile.js to finish loading the
+         * authenticated official, then load jurisdiction
+         * metrics.
+         */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const metricInterval =
+                    setInterval(
+                        function () {
+
+                            if (
+                                window.SkillTrackProfile &&
+                                typeof window.SkillTrackProfile.getOfficial ===
+                                "function"
+                            ) {
+
+                                const official =
+                                    window.SkillTrackProfile.getOfficial();
+
+
+                                if (official) {
+
+                                    clearInterval(
+                                        metricInterval
+                                    );
+
+
+                                    if (
+                                        typeof window.loadProfileMetrics ===
+                                        "function"
+                                    ) {
+
+                                        window.loadProfileMetrics(
+                                            official
+                                        );
+
+                                    }
+
+                                }
+
+                            }
+
+                        },
+                        300
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            clearInterval(
+                                metricInterval
+                            );
+
+                        },
+                        10000
+                    );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

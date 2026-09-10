@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | Trainee Portal</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="trainee_login.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================================
+         ANIMATED BACKGROUND
+    ========================================== -->
+
+    <div class="background">
+
+        <div class="background-grid"></div>
+
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="glow glow-three"></div>
+
+        <div class="soft-shape shape-one"></div>
+        <div class="soft-shape shape-two"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    
+
+       <header class="navbar">
+
+    
+       <a class="brand" href="index.html">
+    <span class="brand-icon"><i class="fa-solid fa-chart-line"></i></span>
+    <span>Skill<span>Track</span></span>
+</a>
+
+        <div class="secure-badge">
+
+            <span class="secure-dot"></span>
+
+            Secure Government Portal
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="page-container">
+
+
+        <!-- =====================================
+             LEFT INTRODUCTION
+        ====================================== -->
+
+        <section class="intro-section">
+
+            <div class="intro-content">
+
+                <div class="section-label">
+                    TRAINEE SERVICES
+                </div>
+
+
+                <h1>
+
+                    Build your
+
+                    <span>
+                        SkillTrack
+                    </span>
+
+                    journey.
+
+                </h1>
+
+
+                <p class="intro-text">
+
+                    Create your trainee profile and keep your
+                    training, certification, employment and
+                    career outcomes connected in one secure place.
+
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Track your outcomes
+                            </h3>
+
+                            <p>
+                                Update your current career status
+                                after completing training.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Keep your profile updated
+                            </h3>
+
+                            <p>
+                                Maintain your personal, location
+                                and training information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Stay connected
+                            </h3>
+
+                            <p>
+                                Receive follow-up requests and
+                                important SkillTrack updates.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- SECURITY INFO -->
+
+                <div class="portal-info">
+
+                    <div class="portal-info-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            One secure trainee profile
+                        </strong>
+
+                        <p>
+                            Your training and career information
+                            stays connected throughout your journey.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             AUTH SECTION
+        ====================================== -->
+
+        <section class="auth-section">
+
+            <div class="auth-card">
+
+
+                <!-- CARD TOP -->
+
+                <div class="auth-header">
+
+                    <div>
+
+                        <p class="form-label">
+                            TRAINEE ACCOUNT
+                        </p>
+
+                        <h2 id="formTitle">
+                            Create your account
+                        </h2>
+
+                    </div>
+
+
+                    <div class="profile-symbol">
+                        👤
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     AUTH TABS
+                ================================== -->
+
+                <div class="auth-tabs">
+
+                    <button
+                        class="tab active"
+                        id="signupTab"
+                        type="button"
+                    >
+                        Create Account
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        id="loginTab"
+                        type="button"
+                    >
+                       LOG IN
+                    </button>
+
+                </div>
+
+
+                <!-- =================================
+                     SIGN UP FORM
+                ================================== -->
+
+                <form
+                    id="signupForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+
+                    <!-- PERSONAL -->
+
+                    <div class="form-section-title">
+
+                        <span>01</span>
+
+                        Personal Details
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field full">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="age">
+                                Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                min="15"
+                                max="100"
+                                placeholder="e.g. 21"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="gender">
+                                Gender
+                            </label>
+
+                            <select
+                                id="gender"
+                                required
+                            >
+
+                                <option
+                                    value=""
+                                    selected
+                                    disabled
+                                >
+                                    Select gender
+                                </option>
+
+                                <option value="male">
+                                    Male
+                                </option>
+
+                                <option value="female">
+                                    Female
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                                <option value="prefer-not">
+                                    Prefer not to say
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT -->
+
+                    <div class="form-section-title">
+
+                        <span>02</span>
+
+                        Contact Information
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="phone">
+                                Mobile Number
+                            </label>
+
+                            <div class="phone-input">
+
+                                <span>+91</span>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="10-digit mobile number"
+                                    maxlength="10"
+                                    inputmode="numeric"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="name@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="form-section-title">
+
+                        <span>03</span>
+
+                        Location
+
+                    </div>
+
+
+
+
+
+<div class="form-grid">
+  <!-- State Dropdown -->
+  <div class="field">
+    <label for="stateSelect">State</label>
+    <select id="stateSelect" required>
+      <option value="" disabled selected>Select State</option>
+      <!-- Options JavaScript se populate hongi -->
+    </select>
+  </div>
+
+  <!-- District Dropdown -->
+  <div class="field">
+    <label for="districtSelect">District</label>
+    <select id="districtSelect" disabled required>
+      <option value="" disabled selected>Select District</option>
+    </select>
+  </div>
+
+
+
+                        <div class="field full">
+
+                            <label for="city">
+                                City / Block / Town
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="Enter city, block or town"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="form-section-title">
+
+                        <span>04</span>
+
+                        Account Security
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="password-input">
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Create password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="password-input">
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="confirmPassword"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD STRENGTH -->
+
+                    <div class="password-strength">
+
+                        <div class="strength-bar">
+
+                            <span id="strengthFill"></span>
+
+                        </div>
+
+                        <small id="strengthText">
+                            Password strength
+                        </small>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <label class="checkbox-row">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        <span>
+                            I confirm that the information provided
+                            is accurate and I agree to the SkillTrack
+                            terms and privacy policy.
+                        </span>
+
+                    </label>
+
+
+                    <!-- MESSAGE -->
+
+                    <div
+                        class="form-message"
+                        id="formMessage"
+                    ></div>
+
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        <span>
+                            Create Trainee Account
+                        </span>
+
+                        <span class="submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p class="demo-note">
+
+                        SkillTrack prototype • Your information
+                        is securely stored in the application database.
+
+                    </p>
+
+                </form>
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form
+                    id="loginForm"
+                    class="auth-form hidden"
+                    novalidate
+                >
+
+
+                    <div class="login-welcome">
+
+                        <div class="login-icon">
+                            🔐
+                        </div>
+
+                        <h3>
+                            Welcome back
+                        </h3>
+
+                        <p>
+                            log in to continue your
+                            SkillTrack journey.
+                        </p>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="field">
+
+                        <label for="loginEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="field">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <div class="password-input">
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="loginPassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                        <a
+                            href="#"
+                            id="forgotPassword"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div
+                        class="form-message"
+                        id="loginMessage"
+                    ></div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        <span>
+                            login
+                        </span>
+
+                        <span class="submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p class="demo-note">
+
+                        SkillTrack authentication is powered
+                        by Supabase.
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         SUPABASE
+         KEEP YOUR EXISTING FILE
+    ========================================== -->
+
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="trainee_login.js"></script>
+
+    <!-- =========================================
+         YOUR EXISTING SUPABASE AUTH CODE
+         
+         IMPORTANT:
+         Keep your existing Supabase authentication
+         script here exactly as you already have it.
+    ========================================== -->
+
+</body>
+
+</html>

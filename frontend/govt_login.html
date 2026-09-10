@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillTrack | Government Official Portal</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="govt_login.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background">
+    <div class="background-grid"></div>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="glow glow-three"></div>
+
+    <div class="soft-shape shape-one"></div>
+    <div class="soft-shape shape-two"></div>
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </span>
+
+        <span class="brand-name">
+            Skill<span>Track</span>
+        </span>
+
+    </a>
+
+    <div class="secure-badge">
+        <span class="secure-dot"></span>
+        <i class="fa-solid fa-shield-halved"></i>
+        Secure Government Portal
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="page-container">
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="intro-section">
+
+        <div class="intro-content">
+
+            <div class="section-label">
+                <i class="fa-solid fa-landmark"></i>
+                GOVERNMENT OFFICIAL PORTAL
+            </div>
+
+            <h1>
+                Manage
+                <span>Verified Outcomes</span>
+                Securely.
+            </h1>
+
+            <p class="intro-text">
+                Access SkillTrack's longitudinal outcome tracking
+                platform for monitoring trainee progression,
+                employment outcomes, verification and follow-up
+                activities.
+            </p>
+
+
+            <!-- FEATURES -->
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+
+                    <div>
+                        <h3>Trainee Outcome Monitoring</h3>
+
+                        <p>
+                            Monitor verified training, employment
+                            and apprenticeship outcomes.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <h3>Institutional Analytics</h3>
+
+                        <p>
+                            View department-level progress,
+                            retention and outcome indicators.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h3>Verified Government Access</h3>
+
+                        <p>
+                            Official accounts are linked to
+                            authorized departmental identities.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PORTAL INFORMATION -->
+
+            <div class="portal-info">
+
+                <div class="portal-info-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div>
+                    <strong>Authorized Officials Only</strong>
+
+                    <p>
+                        This portal is intended for authorized
+                        government personnel. Access to trainee
+                        information is controlled by assigned
+                        departmental permissions.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         AUTHENTICATION
+    ====================================================== -->
+
+    <section class="auth-section">
+
+        <div class="auth-card">
+
+
+            <!-- HEADER -->
+
+            <div class="auth-header">
+
+                <div>
+
+                    <div class="form-label">
+                        OFFICIAL ACCESS
+                    </div>
+
+                    <h2>
+                        Government Portal
+                    </h2>
+
+                </div>
+
+                <div class="profile-symbol">
+                    <i class="fa-solid fa-landmark"></i>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TABS
+            ================================================== -->
+
+            <div class="auth-tabs">
+
+                <button
+                    type="button"
+                    class="tab active"
+                    id="registerTab"
+                >
+                    <i class="fa-solid fa-user-plus"></i>
+                    Official Registration
+                </button>
+
+                <button
+                    type="button"
+                    class="tab"
+                    id="loginTab"
+                >
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Sign In
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 REGISTRATION FORM
+            ================================================== -->
+
+            <form
+                id="registerForm"
+                class="auth-form"
+                novalidate
+            >
+
+
+                <!-- OFFICIAL IDENTITY -->
+
+                <div class="form-section-title">
+
+                    <span>
+                        <i class="fa-solid fa-user-tie"></i>
+                    </span>
+
+                    Official Identity
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="field full">
+
+                        <label for="fullName">
+                            Full Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter full name as per official records"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="designation">
+                            Designation <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="designation"
+                            name="designation"
+                            placeholder="e.g. District Officer"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="officialId">
+                            Employee / Official ID <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="officialId"
+                            name="officialId"
+                            placeholder="Enter official ID"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     DEPARTMENT
+                ================================================== -->
+
+                <div class="form-section-title">
+
+                    <span>
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    Department Information
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="field full">
+
+                        <label for="department">
+                            Department / Ministry <span>*</span>
+                        </label>
+
+                        <select
+                            id="department"
+                            name="department"
+                            required
+                        >
+
+                            <option value="">
+                                Select Department / Ministry
+                            </option>
+
+                            <option value="rural-development">
+                                Ministry of Rural Development
+                            </option>
+
+                            <option value="skill-development">
+                                Ministry of Skill Development & Entrepreneurship
+                            </option>
+
+                            <option value="education">
+                                Ministry of Education
+                            </option>
+
+                            <option value="labour">
+                                Ministry of Labour & Employment
+                            </option>
+
+                            <option value="meity">
+                                Ministry of Electronics & Information Technology
+                            </option>
+
+                            <option value="social-justice">
+                                Ministry of Social Justice & Empowerment
+                            </option>
+
+                            <option value="state-government">
+                                State Government Department
+                            </option>
+
+                            <option value="district-administration">
+                                District Administration
+                            </option>
+
+                            <option value="other-government">
+                                Other Government Department
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="governmentLevel">
+                            Government Level <span>*</span>
+                        </label>
+
+                        <select
+                            id="governmentLevel"
+                            name="governmentLevel"
+                            required
+                        >
+
+                            <option value="">
+                                Select Level
+                            </option>
+
+                            <option value="central">
+                                Central Government
+                            </option>
+
+                            <option value="state">
+                                State Government
+                            </option>
+
+                            <option value="district">
+                                District Administration
+                            </option>
+
+                            <option value="local">
+                                Local Government
+                            </option>
+
+                            <option value="institution">
+                                Government Institution
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="officialRole">
+                            Official Role <span>*</span>
+                        </label>
+
+                        <select
+                            id="officialRole"
+                            name="officialRole"
+                            required
+                        >
+
+                            <option value="">
+                                Select Role
+                            </option>
+
+                            <option value="program-officer">
+                                Program Officer
+                            </option>
+
+                            <option value="district-officer">
+                                District Officer
+                            </option>
+
+                            <option value="state-officer">
+                                State Officer
+                            </option>
+
+                            <option value="monitoring-officer">
+                                Monitoring Officer
+                            </option>
+
+                            <option value="verification-officer">
+                                Verification Officer
+                            </option>
+
+                            <option value="department-admin">
+                                Department Administrator
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- STATE -->
+
+                    <div class="field">
+
+                        <label for="stateSelect">
+                            State <span>*</span>
+                        </label>
+
+                        <select
+                            id="stateSelect"
+                            name="state"
+                            required
+                        >
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DISTRICT -->
+
+                    <div class="field">
+
+                        <label for="districtSelect">
+                            District <span>*</span>
+                        </label>
+
+                        <select
+                            id="districtSelect"
+                            name="district"
+                            disabled
+                            required
+                        >
+
+                            <option value="">
+                                Select District
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- OFFICE -->
+
+                    <div class="field full">
+
+                        <label for="office">
+                            Office / Institution
+                        </label>
+
+                        <input
+                            type="text"
+                            id="office"
+                            name="office"
+                            placeholder="Enter office or institution name"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     CONTACT
+                ================================================== -->
+
+                <div class="form-section-title">
+
+                    <span>
+                        <i class="fa-solid fa-address-card"></i>
+                    </span>
+
+                    Official Contact
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="field">
+
+                        <label for="officialEmail">
+                            Government Email <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="officialEmail"
+                            name="officialEmail"
+                            placeholder="official@department.gov.in"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="mobile">
+                            Official Mobile <span>*</span>
+                        </label>
+
+                        <div class="phone-input">
+
+                            <span>+91</span>
+
+                            <input
+                                type="tel"
+                                id="mobile"
+                                name="mobile"
+                                placeholder="10-digit mobile number"
+                                maxlength="10"
+                                inputmode="numeric"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label for="officeAddress">
+                            Office Address
+                        </label>
+
+                        <input
+                            type="text"
+                            id="officeAddress"
+                            name="officeAddress"
+                            placeholder="Enter official office address"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     SECURITY
+                ================================================== -->
+
+                <div class="form-section-title">
+
+                    <span>
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+
+                    Account Security
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="field">
+
+                        <label for="password">
+                            Password <span>*</span>
+                        </label>
+
+                        <div class="password-input">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create password"
+                                minlength="8"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="password"
+                            >
+                                SHOW
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="confirmPassword">
+                            Confirm Password <span>*</span>
+                        </label>
+
+                        <div class="password-input">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm password"
+                                minlength="8"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="confirmPassword"
+                            >
+                                SHOW
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD STRENGTH -->
+
+                <div class="password-strength">
+
+                    <div class="strength-bar">
+                        <span id="strengthBar"></span>
+                    </div>
+
+                    <small id="strengthText">
+                        Password strength
+                    </small>
+
+                </div>
+
+
+                <!-- AUTHORIZATION -->
+
+                <label class="checkbox-row">
+
+                    <input
+                        type="checkbox"
+                        id="authorization"
+                        name="authorization"
+                        required
+                    >
+
+                    <span>
+                        I confirm that I am an authorized
+                        government employee/official and that
+                        the information provided is accurate
+                        and may be verified by the appropriate
+                        department.
+                    </span>
+
+                </label>
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="registerMessage"
+                    class="form-message"
+                    role="alert"
+                ></div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+
+                    <span>
+                        Submit for Official Verification
+                    </span>
+
+                    <span class="submit-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </button>
+
+
+                <p class="demo-note">
+                    Your account may require departmental
+                    verification before access is granted.
+                </p>
+
+            </form>
+
+
+            <!-- =================================================
+                 LOGIN FORM
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                class="auth-form hidden"
+                novalidate
+            >
+
+                <div class="login-welcome">
+
+                    <div class="login-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <h3>
+                        Welcome, Official
+                    </h3>
+
+                    <p>
+                        Sign in using your authorized
+                        government credentials.
+                    </p>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="loginIdentifier">
+                        Official Email / Employee ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="loginIdentifier"
+                        name="loginIdentifier"
+                        placeholder="Enter official email or employee ID"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="password-input">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="loginPassword"
+                        >
+                            SHOW
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a href="#" id="forgotPassword">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <div
+                    id="loginMessage"
+                    class="form-message"
+                    role="alert"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+
+                    <span>
+                        Sign In to Government Portal
+                    </span>
+
+                    <span class="submit-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </button>
+
+
+                <p class="demo-note">
+                    Access is restricted to authorized
+                    government personnel.
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+<!-- Page JavaScript -->
+<script src="govt_login.js"></script>
+
+</body>
+</html>

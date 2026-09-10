@@ -1,0 +1,496 @@
+/* =====================================================
+   OFFICIAL SETTINGS PAGE STYLES (Top Tabs Layout)
+   Extends design tokens from govt_dashboard.css
+   ===================================================== */
+
+/* Primary Save Button */
+.primary-save {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    border-color: var(--primary) !important;
+}
+
+.primary-save:hover {
+    background: var(--primary-dark) !important;
+}
+
+/* Top Horizontal Navigation Bar */
+.top-settings-tabs {
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 6px;
+    display: flex;
+    gap: 6px;
+    box-shadow: var(--shadow-sm);
+    overflow-x: auto;
+}
+
+.settings-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-smooth);
+}
+
+.settings-tab-btn i {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.settings-tab-btn:hover {
+    background: var(--bg-canvas);
+    color: var(--text-main);
+}
+
+.settings-tab-btn.active {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.settings-tab-btn.active i {
+    color: var(--primary-dark);
+}
+
+/* Tab Panes Visibility Control */
+.settings-tab-content {
+    margin-top: 4px;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Setting Items Styling */
+.settings-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.setting-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--card-border-subtle);
+}
+
+.setting-item-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.setting-text strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.setting-text span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Form Inputs & Controls */
+.setting-select {
+    background-color: var(--surface);
+    border: 1px solid var(--card-border);
+    padding: 7px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+    color: var(--text-main);
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.setting-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.setting-number-input {
+    width: 65px;
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: center;
+    outline: none;
+}
+
+.setting-text-input {
+    width: 220px;
+    background: var(--bg-canvas);
+    border: 1px solid var(--card-border);
+    padding: 7px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    outline: none;
+}
+
+/* Custom iOS-Style Toggle Switch */
+.switch-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.switch-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #cbd5e1;
+    transition: 0.25s ease;
+    border-radius: 999px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.25s ease;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+/* Responsive Rules */
+@media (max-width: 650px) {
+    .setting-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* =========================================
+   MOBILE RESPONSIVE FIX
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* ---------- MAIN CONTENT ---------- */
+
+.main {
+    min-width: 0;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+
+/* ---------- TOPBAR ---------- */
+
+.topbar {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.top-left,
+.top-right {
+    min-width: 0;
+}
+
+.top-right {
+    max-width: 100%;
+}
+
+.jurisdiction {
+    white-space: nowrap;
+}
+
+
+/* ---------- SETTINGS HEADER ---------- */
+
+.page-header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.header-actions {
+    flex-wrap: wrap;
+}
+
+
+/* ---------- TABS ---------- */
+
+.top-settings-tabs {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+}
+
+.top-settings-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.settings-tab-btn {
+    flex-shrink: 0;
+}
+
+
+/* ---------- PANELS ---------- */
+
+.settings-tab-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+/* ---------- SETTING ROWS ---------- */
+
+.setting-item-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.setting-text {
+    min-width: 0;
+}
+
+.setting-text span,
+.setting-text strong {
+    max-width: 100%;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .content {
+        padding: 20px 16px;
+    }
+
+
+    /* Topbar */
+
+    .topbar {
+        padding: 14px 16px;
+    }
+
+    .top-right {
+        gap: 10px;
+    }
+
+    .jurisdiction {
+        display: none;
+    }
+
+    .user-profile {
+        max-width: 150px;
+    }
+
+    .user-profile strong,
+    .user-profile span {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    /* Header */
+
+    .page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .page-header > div:first-child {
+        width: 100%;
+    }
+
+    .header-actions {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    .header-actions button {
+        flex: 1;
+        min-width: 0;
+    }
+
+
+    /* Settings tabs */
+
+    .top-settings-tabs {
+        display: flex;
+        gap: 8px;
+        padding-bottom: 5px;
+    }
+
+    .settings-tab-btn {
+        white-space: nowrap;
+        padding: 10px 14px;
+    }
+
+
+    /* Settings rows */
+
+    .setting-item-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px 0;
+    }
+
+    .setting-text {
+        width: 100%;
+    }
+
+    .switch-toggle {
+        align-self: flex-end;
+    }
+
+    .setting-select,
+    .setting-input-group {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .setting-select {
+        width: 100%;
+    }
+
+    .setting-input-group {
+        display: flex;
+    }
+
+    .setting-input-group input {
+        min-width: 0;
+        flex: 1;
+    }
+
+
+    /* API key */
+
+    #api-tab .setting-input-group {
+        width: 100%;
+    }
+
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+    .content {
+        padding: 16px 12px;
+    }
+
+    .topbar {
+        padding: 12px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+    }
+
+    .header-actions button {
+        width: 100%;
+    }
+
+    .panel {
+        border-radius: 14px;
+    }
+
+    .setting-item-row {
+        padding: 16px 0;
+    }
+
+    .settings-tab-btn {
+        font-size: 12px;
+        padding: 9px 12px;
+    }
+
+}

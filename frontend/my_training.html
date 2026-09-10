@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | My Training</title>
+
+    <!-- Modern Typography & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Linking your style.css so the .brand and .brand-icon classes inherit their exact colors and styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="my_training.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+      TOP BAR
+====================================================== -->
+
+<header class="page-topbar" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+
+    <a href="trainee_dashboard.html" style="text-decoration: none; color: #64748b; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif;">
+        ← Back to Dashboard
+    </a>
+
+    <!-- Exact brand markup from your landing page -->
+    <a class="brand" href="#">
+        <span class="brand-icon"><i class="fa-solid fa-chart-line"></i></span>
+        <span>Skill<span>Track</span></span>
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+      MAIN CONTENT
+====================================================== -->
+
+<main class="inner-content">
+
+
+    <!-- =================================================
+         PAGE HEADING
+    ================================================== -->
+
+    <div class="page-heading">
+
+        <p>
+            MY TRAINING
+        </p>
+
+        <h1>
+            Training Programmes
+        </h1>
+
+        <span>
+            View your training history and add new
+            training programmes.
+        </span>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ADD TRAINING BUTTON
+    ================================================== -->
+
+    <div class="training-actions">
+
+        <button
+            class="primary-btn"
+            id="addTrainingBtn"
+            type="button"
+        >
+            + Add Training
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ADD TRAINING FORM
+    ================================================== -->
+
+    <section
+        class="inner-card"
+        id="trainingForm"
+        style="display: none;"
+    >
+
+        <div class="panel-heading">
+
+            <div>
+
+
+                <h2>
+                    Add Training Programme
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            Enter your training details below.
+            Your submission will be sent for verification.
+        </p>
+
+
+        <!-- =============================================
+             FORM GRID
+        ============================================== -->
+
+        <div class="profile-grid">
+
+
+            <!-- COURSE NAME -->
+
+            <div class="field">
+
+                <label for="newCourseName">
+                    Course Name
+                </label>
+
+                <input
+                    type="text"
+                    id="newCourseName"
+                    placeholder="e.g. Web Development"
+                >
+
+            </div>
+
+
+
+            <!-- PROVIDER -->
+
+            <div class="field">
+
+                <label for="newProviderName">
+                    Training Provider
+                </label>
+
+                <input
+                    type="text"
+                    id="newProviderName"
+                    placeholder="e.g. Skill Development Centre"
+                >
+
+            </div>
+
+
+
+            <!-- START DATE -->
+
+            <div class="field">
+
+                <label for="newStartDate">
+                    Start Date
+                </label>
+
+                <input
+                    type="date"
+                    id="newStartDate"
+                >
+
+            </div>
+
+
+
+            <!-- COMPLETION DATE -->
+
+            <div class="field">
+
+                <label for="newCompletionDate">
+                    Completion Date
+                </label>
+
+                <input
+                    type="date"
+                    id="newCompletionDate"
+                >
+
+            </div>
+
+
+
+            <!-- ATTENDANCE -->
+
+            <div class="field">
+
+                <label for="newAttendance">
+                    Attendance Percentage
+                </label>
+
+                <input
+                    type="number"
+                    id="newAttendance"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    placeholder="e.g. 92"
+                >
+
+            </div>
+
+
+
+            <!-- ASSESSMENT -->
+
+            <div class="field">
+
+                <label for="newAssessment">
+                    Assessment Score
+                </label>
+
+                <input
+                    type="number"
+                    id="newAssessment"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    placeholder="e.g. 88"
+                >
+
+            </div>
+
+
+
+            <!-- CERTIFICATION -->
+
+            <div class="field">
+
+                <label for="newCertification">
+                    Certification Status
+                </label>
+
+                <select id="newCertification">
+
+                    <option value="">
+                        Select status
+                    </option>
+
+                    <option value="Issued">
+                        Issued
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Not Certified">
+                        Not Certified
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             CERTIFICATE VERIFICATION & DIGILOCKER SECTION
+        ============================================== -->
+
+        <div class="verification-section" style="margin-top: 24px; padding: 20px; border: 1px dashed #cbd5e1; border-radius: 8px; background-color: #f8fafc;">
+            <h3 style="margin-bottom: 8px; font-size: 1.1rem; color: #1e293b;">Certificate Verification</h3>
+            <p style="margin-bottom: 16px; font-size: 0.9rem; color: #64748b;">Upload your certificate or fetch it instantly via DigiLocker for instant verification.</p>
+            
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                <!-- Manual File Upload -->
+                <div class="field" style="flex: 1; min-width: 220px; margin-bottom: 0;">
+                    <label for="certificateFile" style="font-size: 0.85rem; margin-bottom: 4px; display: block;">Upload Certificate (PDF/Image)</label>
+                    <input type="file" id="certificateFile" accept=".pdf,.png,.jpg,.jpeg" style="font-size: 0.9rem;">
+                </div>
+
+                <!-- DigiLocker Integration Button -->
+                <div style="align-self: flex-end;">
+                    <button type="button" id="digilockerBtn" class="outline-btn" style="display: flex; align-items: center; gap: 8px; border-color: #0284c7; color: #0284c7; background: #ffffff;">
+                        <span style="font-weight: bold;">🏛️</span> Continue to DigiLocker
+                    </button>
+                </div>
+            </div>
+
+            <!-- Verification Success State Container -->
+            <div id="verificationResultBox" style="display: none; margin-top: 16px; padding: 12px 16px; background: #ecfdf5; border: 1px solid #10b981; border-radius: 6px;">
+                <strong style="color: #047857; display: block; margin-bottom: 4px;">✓ Credential Verified</strong>
+                <p style="margin: 0; font-size: 0.85rem; color: #065f46;" id="verifiedDetailsText">
+                    Training: Full Stack Development<br>
+                    Issuer: XYZ Training Institute<br>
+                    Status: Verified
+                </p>
+            </div>
+        </div>
+
+
+
+        <!-- =============================================
+             FORM MESSAGE
+        ============================================== -->
+
+        <div
+            class="message"
+            id="trainingFormMessage"
+        ></div>
+
+
+
+        <!-- =============================================
+             FORM TERMS & BUTTONS
+        ============================================== -->
+
+        <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+            <label class="checkbox-row" style="display: flex; align-items: flex-start; gap: 8px;">
+                <input
+                    type="checkbox"
+                    id="termsAnalysis"
+                    required
+                >
+                <span style="font-size: 0.9rem;">
+                    I allow my data to be collected and used for further analysis of my training records.
+                </span>
+            </label>
+
+            <label class="checkbox-row" style="display: flex; align-items: flex-start; gap: 8px;">
+                <input
+                    type="checkbox"
+                    id="termsAccuracy"
+                    required
+                >
+                <span style="font-size: 0.9rem;">
+                   I confirm that the training information provided above is accurate and complete to the best of my knowledge.
+                </span>
+            </label>
+        </div>
+
+        <div class="training-form-actions" style="margin-top: 24px;">
+
+            <button
+                class="outline-btn"
+                id="cancelTraining"
+                type="button"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="primary-btn"
+                id="saveTraining"
+                type="button"
+            >
+                Submit for Verification →
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         DIGILOCKER AUTHORIZATION MODAL (PROTOTYPE OVERLAY)
+    ================================================== -->
+    <div id="digilockerModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: #ffffff; padding: 30px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="margin: 0; font-size: 1.25rem; color: #0f172a;">DigiLocker Authorization</h3>
+                <button type="button" id="closeDigilockerModal" style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: #64748b;">&times;</button>
+            </div>
+            <p style="color: #475569; font-size: 0.9rem; margin-bottom: 20px;">
+                SkillTrack is requesting permission to access your selected credential.
+            </p>
+            <div style="background: #f1f5f9; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 0.9rem; color: #334155; display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" checked disabled style="accent-color: #0284c7;">
+                <span>Training / Education Credential</span>
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                <button type="button" id="cancelDigilocker" class="outline-btn" style="padding: 8px 16px;">Cancel</button>
+                <button type="button" id="allowDigilocker" class="primary-btn" style="padding: 8px 16px;">Allow & Continue</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- =================================================
+         LOADING
+    ================================================== -->
+
+    <section
+        class="inner-card"
+        id="trainingLoading"
+    >
+
+        <h3>
+            Loading your training...
+        </h3>
+
+        <p>
+            Please wait while we retrieve your training
+            records.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         NO TRAINING MESSAGE
+    ================================================== -->
+
+    <section
+        class="inner-card"
+        id="noTraining"
+        style="display: none;"
+    >
+
+        <h3>
+            No training records yet
+        </h3>
+
+        <p>
+            You haven't added any training programmes.
+            Click <strong>+ Add Training</strong> to add one.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TRAINING LIST
+    ================================================== -->
+
+    <section
+        id="trainingList"
+        class="training-list"
+    >
+
+        <!-- JavaScript will create all training cards here. -->
+
+    </section>
+
+
+
+    <!-- =================================================
+         TRAINING DETAIL VIEW
+         Hidden until a training is selected
+    ================================================== -->
+
+    <section
+        class="inner-card"
+        id="trainingDetails"
+        style="display: none;"
+    >
+
+        <!-- =============================================
+             TRAINING BANNER
+        ============================================== -->
+
+        <div class="training-banner">
+
+            <div
+                class="big-course-icon"
+                id="courseIcon"
+            >
+                TR
+            </div>
+
+
+            <div class="training-banner-main">
+
+                <span
+                    class="complete-badge"
+                    id="completionBadge"
+                >
+                    Training
+                </span>
+
+
+                <h2 id="courseName">
+                    Training Programme
+                </h2>
+
+
+                <p id="providerName">
+                    Training Provider
+                </p>
+
+            </div>
+
+
+            <strong id="completionPercentage">
+                --%
+            </strong>
+
+        </div>
+
+
+
+        <!-- =============================================
+             DETAILS + PERFORMANCE
+        ============================================== -->
+
+        <section class="inner-grid">
+
+
+            <!-- TRAINING DETAILS -->
+
+            <article class="inner-card">
+
+                <h3>
+                    Training Details
+                </h3>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Training Centre
+                    </span>
+
+                    <strong id="trainingCentre">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Course Duration
+                    </span>
+
+                    <strong id="courseDuration">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Start Date
+                    </span>
+
+                    <strong id="startDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Completion Date
+                    </span>
+
+                    <strong id="completionDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Training ID
+                    </span>
+
+                    <strong id="trainingId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Verification
+                    </span>
+
+                    <strong id="verificationStatus">
+                        -
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PERFORMANCE -->
+
+            <article class="inner-card">
+
+                <h3>
+                    Training Performance
+                </h3>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Attendance
+                    </span>
+
+                    <strong id="attendance">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Assessment Score
+                    </span>
+
+                    <strong id="assessmentScore">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Certification
+                    </span>
+
+                    <strong id="certificationStatus">
+                        -
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =============================================
+             TRAINING PROGRESS
+        ============================================== -->
+
+        <section class="inner-card">
+
+            <h3>
+                Training Progress
+            </h3>
+
+
+            <div class="course-timeline">
+
+
+                <div
+                    class="course-step done"
+                    id="enrolledStep"
+                >
+
+                    <strong>
+                        Enrolled
+                    </strong>
+
+                    <span id="enrolledDate">
+                        -
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    class="course-step done"
+                    id="startedStep"
+                >
+
+                    <strong>
+                        Training Started
+                    </strong>
+
+                    <span id="startedDate">
+                        -
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    class="course-step"
+                    id="completedStep"
+                >
+
+                    <strong>
+                        Training Completed
+                    </strong>
+
+                    <span id="completedTimelineDate">
+                        -
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    class="course-step"
+                    id="certificateStep"
+                >
+
+                    <strong>
+                        Certificate Issued
+                    </strong>
+
+                    <span id="certificateDate">
+                        -
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+             SKILLS
+        ============================================== -->
+
+        <section class="inner-card">
+
+            <h3>
+                Skills Covered
+            </h3>
+
+
+            <div class="skill-list">
+
+                <span>
+                    Skills information
+                </span>
+
+                <span>
+                    Will be added
+                </span>
+
+                <span>
+                    to training records
+                </span>
+
+            </div>
+
+        </section>
+
+   </section>
+
+
+
+    <!-- =================================================
+         GLOBAL MESSAGE
+    ================================================== -->
+
+    <div
+        class="message"
+        id="trainingMessage"
+    ></div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+      FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+    <span>
+        © 2026 SkillTrack
+    </span>
+
+    <span>
+        Government Digital Skill Outcome Platform
+    </span>
+
+    <span>
+        Privacy • Terms • Support
+    </span>
+
+</footer>
+
+
+
+<!-- =====================================================
+      SUPABASE & INTERACTION SCRIPT
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="my_training.js"></script>
+
+<!-- Inline prototype handler for DigiLocker flow simulation -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const digilockerBtn = document.getElementById('digilockerBtn');
+        const digilockerModal = document.getElementById('digilockerModal');
+        const closeDigilockerModal = document.getElementById('closeDigilockerModal');
+        const cancelDigilocker = document.getElementById('cancelDigilocker');
+        const allowDigilocker = document.getElementById('allowDigilocker');
+        const verificationResultBox = document.getElementById('verificationResultBox');
+        const verifiedDetailsText = document.getElementById('verifiedDetailsText');
+        const courseNameInput = document.getElementById('newCourseName');
+        const providerNameInput = document.getElementById('newProviderName');
+        const certificationSelect = document.getElementById('newCertification');
+
+        // Open modal
+        digilockerBtn?.addEventListener('click', () => {
+            digilockerModal.style.display = 'flex';
+        });
+
+        // Close modal functions
+        const closeModal = () => {
+            digilockerModal.style.display = 'none';
+        };
+        closeDigilockerModal?.addEventListener('click', closeModal);
+        cancelDigilocker?.addEventListener('click', closeModal);
+
+        // Allow & Continue action
+        allowDigilocker?.addEventListener('click', () => {
+            closeModal();
+            
+            // Populate example details or use input values if available
+            const course = courseNameInput.value.trim() || "Full Stack Development";
+            const issuer = providerNameInput.value.trim() || "XYZ Training Institute";
+
+            verifiedDetailsText.innerHTML = `
+                Training: ${course}<br>
+                Issuer: ${issuer}<br>
+                Status: Verified
+            `;
+            
+            verificationResultBox.style.display = 'block';
+
+            // Automatically set certification status dropdown to Issued
+            if (certificationSelect) {
+                certificationSelect.value = "Issued";
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillTrack | System Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="govt_dashboard.css">
+    <link rel="stylesheet" href="govt_settings.css">
+</head>
+
+
+<body>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand-block">
+
+            <a
+                href="govt_dashboard.html"
+                class="brand-logo"
+                aria-label="SkillTrack Logo"
+            >
+                <i class="fa-solid fa-chart-line"></i>
+            </a>
+
+            <div>
+                <h2>Skill<span>Track</span></h2>
+                <span>Government Portal</span>
+            </div>
+
+        </div>
+
+
+        <!-- GOVERNMENT OFFICIAL -->
+        <div class="official-user">
+
+            <div
+                class="official-avatar"
+                id="officialAvatar"
+            >
+                --
+            </div>
+
+            <div>
+
+                <strong id="officialName">
+                    Loading...
+                </strong>
+
+                <span id="officialDesignation">
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <nav class="navigation">
+
+            <p class="nav-label">
+                Monitoring
+            </p>
+
+            <a
+                href="govt_dashboard.html"
+                class="nav-link"
+            >
+                <span class="nav-icon">▦</span>
+                Dashboard
+            </a>
+
+            <a
+                href="govt_dashboard.html#outcomes"
+                class="nav-link"
+            >
+                <span class="nav-icon">◉</span>
+                Outcome Analytics
+            </a>
+
+            <a
+                href="govt_dashboard.html#districts"
+                class="nav-link"
+            >
+                <span class="nav-icon">▤</span>
+                District Performance
+            </a>
+
+
+            <p class="nav-label second">
+                Management
+            </p>
+
+            <a
+                href="govt_profile.html"
+                class="nav-link"
+            >
+                <span class="nav-icon">👤</span>
+                Official Profile
+            </a>
+
+            <a
+                href="govt_dashboard.html#reports"
+                class="nav-link"
+            >
+                <span class="nav-icon">▣</span>
+                Reports
+            </a>
+
+            <a
+                href="govt_settings.html"
+                class="nav-link active"
+            >
+                <span class="nav-icon">⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+        <div class="sidebar-footer">
+
+            <div
+                class="system-status"
+                id="systemStatus"
+            >
+                <span></span>
+                System Operational
+            </div>
+
+            <button
+                class="logout-btn"
+                id="logoutBtn"
+                type="button"
+            >
+                ↪ Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <div class="main">
+
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    type="button"
+                    aria-label="Toggle menu"
+                >
+                    ☰
+                </button>
+
+                <div>
+
+                    <p>
+                        Government Portal
+                    </p>
+
+                    <h1>
+                        Platform Settings
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+   <!-- BACKEND-DRIVEN TOP RIGHT -->
+<div class="top-right">
+
+    <div class="jurisdiction">
+
+        <span>
+            CURRENT JURISDICTION
+        </span>
+
+        <strong id="topJurisdiction">
+            Loading...
+        </strong>
+
+    </div>
+
+
+    <a
+        href="govt_profile.html"
+        class="user-profile"
+    >
+
+        <div
+            class="top-avatar"
+            id="topAvatar"
+        >
+            --
+        </div>
+
+        <div>
+
+            <strong id="topOfficialName">
+                Loading...
+            </strong>
+
+            <span id="topOfficialDesignation">
+                Loading...
+            </span>
+
+        </div>
+
+    </a>
+
+</div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <main class="content">
+
+
+            <!-- PAGE HEADER -->
+            <section class="page-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        System Configuration
+                    </p>
+
+                    <h2>
+                        Dashboard 
+                    </h2>
+
+                    <span>
+                        Manage real-time data sync, alert triggers,
+                        and portal preferences.
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button
+                        class="reset-btn"
+                        id="discardSettingsBtn"
+                        type="button"
+                    >
+                        Discard Changes
+                    </button>
+
+                    <button
+                        class="export-btn primary-save"
+                        id="saveSettingsBtn"
+                        type="button"
+                    >
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Settings
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SETTINGS TABS -->
+            <div class="top-settings-tabs">
+
+                <button
+                    class="settings-tab-btn active"
+                    data-tab="general-tab"
+                    type="button"
+                >
+                    <i class="fa-solid fa-sliders"></i>
+                    General & Data
+                </button>
+
+                <button
+                    class="settings-tab-btn"
+                    data-tab="alerts-tab"
+                    type="button"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    Alerts & Notifications
+                </button>
+
+                <button
+                    class="settings-tab-btn"
+                    data-tab="analytics-tab"
+                    type="button"
+                >
+                    <i class="fa-solid fa-brain"></i>
+                    Analytics & ML
+                </button>
+
+                <button
+                    class="settings-tab-btn"
+                    data-tab="api-tab"
+                    type="button"
+                >
+                    <i class="fa-solid fa-key"></i>
+                    API & Integrations
+                </button>
+
+            </div>
+
+
+            <!-- TAB CONTENT -->
+            <div class="settings-tab-content">
+
+
+                <!-- GENERAL -->
+                <article
+                    class="panel tab-pane active"
+                    id="general-tab"
+                >
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                Data Refresh & Display
+                            </span>
+
+                            <h2>
+                                General 
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-options-list">
+
+
+                        <!-- AUTOMATIC REFRESH -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Automatic Background Refresh
+                                </strong>
+
+                                <span>
+                                    Poll backend API for new trainee
+                                    outcome records every 5 minutes.
+                                </span>
+
+                            </div>
+
+
+                            <label class="switch-toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="automaticBackgroundRefresh"
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- FISCAL YEAR -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Default Reporting Fiscal Year
+                                </strong>
+
+                                <span>
+                                    Select the default timeframe loaded
+                                    when opening the dashboard.
+                                </span>
+
+                            </div>
+
+
+                            <select
+                                class="setting-select"
+                                id="defaultFiscalYear"
+                            >
+
+                                <option value="FY 2026-27">
+                                    FY 2026-27
+                                </option>
+
+                                <option value="FY 2025-26">
+                                    FY 2025-26
+                                </option>
+
+                                <option value="FY 2024-25">
+                                    FY 2024-25
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ANIMATIONS -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Interface Animations
+                                </strong>
+
+                                <span>
+                                    Enable smooth card transitions
+                                    and counter animations.
+                                </span>
+
+                            </div>
+
+
+                            <label class="switch-toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="interfaceAnimations"
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ALERTS -->
+                <article
+                    class="panel tab-pane"
+                    id="alerts-tab"
+                >
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                Threshold Monitoring
+                            </span>
+
+                            <h2>
+                                Automated Alert Triggers
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-options-list">
+
+
+                        <!-- RETENTION -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Low Employment Retention Warning
+                                </strong>
+
+                                <span>
+                                    Trigger an official alert when
+                                    6-month retention drops below
+                                    this threshold.
+                                </span>
+
+                            </div>
+
+
+                            <div class="setting-input-group">
+
+                                <input
+                                    type="number"
+                                    id="retentionThreshold"
+                                    min="0"
+                                    max="100"
+                                    class="setting-number-input"
+                                >
+
+                                <span>%</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Email Digest Reports
+                                </strong>
+
+                                <span>
+                                    Receive weekly PDF summaries
+                                    of district outcome performance.
+                                </span>
+
+                            </div>
+
+
+                            <label class="switch-toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="emailDigest"
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- FLAGGING -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Unverified Placement Flagging
+                                </strong>
+
+                                <span>
+                                    Flag training providers with
+                                    unverified employment claims
+                                    exceeding 15 days.
+                                </span>
+
+                            </div>
+
+
+                            <label class="switch-toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="unverifiedPlacementFlagging"
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ANALYTICS -->
+                <article
+                    class="panel tab-pane"
+                    id="analytics-tab"
+                >
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                Predictive Intelligence
+                            </span>
+
+                            <h2>
+                                Machine Learning Display Settings
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-options-list">
+
+
+                        <!-- PREDICTIVE ANALYTICS -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Display Predictive Placement Analytics
+                                </strong>
+
+                                <span>
+                                    Show ML model forecasts alongside
+                                    verified historical outcome data.
+                                </span>
+
+                            </div>
+
+
+                            <label class="switch-toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="displayPredictiveAnalytics"
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- ANOMALY -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Anomaly Sensitivity Level
+                                </strong>
+
+                                <span>
+                                    Adjust statistical threshold
+                                    for anomaly detection in
+                                    provider reporting.
+                                </span>
+
+                            </div>
+
+
+                            <select
+                                class="setting-select"
+                                id="anomalySensitivity"
+                            >
+
+                                <option value="High (Strict)">
+                                    High (Strict)
+                                </option>
+
+                                <option value="Balanced">
+                                    Balanced
+                                </option>
+
+                                <option value="Low (Tolerant)">
+                                    Low (Tolerant)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- API -->
+                <article
+                    class="panel tab-pane"
+                    id="api-tab"
+                >
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span>
+                                Developer & Integration
+                            </span>
+
+                            <h2>
+                                API Credentials & Webhooks
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-options-list">
+
+
+                        <!-- API KEY -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Government Analytics API Key
+                                </strong>
+
+                                <span>
+                                    Secure bearer token for integration
+                                    with national skill databases.
+                                </span>
+
+                            </div>
+
+
+                            <div class="setting-input-group">
+
+                                <input
+                                    type="password"
+                                    id="governmentApiKey"
+                                    class="setting-text-input"
+                                    readonly
+                                    autocomplete="off"
+                                >
+
+                                <button
+                                    class="reset-btn"
+                                    id="copyApiKeyBtn"
+                                    type="button"
+                                >
+                                    Copy
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- WEBHOOK -->
+                        <div class="setting-item-row">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Outcome Event Webhooks
+                                </strong>
+
+                                <span>
+                                    Send real-time JSON webhooks
+                                    when a trainee placement
+                                    is verified.
+                                </span>
+
+                            </div>
+
+
+                            <label class="switch-toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="outcomeWebhooks"
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <span>
+                ©️ 2026 SkillTrack
+            </span>
+
+            <span>
+                Government Digital Skill Outcome Platform
+            </span>
+
+            <span>
+                Secure Government Access
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <!-- SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- YOUR SUPABASE CONFIG -->
+    <script src="supabase.js"></script>
+
+    <!-- EXISTING DASHBOARD JS -->
+    <script src="govt_dashboard.js"></script>
+
+    <!-- THIS PAGE JS -->
+    <script src="govt_settings.js"></script>
+
+</body>
+</html>
