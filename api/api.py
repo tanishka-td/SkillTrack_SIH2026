@@ -40,7 +40,7 @@ app.add_middleware(
 # DATABASE
 # =========================================================
 
-engine = get_engine("data/SQLlite/skilling_outcomes_demo.db")
+engine = get_engine("data/skilling_outcomes_demo.db")
 
 API_KEY = os.environ.get(
     "ANALYTICS_API_KEY"
