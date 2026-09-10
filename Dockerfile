@@ -13,9 +13,8 @@ ARG SUPABASE_SERVICE_KEY=""
 ENV SUPABASE_URL=${SUPABASE_URL}
 ENV SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY}
 
-RUN mkdir -p data
+RUN mkdir -p data database/data
 
-# Build the database using the scripts inside database/
 RUN cd database && python build_data.py && cp -r data/* ../data/
 
 EXPOSE 8000
