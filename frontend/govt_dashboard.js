@@ -554,7 +554,10 @@ function updateOfficialUI() {
 async function loadProgrammeData() {
     console.log("Loading programme data from local demo database...");
 
+    let data;
+
     try {
+        // Primary source: the FastAPI analytics backend (live SQLite/Supabase-fed data).
         const response = await fetch(
             `${ANALYTICS_API_BASE}/api/demo/programme-data`,
             {
@@ -568,44 +571,69 @@ async function loadProgrammeData() {
             );
         }
 
-        const data = await response.json();
-
-        allProfiles = data.profiles || [];
-        allTrainingRecords = data.training || [];
-        allEmploymentRecords = data.employment || [];
-
-        console.log(
-            "Programme data source:",
-            data.source || "local-demo-database"
-        );
-
-        console.log(
-            "Profiles:",
-            allProfiles.length
-        );
-
-        console.log(
-            "Training:",
-            allTrainingRecords.length
-        );
-
-        console.log(
-            "Employment:",
-            allEmploymentRecords.length
-        );
+        data = await response.json();
 
     } catch (error) {
-        console.error(
-            "Failed to load programme data:",
+        // Analytics backend isn't running/reachable (e.g. local demo without
+        // `uvicorn` started). Fall back to the static demo dataset that
+        // ships in this same frontend folder so the dashboard still shows
+        // data. Supabase-backed flows (auth, trainee side) are unaffected.
+        console.warn(
+            "Analytics API unavailable, falling back to local demo_data.json:",
             error
         );
 
-        allProfiles = [];
-        allTrainingRecords = [];
-        allEmploymentRecords = [];
+        try {
+            const fallbackResponse = await fetch(
+                "demo_data.json",
+                { cache: "no-store" }
+            );
 
-        throw error;
+            if (!fallbackResponse.ok) {
+                throw new Error(
+                    `demo_data.json -> HTTP ${fallbackResponse.status}`
+                );
+            }
+
+            data = await fallbackResponse.json();
+
+        } catch (fallbackError) {
+            console.error(
+                "Failed to load programme data (API and local fallback both failed):",
+                fallbackError
+            );
+
+            allProfiles = [];
+            allTrainingRecords = [];
+            allEmploymentRecords = [];
+
+            throw fallbackError;
+        }
     }
+
+    allProfiles = data.profiles || [];
+    allTrainingRecords = data.training || [];
+    allEmploymentRecords = data.employment || [];
+
+    console.log(
+        "Programme data source:",
+        data.source || "local-demo-database"
+    );
+
+    console.log(
+        "Profiles:",
+        allProfiles.length
+    );
+
+    console.log(
+        "Training:",
+        allTrainingRecords.length
+    );
+
+    console.log(
+        "Employment:",
+        allEmploymentRecords.length
+    );
 }
 
 /* =========================================================
