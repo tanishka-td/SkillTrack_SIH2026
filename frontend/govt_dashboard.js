@@ -93,6 +93,10 @@ document.addEventListener(
    INITIALIZE DASHBOARD
    ========================================================= */
 
+/* =========================================================
+   INITIALIZE DASHBOARD
+   ========================================================= */
+
 async function initializeDashboard() {
 
     try {
@@ -109,19 +113,15 @@ async function initializeDashboard() {
         const {
             data: authData,
             error: authError
-        } =
-            await supabaseClient.auth.getUser();
+        } = await supabaseClient.auth.getUser();
 
 
         if (authError) {
-
             throw authError;
-
         }
 
 
-        currentUser =
-            authData.user;
+        currentUser = authData.user;
 
 
         if (!currentUser) {
@@ -130,7 +130,6 @@ async function initializeDashboard() {
                 "govt_login.html";
 
             return;
-
         }
 
 
@@ -148,7 +147,7 @@ async function initializeDashboard() {
 
 
         /* =================================================
-           VERIFY ACCESS
+           VERIFY GOVERNMENT ACCESS
            ================================================= */
 
         if (
@@ -161,31 +160,74 @@ async function initializeDashboard() {
                 "govt_login.html";
 
             return;
-
         }
 
 
         /* =================================================
            LOAD PROGRAMME DATA
+           
+           IMPORTANT:
+           This now comes from our LOCAL DEMO DATABASE,
+           NOT Supabase.
            ================================================= */
 
         await loadProgrammeData();
 
 
         /* =================================================
-           INITIAL FILTER
+           FIND AVAILABLE DEMO STATES
            ================================================= */
 
-        currentFilters.state =
+        const availableStates = [
+            ...new Set(
+                allProfiles
+                    .map(profile => profile.state)
+                    .filter(Boolean)
+            )
+        ].sort();
+
+
+        /* =================================================
+           GOVERNMENT OFFICIAL'S JURISDICTION
+           ================================================= */
+
+        const officialState =
             currentOfficial.state || "";
 
-        currentFilters.district =
+        const officialDistrict =
             currentOfficial.district || "";
 
 
-        /*
-         * Set state filter to official jurisdiction
-         */
+        /* =================================================
+           SELECT INITIAL STATE
+           
+           If the official's state exists in the demo
+           data, use it.
+
+           Otherwise, automatically select the first
+           state available in the demo dataset.
+           ================================================= */
+
+        if (
+            availableStates.includes(
+                officialState
+            )
+        ) {
+
+            currentFilters.state =
+                officialState;
+
+        } else {
+
+            currentFilters.state =
+                availableStates[0] || "";
+
+        }
+
+
+        /* =================================================
+           SET STATE DROPDOWN
+           ================================================= */
 
         const stateFilter =
             document.getElementById(
@@ -193,10 +235,7 @@ async function initializeDashboard() {
             );
 
 
-        if (
-            stateFilter &&
-            currentOfficial.state
-        ) {
+        if (stateFilter) {
 
             const stateOption =
                 Array.from(
@@ -204,14 +243,14 @@ async function initializeDashboard() {
                 ).find(
                     option =>
                         option.value ===
-                        currentOfficial.state
+                        currentFilters.state
                 );
 
 
             if (stateOption) {
 
                 stateFilter.value =
-                    currentOfficial.state;
+                    currentFilters.state;
 
             }
 
@@ -219,13 +258,68 @@ async function initializeDashboard() {
 
 
         /* =================================================
-           LOAD DISTRICTS
+           LOAD DISTRICTS FOR SELECTED STATE
            ================================================= */
 
         populateDistrictFilter(
-            currentOfficial.state
+            currentFilters.state
         );
 
+
+        /* =================================================
+           GET AVAILABLE DISTRICTS
+           ================================================= */
+
+        const availableDistricts = [
+            ...new Set(
+                allProfiles
+                    .filter(
+                        profile =>
+                            !currentFilters.state ||
+                            profile.state ===
+                                currentFilters.state
+                    )
+                    .map(
+                        profile =>
+                            profile.district
+                    )
+                    .filter(Boolean)
+            )
+        ].sort();
+
+
+        /* =================================================
+           SELECT INITIAL DISTRICT
+           
+           Keep the government official's district only
+           if that district actually exists in the demo
+           dataset.
+
+           Otherwise leave district as "All".
+           ================================================= */
+
+        if (
+            officialState ===
+                currentFilters.state &&
+            availableDistricts.includes(
+                officialDistrict
+            )
+        ) {
+
+            currentFilters.district =
+                officialDistrict;
+
+        } else {
+
+            currentFilters.district =
+                "";
+
+        }
+
+
+        /* =================================================
+           SET DISTRICT DROPDOWN
+           ================================================= */
 
         const districtFilter =
             document.getElementById(
@@ -235,25 +329,11 @@ async function initializeDashboard() {
 
         if (
             districtFilter &&
-            currentOfficial.district
+            currentFilters.district
         ) {
 
-            const districtOption =
-                Array.from(
-                    districtFilter.options
-                ).find(
-                    option =>
-                        option.value ===
-                        currentOfficial.district
-                );
-
-
-            if (districtOption) {
-
-                districtFilter.value =
-                    currentOfficial.district;
-
-            }
+            districtFilter.value =
+                currentFilters.district;
 
         }
 
@@ -266,14 +346,18 @@ async function initializeDashboard() {
 
 
         /* =================================================
-           UPDATE LAST UPDATED
+           UPDATE LAST UPDATED TIME
            ================================================= */
 
         updateLastUpdated();
 
 
+        /* =================================================
+           UPDATE STATUS
+           ================================================= */
+
         setAdvancedStatus(
-            "Live programme data loaded successfully."
+            "Demo programme data loaded successfully."
         );
 
 
@@ -303,7 +387,6 @@ async function initializeDashboard() {
     }
 
 }
-
 
 /* =========================================================
    LOAD OFFICIAL PROFILE
@@ -469,164 +552,61 @@ function updateOfficialUI() {
    ========================================================= */
 
 async function loadProgrammeData() {
+    console.log("Loading programme data from local demo database...");
 
-    console.log(
-        "Loading programme data..."
-    );
-
-
-    /* =====================================================
-       LOAD TRAINEE PROFILES
-       ===================================================== */
-
-    const {
-        data: profiles,
-        error: profileError
-    } =
-        await supabaseClient
-            .from("profile")
-            .select(`
-                id,
-                user_id,
-                full_name,
-                age,
-                gender,
-                mobile_number,
-                email,
-                state,
-                district,
-                city_block_town,
-                profile_status,
-                created_at
-            `);
-
-
-    if (profileError) {
-
-        console.error(
-            "Profile data error:",
-            profileError
+    try {
+        const response = await fetch(
+            `${ANALYTICS_API_BASE}/api/demo/programme-data`,
+            {
+                cache: "no-store"
+            }
         );
 
-        throw profileError;
-
-    }
-
-
-    allProfiles =
-        profiles || [];
-
-
-    /* =====================================================
-       LOAD TRAINING
-       ===================================================== */
-
-    const {
-        data: training,
-        error: trainingError
-    } =
-        await supabaseClient
-            .from("trainee_records")
-            .select(`
-                id,
-                trainee_id,
-                course_name,
-                provider_name,
-                start_date,
-                completion_date,
-                attendance,
-                assessment_score,
-                certification_status,
-                is_verified,
-                duration_months,
-                skills,
-                created_at,
-                updated_at
-            `);
-
-
-    if (trainingError) {
-
-        console.error(
-            "Training data error:",
-            trainingError
-        );
-
-        throw trainingError;
-
-    }
-
-
-    allTrainingRecords =
-        training || [];
-
-
-    /* =====================================================
-       LOAD EMPLOYMENT
-       ===================================================== */
-
-    const {
-        data: employment,
-        error: employmentError
-    } =
-        await supabaseClient
-            .from("employment_records")
-            .select(`
-                id,
-                trainee_id,
-                status,
-                company_name,
-                job_role,
-                monthly_salary,
-                joining_date,
-                employment_type,
-                unemployed_reason,
-                recorded_at,
-                created_at
-            `)
-            .order(
-                "recorded_at",
-                {
-                    ascending: false
-                }
+        if (!response.ok) {
+            throw new Error(
+                `Programme data -> HTTP ${response.status}`
             );
+        }
 
+        const data = await response.json();
 
-    if (employmentError) {
+        allProfiles = data.profiles || [];
+        allTrainingRecords = data.training || [];
+        allEmploymentRecords = data.employment || [];
 
-        console.error(
-            "Employment data error:",
-            employmentError
+        console.log(
+            "Programme data source:",
+            data.source || "local-demo-database"
         );
 
-        throw employmentError;
+        console.log(
+            "Profiles:",
+            allProfiles.length
+        );
 
+        console.log(
+            "Training:",
+            allTrainingRecords.length
+        );
+
+        console.log(
+            "Employment:",
+            allEmploymentRecords.length
+        );
+
+    } catch (error) {
+        console.error(
+            "Failed to load programme data:",
+            error
+        );
+
+        allProfiles = [];
+        allTrainingRecords = [];
+        allEmploymentRecords = [];
+
+        throw error;
     }
-
-
-    allEmploymentRecords =
-        employment || [];
-
-
-    console.log(
-        "Profiles:",
-        allProfiles.length
-    );
-
-
-    console.log(
-        "Training:",
-        allTrainingRecords.length
-    );
-
-
-    console.log(
-        "Employment:",
-        allEmploymentRecords.length
-    );
-
 }
-
 
 /* =========================================================
    APPLY FILTERS

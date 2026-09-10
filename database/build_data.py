@@ -9,9 +9,8 @@ for local testing or before real credentials exist.
 import os
 import subprocess
 
-if os.environ.get("SUPABASE_URL") and os.environ.get("SUPABASE_SERVICE_KEY"):
-    print("Real Supabase credentials found — running real ETL...")
-    subprocess.run(["python", "etl_from_supabase.py"], check=True)
-else:
-    print("No Supabase credentials set — building with synthetic demo data instead.")
-    subprocess.run(["python", "generate_data.py"], check=True)
+print("Building with local demo data...")
+subprocess.run(
+    ["python", os.path.join(os.path.dirname(__file__), "generate_data.py")],
+    check=True
+)
