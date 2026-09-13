@@ -490,7 +490,7 @@ async function loadProgrammeData() {
 
     const DEMO_API_BASE =
         window.SKILLTRACK_DEMO_API_BASE ||
-        "http://localhost:8000";
+        "https://skilltrack-sih2026.onrender.com";
 
     const demoResponse =
         await fetch(
