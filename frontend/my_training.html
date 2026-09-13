@@ -135,37 +135,73 @@
 
             <!-- COURSE NAME -->
 
-            <div class="field">
+<!-- =============================================
+     COURSE NAME
+============================================== -->
 
-                <label for="newCourseName">
-                    Course Name
-                </label>
+<div class="field">
+    <label for="newCourseName">
+        Course Name
+    </label>
 
-                <input
-                    type="text"
-                    id="newCourseName"
-                    placeholder="e.g. Web Development"
-                >
+    <select id="newCourseName" required>
+        <option value="">Select a course</option>
 
-            </div>
+        <option value="Web Development">Web Development</option>
+        <option value="Data Analytics">Data Analytics</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="Graphic Design">Graphic Design</option>
+        <option value="Cyber Security">Cyber Security</option>
+        <option value="Cloud Computing">Cloud Computing</option>
+        <option value="Artificial Intelligence">Artificial Intelligence</option>
+        <option value="Mobile App Development">Mobile App Development</option>
+        <option value="Tally & Accounting">Tally & Accounting</option>
+
+        <!-- ADDITIONAL COURSES -->
+
+        <option value="Assistant Electrician">Assistant Electrician</option>
+        <option value="Self Employed Tailor">Self Employed Tailor</option>
+        <option value="Domestic Data Entry Operator">Domestic Data Entry Operator</option>
+        <option value="Assistant Beauty Therapist">Assistant Beauty Therapist</option>
+        <option value="Solar Pump Technician">Solar Pump Technician</option>
+        <option value="Tractor Operator">Tractor Operator</option>
+        <option value="Agri Service Input Dealer">Agri Service Input Dealer</option>
+        <option value="Agriculture Extension Service Provider">Agriculture Extension Service Provider</option>
+        <option value="Soil & Water Testing Lab Analyst">Soil & Water Testing Lab Analyst</option>
+        <option value="Airline Customer Service Executive">Airline Customer Service Executive</option>
+        <option value="Flight Dispatcher">Flight Dispatcher</option>
+        <option value="Agri Commodity Procurement Manager">Agri Commodity Procurement Manager</option>
+        <option value="Assistant Bar Bender & Steel Fixer">Assistant Bar Bender & Steel Fixer</option>
+        <option value="Assistant Mason">Assistant Mason</option>
+        <option value="Bar Bender & Steel Fixer">Bar Bender & Steel Fixer</option>
+        <option value="Mason General">Mason General</option>
+        <option value="Plumber – General">Plumber – General</option>
+        <option value="Distribution Lineman">Distribution Lineman</option>
+        <option value="Consumer Energy Meter Technician">Consumer Energy Meter Technician</option>
+        <option value="Retail Sales Associate">Retail Sales Associate</option>
+    </select>
+</div>
 
 
+<!-- =============================================
+     TRAINING PROVIDER
+============================================== -->
 
-            <!-- PROVIDER -->
+<div class="field">
 
-            <div class="field">
+    <label for="newProviderName">
+        Training Provider
+    </label>
 
-                <label for="newProviderName">
-                    Training Provider
-                </label>
+    <select id="newProviderName" required disabled>
 
-                <input
-                    type="text"
-                    id="newProviderName"
-                    placeholder="e.g. Skill Development Centre"
-                >
+        <option value="">
+            Select Course First
+        </option>
 
-            </div>
+    </select>
+
+</div>
 
 
 
@@ -284,7 +320,11 @@
              CERTIFICATE VERIFICATION & DIGILOCKER SECTION
         ============================================== -->
 
-        <div class="verification-section" style="margin-top: 24px; padding: 20px; border: 1px dashed #cbd5e1; border-radius: 8px; background-color: #f8fafc;">
+       <div
+    class="verification-section"
+    id="certificateVerificationSection"
+    style="display: none; margin-top: 24px; padding: 20px; border: 1px dashed #cbd5e1; border-radius: 8px; background-color: #f8fafc;"
+>
             <h3 style="margin-bottom: 8px; font-size: 1.1rem; color: #1e293b;">Certificate Verification</h3>
             <p style="margin-bottom: 16px; font-size: 0.9rem; color: #64748b;">Upload your certificate or fetch it instantly via DigiLocker for instant verification.</p>
             
@@ -886,6 +926,278 @@
             }
         });
     });
+
+
+
+
+
+   
+document.addEventListener("DOMContentLoaded", () => {
+
+    const courseSelect =
+        document.getElementById("newCourseName");
+
+    const providerSelect =
+        document.getElementById("newProviderName");
+
+
+    // =====================================================
+    // COURSE → TRAINING PROVIDER MAPPING
+    // =====================================================
+const courseProviders = { 
+
+    // ==============================
+    // EXISTING DATA
+    // ==============================
+
+    "Web Development": [ 
+        "NIELIT", 
+        "Skill India Digital", 
+        "Aptech Learning" 
+    ], 
+
+    "Data Analytics": [ 
+        "NIELIT", 
+        "IBM SkillsBuild", 
+        "Skill India Digital" 
+    ], 
+
+    "Digital Marketing": [ 
+        "Google", 
+        "Skill India Digital", 
+        "NSDC" 
+    ], 
+
+    "Graphic Design": [ 
+        "Arena Animation", 
+        "Aptech Learning", 
+        "Skill India Digital" 
+    ], 
+
+    "Cyber Security": [ 
+        "NIELIT", 
+        "IBM SkillsBuild", 
+        "Skill India Digital" 
+    ], 
+
+    "Cloud Computing": [ 
+        "AWS Academy", 
+        "IBM SkillsBuild", 
+        "NIELIT" 
+    ], 
+
+    "Artificial Intelligence": [ 
+        "IBM SkillsBuild", 
+        "NIELIT", 
+        "Skill India Digital" 
+    ], 
+
+    "Mobile App Development": [ 
+        "Aptech Learning", 
+        "NIELIT", 
+        "Skill India Digital" 
+    ], 
+
+    "Tally & Accounting": [ 
+        "Tally Education", 
+        "Aptech Learning", 
+        "Skill India Digital" 
+    ], 
+
+
+    // ==============================
+    // ADDITIONAL DATA
+    // ==============================
+
+    "Assistant Electrician": [
+        "A Square Solution",
+        "Aartav Infotech",
+        "AASTHA Skill Development Center",
+        "ACME India Microsys Pvt. Ltd.",
+        "Adani Skill Development Centre"
+    ],
+
+    "Self Employed Tailor": [
+        "Aaisaheb Skill Academy",
+        "Abhinav Skill Training Center",
+        "ACME India Microsys Pvt. Ltd.",
+        "AIMS Tutorials",
+        "Asha Training Center",
+        "Aspirant Skills Academy"
+    ],
+
+    "Domestic Data Entry Operator": [
+        "Indus Academy Yavatmal",
+        "EduBridge Learning Pvt. Ltd.",
+        "ACME India Microsys Pvt. Ltd.",
+        "AASTHA Skill Development Center"
+    ],
+
+    "Assistant Beauty Therapist": [
+        "Indus Academy Yavatmal",
+        "MSSDS-affiliated Beauty & Wellness training centres"
+    ],
+
+    "Solar Pump Technician": [
+        "Annasaheb Dr. Satish Bhaskarrao Patil Polytechnic Training Centre"
+    ],
+
+    "Tractor Operator": [
+        "Deendayal Research Institute Krishi Vigyan Kendra Beed-I",
+        "Krishi Vigyan Kendra Sagroli"
+    ],
+
+    "Agri Service Input Dealer": [
+        "ATA Training Center"
+    ],
+
+    "Agriculture Extension Service Provider": [
+        "ATA Training Center",
+        "Kalyani Gorakshan Trust Krishi Vigyan Kendra Kalwade"
+    ],
+
+    "Soil & Water Testing Lab Analyst": [
+        "Kalyani Gorakshan Trust Krishi Vigyan Kendra Kalwade"
+    ],
+
+    "Airline Customer Service Executive": [
+        "Mumbai Flight Training",
+        "Vision Aviation Academy"
+    ],
+
+    "Flight Dispatcher": [
+        "Step Education – Mahajan College"
+    ],
+
+    "Agri Commodity Procurement Manager": [
+        "SIMACES Learning LLP"
+    ],
+
+    "Assistant Bar Bender & Steel Fixer": [
+        "SBSS Skill Training Institute"
+    ],
+
+    "Assistant Mason": [
+        "SBSS Skill Training Institute"
+    ],
+
+    "Bar Bender & Steel Fixer": [
+        "Amaya Training Center",
+        "NYCS Training Center",
+        "Parvati Training Center"
+    ],
+
+    "Mason General": [
+        "Amaya Training Center",
+        "Globalreach Skill Training India Pvt. Ltd.",
+        "Parvati Training Center",
+        "Vishwapushpa Skill Development Center"
+    ],
+
+    "Plumber – General": [
+        "Kolhapur Incubation Center",
+        "M/S Sant Shiromani Rohidas Foundation Samajik Sanstha Nashik",
+        "Maa Anusaya Steel Furniture Industries",
+        "SG Skill Training Center",
+        "Shree Datta Polytechnic College",
+        "Tarai Technical Institute",
+        "Utkarsha Training Centre",
+        "VDKP Technology Pvt. Ltd.",
+        "A Square Solution"
+    ],
+
+    "Distribution Lineman": [
+        "Baihar Institute",
+        "Dnyan Prabodhini Institute of Vocational Training Center",
+        "MaDHURA Technology",
+        "Mayank Memorial ITI",
+        "Pragati Vocational Training Center",
+        "Vaijapur Vocational Training Center"
+    ],
+
+    "Consumer Energy Meter Technician": [
+        "Baihar Institute",
+        "Dnyan Prabodhini Institute of Vocational Training Center",
+        "Janhvi Siksha Swasthya & Samaj Kalyan Samiti",
+        "Shanti Institute of Training Center",
+        "SmartBrains Tuljapur"
+    ],
+
+    "Retail Sales Associate": [
+        "EduBridge Learning Pvt. Ltd.",
+        "MSSDS/NSDC-affiliated retail training centres"
+    ]
+
+};
+
+    // =====================================================
+    // WHEN COURSE IS SELECTED
+    // =====================================================
+
+    courseSelect.addEventListener("change", () => {
+
+        const selectedCourse =
+            courseSelect.value;
+
+        // Clear existing providers
+        providerSelect.innerHTML = "";
+
+
+        // No course selected
+        if (!selectedCourse) {
+
+            providerSelect.disabled = true;
+
+            const defaultOption =
+                document.createElement("option");
+
+            defaultOption.value = "";
+            defaultOption.textContent =
+                "Select Course First";
+
+            providerSelect.appendChild(defaultOption);
+
+            return;
+        }
+
+
+        // Enable provider dropdown
+        providerSelect.disabled = false;
+
+
+        // Default option
+        const defaultOption =
+            document.createElement("option");
+
+        defaultOption.value = "";
+        defaultOption.textContent =
+            "Select Training Provider";
+
+        providerSelect.appendChild(defaultOption);
+
+
+        // Get providers for selected course
+        const providers =
+            courseProviders[selectedCourse] || [];
+
+
+        // Add providers
+        providers.forEach(provider => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = provider;
+
+            option.textContent = provider;
+
+            providerSelect.appendChild(option);
+
+        });
+
+    });
+
+});
 </script>
 
 </body>

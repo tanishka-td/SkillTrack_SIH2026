@@ -75,7 +75,6 @@ document.addEventListener(
         setupModals();
         setupExport();
         setupAnalyticsRefresh();
-        setupMlTools();
 
 
         /* =================================================
@@ -83,15 +82,10 @@ document.addEventListener(
            ================================================= */
 
         await initializeDashboard();
-        loadAdvancedAnalytics();
 
     }
 );
 
-
-/* =========================================================
-   INITIALIZE DASHBOARD
-   ========================================================= */
 
 /* =========================================================
    INITIALIZE DASHBOARD
@@ -113,15 +107,19 @@ async function initializeDashboard() {
         const {
             data: authData,
             error: authError
-        } = await supabaseClient.auth.getUser();
+        } =
+            await supabaseClient.auth.getUser();
 
 
         if (authError) {
+
             throw authError;
+
         }
 
 
-        currentUser = authData.user;
+        currentUser =
+            authData.user;
 
 
         if (!currentUser) {
@@ -130,6 +128,7 @@ async function initializeDashboard() {
                 "govt_login.html";
 
             return;
+
         }
 
 
@@ -147,7 +146,7 @@ async function initializeDashboard() {
 
 
         /* =================================================
-           VERIFY GOVERNMENT ACCESS
+           VERIFY ACCESS
            ================================================= */
 
         if (
@@ -160,74 +159,31 @@ async function initializeDashboard() {
                 "govt_login.html";
 
             return;
+
         }
 
 
         /* =================================================
            LOAD PROGRAMME DATA
-           
-           IMPORTANT:
-           This now comes from our LOCAL DEMO DATABASE,
-           NOT Supabase.
            ================================================= */
 
         await loadProgrammeData();
 
 
         /* =================================================
-           FIND AVAILABLE DEMO STATES
+           INITIAL FILTER
            ================================================= */
 
-        const availableStates = [
-            ...new Set(
-                allProfiles
-                    .map(profile => profile.state)
-                    .filter(Boolean)
-            )
-        ].sort();
-
-
-        /* =================================================
-           GOVERNMENT OFFICIAL'S JURISDICTION
-           ================================================= */
-
-        const officialState =
+        currentFilters.state =
             currentOfficial.state || "";
 
-        const officialDistrict =
+        currentFilters.district =
             currentOfficial.district || "";
 
 
-        /* =================================================
-           SELECT INITIAL STATE
-           
-           If the official's state exists in the demo
-           data, use it.
-
-           Otherwise, automatically select the first
-           state available in the demo dataset.
-           ================================================= */
-
-        if (
-            availableStates.includes(
-                officialState
-            )
-        ) {
-
-            currentFilters.state =
-                officialState;
-
-        } else {
-
-            currentFilters.state =
-                availableStates[0] || "";
-
-        }
-
-
-        /* =================================================
-           SET STATE DROPDOWN
-           ================================================= */
+        /*
+         * Set state filter to official jurisdiction
+         */
 
         const stateFilter =
             document.getElementById(
@@ -235,7 +191,10 @@ async function initializeDashboard() {
             );
 
 
-        if (stateFilter) {
+        if (
+            stateFilter &&
+            currentOfficial.state
+        ) {
 
             const stateOption =
                 Array.from(
@@ -243,14 +202,14 @@ async function initializeDashboard() {
                 ).find(
                     option =>
                         option.value ===
-                        currentFilters.state
+                        currentOfficial.state
                 );
 
 
             if (stateOption) {
 
                 stateFilter.value =
-                    currentFilters.state;
+                    currentOfficial.state;
 
             }
 
@@ -258,68 +217,13 @@ async function initializeDashboard() {
 
 
         /* =================================================
-           LOAD DISTRICTS FOR SELECTED STATE
+           LOAD DISTRICTS
            ================================================= */
 
         populateDistrictFilter(
-            currentFilters.state
+            currentOfficial.state
         );
 
-
-        /* =================================================
-           GET AVAILABLE DISTRICTS
-           ================================================= */
-
-        const availableDistricts = [
-            ...new Set(
-                allProfiles
-                    .filter(
-                        profile =>
-                            !currentFilters.state ||
-                            profile.state ===
-                                currentFilters.state
-                    )
-                    .map(
-                        profile =>
-                            profile.district
-                    )
-                    .filter(Boolean)
-            )
-        ].sort();
-
-
-        /* =================================================
-           SELECT INITIAL DISTRICT
-           
-           Keep the government official's district only
-           if that district actually exists in the demo
-           dataset.
-
-           Otherwise leave district as "All".
-           ================================================= */
-
-        if (
-            officialState ===
-                currentFilters.state &&
-            availableDistricts.includes(
-                officialDistrict
-            )
-        ) {
-
-            currentFilters.district =
-                officialDistrict;
-
-        } else {
-
-            currentFilters.district =
-                "";
-
-        }
-
-
-        /* =================================================
-           SET DISTRICT DROPDOWN
-           ================================================= */
 
         const districtFilter =
             document.getElementById(
@@ -329,11 +233,25 @@ async function initializeDashboard() {
 
         if (
             districtFilter &&
-            currentFilters.district
+            currentOfficial.district
         ) {
 
-            districtFilter.value =
-                currentFilters.district;
+            const districtOption =
+                Array.from(
+                    districtFilter.options
+                ).find(
+                    option =>
+                        option.value ===
+                        currentOfficial.district
+                );
+
+
+            if (districtOption) {
+
+                districtFilter.value =
+                    currentOfficial.district;
+
+            }
 
         }
 
@@ -346,18 +264,14 @@ async function initializeDashboard() {
 
 
         /* =================================================
-           UPDATE LAST UPDATED TIME
+           UPDATE LAST UPDATED
            ================================================= */
 
         updateLastUpdated();
 
 
-        /* =================================================
-           UPDATE STATUS
-           ================================================= */
-
         setAdvancedStatus(
-            "Demo programme data loaded successfully."
+            "Live programme data loaded successfully."
         );
 
 
@@ -387,6 +301,7 @@ async function initializeDashboard() {
     }
 
 }
+
 
 /* =========================================================
    LOAD OFFICIAL PROFILE
@@ -552,89 +467,164 @@ function updateOfficialUI() {
    ========================================================= */
 
 async function loadProgrammeData() {
-    console.log("Loading programme data from local demo database...");
-
-    let data;
-
-    try {
-        // Primary source: the FastAPI analytics backend (live SQLite/Supabase-fed data).
-        const response = await fetch(
-            `${ANALYTICS_API_BASE}/api/demo/programme-data`,
-            {
-                cache: "no-store"
-            }
-        );
-
-        if (!response.ok) {
-            throw new Error(
-                `Programme data -> HTTP ${response.status}`
-            );
-        }
-
-        data = await response.json();
-
-    } catch (error) {
-        // Analytics backend isn't running/reachable (e.g. local demo without
-        // `uvicorn` started). Fall back to the static demo dataset that
-        // ships in this same frontend folder so the dashboard still shows
-        // data. Supabase-backed flows (auth, trainee side) are unaffected.
-        console.warn(
-            "Analytics API unavailable, falling back to local demo_data.json:",
-            error
-        );
-
-        try {
-            const fallbackResponse = await fetch(
-                "demo_data.json",
-                { cache: "no-store" }
-            );
-
-            if (!fallbackResponse.ok) {
-                throw new Error(
-                    `demo_data.json -> HTTP ${fallbackResponse.status}`
-                );
-            }
-
-            data = await fallbackResponse.json();
-
-        } catch (fallbackError) {
-            console.error(
-                "Failed to load programme data (API and local fallback both failed):",
-                fallbackError
-            );
-
-            allProfiles = [];
-            allTrainingRecords = [];
-            allEmploymentRecords = [];
-
-            throw fallbackError;
-        }
-    }
-
-    allProfiles = data.profiles || [];
-    allTrainingRecords = data.training || [];
-    allEmploymentRecords = data.employment || [];
 
     console.log(
-        "Programme data source:",
-        data.source || "local-demo-database"
+        "Loading programme data..."
     );
+
+
+    /* =====================================================
+       LOAD TRAINEE PROFILES
+       ===================================================== */
+
+    const {
+        data: profiles,
+        error: profileError
+    } =
+        await supabaseClient
+            .from("profile")
+            .select(`
+                id,
+                user_id,
+                full_name,
+                age,
+                gender,
+                mobile_number,
+                email,
+                state,
+                district,
+                city_block_town,
+                profile_status,
+                created_at
+            `);
+
+
+    if (profileError) {
+
+        console.error(
+            "Profile data error:",
+            profileError
+        );
+
+        throw profileError;
+
+    }
+
+
+    allProfiles =
+        profiles || [];
+
+
+    /* =====================================================
+       LOAD TRAINING
+       ===================================================== */
+
+    const {
+        data: training,
+        error: trainingError
+    } =
+        await supabaseClient
+            .from("trainee_records")
+            .select(`
+                id,
+                trainee_id,
+                course_name,
+                provider_name,
+                start_date,
+                completion_date,
+                attendance,
+                assessment_score,
+                certification_status,
+                is_verified,
+                duration_months,
+                skills,
+                created_at,
+                updated_at
+            `);
+
+
+    if (trainingError) {
+
+        console.error(
+            "Training data error:",
+            trainingError
+        );
+
+        throw trainingError;
+
+    }
+
+
+    allTrainingRecords =
+        training || [];
+
+
+    /* =====================================================
+       LOAD EMPLOYMENT
+       ===================================================== */
+
+    const {
+        data: employment,
+        error: employmentError
+    } =
+        await supabaseClient
+            .from("employment_records")
+            .select(`
+                id,
+                trainee_id,
+                status,
+                company_name,
+                job_role,
+                monthly_salary,
+                joining_date,
+                employment_type,
+                unemployed_reason,
+                recorded_at,
+                created_at
+            `)
+            .order(
+                "recorded_at",
+                {
+                    ascending: false
+                }
+            );
+
+
+    if (employmentError) {
+
+        console.error(
+            "Employment data error:",
+            employmentError
+        );
+
+        throw employmentError;
+
+    }
+
+
+    allEmploymentRecords =
+        employment || [];
+
 
     console.log(
         "Profiles:",
         allProfiles.length
     );
 
+
     console.log(
         "Training:",
         allTrainingRecords.length
     );
 
+
     console.log(
         "Employment:",
         allEmploymentRecords.length
     );
+
 }
+
 
 /* =========================================================
    APPLY FILTERS
@@ -3980,8 +3970,6 @@ function setupAnalyticsRefresh() {
 
                 applyFilters();
 
-                await loadAdvancedAnalytics();
-
                 updateLastUpdated();
 
 
@@ -4066,241 +4054,6 @@ function setAdvancedStatus(
 
     }
 
-}
-
-
-/* =========================================================
-   SKILLTRACK ANALYTICS API (Python/FastAPI backend)
-   ========================================================= */
-
-// Points at the deployed backend by default; falls back to a local
-// server automatically when the dashboard itself is opened from localhost.
-const ANALYTICS_API_BASE =
-    (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
-        ? "http://localhost:8000"
-        : "https://skilltrack-sih2026.onrender.com";
-
-// Set this if ANALYTICS_API_KEY is configured on the backend deployment.
-const ANALYTICS_API_KEY = "";
-
-async function analyticsFetch(path) {
-    const headers = ANALYTICS_API_KEY ? { "X-API-Key": ANALYTICS_API_KEY } : {};
-    const response = await fetch(`${ANALYTICS_API_BASE}${path}`, { headers, cache: "no-store" });
-    if (!response.ok) {
-        throw new Error(`${path} -> HTTP ${response.status}`);
-    }
-    return response.json();
-}
-
-function renderTable(elementId, rows, columns) {
-    const el = document.getElementById(elementId);
-    if (!el) return;
-    if (!rows || rows.length === 0) {
-        el.textContent = "No data available.";
-        return;
-    }
-    const head = columns.map(c => `<th>${c.label}</th>`).join("");
-    const body = rows.map(row => {
-        const cells = columns.map(c => `<td>${c.format ? c.format(row[c.key], row) : (row[c.key] ?? "-")}</td>`).join("");
-        return `<tr>${cells}</tr>`;
-    }).join("");
-    el.innerHTML = `<div class="table-container"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
-}
-
-function renderNote(elementId, message) {
-    const el = document.getElementById(elementId);
-    if (el) el.textContent = message;
-}
-
-function riskBadge(value, highThreshold = 0.6, midThreshold = 0.3) {
-    const num = Number(value);
-    if (Number.isNaN(num)) return value;
-    const cls = num >= highThreshold ? "status-bad" : num >= midThreshold ? "status-watch" : "status-good";
-    return `<span class="${cls}">${(num * 100).toFixed(1)}%</span>`;
-}
-
-async function loadAdvancedAnalytics() {
-
-    setAdvancedStatus("Loading analytics from the API...");
-
-    const tasks = [
-
-        // ---- existing metrics/ML endpoints ----
-        analyticsFetch("/api/metrics/impact-index")
-            .then(d => setText("impactIndex", d.overall_impact_index?.toFixed(1) ?? "N/A"))
-            .catch(() => setText("impactIndex", "Error")),
-
-        analyticsFetch("/api/metrics/composite-score")
-            .then(rows => {
-                const el = document.getElementById("compositeScore");
-                if (el && rows.length) {
-                    el.textContent = rows[0].composite_score?.toFixed?.(1) ?? JSON.stringify(rows[0]);
-                }
-                renderTable("providerPlacement", rows, [
-                    { key: "group_key", label: "Provider" },
-                    { key: "composite_score", label: "Score", format: v => v?.toFixed?.(1) ?? v },
-                ]);
-            })
-            .catch(() => setText("compositeScore", "Error")),
-
-        analyticsFetch("/api/ml/anomalies")
-            .then(rows => {
-                setText("anomalyCount", String(rows.length));
-                renderTable("anomalies", rows, Object.keys(rows[0] || {}).slice(0, 4).map(k => ({ key: k, label: k })));
-            })
-            .catch(() => setText("anomalyCount", "Error")),
-
-        analyticsFetch("/api/metrics/wage-growth")
-            .then(rows => renderTable("wageGrowth", rows, [
-                { key: "course_name", label: "Course" },
-                { key: "wage_growth_pct", label: "Wage growth %" },
-            ]))
-            .catch(() => renderNote("wageGrowth", "Unable to load.")),
-
-        analyticsFetch("/api/metrics/relevance")
-            .then(rows => renderTable("relevance", rows, [
-                { key: "course_name", label: "Course" },
-                { key: "relevance_score", label: "Relevance", format: v => v?.toFixed?.(2) ?? v },
-            ]))
-            .catch(() => renderNote("relevance", "Unable to load.")),
-
-        analyticsFetch("/api/metrics/skill-gap")
-            .then(rows => renderTable("skillGap", rows, Object.keys(rows[0] || {}).slice(0, 3).map(k => ({ key: k, label: k }))))
-            .catch(() => renderNote("skillGap", "Unable to load.")),
-
-        analyticsFetch("/api/reasons/non-placement")
-            .then(rows => renderTable("nonPlacementReasons", rows, [
-                { key: "reason_label", label: "Reason" },
-                { key: "n", label: "Count" },
-            ]))
-            .catch(() => renderNote("nonPlacementReasons", "Unable to load.")),
-
-        analyticsFetch("/api/reasons/attrition")
-            .then(rows => renderTable("attritionReasons", rows, [
-                { key: "reason_label", label: "Reason" },
-                { key: "n", label: "Count" },
-            ]))
-            .catch(() => renderNote("attritionReasons", "Unable to load.")),
-
-        analyticsFetch("/api/ml/placement-prediction-demo")
-            .then(d => renderNote("placementPrediction",
-                d.trained === false ? d.note : `AUC-ROC: ${d.auc_roc} · F1: ${d.f1_score} (n=${d.n_train + d.n_test})`))
-            .catch(() => renderNote("placementPrediction", "Unable to load.")),
-
-        analyticsFetch("/api/ml/attrition-prediction-demo")
-            .then(d => {
-                renderNote("attritionPrediction",
-                    d.trained === false ? d.note : `AUC-ROC: ${d.auc_roc} · F1: ${d.f1_score} (n=${d.n_train + d.n_test})`);
-                setText("mlStatus", "Live");
-            })
-            .catch(() => { renderNote("attritionPrediction", "Unable to load."); setText("mlStatus", "Offline"); }),
-
-        analyticsFetch("/api/insights")
-            .then(d => {
-                const el = document.getElementById("insights");
-                if (el) el.innerHTML = (d.insights || []).map(i => `<p>${i}</p>`).join("");
-            })
-            .catch(() => renderNote("insights", "Unable to load insights.")),
-
-        // ---- new ml_extensions endpoints ----
-        analyticsFetch("/api/ml/dropout-risk")
-            .then(d => {
-                if (d.trained === false) { renderNote("dropoutRisk", d.note); return; }
-                renderTable("dropoutRisk", d.at_risk_trainees, [
-                    { key: "trainee_id", label: "Trainee" },
-                    { key: "course_name", label: "Course" },
-                    { key: "district_name", label: "District" },
-                    { key: "dropout_risk", label: "Risk", format: riskBadge },
-                ]);
-            })
-            .catch(() => renderNote("dropoutRisk", "Unable to load.")),
-
-        analyticsFetch("/api/ml/salary-model-summary")
-            .then(d => renderNote("salaryModelSummary",
-                d.trained === false ? d.note : `MAE: ₹${d.mae} · R²: ${d.r2} (n=${d.n_train + d.n_test})`))
-            .catch(() => renderNote("salaryModelSummary", "Unable to load.")),
-
-        analyticsFetch("/api/followups/compliance")
-            .then(rows => renderTable("followupCompliance", rows, [
-                { key: "group_key", label: "Month" },
-                { key: "completed", label: "Completed" },
-                { key: "missed", label: "Missed" },
-                { key: "completion_rate_pct", label: "Compliance %" },
-            ]))
-            .catch(() => renderNote("followupCompliance", "Unable to load.")),
-
-        analyticsFetch("/api/followups/risk")
-            .then(d => renderNote("followupRisk",
-                d.trained === false ? d.note : `AUC-ROC: ${d.auc_roc} · F1: ${d.f1_score} (n=${d.n_train + d.n_test})`))
-            .catch(() => renderNote("followupRisk", "Unable to load.")),
-
-        analyticsFetch("/api/validation/employer-scorecard")
-            .then(rows => renderTable("employerScorecard", rows.slice(0, 10), [
-                { key: "employer_name", label: "Employer" },
-                { key: "n_placements", label: "Placements" },
-                { key: "disputed_pct", label: "Disputed %" },
-                { key: "trust_score", label: "Trust score" },
-            ]))
-            .catch(() => renderNote("employerScorecard", "Unable to load.")),
-
-        analyticsFetch("/api/validation/dispute-risk")
-            .then(d => renderNote("disputeRisk",
-                d.trained === false ? d.note : `AUC-ROC: ${d.auc_roc} · F1: ${d.f1_score} (n=${d.n_train + d.n_test})`))
-            .catch(() => renderNote("disputeRisk", "Unable to load.")),
-
-        analyticsFetch("/api/validation/suspicious-placements")
-            .then(rows => renderTable("suspiciousPlacements", rows, [
-                { key: "placement_id", label: "Placement" },
-                { key: "flag", label: "Flag" },
-                { key: "detail", label: "Detail" },
-            ]))
-            .catch(() => renderNote("suspiciousPlacements", "Unable to load.")),
-    ];
-
-    await Promise.allSettled(tasks);
-
-    setAdvancedStatus(`Analytics loaded from ${ANALYTICS_API_BASE}.`);
-}
-
-function setupMlTools() {
-
-    const jobMatchBtn = document.getElementById("jobMatchBtn");
-    if (jobMatchBtn) {
-        jobMatchBtn.addEventListener("click", async () => {
-            const idInput = document.getElementById("jobMatchTraineeId");
-            const traineeId = idInput?.value;
-            if (!traineeId) return;
-            renderNote("jobMatchResult", "Searching...");
-            try {
-                const rows = await analyticsFetch(`/api/ml/job-match/${traineeId}?top_n=5`);
-                renderTable("jobMatchResult", rows, [
-                    { key: "job_title", label: "Job title" },
-                    { key: "sector", label: "Sector" },
-                    { key: "match_score", label: "Match", format: riskBadge },
-                    { key: "missing_skills", label: "Missing skills" },
-                ]);
-            } catch (err) {
-                renderNote("jobMatchResult", "Unable to fetch recommendations.");
-            }
-        });
-    }
-
-    const salaryForm = document.getElementById("salaryPredictForm");
-    if (salaryForm) {
-        salaryForm.addEventListener("submit", async (event) => {
-            event.preventDefault();
-            const data = new FormData(salaryForm);
-            const params = new URLSearchParams();
-            for (const [key, value] of data.entries()) params.append(key, value);
-            renderNote("salaryPredictResult", "Predicting...");
-            try {
-                const result = await analyticsFetch(`/api/ml/salary-predict?${params.toString()}`);
-                renderNote("salaryPredictResult", `Predicted starting wage: ₹${result.predicted_starting_wage}`);
-            } catch (err) {
-                renderNote("salaryPredictResult", "Unable to predict — check the model has enough training data yet.");
-            }
-        });
-    }
 }
 
 
@@ -4577,3 +4330,51 @@ function escapeHTML(
         );
 
 }
+
+/* =====================================================
+   PROGRAMME PERFORMANCE - VIEW DETAILS
+   ===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const courseDetailsBtn =
+        document.getElementById("courseDetailsBtn");
+
+    const courseDetails =
+        document.getElementById("courseDetails");
+
+    if (!courseDetailsBtn || !courseDetails) {
+        return;
+    }
+
+    courseDetailsBtn.addEventListener("click", () => {
+
+        const isHidden = courseDetails.hasAttribute("hidden");
+
+        if (isHidden) {
+
+            // Show details
+            courseDetails.removeAttribute("hidden");
+
+            courseDetailsBtn.textContent = "Hide details";
+            courseDetailsBtn.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        } else {
+
+            // Hide details
+            courseDetails.setAttribute("hidden", "");
+
+            courseDetailsBtn.textContent = "View details";
+            courseDetailsBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+    });
+
+});
+
+

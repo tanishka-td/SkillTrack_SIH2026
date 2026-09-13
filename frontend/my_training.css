@@ -1013,3 +1013,203 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================================
+   FIXED TRAINING RECORD CARDS
+   Keeps the existing HTML/JS structure unchanged.
+   ========================================================= */
+
+/* The JS creates .training-card, while the older CSS was styling
+   .training-summary-card. These styles make the generated cards
+   render as proper full-width cards. */
+
+.training-card {
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 26px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.training-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(37, 99, 235, 0.35);
+}
+
+.training-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.training-card .course-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--navy-950), var(--blue-700));
+    color: var(--cyan-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.training-card-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.training-card-title h3 {
+    margin: 0 0 3px;
+    font-size: 1.05rem;
+    color: var(--navy-950);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.training-card-title span {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
+
+.training-status {
+    flex-shrink: 0;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.training-status.verified {
+    background: #ecfdf5;
+    color: var(--success);
+    border: 1px solid #d1fae5;
+}
+
+.training-status.pending {
+    background: #fff7ed;
+    color: var(--warning);
+    border: 1px solid #ffedd5;
+}
+
+.training-card-info {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    padding: 18px 0;
+}
+
+.training-card-info > div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.training-card-info > div > span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.training-card-info > div > strong {
+    font-size: 0.86rem;
+    color: var(--navy-950);
+    overflow-wrap: anywhere;
+}
+
+.training-card .view-training-btn {
+    margin-top: 0;
+}
+
+/* =========================================================
+   DETAIL VIEW - KEEP EVERY VALUE INSIDE ITS COLUMN
+   Especially important for long Training IDs / UUIDs.
+   ========================================================= */
+
+#trainingDetails .info-row {
+    display: grid;
+    grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+    column-gap: 14px;
+    align-items: center;
+    width: 100%;
+}
+
+#trainingDetails .info-row > span {
+    min-width: 0;
+}
+
+#trainingDetails .info-row > strong {
+    min-width: 0;
+    max-width: 100%;
+    text-align: right;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.45;
+}
+
+/* Give the long Training ID a little more breathing room. */
+#trainingDetails #trainingId {
+    font-size: 0.82rem;
+    letter-spacing: 0.1px;
+}
+
+/* =========================================================
+   RESPONSIVE CARD LAYOUT
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .training-card-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .training-card {
+        padding: 18px;
+    }
+
+    .training-card-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .training-card-title {
+        flex-basis: calc(100% - 64px);
+    }
+
+    .training-status {
+        margin-left: 64px;
+    }
+
+    .training-card-info {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    #trainingDetails .info-row {
+        grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+    }
+}
+
+@media (max-width: 450px) {
+    .training-card-info {
+        grid-template-columns: 1fr;
+    }
+
+    .training-status {
+        margin-left: 0;
+    }
+}

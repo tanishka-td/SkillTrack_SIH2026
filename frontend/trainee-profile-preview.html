@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillTrack | Profile Preview</title>
+
+    <link
+        rel="stylesheet"
+        href="trainee-profile-preview.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <header class="page-topbar">
+
+        <a href="trainee_profile.html">
+            ← Back to My Profile
+        </a>
+
+
+        <div class="inner-brand">
+
+            <div class="inner-logo">
+                S
+            </div>
+
+            <div>
+
+                <strong>
+                    SkillTrack
+                </strong>
+
+                <span>
+                    Profile Preview
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="preview-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="page-heading">
+
+            <p>
+                TRAINEE PROFILE
+            </p>
+
+            <h1>
+                Profile Preview
+            </h1>
+
+            <span>
+                Your SkillTrack profile summary
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             REPORT CARD
+        ================================================== -->
+
+        <section class="profile-card">
+
+
+            <!-- CARD HEADER -->
+
+            <div class="card-header">
+
+                <div>
+
+                    <div class="official-label">
+                        SKILLTRACK
+                    </div>
+
+                    <h2>
+                        Trainee Profile Report
+                    </h2>
+
+                    <p>
+                        Post-Training Outcome Tracking System
+                    </p>
+
+                </div>
+
+
+                <div class="status-badge">
+                    VERIFIED PROFILE
+                </div>
+
+            </div>
+
+
+
+            <!-- PROFILE IDENTITY -->
+
+            <div class="identity-section">
+
+
+                <div class="photo-section">
+
+                    <div
+                        class="profile-photo"
+                        id="profilePhoto"
+                    >
+
+                        <span id="photoInitials">
+                            TR
+                        </span>
+
+                    </div>
+
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/png,image/jpeg,image/webp"
+                        hidden
+                    >
+
+
+                    <button
+                        type="button"
+                        class="upload-photo-btn"
+                        id="uploadPhotoBtn"
+                    >
+                        📷 Upload Photo
+                    </button>
+
+
+                    <p class="photo-help">
+                        JPG, PNG or WEBP<br>
+                        Maximum 5 MB
+                    </p>
+
+                </div>
+
+
+
+                <div class="identity-details">
+
+                    <span class="small-label">
+                        TRAINEE NAME
+                    </span>
+
+                    <h1 id="previewName">
+                        Loading...
+                    </h1>
+
+
+                    <div class="trainee-id">
+
+                        <span>
+                            Trainee ID
+                        </span>
+
+                        <strong id="previewTraineeId">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="completion-box">
+
+                        <div>
+
+                            <span>
+                                Profile Completion
+                            </span>
+
+                            <strong id="previewCompletion">
+                                0%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar"
+                                id="completionBar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PERSONAL DETAILS -->
+
+            <div class="report-section">
+
+                <div class="section-title">
+
+                    <span class="section-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Personal Details
+                        </h3>
+
+                        <p>
+                            Basic information
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details-grid">
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="detailName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Age
+                        </span>
+
+                        <strong id="detailAge">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Gender
+                        </span>
+
+                        <strong id="detailGender">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT DETAILS -->
+
+            <div class="report-section">
+
+                <div class="section-title">
+
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Contact Information
+                        </h3>
+
+                        <p>
+                            Registered contact details
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details-grid">
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Mobile Number
+                        </span>
+
+                        <strong id="detailPhone">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="detailEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="report-section">
+
+                <div class="section-title">
+
+                    <span class="section-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Location
+                        </h3>
+
+                        <p>
+                            Registered residential location
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details-grid">
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            State / UT
+                        </span>
+
+                        <strong id="detailState">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            District
+                        </span>
+
+                        <strong id="detailDistrict">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            City / Town
+                        </span>
+
+                        <strong id="detailCity">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="report-footer">
+
+                <div>
+
+                    <strong>
+                        SkillTrack
+                    </strong>
+
+                    <span>
+                        Government Post-Training Outcome Tracking
+                    </span>
+
+                </div>
+
+
+                <div class="generated">
+
+                    <span>
+                        Profile Status
+                    </span>
+
+                    <strong>
+                        Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="bottom-actions">
+
+            <a
+                href="trainee_profile.html"
+                class="secondary-btn"
+            >
+                ✎ Edit Profile
+            </a>
+
+
+            <button
+                type="button"
+                class="primary-action"
+                onclick="window.print()"
+            >
+                🖨 Print Profile
+            </button>
+
+        </div>
+
+
+        <div
+            id="previewMessage"
+            class="preview-message"
+        ></div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="trainee-profile-preview.js"></script>
+
+</body>
+
+</html>

@@ -73,6 +73,8 @@
     </div>
 
 
+    <!-- FAQ SECTION -->
+
     <section class="faq">
 
 
@@ -123,7 +125,7 @@
             <div>
 
                 <strong>
-                  What should I do if my training information is incorrect?
+                    What should I do if my training information is incorrect?
                 </strong>
 
                 <p>
@@ -148,7 +150,7 @@
                 </strong>
 
                 <p>
-                 Go to My Profile from the sidebar and select Edit Profile. Update the required information and save your changes. Your profile will then reflect the updated details.
+                    Go to My Profile from the sidebar and select Edit Profile. Update the required information and save your changes. Your profile will then reflect the updated details.
                 </p>
 
             </div>
@@ -169,7 +171,7 @@
                 </strong>
 
                 <p>
-                   SkillTrack helps track your training information, profile details, employment status, and post-training follow-ups. This information supports accurate monitoring of outcomes after training.
+                    SkillTrack helps track your training information, profile details, employment status, and post-training follow-ups. This information supports accurate monitoring of outcomes after training.
                 </p>
 
             </div>
@@ -183,6 +185,72 @@
 
     </section>
 
+
+    <!-- REPORT A PROBLEM SECTION -->
+
+    <section class="support-card problem-card">
+
+        <h2>
+            Report a Problem
+        </h2>
+
+        <p>
+            Having an issue with your training, certificate,
+            profile or follow-up? Tell us what happened and
+            our support team can review it.
+        </p>
+
+
+        <div class="problem-form">
+
+            <label for="problemComment">
+                Describe your problem
+            </label>
+
+
+            <textarea
+                id="problemComment"
+                name="problemComment"
+                maxlength="500"
+                rows="6"
+                placeholder="Please describe the problem you are facing..."
+            ></textarea>
+
+
+            <div class="comment-footer">
+
+                <span id="characterCount">
+                    0 / 500
+                </span>
+
+                <span>
+                    Maximum 500 characters
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="submitProblemBtn"
+            >
+                Submit Problem
+            </button>
+
+
+            <div
+                class="message"
+                id="problemMessage"
+                aria-live="polite"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SUPPORT -->
 
     <section class="support-card">
 
@@ -214,6 +282,114 @@
 
 
 <script src="trainee_help.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const problemComment =
+        document.getElementById("problemComment");
+
+    const characterCount =
+        document.getElementById("characterCount");
+
+    const submitProblemBtn =
+        document.getElementById("submitProblemBtn");
+
+    const problemMessage =
+        document.getElementById("problemMessage");
+
+
+    /* ==========================================
+       CHARACTER COUNTER
+    ========================================== */
+
+    problemComment.addEventListener("input", function () {
+
+        const currentLength =
+            problemComment.value.length;
+
+        characterCount.textContent =
+            currentLength + " / 500";
+
+
+        if (currentLength >= 500) {
+
+            characterCount.classList.add("limit-reached");
+
+        } else {
+
+            characterCount.classList.remove("limit-reached");
+
+        }
+
+    });
+
+
+    /* ==========================================
+       SUBMIT PROBLEM
+    ========================================== */
+
+    submitProblemBtn.addEventListener("click", function () {
+
+        const problem =
+            problemComment.value.trim();
+
+
+        /* EMPTY CHECK */
+
+        if (problem.length === 0) {
+
+            problemMessage.textContent =
+                "Please describe the problem before submitting.";
+
+            problemMessage.className =
+                "message error-message";
+
+            problemComment.focus();
+
+            return;
+        }
+
+
+        /* WORD/CHARACTER LIMIT CHECK */
+
+        if (problem.length > 500) {
+
+            problemMessage.textContent =
+                "Your problem description cannot exceed 500 characters.";
+
+            problemMessage.className =
+                "message error-message";
+
+            return;
+        }
+
+
+        /* SUCCESS */
+
+        problemMessage.textContent =
+            "Your problem has been submitted successfully. Our support team will review it.";
+
+        problemMessage.className =
+            "message success-message";
+
+
+        /* CLEAR TEXTAREA */
+
+        problemComment.value = "";
+
+        characterCount.textContent = "0 / 500";
+
+        characterCount.classList.remove("limit-reached");
+
+    });
+
+});
+
+</script>
+
 
 </body>
 

@@ -19,6 +19,19 @@ document.addEventListener(
     "DOMContentLoaded",
     async function () {
 
+        const today = new Date().toISOString().split("T")[0];
+
+        const startDateInput = document.getElementById("newStartDate");
+        const completionDateInput = document.getElementById("newCompletionDate");
+
+        if (startDateInput) {
+            startDateInput.max = today;
+        }
+
+        if (completionDateInput) {
+            completionDateInput.max = today;
+        }
+
         console.log(
             "SkillTrack My Training loaded"
         );
@@ -799,12 +812,33 @@ function setupTrainingUI() {
         document.getElementById(
             "saveTraining"
         );
+    
 
 
     const backButton =
         document.getElementById(
             "backToTrainingList"
         );
+
+        // Date limits
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    const startDateInput =
+        document.getElementById("newStartDate");
+
+    const completionDateInput =
+        document.getElementById("newCompletionDate");
+
+    if (startDateInput) {
+        startDateInput.min = "1950-01-01";
+        startDateInput.max = today;
+    }
+
+    if (completionDateInput) {
+        completionDateInput.min = "1950-01-01";
+        completionDateInput.max = today;
+    }
 
 
     addButton?.addEventListener(
@@ -1006,6 +1040,38 @@ async function submitTraining() {
 
         showFormMessage(
             "Completion date cannot be before the start date.",
+            "error"
+        );
+
+        return;
+    }
+
+        // Validate realistic dates
+    const minDate = "1950-01-01";
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    if (
+        startDate < minDate ||
+        startDate > today
+    ) {
+        showFormMessage(
+            "Please enter a valid start date.",
+            "error"
+        );
+
+        return;
+    }
+
+    if (
+        completionDate &&
+        (
+            completionDate < minDate ||
+            completionDate > today
+        )
+    ) {
+        showFormMessage(
+            "Please enter a valid completion date.",
             "error"
         );
 
@@ -2173,27 +2239,57 @@ function calculateDuration(
 function formatDate(
     value
 ) {
+    
 
     if (!value) {
         return "-";
     }
 
-
-    const date =
-        new Date(
-            value
+    // Check YYYY-MM-DD format
+    const match =
+        String(value).match(
+            /^(\d{4})-(\d{2})-(\d{2})/
         );
 
-
-    if (
-        Number.isNaN(
-            date.getTime()
-        )
-    ) {
-
-        return value;
+    if (!match) {
+        return "-";
     }
 
+    const year =
+        Number(match[1]);
+
+    const month =
+        Number(match[2]);
+
+    const day =
+        Number(match[3]);
+
+    // Reject unrealistic years
+    const currentYear =
+        new Date().getFullYear();
+
+    if (
+        year < 1900 ||
+        year > currentYear
+    ) {
+        return "-";
+    }
+
+    // Check valid month/day
+    const date =
+        new Date(
+            year,
+            month - 1,
+            day
+        );
+
+    if (
+        date.getFullYear() !== year ||
+        date.getMonth() !== month - 1 ||
+        date.getDate() !== day
+    ) {
+        return "-";
+    }
 
     return date.toLocaleDateString(
         "en-IN",
@@ -2204,6 +2300,7 @@ function formatDate(
         }
     );
 }
+
 
 
 /* =========================================================
@@ -2388,4 +2485,36 @@ function getFileExtension(
             parts.length - 1
         ].toLowerCase()
         : "file";
+}
+// =====================================================
+// CERTIFICATE VERIFICATION VISIBILITY
+// =====================================================
+
+const certificationSelect =
+    document.getElementById("newCertification");
+
+const certificateVerificationSection =
+    document.getElementById("certificateVerificationSection");
+
+function toggleCertificateVerification() {
+    if (!certificationSelect || !certificateVerificationSection) {
+        return;
+    }
+
+    if (certificationSelect.value === "Issued") {
+        certificateVerificationSection.style.display = "block";
+    } else {
+        certificateVerificationSection.style.display = "none";
+    }
+}
+
+// Run when certification status changes
+if (certificationSelect) {
+    certificationSelect.addEventListener(
+        "change",
+        toggleCertificateVerification
+    );
+
+    // Set the correct visibility when the page loads
+    toggleCertificateVerification();
 }
