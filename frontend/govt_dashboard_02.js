@@ -474,136 +474,48 @@ async function loadProgrammeData() {
 
 
     /* =====================================================
-       LOAD TRAINEE PROFILES
+       LOAD DEMO DATA FROM LOCAL ANALYTICS API
+       -----------------------------------------------------
+       The Supabase tables (profile / trainee_records /
+       employment_records) are empty until real intake happens.
+       Until then, pull the CSV-backed demo dataset from the
+       FastAPI backend (api/api.py -> data/skilling_outcomes_demo.db,
+       generated from data/demo/*.csv) so the dashboard has
+       something real to render.
+
+       Swap DEMO_API_BASE below for wherever api.api:app is
+       running (local uvicorn, or your Vercel deployment), and
+       remove this whole block once Supabase is actually seeded.
        ===================================================== */
 
-    const {
-        data: profiles,
-        error: profileError
-    } =
-        await supabaseClient
-            .from("profile")
-            .select(`
-                id,
-                user_id,
-                full_name,
-                age,
-                gender,
-                mobile_number,
-                email,
-                state,
-                district,
-                city_block_town,
-                profile_status,
-                created_at
-            `);
+    const DEMO_API_BASE =
+        window.SKILLTRACK_DEMO_API_BASE ||
+        "http://localhost:8000";
 
-
-    if (profileError) {
-
-        console.error(
-            "Profile data error:",
-            profileError
+    const demoResponse =
+        await fetch(
+            `${DEMO_API_BASE}/api/demo/programme-data`
         );
 
-        throw profileError;
+    if (!demoResponse.ok) {
+
+        throw new Error(
+            `Demo data request failed: ${demoResponse.status}`
+        );
 
     }
 
+    const demoData =
+        await demoResponse.json();
 
     allProfiles =
-        profiles || [];
-
-
-    /* =====================================================
-       LOAD TRAINING
-       ===================================================== */
-
-    const {
-        data: training,
-        error: trainingError
-    } =
-        await supabaseClient
-            .from("trainee_records")
-            .select(`
-                id,
-                trainee_id,
-                course_name,
-                provider_name,
-                start_date,
-                completion_date,
-                attendance,
-                assessment_score,
-                certification_status,
-                is_verified,
-                duration_months,
-                skills,
-                created_at,
-                updated_at
-            `);
-
-
-    if (trainingError) {
-
-        console.error(
-            "Training data error:",
-            trainingError
-        );
-
-        throw trainingError;
-
-    }
-
+        demoData.profiles || [];
 
     allTrainingRecords =
-        training || [];
-
-
-    /* =====================================================
-       LOAD EMPLOYMENT
-       ===================================================== */
-
-    const {
-        data: employment,
-        error: employmentError
-    } =
-        await supabaseClient
-            .from("employment_records")
-            .select(`
-                id,
-                trainee_id,
-                status,
-                company_name,
-                job_role,
-                monthly_salary,
-                joining_date,
-                employment_type,
-                unemployed_reason,
-                recorded_at,
-                created_at
-            `)
-            .order(
-                "recorded_at",
-                {
-                    ascending: false
-                }
-            );
-
-
-    if (employmentError) {
-
-        console.error(
-            "Employment data error:",
-            employmentError
-        );
-
-        throw employmentError;
-
-    }
-
+        demoData.training || [];
 
     allEmploymentRecords =
-        employment || [];
+        demoData.employment || [];
 
 
     console.log(
