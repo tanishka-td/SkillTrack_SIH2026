@@ -30,8 +30,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["GET"],
+    allow_origins=[
+        "https://skill-track-sih-2026-3b7e.vercel.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
