@@ -21,7 +21,7 @@ let allEmploymentRecords = [];
 const DEMO_MODE = true;
 
 const DEMO_API_URL =
-    "http://127.0.0.1:8000/api/demo/programme-data";
+    "https://skilltrack-sih2026.onrender.com/api/demo/programme-data";
 
 let filteredProfiles = [];
 let filteredTrainingRecords = [];
