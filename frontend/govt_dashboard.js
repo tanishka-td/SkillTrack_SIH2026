@@ -30,6 +30,13 @@ let filteredEmploymentRecords = [];
 let retentionChart = null;
 let outcomeDonutChart = null;
 let courseComparisonChart = null;
+// Advanced analytics chart instances
+let providerPlacementChart = null;
+let wageGrowthChart = null;
+let relevanceChart = null;
+let skillGapChart = null;
+let nonPlacementChart = null;
+let attritionChart = null;
 
 let currentFilters = {
     state: "",
@@ -2080,6 +2087,103 @@ function updateAdvancedAnalytics() {
 /* =========================================================
    PROVIDER PLACEMENT
    ========================================================= */
+function getChartColors() {
+    return [
+        "#0284c7",
+        "#10b981",
+        "#f59e0b",
+        "#f43f5e",
+        "#8b5cf6",
+        "#14b8a6"
+    ];
+}
+
+
+function destroyChart(chart) {
+    if (chart) {
+        chart.destroy();
+    }
+
+    return null;
+}
+
+
+function renderProviderPlacementChart(labels, values) {
+
+    const canvas =
+        document.getElementById(
+            "providerPlacementChart"
+        );
+
+    if (!canvas || typeof Chart === "undefined") {
+        return;
+    }
+
+    providerPlacementChart =
+        destroyChart(providerPlacementChart);
+
+    providerPlacementChart =
+        new Chart(
+            canvas.getContext("2d"),
+            {
+                type: "bar",
+
+                data: {
+                    labels: labels,
+
+                    datasets: [
+                        {
+                            label: "Placement %",
+                            data: values,
+                            backgroundColor: "#0284c7",
+                            borderRadius: 5,
+                            barThickness: 12
+                        }
+                    ]
+                },
+
+                options: {
+                    indexAxis: "y",
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+
+                            ticks: {
+                                callback:
+                                    value => `${value}%`,
+                                maxTicksLimit: 5
+                            },
+
+                            grid: {
+                                display: false
+                            }
+                        },
+
+                        y: {
+                            grid: {
+                                display: false
+                            },
+
+                            ticks: {
+                                autoSkip: false,
+                                maxTicksLimit: 6
+                            }
+                        }
+                    }
+                }
+            }
+        );
+}
 
 function updateProviderPlacement(
     training,
@@ -2163,15 +2267,13 @@ function updateProviderPlacement(
     );
 
 
-    const html =
-        Array.from(
-            providerMap.entries()
-        )
-        .slice(0, 8)
+    const results =
+    Array.from(providerMap.entries())
         .map(
-            function ([provider, item]) {
+            ([provider, item]) => ({
+                provider,
 
-                const rate =
+                rate:
                     item.total.size > 0
                         ? Math.round(
                             (
@@ -2179,30 +2281,39 @@ function updateProviderPlacement(
                                 item.total.size
                             ) * 100
                         )
-                        : 0;
+                        : 0
+            })
+        )
+        .sort(
+            (a, b) => b.rate - a.rate
+        )
+        .slice(0, 6);
 
 
-                return `
+container.innerHTML =
+    results.length
+        ? results
+            .map(
+                item => `
                     <div class="analytics-row">
                         <span>
-                            ${escapeHTML(provider)}
+                            ${escapeHTML(item.provider)}
                         </span>
 
                         <strong>
-                            ${rate}%
+                            ${item.rate}%
                         </strong>
                     </div>
-                `;
+                `
+            )
+            .join("")
+        : "<span>No provider data available.</span>";
 
-            }
-        )
-        .join("");
 
-
-    container.innerHTML =
-        html ||
-        "<span>No provider data available.</span>";
-
+renderProviderPlacementChart(
+    results.map(item => item.provider),
+    results.map(item => item.rate)
+);
 }
 
 
@@ -2219,13 +2330,126 @@ function updateWageGrowth(
             "wageGrowth"
         );
 
-
     if (!container) {
         return;
     }
 
 
-    const salaries =
+    const trainingByTrainee =
+        new Map();
+
+
+    filteredTrainingRecords.forEach(
+        record => {
+
+            if (
+                !trainingByTrainee.has(
+                    record.trainee_id
+                )
+            ) {
+
+                trainingByTrainee.set(
+                    record.trainee_id,
+                    record.course_name ||
+                    "Unknown Programme"
+                );
+
+            }
+
+        }
+    );
+
+
+    const salaryMap =
+        new Map();
+
+
+    employment.forEach(
+        record => {
+
+            const salary =
+                Number(
+                    record.monthly_salary
+                );
+
+
+            if (
+                !Number.isFinite(salary) ||
+                salary < 0
+            ) {
+                return;
+            }
+
+
+            const course =
+                trainingByTrainee.get(
+                    record.trainee_id
+                ) ||
+                "Unknown Programme";
+
+
+            if (!salaryMap.has(course)) {
+
+                salaryMap.set(
+                    course,
+                    {
+                        total: 0,
+                        count: 0
+                    }
+                );
+
+            }
+
+
+            const item =
+                salaryMap.get(course);
+
+
+            item.total += salary;
+            item.count++;
+
+        }
+    );
+
+
+    const results =
+        Array.from(
+            salaryMap.entries()
+        )
+        .map(
+            ([course, item]) => ({
+                course,
+
+                average:
+                    Math.round(
+                        item.total /
+                        item.count
+                    )
+            })
+        )
+        .sort(
+            (a, b) =>
+                b.average -
+                a.average
+        )
+        .slice(0, 6);
+
+
+    if (!results.length) {
+
+        container.innerHTML =
+            "<span>No salary data available yet.</span>";
+
+        wageGrowthChart =
+            destroyChart(
+                wageGrowthChart
+            );
+
+        return;
+    }
+
+
+    const overallSalary =
         employment
             .map(
                 record =>
@@ -2240,29 +2464,23 @@ function updateWageGrowth(
             );
 
 
-    if (!salaries.length) {
-
-        container.innerHTML =
-            "<span>No salary data available yet.</span>";
-
-        return;
-
-    }
-
-
     const average =
-        salaries.reduce(
-            (sum, value) =>
-                sum + value,
-            0
-        ) /
-        salaries.length;
+        overallSalary.length
+            ? Math.round(
+                overallSalary.reduce(
+                    (sum, value) =>
+                        sum + value,
+                    0
+                ) /
+                overallSalary.length
+            )
+            : 0;
 
 
     container.innerHTML =
         `
         <div class="analytics-highlight">
-            ₹${Math.round(average).toLocaleString()}
+            ₹${average.toLocaleString()}
         </div>
 
         <span>
@@ -2270,8 +2488,105 @@ function updateWageGrowth(
         </span>
         `;
 
-}
 
+    const canvas =
+        document.getElementById(
+            "wageGrowthChart"
+        );
+
+
+    if (
+        !canvas ||
+        typeof Chart === "undefined"
+    ) {
+        return;
+    }
+
+
+    wageGrowthChart =
+        destroyChart(
+            wageGrowthChart
+        );
+
+
+    wageGrowthChart =
+        new Chart(
+            canvas.getContext("2d"),
+            {
+                type: "bar",
+
+                data: {
+                    labels:
+                        results.map(
+                            item =>
+                                item.course
+                        ),
+
+                    datasets: [
+                        {
+                            label:
+                                "Average Monthly Salary",
+
+                            data:
+                                results.map(
+                                    item =>
+                                        item.average
+                                ),
+
+                            backgroundColor:
+                                "#10b981",
+
+                            borderRadius: 5,
+
+                            barThickness: 14
+                        }
+                    ]
+                },
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+
+                    scales: {
+
+                        y: {
+                            beginAtZero: true,
+
+                            ticks: {
+                                callback:
+                                    value =>
+                                        `₹${Number(value).toLocaleString()}`,
+
+                                maxTicksLimit: 4
+                            },
+
+                            grid: {
+                                display: false
+                            }
+                        },
+
+                        x: {
+                            grid: {
+                                display: false
+                            },
+
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 0,
+                                autoSkip: true
+                            }
+                        }
+                    }
+                }
+            }
+        );
+}
 
 /* =========================================================
    TRAINING RELEVANCE
@@ -2347,7 +2662,76 @@ function updateRelevance(
             Training-to-employment linkage
         </span>
         `;
+    const notLinked =
+    Math.max(
+        employed.length - relevant,
+        0
+    );
 
+
+const canvas =
+    document.getElementById(
+        "relevanceChart"
+    );
+
+
+if (
+    !canvas ||
+    typeof Chart === "undefined"
+) {
+    return;
+}
+
+
+relevanceChart =
+    destroyChart(
+        relevanceChart
+    );
+
+
+relevanceChart =
+    new Chart(
+        canvas.getContext("2d"),
+        {
+            type: "doughnut",
+
+            data: {
+                labels: [
+                    "Linked to training",
+                    "Not linked"
+                ],
+
+                datasets: [
+                    {
+                        data: [
+                            relevant,
+                            notLinked
+                        ],
+
+                        backgroundColor: [
+                            "#10b981",
+                            "#e5e7eb"
+                        ],
+
+                        borderWidth: 0
+                    }
+                ]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                cutout: "70%",
+
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        }
+    );
 }
 
 
@@ -2377,12 +2761,38 @@ function updateSkillGap(
     training.forEach(
         record => {
 
-            if (!Array.isArray(record.skills)) {
+            let skills =
+                record.skills;
+
+
+            /*
+             * Demo data may store skills
+             * either as an array or
+             * comma-separated text.
+             */
+
+            if (
+                typeof skills === "string"
+            ) {
+
+                skills =
+                    skills
+                        .split(",")
+                        .map(
+                            skill =>
+                                skill.trim()
+                        )
+                        .filter(Boolean);
+
+            }
+
+
+            if (!Array.isArray(skills)) {
                 return;
             }
 
 
-            record.skills.forEach(
+            skills.forEach(
                 skill => {
 
                     if (!skill) {
@@ -2393,6 +2803,11 @@ function updateSkillGap(
                     const normalized =
                         String(skill)
                             .trim();
+
+
+                    if (!normalized) {
+                        return;
+                    }
 
 
                     skillCount.set(
@@ -2417,7 +2832,7 @@ function updateSkillGap(
         )
         .sort(
             (a, b) =>
-                a[1] - b[1]
+                b[1] - a[1]
         )
         .slice(0, 5);
 
@@ -2427,10 +2842,20 @@ function updateSkillGap(
         container.innerHTML =
             "<span>Skill-level data is not available yet.</span>";
 
-        return;
 
+        skillGapChart =
+            destroyChart(
+                skillGapChart
+            );
+
+
+        return;
     }
 
+
+    /*
+     * TEXT DATA
+     */
 
     container.innerHTML =
         topSkills
@@ -2438,6 +2863,7 @@ function updateSkillGap(
                 ([skill, count]) =>
                     `
                     <div class="analytics-row">
+
                         <span>
                             ${escapeHTML(skill)}
                         </span>
@@ -2445,10 +2871,149 @@ function updateSkillGap(
                         <strong>
                             ${count}
                         </strong>
+
                     </div>
                     `
             )
             .join("");
+
+
+    /*
+     * CHART
+     */
+
+    const canvas =
+        document.getElementById(
+            "skillGapChart"
+        );
+
+
+    if (
+        !canvas ||
+        typeof Chart === "undefined"
+    ) {
+        return;
+    }
+
+
+    skillGapChart =
+        destroyChart(
+            skillGapChart
+        );
+
+
+    skillGapChart =
+        new Chart(
+            canvas.getContext("2d"),
+            {
+
+                type: "bar",
+
+
+                data: {
+
+                    labels:
+                        topSkills.map(
+                            item =>
+                                item[0]
+                        ),
+
+
+                    datasets: [
+
+                        {
+
+                            label:
+                                "Training Records",
+
+
+                            data:
+                                topSkills.map(
+                                    item =>
+                                        item[1]
+                                ),
+
+
+                            backgroundColor:
+                                "#8b5cf6",
+
+
+                            borderRadius: 5,
+
+
+                            barThickness: 14
+
+                        }
+
+                    ]
+
+                },
+
+
+                options: {
+
+                    responsive: true,
+
+                    maintainAspectRatio: false,
+
+
+                    plugins: {
+
+                        legend: {
+                            display: false
+                        }
+
+                    },
+
+
+                    scales: {
+
+                        y: {
+
+                            beginAtZero: true,
+
+
+                            ticks: {
+
+                                precision: 0,
+
+                                maxTicksLimit: 4
+
+                            },
+
+
+                            grid: {
+                                display: false
+                            }
+
+                        },
+
+
+                        x: {
+
+                            grid: {
+                                display: false
+                            },
+
+
+                            ticks: {
+
+                                maxRotation: 45,
+
+                                minRotation: 0,
+
+                                autoSkip: true
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+        );
 
 }
 
@@ -2539,7 +3104,74 @@ function updateNonPlacementReasons(
                 )
                 .join("")
             : "<span>No non-placement reasons recorded.</span>";
+    const canvas =
+    document.getElementById(
+        "nonPlacementChart"
+    );
 
+
+if (
+    !canvas ||
+    typeof Chart === "undefined"
+) {
+    return;
+}
+
+
+nonPlacementChart =
+    destroyChart(
+        nonPlacementChart
+    );
+
+
+if (!rows.length) {
+    return;
+}
+
+
+nonPlacementChart =
+    new Chart(
+        canvas.getContext("2d"),
+        {
+            type: "doughnut",
+
+            data: {
+                labels:
+                    rows.map(
+                        item =>
+                            item[0]
+                    ),
+
+                datasets: [
+                    {
+                        data:
+                            rows.map(
+                                item =>
+                                    item[1]
+                            ),
+
+                        backgroundColor:
+                            getChartColors(),
+
+                        borderWidth: 0
+                    }
+                ]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                cutout: "65%",
+
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        }
+    );
 }
 
 
@@ -2573,7 +3205,13 @@ function updateAttritionReasons(
             record =>
                 record.status === "Unemployed"
         );
-
+    const employed =
+    latest.filter(
+        record =>
+            record.status === "Employed" ||
+            record.status === "Business" ||
+            record.status === "Apprenticeship"
+    );
 
     if (!unemployed.length) {
 
@@ -2595,7 +3233,69 @@ function updateAttritionReasons(
             Trainees currently recorded as unemployed
         </span>
         `;
+    const canvas =
+    document.getElementById(
+        "attritionChart"
+    );
 
+
+if (
+    !canvas ||
+    typeof Chart === "undefined"
+) {
+    return;
+}
+
+
+attritionChart =
+    destroyChart(
+        attritionChart
+    );
+
+
+attritionChart =
+    new Chart(
+        canvas.getContext("2d"),
+        {
+            type: "doughnut",
+
+            data: {
+                labels: [
+                    "Currently employed / placed",
+                    "Currently unemployed"
+                ],
+
+                datasets: [
+                    {
+                        data: [
+                            employed.length,
+                            unemployed.length
+                        ],
+
+                        backgroundColor: [
+                            "#10b981",
+                            "#f43f5e"
+                        ],
+
+                        borderWidth: 0
+                    }
+                ]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                cutout: "65%",
+
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        }
+    );
 }
 
 
