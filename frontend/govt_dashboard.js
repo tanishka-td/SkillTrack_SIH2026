@@ -15,6 +15,14 @@ let allProfiles = [];
 let allTrainingRecords = [];
 let allEmploymentRecords = [];
 
+// =========================================================
+// DEMO DATA MODE
+// =========================================================
+const DEMO_MODE = true;
+
+const DEMO_API_URL =
+    "http://127.0.0.1:8000/api/demo/programme-data";
+
 let filteredProfiles = [];
 let filteredTrainingRecords = [];
 let filteredEmploymentRecords = [];
@@ -41,27 +49,6 @@ document.addEventListener(
         console.log(
             "SkillTrack Government Dashboard starting..."
         );
-
-
-        /* =================================================
-           CHECK SUPABASE
-           ================================================= */
-
-        if (
-            typeof supabaseClient === "undefined"
-        ) {
-
-            console.error(
-                "supabaseClient is not available."
-            );
-
-            showDashboardError(
-                "Supabase connection is not available."
-            );
-
-            return;
-        }
-
 
         /* =================================================
            INITIAL UI
@@ -96,94 +83,98 @@ async function initializeDashboard() {
     try {
 
         setAdvancedStatus(
-            "Loading government dashboard data..."
+            "Loading demo data..."
         );
 
 
         /* =================================================
-           GET AUTH USER
+           DEMO GOVERNMENT OFFICIAL
            ================================================= */
 
-        const {
-            data: authData,
-            error: authError
-        } =
-            await supabaseClient.auth.getUser();
+        currentUser = {
+            id: "demo-government-user"
+        };
 
 
-        if (authError) {
+        currentOfficial = {
 
-            throw authError;
+            full_name:
+                "Demo Government Official",
 
-        }
+            designation:
+                "Government Programme Officer",
 
+            official_id:
+                "DEMO-001",
 
-        currentUser =
-            authData.user;
+            department:
+                "Skill Development",
 
+            government_level:
+                "State",
 
-        if (!currentUser) {
+            official_role:
+                "Government Official",
 
-            window.location.href =
-                "govt_login.html";
+            state:
+                "Haryana",
 
-            return;
+            district:
+                "",
 
-        }
+            office:
+                "Demo Office",
 
+            official_email:
+                "",
 
-        console.log(
-            "Government user:",
-            currentUser.id
-        );
+            mobile:
+                "",
+
+            office_address:
+                "",
+
+            verification_status:
+                true
+
+        };
 
 
         /* =================================================
-           FETCH OFFICIAL PROFILE
+           UPDATE OFFICIAL INFORMATION
            ================================================= */
 
-        await loadOfficialProfile();
+        updateOfficialUI();
 
 
         /* =================================================
-           VERIFY ACCESS
-           ================================================= */
-
-        if (
-            currentOfficial.verification_status !== true
-        ) {
-
-            await supabaseClient.auth.signOut();
-
-            window.location.href =
-                "govt_login.html";
-
-            return;
-
-        }
-
-
-        /* =================================================
-           LOAD PROGRAMME DATA
+           LOAD SQLITE DEMO DATA THROUGH API
            ================================================= */
 
         await loadProgrammeData();
 
 
         /* =================================================
-           INITIAL FILTER
+           INITIAL FILTERS
            ================================================= */
 
-        currentFilters.state =
-            currentOfficial.state || "";
+        currentFilters = {
 
-        currentFilters.district =
-            currentOfficial.district || "";
+            state:
+                "Haryana",
+
+            district:
+                "",
+
+            programme:
+                ""
+
+        };
 
 
-        /*
-         * Set state filter to official jurisdiction
-         */
+        /* =================================================
+           STATE DROPDOWN
+           ================================================= */
 
         const stateFilter =
             document.getElementById(
@@ -191,37 +182,20 @@ async function initializeDashboard() {
             );
 
 
-        if (
-            stateFilter &&
-            currentOfficial.state
-        ) {
+        if (stateFilter) {
 
-            const stateOption =
-                Array.from(
-                    stateFilter.options
-                ).find(
-                    option =>
-                        option.value ===
-                        currentOfficial.state
-                );
-
-
-            if (stateOption) {
-
-                stateFilter.value =
-                    currentOfficial.state;
-
-            }
+            stateFilter.value =
+                "Haryana";
 
         }
 
 
         /* =================================================
-           LOAD DISTRICTS
+           DISTRICT DROPDOWN
            ================================================= */
 
         populateDistrictFilter(
-            currentOfficial.state
+            "Haryana"
         );
 
 
@@ -231,27 +205,10 @@ async function initializeDashboard() {
             );
 
 
-        if (
-            districtFilter &&
-            currentOfficial.district
-        ) {
+        if (districtFilter) {
 
-            const districtOption =
-                Array.from(
-                    districtFilter.options
-                ).find(
-                    option =>
-                        option.value ===
-                        currentOfficial.district
-                );
-
-
-            if (districtOption) {
-
-                districtFilter.value =
-                    currentOfficial.district;
-
-            }
+            districtFilter.value =
+                "";
 
         }
 
@@ -264,14 +221,14 @@ async function initializeDashboard() {
 
 
         /* =================================================
-           UPDATE LAST UPDATED
+           FINAL UI UPDATE
            ================================================= */
 
         updateLastUpdated();
 
 
         setAdvancedStatus(
-            "Live programme data loaded successfully."
+            "Demo data loaded successfully."
         );
 
 
@@ -301,7 +258,6 @@ async function initializeDashboard() {
     }
 
 }
-
 
 /* =========================================================
    LOAD OFFICIAL PROFILE
@@ -469,216 +425,414 @@ function updateOfficialUI() {
 async function loadProgrammeData() {
 
     console.log(
-        "Loading programme data..."
+        "Loading programme data from SQLite demo database..."
     );
 
 
-    /* =====================================================
-       LOAD DEMO DATA FROM LOCAL ANALYTICS API
-       -----------------------------------------------------
-       The Supabase tables (profile / trainee_records /
-       employment_records) are empty until real intake happens.
-       Until then, pull the CSV-backed demo dataset from the
-       FastAPI backend (api/api.py -> data/skilling_outcomes_demo.db,
-       generated from data/demo/*.csv) so the dashboard has
-       something real to render.
-
-       Swap DEMO_API_BASE below for wherever api.api:app is
-       running (local uvicorn, or your Vercel deployment), and
-       remove this whole block once Supabase is actually seeded.
-       ===================================================== */
-
-    const DEMO_API_BASE =
-        window.SKILLTRACK_DEMO_API_BASE ||
-        "https://skilltrack-sih2026.onrender.com";
-
-    const demoResponse =
+    const response =
         await fetch(
-            `${DEMO_API_BASE}/api/demo/programme-data`
+            DEMO_API_URL
         );
 
-    if (!demoResponse.ok) {
+
+    if (!response.ok) {
 
         throw new Error(
-            `Demo data request failed: ${demoResponse.status}`
+            `Demo API returned HTTP ${response.status}`
         );
 
     }
 
-    const demoData =
-        await demoResponse.json();
+
+    const data =
+        await response.json();
+
+
+    /* =====================================================
+       LOAD DATA INTO DASHBOARD ARRAYS
+       ===================================================== */
 
     allProfiles =
-        demoData.profiles || [];
+        data.profiles || [];
+
 
     allTrainingRecords =
-        demoData.training || [];
+        data.training || [];
+
 
     allEmploymentRecords =
-        demoData.employment || [];
+        data.employment || [];
 
+
+    /* =====================================================
+       DEBUG
+       ===================================================== */
+
+    console.log(
+        "======================================"
+    );
+
+    console.log(
+        "SQLITE DEMO DATA LOADED"
+    );
 
     console.log(
         "Profiles:",
         allProfiles.length
     );
 
-
     console.log(
         "Training:",
         allTrainingRecords.length
     );
-
 
     console.log(
         "Employment:",
         allEmploymentRecords.length
     );
 
+    console.log(
+        "Source:",
+        data.source
+    );
+
+    console.log(
+        "======================================"
+    );
+
+}
+
+/* =========================================================
+   CSV → OBJECTS
+   ========================================================= */
+
+function csvToObjects(
+    text
+) {
+
+    const rows = [];
+
+    let row = [];
+
+    let field = "";
+
+    let insideQuotes =
+        false;
+
+
+    text =
+        text.replace(
+            /^\uFEFF/,
+            ""
+        );
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const char =
+            text[i];
+
+        const next =
+            text[i + 1];
+
+
+        /* ---------------------------------------------
+           QUOTES
+           --------------------------------------------- */
+
+        if (
+            char === '"'
+        ) {
+
+            if (
+                insideQuotes &&
+                next === '"'
+            ) {
+
+                field += '"';
+
+                i++;
+
+            }
+
+            else {
+
+                insideQuotes =
+                    !insideQuotes;
+
+            }
+
+        }
+
+
+        /* ---------------------------------------------
+           COMMA
+           --------------------------------------------- */
+
+        else if (
+            char === "," &&
+            !insideQuotes
+        ) {
+
+            row.push(
+                field
+            );
+
+            field =
+                "";
+
+        }
+
+
+        /* ---------------------------------------------
+           NEW LINE
+           --------------------------------------------- */
+
+        else if (
+            (
+                char === "\n" ||
+                char === "\r"
+            ) &&
+            !insideQuotes
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+
+                i++;
+
+            }
+
+
+            row.push(
+                field
+            );
+
+
+            if (
+                row.some(
+                    value =>
+                        value.trim() !== ""
+                )
+            ) {
+
+                rows.push(
+                    row
+                );
+
+            }
+
+
+            row =
+                [];
+
+            field =
+                "";
+
+        }
+
+
+        /* ---------------------------------------------
+           NORMAL CHARACTER
+           --------------------------------------------- */
+
+        else {
+
+            field +=
+                char;
+
+        }
+
+    }
+
+
+    /* ---------------------------------------------
+       LAST ROW
+       --------------------------------------------- */
+
+    if (
+        field !== "" ||
+        row.length
+    ) {
+
+        row.push(
+            field
+        );
+
+
+        if (
+            row.some(
+                value =>
+                    value.trim() !== ""
+            )
+        ) {
+
+            rows.push(
+                row
+            );
+
+        }
+
+    }
+
+
+    if (!rows.length) {
+
+        return [];
+
+    }
+
+
+    /* ---------------------------------------------
+       HEADERS
+       --------------------------------------------- */
+
+    const headers =
+        rows[0].map(
+            header =>
+                header.trim()
+        );
+
+
+    /* ---------------------------------------------
+       OBJECTS
+       --------------------------------------------- */
+
+    return rows
+        .slice(1)
+        .map(
+            function (values) {
+
+                const object =
+                    {};
+
+
+                headers.forEach(
+                    function (
+                        header,
+                        index
+                    ) {
+
+                        object[header] =
+                            (
+                                values[index] ??
+                                ""
+                            ).trim();
+
+                    }
+                );
+
+
+                return object;
+
+            }
+        );
+
 }
 
 
 /* =========================================================
-   APPLY FILTERS
+   NUMBER HELPER
    ========================================================= */
 
-function applyFilters() {
+function toNumber(
+    value
+) {
 
-    const state =
-        currentFilters.state;
+    if (
+        value === null ||
+        value === undefined ||
+        value === ""
+    ) {
 
+        return null;
 
-    const district =
-        currentFilters.district;
-
-
-    const programme =
-        currentFilters.programme;
-
-
-    /* =====================================================
-       FILTER TRAINEES
-       ===================================================== */
-
-    filteredProfiles =
-        allProfiles.filter(
-            function (profile) {
-
-                if (
-                    state &&
-                    state !== "All States" &&
-                    profile.state !== state
-                ) {
-
-                    return false;
-
-                }
+    }
 
 
-                if (
-                    district &&
-                    district !== "All Districts" &&
-                    profile.district !== district
-                ) {
-
-                    return false;
-
-                }
+    const number =
+        Number(value);
 
 
-                return true;
+    return Number.isFinite(
+        number
+    )
+        ? number
+        : null;
 
-            }
+}
+
+
+/* =========================================================
+   PROGRAMME DROPDOWN
+   ========================================================= */
+
+function populateProgrammeFilter() {
+
+    const programmeFilter =
+        document.getElementById(
+            "programmeFilter"
         );
 
 
-    /* =====================================================
-       TRAINEE IDS
-       ===================================================== */
+    if (!programmeFilter) {
 
-    const traineeIds =
-        new Set(
-            filteredProfiles.map(
-                profile =>
-                    profile.user_id
-            )
-        );
+        return;
+
+    }
 
 
-    /* =====================================================
-       FILTER TRAINING
-       ===================================================== */
-
-    filteredTrainingRecords =
-        allTrainingRecords.filter(
-            function (record) {
-
-                if (
-                    !traineeIds.has(
-                        record.trainee_id
+    const programmes =
+        [
+            ...new Set(
+                allTrainingRecords
+                    .map(
+                        record =>
+                            record.course_name
                     )
-                ) {
-
-                    return false;
-
-                }
-
-
-                if (
-                    programme &&
-                    programme !== "All Programmes" &&
-                    record.course_name !== programme
-                ) {
-
-                    return false;
-
-                }
+                    .filter(Boolean)
+            )
+        ]
+        .sort();
 
 
-                return true;
+    programmeFilter.innerHTML =
+        `
+        <option value="All Programmes">
+            All Programmes
+        </option>
+        `;
 
-            }
-        );
 
+    programmes.forEach(
+        function (programme) {
 
-    /* =====================================================
-       FILTER EMPLOYMENT
-       ===================================================== */
-
-    filteredEmploymentRecords =
-        allEmploymentRecords.filter(
-            function (record) {
-
-                return traineeIds.has(
-                    record.trainee_id
+            const option =
+                document.createElement(
+                    "option"
                 );
 
-            }
-        );
+
+            option.value =
+                programme;
 
 
-    /* =====================================================
-       UPDATE FILTER STATUS
-       ===================================================== */
-
-    updateFilterStatus();
+            option.textContent =
+                programme;
 
 
-    /* =====================================================
-       UPDATE EVERYTHING
-       ===================================================== */
+            programmeFilter.appendChild(
+                option
+            );
 
-    updateKPIs();
-
-    updateOutcomeChart();
-
-    updateCourseAnalytics();
-
-    updateRetentionChart();
-
-    updateAdvancedAnalytics();
-
-    updateAlerts();
+        }
+    );
 
 }
 
@@ -3002,7 +3156,7 @@ function setupFilters() {
                 if (programmeFilter) {
 
                     programmeFilter.value =
-                        "All Programmes";
+                        "";
 
                 }
 
@@ -3018,8 +3172,77 @@ function setupFilters() {
 
 
 /* =========================================================
-   POPULATE DISTRICT FILTER
+   POPULATE PROGRAMME FILTER
    ========================================================= */
+
+function populateProgrammeFilter() {
+
+    const programmeFilter =
+        document.getElementById(
+            "programmeFilter"
+        );
+
+
+    if (!programmeFilter) {
+        return;
+    }
+
+
+    /* =====================================================
+       GET UNIQUE PROGRAMMES FROM DEMO DATA
+       ===================================================== */
+
+    const programmes =
+        [
+            ...new Set(
+                allTrainingRecords
+                    .map(
+                        record =>
+                            record.course_name
+                    )
+                    .filter(Boolean)
+            )
+        ]
+        .sort();
+
+
+    /* =====================================================
+       RESET DROPDOWN
+       ===================================================== */
+
+    programmeFilter.innerHTML =
+        `<option value="">All Programmes</option>`;
+
+
+    /* =====================================================
+       ADD PROGRAMMES
+       ===================================================== */
+
+    programmes.forEach(
+        function (programme) {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                programme;
+
+
+            option.textContent =
+                programme;
+
+
+            programmeFilter.appendChild(
+                option
+            );
+
+        }
+    );
+
+}
 
 function populateDistrictFilter(
     state
@@ -3085,6 +3308,230 @@ function populateDistrictFilter(
 
 }
 
+/* =========================================================
+   APPLY FILTERS
+   ========================================================= */
+
+function applyFilters() {
+
+    console.log(
+        "Applying filters:",
+        currentFilters
+    );
+
+
+    /* =====================================================
+       NORMALIZE FILTER VALUES
+       ===================================================== */
+
+    const selectedState =
+        currentFilters.state || "";
+
+
+    const selectedDistrict =
+        currentFilters.district || "";
+
+
+    const selectedProgramme =
+        currentFilters.programme || "";
+
+
+    const programmeIsAll =
+        !selectedProgramme ||
+        selectedProgramme === "All Programmes";
+
+
+    const districtIsAll =
+        !selectedDistrict ||
+        selectedDistrict === "All Districts";
+
+
+    /* =====================================================
+       STEP 1 — FILTER PROFILES BY STATE + DISTRICT
+       ===================================================== */
+
+    filteredProfiles =
+        allProfiles.filter(
+            function (profile) {
+
+                const stateMatches =
+                    !selectedState ||
+                    profile.state === selectedState;
+
+
+                const districtMatches =
+                    districtIsAll ||
+                    profile.district === selectedDistrict;
+
+
+                return (
+                    stateMatches &&
+                    districtMatches
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       STEP 2 — IF PROGRAMME IS SELECTED,
+                KEEP ONLY TRAINEES IN THAT PROGRAMME
+       ===================================================== */
+
+    if (!programmeIsAll) {
+
+        const programmeTraineeIds =
+            new Set(
+
+                allTrainingRecords
+
+                    .filter(
+                        function (record) {
+
+                            return (
+                                record.course_name ===
+                                selectedProgramme
+                            );
+
+                        }
+                    )
+
+                    .map(
+                        function (record) {
+
+                            return String(
+                                record.trainee_id
+                            );
+
+                        }
+                    )
+
+            );
+
+
+        filteredProfiles =
+            filteredProfiles.filter(
+                function (profile) {
+
+                    return programmeTraineeIds.has(
+                        String(profile.user_id)
+                    );
+
+                }
+            );
+
+    }
+
+
+    /* =====================================================
+       STEP 3 — GET IDs OF FILTERED TRAINEES
+       ===================================================== */
+
+    const filteredTraineeIds =
+        new Set(
+
+            filteredProfiles.map(
+                function (profile) {
+
+                    return String(
+                        profile.user_id
+                    );
+
+                }
+            )
+
+        );
+
+
+    /* =====================================================
+       STEP 4 — FILTER TRAINING RECORDS
+       ===================================================== */
+
+    filteredTrainingRecords =
+        allTrainingRecords.filter(
+            function (record) {
+
+                const traineeMatches =
+                    filteredTraineeIds.has(
+                        String(record.trainee_id)
+                    );
+
+
+                const programmeMatches =
+                    programmeIsAll ||
+                    record.course_name ===
+                        selectedProgramme;
+
+
+                return (
+                    traineeMatches &&
+                    programmeMatches
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       STEP 5 — FILTER EMPLOYMENT RECORDS
+       ===================================================== */
+
+    filteredEmploymentRecords =
+        allEmploymentRecords.filter(
+            function (record) {
+
+                return filteredTraineeIds.has(
+                    String(record.trainee_id)
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       DEBUG
+       ===================================================== */
+
+    console.log(
+        "Filtered profiles:",
+        filteredProfiles.length
+    );
+
+    console.log(
+        "Filtered training:",
+        filteredTrainingRecords.length
+    );
+
+    console.log(
+        "Filtered employment:",
+        filteredEmploymentRecords.length
+    );
+
+
+    /* =====================================================
+       UPDATE DASHBOARD
+       ===================================================== */
+
+    updateKPIs();
+
+    updateOutcomeChart();
+
+    updateCourseAnalytics();
+
+    updateRetentionChart();
+
+    updateAdvancedAnalytics();
+
+    updateAlerts();
+
+    updateFilterStatus();
+
+
+    console.log(
+        "Dashboard filters applied successfully."
+    );
+
+}
 
 /* =========================================================
    FILTER STATUS
